@@ -1,0 +1,35 @@
+/*style for the main section*/
+section.mainsection{
+   display: flex;
+   flex-direction: column;
+}
+
+
+
+/*style for all the individual items in the list of sorts*/
+.mainsectionselectionbars{
+    font-size: 30;
+    color:black;
+    background-color: cyan;
+    text-align: center;
+    width: 200px;
+    height: 150px;
+    padding: 10px 1px 10px 1px;
+    margin: 10px 1px 10px 40px;
+}
+
+/*changes the style for the paragraphs in the sections as a whole*/
+
+
+ .paragraphs {
+    font-size: 20;
+    color:white;
+    background-color: red;
+    width: 1000px;
+    height: 150px;
+    padding: 0px 10px 0px 10px;
+    flex: 80%
+    
+}
+
+/*resource for the two column setup https://www.w3schools.com/howto/howto_css_two_columns.asp*/
