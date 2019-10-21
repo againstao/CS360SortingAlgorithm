@@ -1,32 +1,32 @@
-/*general style for the navagation menu at the top */
 header.navmenu{
+    /*general style for the navagation menu at the top */
     background: rgb(199, 199, 199,1);
     color:black;
     font-size: 14;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
-/*style for the unorderd list as a whole*/
+
 .navmenu ul{
-   
+   /*style for the unorderd list as a whole*/
    list-style-type: none;
    text-align: center;
    
 }
-/*style for the individual elements in the unordered list*/
 .navmenu li{
+    /*style for the individual elements in the unordered list*/
    display:inline-block;
    padding:12px 100px 12px 0px;
    /*text-align: center;*/
 }
 
-/*styles the links so that their not in hyper link form*/
 .navmenu a{
+    /*styles the links so that their not in hyper link form*/
     text-decoration:none;
     color: black;
     
 }
-/*styles the links so that they change color when you hover over them*/
 a:hover{
+    /*styles the links so that they change color when you hover over them*/
     color:rgb(50, 50, 50);
 }
 

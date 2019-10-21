@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    <title>nothing to see here lol</title>
+    <script>console.clear();/*this is just a personal decision; I didn't want my debugger retaining old console text.*/</script>
+    <style>
+        body { background-color: black; color: white; }
+        /* h1, h2 { color: white; } */
+        #sdparent {
+            /* not being 'static' makes sdparent the child's offsetParent, not body */
+            /* see https://www.w3schools.com/css/css_positioning.asp */
+            position: relative;
+            /*center*/
+            margin:auto;
+            width: 30%;
+            /*looks*/
+            border: 1px solid red;
+            /* background-color: lightgray; */
+
+            /* height:;  nvm, we won't make the sorter be relative to height */
+        }
+        .sdelem {
+            background-color: red;
+            border: 0px solid red;
+        }
+        /* #sd0 { height:100px; }
+        #sd1 { height: 85px; }
+        #sd2 { height: 45px; } */
+    </style>
+</head>
+<body>
+    <h1>Hello test</h1>
+    <h2>test2</h2>
+    <div id="sdparent">
+        <!-- <div class="sdelem" id="sd0"></div>
+        <div class="sdelem" id="sd1"></div>
+        <div class="sdelem" id="sd2"></div> -->
+    </div>
+</body>
+<script src="sortingjs/main.js" type="module"></script>

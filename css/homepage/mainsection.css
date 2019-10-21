@@ -1,13 +1,11 @@
-/*style for the main section*/
 section.mainsection{
-   display: flex;
-   flex-direction: column;
+    /*style for the main section*/
+    display: flex;
+    flex-direction: column;
 }
 
-
-
-/*style for all the individual items in the list of sorts*/
 .mainsectionselectionbars{
+    /*style for all the individual items in the list of sorts*/
     font-size: 30;
     color:black;
     background-color: cyan;
@@ -18,10 +16,8 @@ section.mainsection{
     margin: 10px 1px 10px 40px;
 }
 
-/*changes the style for the paragraphs in the sections as a whole*/
-
-
- .paragraphs {
+.paragraphs {
+    /*changes the style for the paragraphs in the sections as a whole*/
     font-size: 20;
     color:white;
     background-color: red;

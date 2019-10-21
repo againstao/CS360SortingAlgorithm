@@ -1,0 +1,46 @@
+section.introsection{
+    /*general settings for our introsection*/
+    font-size: 26;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    border-bottom-style: solid;
+    border-color: white;
+    padding: 0px;
+    margin: 0px;
+}
+
+.introsectionlogo img{
+    /*style settings for our logo*/
+    display: inline-block;
+    padding:0px 30px 0px 0px;
+    margin:0;
+    position: relative;  
+
+}
+
+.introsectiontitle h1{
+    /*style settings for title*/
+    position: absolute;
+    top: 45px;
+    max-height: 60px;
+    max-width: 2000
+}
+
+.introsection ul{
+    /*style settings for the unorded lists as a whole*/
+    margin:0;
+    padding:0px 30px 0px 30px;
+    list-style-type: none;
+    text-align: left;
+}
+
+.introsection li{
+    /*general style settings for the individual items in the list*/
+    display:inline-block;
+}
+
+.introsection p{
+    /*styles for div*/
+    display: block;
+}
+
+ 
