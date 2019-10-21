@@ -1,7 +1,9 @@
 // import { SortFactory } from "./sorts.js";
 export { setupTransitions, setOffsetPercent,
     BarDisplay,
-    actionSwapIndices }
+    actionSwapIndices };
+
+const TARGET_DIV_ID = 'sortdisplay';
 
 // function setOffset(sd, top, left) {
 //     sd.style.position = 'absolute';
@@ -18,11 +20,6 @@ const WIDTH_PERCENT = 0.6;
 
 function setupTransitions(elem) {
     elem.style.transition = 'left 0.4s ease-out 0s';
-    // console.log(elem.onmousemove);
-    // console.log(elem.addEventListener);
-    // elem.addEventListener( "mousemove", setOffsetPercent(document.getElementById(elem.id),3,3) );
-    // console.log(elem.style.transition);
-    
 }
 
 function setOffsetPercent(elem, index, total) {
@@ -49,35 +46,67 @@ function setOffsetPercent(elem, index, total) {
 
 
 
+// https://stackoverflow.com/a/13440842
+function arrayMin(arr) {
+    var len = arr.length, min = Infinity;
+    while (len--) {
+        if (arr[len] < min) {
+            min = arr[len];
+        }
+    }
+    return min;
+};
+function arrayMax(arr) {
+    var len = arr.length, max = -Infinity;
+    while (len--) {
+        if (arr[len] > max) {
+            max = arr[len];
+        }
+    }
+    return max;
+};
+
+
 // contains the display stuff that sorts and actions will use as context
 // also initializes the display with stuff needed
 
-const HEIGHT_UNIT = 'px';
+const MIN_HEIGHT_PERCENT = 20;
 
 function BarDisplay(initarray, heightincrement) {
-    // console.log(this);
     this.elems = initarray;
+    const maxElem = arrayMax(initarray);
+    const minElem = arrayMin(initarray);
+    const range = maxElem - minElem;
+    
+    // populate the divs using the initarray
     this.divs = [];
-    let parent = document.getElementById('sdparent');
+    let parent = document.getElementById(TARGET_DIV_ID);
+    parent.classList.add('sdparent');
     for (let i = 0; i < initarray.length; i++) {
         const elem = initarray[i];
         let div = document.createElement('div');
-        div.classList.add('sdelem');
-        div.style.height = this.elems[i]*heightincrement + HEIGHT_UNIT;
+        div.classList.add('sdbar');
+        // div.style.height = this.elems[i]*heightincrement + HEIGHT_UNIT;
+        div.style.height = MIN_HEIGHT_PERCENT
+                + ((this.elems[i]-minElem)/range)*(100-MIN_HEIGHT_PERCENT) + '%';
+        div.style.bottom = '0px';
 
-        div.style.textAlign = 'center';
-        div.innerHTML = this.elems[i];
+        // div.style.textAlign = 'center';
+        // div.innerHTML = this.elems[i];
+        let text = document.createElement('div');
+        text.innerHTML = this.elems[i];
+        text.classList.add('sdbar-text');
 
         // div.id='sd'+i;
         setOffsetPercent(div, i, initarray.length);
         setupTransitions(div);
         parent.appendChild(div);
+        div.appendChild(text);
         this.divs[i] = div;
     }
 }
 
 function TreeDisplay(initarray) {
-
 }
 
 // note to self: don't need this syntax after all?

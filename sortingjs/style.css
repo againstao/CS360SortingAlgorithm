@@ -1,0 +1,19 @@
+
+        .sdparent { /* is applied to the targeted div in which the displaying is animated */
+            /* not being 'static' makes sdparent the child's offsetParent, not body */
+            /* see https://www.w3schools.com/css/css_positioning.asp */
+            position: relative;
+        }
+        .sdbar { /* is applied to each bar element */
+            background-color: red;
+            /* border: 0px solid red; */
+        }
+        .sdbar-text { /* is applied to each div that contains the text on each bar */
+            position: absolute;
+            width: 100%;
+            /* you can try different values for bottom;
+            0px makes it stay at the bottom, and 50% makes it start in the middle */
+            /* bottom: 0px; */
+            bottom: 50%;
+            text-align: center;
+        }
