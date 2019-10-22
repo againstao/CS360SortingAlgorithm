@@ -1,12 +1,14 @@
-.mainsection{
+ .mainsection{
     /*style for the main section*/
     display: flex;
     flex-direction: column;
     margin: 80px 5% 80px 5%;
+    
 }
 
 .mainsectionselectionbars {
     /*style for all the individual items in the list of sorts*/
+    
     font-size: 30;
     color:black;
     background-color: rgb(0,153,153);
@@ -15,8 +17,8 @@
     text-align: center;
     width: 225px;
     height: 125px;
-    padding: 20px 1px 10px 1px;
-    margin: 0px 10px 0px 0px;
+    padding: 20px 0px 0px 0px;
+    
    
 }
 
@@ -27,15 +29,35 @@
     background-color:red;
     outline: white;
     outline-style: solid;
-    
     width: 1400px;
-    height: 620px;
-    padding: 0px 10px 0px 10px;
-    margin: 0px 0px 0px 210px;
+    height: 580px;
     position: relative;
     top: -54;
-    left: 19;
-    
+    left: 239;
+    /*above is the paragraph settings for the block*/
+
+   
+    /*this is what allows the paragraph section to dynamically change*/
+
+
+
 }
+
+.test {
+    
+    font-size: 20;
+    color:white;
+    background-color:red;
+    outline: white;
+    outline-style: solid;
+    width: auto;
+    height: auto;
+    margin: 80px 5% 80px 5%;
+    flex-basis: 90%;
+    min-width: 800px;
+    max-width: 1000px;
+
+}
+/*let this be an example of how to dynamically size a section*/
 
 /*resource for the two column setup https://www.w3schools.com/howto/howto_css_two_columns.asp*/
