@@ -3,7 +3,7 @@ export { setupTransitions, setOffsetPercent,
     BarDisplay,
     actionSwapIndices };
 
-const TARGET_DIV_ID = 'sortdisplay';
+// const TARGET_DIV_ID = 'sortdisplay';
 
 // function setOffset(sd, top, left) {
 //     sd.style.position = 'absolute';
@@ -72,7 +72,7 @@ function arrayMax(arr) {
 
 const MIN_HEIGHT_PERCENT = 20;
 
-function BarDisplay(initarray, heightincrement) {
+function BarDisplay(initarray, targetDivID) {
     this.elems = initarray;
     const maxElem = arrayMax(initarray);
     const minElem = arrayMin(initarray);
@@ -80,7 +80,7 @@ function BarDisplay(initarray, heightincrement) {
     
     // populate the divs using the initarray
     this.divs = [];
-    let parent = document.getElementById(TARGET_DIV_ID);
+    let parent = document.getElementById(targetDivID);
     parent.classList.add('sdparent');
     for (let i = 0; i < initarray.length; i++) {
         const elem = initarray[i];
