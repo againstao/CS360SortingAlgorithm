@@ -27,8 +27,8 @@
     height: 800px;
     padding: 0px 10px 0px 10px;
     margin: 0px 0px 0px 210px;
-    position: absolute;
-    top: 174;
+    position: relative;
+    top: -44;
     
 }
 
