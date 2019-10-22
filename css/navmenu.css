@@ -10,13 +10,14 @@ header.navmenu{
    /*style for the unorderd list as a whole*/
    list-style-type: none;
    text-align: center;
-   
+   margin: 0px 100px 0px 0px;
+
 }
 .navmenu li{
     /*style for the individual elements in the unordered list*/
    display:inline-block;
    padding:12px 100px 12px 0px;
-   /*text-align: center;*/
+   text-align: center;
 }
 
 .navmenu a{
