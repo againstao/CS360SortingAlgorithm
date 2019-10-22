@@ -1,30 +1,40 @@
-section.mainsection{
+.mainsection{
     /*style for the main section*/
     display: flex;
     flex-direction: column;
+    margin: 80px 5% 80px 5%;
 }
 
-.mainsectionselectionbars{
+.mainsectionselectionbars {
     /*style for all the individual items in the list of sorts*/
     font-size: 30;
     color:black;
     background-color: rgb(0,153,153);
+    outline: white;
+    outline-style: solid;
     text-align: center;
-    width: 200px;
-    height: 150px;
-    padding: 10px 1px 10px 1px;
-    margin: 10px 1px 10px 40px;
+    width: 225px;
+    height: 125px;
+    padding: 20px 1px 10px 1px;
+    margin: 0px 10px 0px 0px;
+   
 }
 
 .paragraphs {
     /*changes the style for the paragraphs in the sections as a whole*/
     font-size: 20;
     color:white;
-    background-color: red;
-    width: 1000px;
-    height: 150px;
+    background-color:red;
+    outline: white;
+    outline-style: solid;
+    
+    width: 1400px;
+    height: 620px;
     padding: 0px 10px 0px 10px;
-    flex: 80%
+    margin: 0px 0px 0px 210px;
+    position: relative;
+    top: -54;
+    left: 19;
     
 }
 
