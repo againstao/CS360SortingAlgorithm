@@ -1,10 +1,10 @@
-section.mainsection{
+.mainsection{
     /*style for the main section*/
     display: flex;
     flex-direction: column;
 }
 
-.mainsectionselectionbars{
+.mainsectionselectionbars {
     /*style for all the individual items in the list of sorts*/
     font-size: 30;
     color:black;
@@ -13,18 +13,22 @@ section.mainsection{
     width: 200px;
     height: 150px;
     padding: 10px 1px 10px 1px;
-    margin: 10px 1px 10px 40px;
+    margin: 10px 1px 5px 100px;
 }
 
 .paragraphs {
     /*changes the style for the paragraphs in the sections as a whole*/
     font-size: 20;
     color:white;
-    background-color: red;
-    width: 1000px;
-    height: 150px;
+    background-color:red;
+    border-style: solid;
+    border: white;
+    width: 1450px;
+    height: 800px;
     padding: 0px 10px 0px 10px;
-    flex: 80%
+    margin: 0px 0px 0px 210px;
+    position: absolute;
+    top: 174;
     
 }
 
