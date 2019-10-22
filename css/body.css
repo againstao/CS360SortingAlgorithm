@@ -3,6 +3,10 @@ body{
     background: rgb(0,0,0);
     color: rgb(255,255,255);
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+<<<<<<< HEAD
     margin: 1000px;
+=======
+    margin: 12px;
+>>>>>>> 611e2d2eb2b5adce062c6a87e45c7ebfe147cd94
     padding: 0px;
 }
