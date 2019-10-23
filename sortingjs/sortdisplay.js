@@ -1,7 +1,7 @@
 // import { SortFactory } from "./sorts.js";
-export { setupTransitions, setOffsetPercent, setIndicatorOffset,
+export { setupTransitions, setOffsetPercent,
     BarDisplay,
-    actionSwapIndices };
+    actionSwapIndices, actionMoveIndicator };
 
 
 // ===================
@@ -77,11 +77,11 @@ const supplyIndicatorDiv = function(indicatorID, parentDiv) {
     let div = document.createElement('div');
     setupTransitions(div);
     // FOR STYLING PURPOSES, you can target them multiple ways:
-    //   by their individual ids "(parentid)_(indicatorid)"
+    //   by their individual ids "(parentid)_indic_(indicatorid)"
     //   by the class "sdbar" - general for ALL bars (including non-indicators)
     //   by the class "sdind" - for all indicator bars (useful for overriding properties on regular bars)
     //   by their individual classes "sdind_(indicatorid)"
-    div.id = parentDiv.id + "_" + indicatorID;
+    div.id = parentDiv.id + "_indic_" + indicatorID;
     div.classList.add('sdbar');
     div.classList.add('sdind');
     div.classList.add('sdind_' + indicatorID);
@@ -90,19 +90,45 @@ const supplyIndicatorDiv = function(indicatorID, parentDiv) {
     return div;
 }
 
+
+// apply actions to a display
+
+// note: actions don't need to have an un-apply;
+//   unapplying will be handled by the sorts classes (just applying an inverse)
+
+function actionSwapIndices(displayContext, ind1, ind2) {
+    console.log('swapping ' + ind1 + ' and ' + ind2);
+    // shortcut if possible
+    if(ind1 == ind2) return;
+    // swap elems
+    let elems = displayContext.elems;
+    let tempelem = elems[ind1];
+    elems[ind1] = elems[ind2];
+    elems[ind2] = tempelem;
+    // swap divs
+    let divs = displayContext.divs;
+    let div1 = divs[ind1];
+    let div2 = divs[ind2];
+    divs[ind1] = div2;
+    divs[ind2] = div1;
+    // update visuals
+    setOffsetPercent(div1,ind2,elems.length);
+    setOffsetPercent(div2,ind1,elems.length);
+}
+
 // used to color bars specially for indices, etc. (also move a transparent version?)
-function setIndicatorOffset(disp, indicatorID, indexTo) {
-    let div = disp.indicatorDivs[indicatorID];
+function actionMoveIndicator(displayContext, indicatorID, indexTo) {
+    let div = displayContext.indicatorDivs[indicatorID];
     if (typeof(div) === 'undefined') {
         // then create a new one and start using it
-        div = (disp.indicatorDivs[indicatorID] = supplyIndicatorDiv(indicatorID, disp.divParent));
+        div = (displayContext.indicatorDivs[indicatorID] = supplyIndicatorDiv(indicatorID, displayContext.divParent));
     }
-    console.log(disp);
+    // console.log(displayContext);
     // do the positioning
-    setOffsetPercent(div, indexTo, disp.elems.length);
+    setOffsetPercent(div, indexTo, displayContext.elems.length);
     // TODO use setIndicatorOffset for different heights depending on indexTo?
     div.style.height = '100%';
-    console.log(div);
+    // console.log(div);
 }
 
 
@@ -167,33 +193,4 @@ function TreeDisplay(initarray) {
 //     constructor(initarray) {
 //         stuff
 //     }
-// }
-
-
-
-// apply actions to a display
-
-// note: actions don't need to have an un-apply;
-//   unapplying will be handled by the sorts classes (just applying an inverse)
-
-function actionSwapIndices(displayContext, ind1, ind2) {
-    console.log('swapping ' + ind1 + ' and ' + ind2);
-    // shortcut if possible
-    if(ind1 == ind2) return;
-    // swap elems
-    let elems = displayContext.elems;
-    let tempelem = elems[ind1];
-    elems[ind1] = elems[ind2];
-    elems[ind2] = tempelem;
-    // swap divs
-    let divs = displayContext.divs;
-    let div1 = divs[ind1];
-    let div2 = divs[ind2];
-    divs[ind1] = div2;
-    divs[ind2] = div1;
-    // update visuals
-    setOffsetPercent(div1,ind2,elems.length);
-    setOffsetPercent(div2,ind1,elems.length);
-}
-// SwapIndicesAction.prototype.apply = function() {
 // }

@@ -26,4 +26,19 @@
         .sdind { /* this class is applied to each 'indicator' bar element - the special ones */
             background-color: green;
             /* border: 3px solid rgba(80, 255, 80, 10); */
+            border: 5px solid lightblue;
+            transform: translate(-5px, -5px); /* offsetting the border, because that's necessary for some reason */
+        }
+
+
+        /* me actually testing the indicator-specific class styling */
+        .sdind_1 {
+            background-color: royalblue;
+        }
+        .sdind_test2 {
+            background-color: aqua;
+            border: 10px solid purple; /* test of changing up the border for differentiation */
+        }
+        .sdind_iDidntUseThisOne { /* I didn't make any ind divs which used the id 'iDidntUseThisOne', so this shouldn't get used */
+            background-color: yellow;
         }

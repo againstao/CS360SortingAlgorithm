@@ -49,12 +49,40 @@ SortFactory.prototype.createSort = function(type, initarray, targetDivID) {
 //         return this.disp.elems;
 //     }
 // }
+function applyCommonFunctions(aType) {
+    aType.prototype.start = function() {
+        this.timer = setInterval(() => {
+            // console.log("the 'this' inside SelectionSort.start's lambda: " + this);
+            console.log(this);
+        }, this.timing);
+    }
+    aType.prototype.currentlyAuto = function() {
+        return (this.timer !== 'undefined'); // check if there's a timer being tracked
+    }
+    aType.prototype.pause = function() {
+        if(this.timer !== 'undefined') {
+            clearInterval(this.timer);
+        }
+        this.timer = 'undefined'; // set it back to pseudo-undefined
+    }
+    aType.prototype.setTiming = function(millis) {
+        const wasRunning = this.currentlyAuto(); // for auto-resuming purposes
+        this.pause();
+        this.timing = millis || this.timing;
+        if(wasRunning) { // resume it, if applicable
+            this.start();
+        }
+    }
+}
 
 
 function SelectionSort(displayObj) {
     // general variables
     this.disp = displayObj;
     this.elems = displayObj.elems; // note to implementations: treat this as READ-ONLY
+    // Note: I'm using strings because: apparently the undefined object could be reassigned to something not actually undefined, because JavaScript's loose type checking is janky.
+    this.timer = 'undefined';
+    this.timing = 1000;
     // implementation-specific variables
     this.gradualIndex = 0; // for as-it-goes
     this.searchingIndex = 0; // for each gradualIndex, this finds the smallest
@@ -65,10 +93,16 @@ SelectionSort.prototype.cleanup = function () {
     this.disp.cleanup();
     delete this.disp;
 }
-// applyGeneralGetters(InsertionSort);
-SelectionSort.prototype.start = function() {
-    
-}
+// SelectionSort.prototype.start = function() {
+//     this.timer = setInterval(() => {
+//         // console.log("the 'this' inside SelectionSort.start's lambda: " + this);
+//         console.log(this);
+//     }, 400);
+// }
+// SelectionSort.prototype.pause = function() {
+//     clearInterval(this.timer);
+// }
+applyCommonFunctions(SelectionSort);
 
 
 // function BubbleSort(display) {
