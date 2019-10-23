@@ -6,7 +6,7 @@
 */
 
 
-import { BarDisplay, actionSwapIndices } from './sortdisplay.js';
+import { BarDisplay, actionSwapIndices, setIndicatorOffset } from './sortdisplay.js';
 import { SortFactory, SelectionSort } from './sorts.js';
 
 // console.log(new InsertionSort(null));
@@ -20,16 +20,34 @@ import { SortFactory, SelectionSort } from './sorts.js';
 
 // console.log(InsertionSort.prototype == new InsertionSort(null).__proto__);
 
-console.log( new SortFactory().createSort('selection',null,null) );
 
 
-// ===================
-//  THE TESTING STUFF
-// ===================
 
-if(true) {
+// let disp = new BarDisplay([1,2,3,5,4,10,12,7,8], 'sortdisplay');
+// setTimeout(() => {
+//     console.log('testing display clean up!');
+//     disp.cleanup();
+// }, 2000);
 
-    var disp = new BarDisplay([1,2,3,5,4,10,12,7,8], 'sortdisplay');
+let sort = new SortFactory().createSort('selection',[1,3,2,4,3,5,4,6],'sortdisplay');
+console.log(sort);
+
+// setTimeout(() => {
+//     console.log('testing sort clean up!');
+//     sort.cleanup();
+//     console.log(sort);
+// }, 2000);
+
+setIndicatorOffset(sort.disp, 3, 2);
+
+setTimeout(() => {
+    setIndicatorOffset(sort.disp, 3, 4);
+}, 2000);
+
+
+if(false) {
+
+    let disp = new BarDisplay([1,2,3,5,4,10,12,7,8], 'sortdisplay');
 
     // actionSwapIndices(disp, 6, 8);
 

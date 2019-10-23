@@ -1,5 +1,5 @@
 // import { SortFactory } from "./sorts.js";
-export { setupTransitions, setOffsetPercent,
+export { setupTransitions, setOffsetPercent, setIndicatorOffset,
     BarDisplay,
     actionSwapIndices };
 
@@ -16,36 +16,11 @@ export { setupTransitions, setOffsetPercent,
 //     sd.style.left = sd.offsetLeft + left + 'px';
 // }
 
-const WIDTH_PERCENT = 0.6;
+const WIDTH_RATIO = 0.6;
 
-function setupTransitions(elem) {
-    elem.style.transition = 'left 0.4s ease-out 0s';
-}
+const MIN_HEIGHT_PERCENT = 20;
 
-function setOffsetPercent(elem, index, total) {
-    // each index will be centered & justified like 'space-between' in flex
-    /*
-        ...   elem    space   elem    ...
-        ,---|###:###|---,---|###:###|---,
-    */
-    elem.style.position = 'absolute';
-    let part = 100/(total); // in terms of percentage; elem's justification width
-    // console.log('part: ' + part);
-    
-    let width = (part*WIDTH_PERCENT);
-    let leftOffset = part*(index+0.5*(1-WIDTH_PERCENT));
-    
-    elem.style.width = width + '%';
-    elem.style.left = leftOffset + '%';
-    // console.log(width);
-    // console.log(leftOffset);
-    
-    // console.log(elem);
-    
-}
-
-
-
+// some utility functions
 // https://stackoverflow.com/a/13440842
 function arrayMin(arr) {
     var len = arr.length, min = Infinity;
@@ -67,10 +42,75 @@ function arrayMax(arr) {
 };
 
 
+const calcHeight = function(elem, minElem, range) {
+    return ( MIN_HEIGHT_PERCENT
+        + ((elem-minElem)/range)*(100-MIN_HEIGHT_PERCENT) + '%' );
+}
+
+
+function setupTransitions(div) {
+    div.style.transition = 'left 0.4s ease-out 0s';
+}
+
+function ensureDivPositioning(div) {
+    div.style.position = 'absolute';
+}
+
+function setOffsetPercent(elem, index, total) {
+    // each index will be centered & justified like 'space-between' in flex
+    /*
+        ...   elem    space   elem    ...
+        ,---|###:###|---,---|###:###|---,
+    */
+    ensureDivPositioning(elem);
+    let part = 100/(total); // in terms of percentage; elem's justification width
+    // console.log('part: ' + part);
+    
+    let width = (part*WIDTH_RATIO);
+    let leftOffset = part*(index+0.5*(1-WIDTH_RATIO));
+    
+    elem.style.width = width + '%';
+    elem.style.left = leftOffset + '%';
+    // console.log(width);
+    // console.log(leftOffset);
+    
+    // console.log(elem);
+    
+}
+
+
+// utility function for creating a new indicator div
+const supplyIndicatorDiv = function(indicatorID, parentDiv) {
+    let div = document.createElement('div');
+    setupTransitions(div);
+    div.id = parentDiv.id + "_" + indicatorID;
+    div.classList.add('sdbar');
+    div.classList.add('sdind');
+    div.classList.add('sdind_' + indicatorID);
+    // parentDiv.appendChild(div);
+    parentDiv.insertBefore(div, parentDiv.children[0]);
+    return div;
+}
+
+// used to color bars specially for indices, etc. (also move a transparent version?)
+function setIndicatorOffset(disp, indicatorID, indexTo) {
+    let div = disp.indicatorDivs[indicatorID];
+    if (typeof(div) === 'undefined') {
+        // then create a new one and start using it
+        div = (disp.indicatorDivs[indicatorID] = supplyIndicatorDiv(indicatorID, disp.divParent));
+    }
+    console.log(disp);
+    // do the positioning
+    setOffsetPercent(div, indexTo, disp.elems.length);
+    // TODO use setIndicatorOffset for different heights depending on indexTo?
+    div.style.height = '100%';
+    console.log(div);
+}
+
+
+
 // contains the display stuff that sorts and actions will use as context
 // also initializes the display with stuff needed
-
-const MIN_HEIGHT_PERCENT = 20;
 
 function BarDisplay(initarray, targetDivID) {
     this.elems = initarray;
@@ -81,14 +121,14 @@ function BarDisplay(initarray, targetDivID) {
     // populate the divs using the initarray
     this.divs = [];
     let parent = document.getElementById(targetDivID);
+    this.divParent = parent;
     parent.classList.add('sdparent');
     for (let i = 0; i < initarray.length; i++) {
         const elem = initarray[i];
         let div = document.createElement('div');
         div.classList.add('sdbar');
         // div.style.height = this.elems[i]*heightincrement + HEIGHT_UNIT;
-        div.style.height = MIN_HEIGHT_PERCENT
-                + ((this.elems[i]-minElem)/range)*(100-MIN_HEIGHT_PERCENT) + '%';
+        div.style.height = calcHeight(this.elems[i], minElem, range);
         div.style.bottom = '0px';
 
         // div.style.textAlign = 'center';
@@ -104,6 +144,16 @@ function BarDisplay(initarray, targetDivID) {
         div.appendChild(text);
         this.divs[i] = div;
     }
+    this.indicatorDivs = {}; // a dictionary to contain special indicative bar divs
+}
+BarDisplay.prototype.cleanup = function() {
+    // releases resources and removes its divs from the targeted parent div
+    delete this.elems;
+    this.divs.forEach(div => {
+        this.divParent.removeChild(div);
+    });
+    delete this.divs;
+    delete this.parent;
 }
 
 function TreeDisplay(initarray) {

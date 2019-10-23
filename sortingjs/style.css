@@ -19,5 +19,12 @@
             /* you can try different values for bottom;
                 0px makes it stay at the bottom, and 50% makes it start in the middle */
             /* bottom: 0px; */
-            bottom: 50%;
+            bottom: 50%; /* 50% is making the BOTTOM of the div start there. Hence, the trasform below */
+            transform: translateY(50%); /* this affects bottom so it treats it as a vertical center */
+        }
+
+        .sdind {
+            /* allan please add details */
+            background-color: green;
+            /* border: 3px solid rgba(80, 255, 80, 10); */
         }

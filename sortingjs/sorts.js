@@ -56,11 +56,19 @@ function SelectionSort(displayObj) {
     this.disp = displayObj;
     this.elems = displayObj.elems; // note to implementations: treat this as READ-ONLY
     // implementation-specific variables
-    this.gradualIndex; // for as-it-goes
-    this.searchingIndex; // for each gradualIndex, this finds the smallest
-    this.curFound;
+    this.gradualIndex = 0; // for as-it-goes
+    this.searchingIndex = 0; // for each gradualIndex, this finds the smallest
+    this.curSearched = 0;
+}
+// releases appropriate resources and tells the display to clean itself up too
+SelectionSort.prototype.cleanup = function () {
+    this.disp.cleanup();
+    delete this.disp;
 }
 // applyGeneralGetters(InsertionSort);
+SelectionSort.prototype.start = function() {
+    
+}
 
 
 // function BubbleSort(display) {
