@@ -2,13 +2,14 @@
     /*style for the main section*/
     display: flex;
     flex-direction: column;
-    margin: 80px 5% 80px 5%;
+    margin: 80px 5% 0px 5% ;
     
 }
 
+
+
 .mainsectionselectionbars {
-    /*style for all the individual items in the list of sorts*/
-    
+     /*style for all the individual items in the list of sorts*/
     font-size: 30;
     color:black;
     background-color: rgb(0,153,153);
@@ -18,22 +19,20 @@
     width: 225px;
     height: 125px;
     padding: 20px 0px 0px 0px;
-    
-   
+     
 }
 
-.paragraphs {
+.mainsectionoutline {
     /*changes the style for the paragraphs in the sections as a whole*/
     font-size: 20;
     color:white;
-    background-color:red;
+    background-color: black;
     outline: white;
     outline-style: solid;
-    width: 1400px;
-    height: 580px;
-    position: relative;
-    top: -54;
-    left: 239;
+    width: auto;
+    height: auto;
+    flex-basis: 100%;
+    margin: 0px 5% 0px 5%;
     /*above is the paragraph settings for the block*/
 
    
