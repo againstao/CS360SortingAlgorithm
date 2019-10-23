@@ -8,19 +8,16 @@
     
     <style>
         body { background-color: black; color: white; }
-        /* h1, h2 { color: white; } */
+        /* h1, h2 { color: white; } nvm, this is getting inherited from body now */
         .sortdisplay {
-            /*center*/
-            margin:auto;
+            /* Centering and such */
+            margin: auto;
             width: 70%;
             height: 300px;
-            /*looks*/
+            /* Looks */
             border: 1px solid red;
             /* background-color: lightgray; */
         }
-        /* #sd0 { height:100px; }
-        #sd1 { height: 85px; }
-        #sd2 { height: 45px; } */
     </style>
 </head>
 <body>
@@ -29,6 +26,7 @@
     <!-- This div gets targeted by the sortingjs files, because its id matches -->
     <div id="sortdisplay" class="sortdisplay"></div>
 </body>
+<!-- THIS SCRIPT LINK ALSO REQUIRED! This is all the js that does all the sorting. without this it's pretty boring :P -->
 <script src="sortingjs/main.js" type="module"></script>
 <script>
     //

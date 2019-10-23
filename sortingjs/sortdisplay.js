@@ -3,18 +3,11 @@ export { setupTransitions, setOffsetPercent, setIndicatorOffset,
     BarDisplay,
     actionSwapIndices };
 
-// const TARGET_DIV_ID = 'sortdisplay';
 
-// function setOffset(sd, top, left) {
-//     sd.style.position = 'absolute';
-//     sd.style.top = top + 'px';
-//     sd.style.left = left + 'px';
-// }
-// function changeOffset(sd, top, left) {
-//     sd.style.position = 'absolute';
-//     sd.style.top = sd.offsetTop   + top + 'px';
-//     sd.style.left = sd.offsetLeft + left + 'px';
-// }
+// ===================
+//  UTILITY FUNCTIONS
+// ===================
+
 
 const WIDTH_RATIO = 0.6;
 
@@ -83,6 +76,11 @@ function setOffsetPercent(elem, index, total) {
 const supplyIndicatorDiv = function(indicatorID, parentDiv) {
     let div = document.createElement('div');
     setupTransitions(div);
+    // FOR STYLING PURPOSES, you can target them multiple ways:
+    //   by their individual ids "(parentid)_(indicatorid)"
+    //   by the class "sdbar" - general for ALL bars (including non-indicators)
+    //   by the class "sdind" - for all indicator bars (useful for overriding properties on regular bars)
+    //   by their individual classes "sdind_(indicatorid)"
     div.id = parentDiv.id + "_" + indicatorID;
     div.classList.add('sdbar');
     div.classList.add('sdind');
@@ -107,6 +105,11 @@ function setIndicatorOffset(disp, indicatorID, indexTo) {
     console.log(div);
 }
 
+
+
+// =================
+//  DISPLAY OBJECTS
+// =================
 
 
 // contains the display stuff that sorts and actions will use as context
@@ -168,9 +171,10 @@ function TreeDisplay(initarray) {
 
 
 
-// apply actions to the display
+// apply actions to a display
 
-// note: actions don't need to have an un-apply; unapplying will be handled by the sorts classes
+// note: actions don't need to have an un-apply;
+//   unapplying will be handled by the sorts classes (just applying an inverse)
 
 function actionSwapIndices(displayContext, ind1, ind2) {
     console.log('swapping ' + ind1 + ' and ' + ind2);
