@@ -1,0 +1,6 @@
+#!/bin/bash
+#Script bc Mus is lazy :)
+
+git add .
+git commit -m 'Mustafa used auto-script because he was lazy'
+git push
