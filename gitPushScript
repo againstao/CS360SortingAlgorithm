@@ -2,6 +2,5 @@
 #Script bc Mus is lazy :)
 
 git add .
-git commit
-echo "Mustafa used auto-script because he was lazy"
+git commit -m 'Mustafa used auto-script because he was lazy'
 git push
