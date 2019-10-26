@@ -1,4 +1,5 @@
-import { BarDisplay } from "./sortdisplay.js";
+import { BarDisplay,
+    actionMoveIndicator, actionSwapIndices } from "./sortdisplay.js";
 
 export { SortFactory,
     SelectionSort };
@@ -36,19 +37,7 @@ SortFactory.prototype.createSort = function(type, initarray, targetDivID) {
 // TODO: ALSO sorts should have a cleanup() to make way for new sorts in the same div;
 //      the cleanup() will likely pass it on to the internal display object
 
-
-// function applyGeneralGetters(sort) {
-//     let classPrototype = sort.__proto__;
-//     classPrototype =;
-// }
-// function applyGeneralGetters(sortType) {
-//     sortType.prototype.getElems = function() {
-//         return this.disp.elems;
-//     }
-//     sortType.prototype.getElems = function() {
-//         return this.disp.elems;
-//     }
-// }
+// a utility function for redundancy removal; all sorting impls should have these functions
 function applyCommonFunctions(aType) {
     aType.prototype.start = function() {
         this.timer = setInterval(() => {
@@ -87,22 +76,18 @@ function SelectionSort(displayObj) {
     this.gradualIndex = 0; // for as-it-goes
     this.searchingIndex = 0; // for each gradualIndex, this finds the smallest
     this.curSearched = 0;
+    // setup index pointers
+    
 }
 // releases appropriate resources and tells the display to clean itself up too
 SelectionSort.prototype.cleanup = function () {
     this.disp.cleanup();
     delete this.disp;
 }
-// SelectionSort.prototype.start = function() {
-//     this.timer = setInterval(() => {
-//         // console.log("the 'this' inside SelectionSort.start's lambda: " + this);
-//         console.log(this);
-//     }, 400);
-// }
-// SelectionSort.prototype.pause = function() {
-//     clearInterval(this.timer);
-// }
 applyCommonFunctions(SelectionSort);
+SelectionSort.prototype.nextStep = function() {
+    // TODO basically a big finite state machine
+}
 
 
 // function BubbleSort(display) {
