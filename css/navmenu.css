@@ -1,11 +1,13 @@
 header.navmenu{
     /*general style for the navagation menu at the top */
-    background: rgb(199, 199, 199,1);
+   
     background: linear-gradient(180deg,rgb(199, 199, 199),rgb(92, 92, 92));
     color:black;
     font-size: 14px;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     padding: 0px 0px 0px 0px;
+    position: sticky;
+    top:0;
 }
 
 .navmenu nav{
@@ -17,7 +19,7 @@ header.navmenu{
    margin: auto;
    display: flex;
    flex-direction: row;
-
+    
 }
 
 
