@@ -1,45 +1,62 @@
- .mainsection{
+.mainsection{
     /*style for the main section*/
     display: flex;
-    flex-direction: column;
-    margin: 80px 5% 0px 5% ;
-    
+    margin: 80px 10% 0px 10%;
+    padding: 0;
 }
 
+.mainsectionoutline{
+    border:solid;
+    border-color: white;
+}
 
-
+.selectionbars{
+    flex:0;
+    outline: solid;
+    outline-color: white;
+}
 .mainsectionselectionbars {
      /*style for all the individual items in the list of sorts*/
-    font-size: 30;
+    font-size: x-large;
     color:black;
     background-color: rgb(0,153,153);
-    outline: white;
-    outline-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-top: solid;
+    border-bottom:solid;
+    border-color: white;
+    
     text-align: center;
     width: 225px;
     height: 125px;
     padding: 20px 0px 0px 0px;
-     
+    flex: 1;
+    
 }
 
-.mainsectionoutline {
-    /*changes the style for the paragraphs in the sections as a whole*/
-    font-size: 20;
-    color:white;
-    background-color: black;
-    outline: white;
-    outline-style: solid;
-    width: auto;
-    height: auto;
-    flex-basis: 100%;
-    margin: 0px 5% 0px 5%;
-    /*above is the paragraph settings for the block*/
+.paragraphs {
+    outline: white solid;
+    flex:1;
+    padding:0px 0px;
+    position: relative;
+    display: -10;
+}
 
-   
-    /*this is what allows the paragraph section to dynamically change*/
+.upperselectionparagraph {
+    height: 50%;
+    padding: 0;
+    margin: 0px ;
+    outline: auto;
+    
 
+}
 
-
+.lowerparagraph {
+    padding: 0px 10px;
+    border-top: white solid;
+    height: 50%;
+    border-width: auto;
+    outline: auto;
 }
 
 .test {
