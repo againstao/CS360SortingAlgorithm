@@ -5,12 +5,8 @@
     padding: 0;
 }
 
-.mainsectionoutline{
-    border:solid;
-    border-color: white;
-}
-
 .selectionbars{
+    /*style for all selection bars as a whole*/
     flex:0;
     outline: solid;
     outline-color: white;
@@ -35,29 +31,37 @@
 }
 
 .paragraphs {
+    /*style for paragraph section as a whole*/
     outline: white solid;
     flex:1;
     padding:0px 0px;
     position: relative;
-    display: -10;
+    
 }
 
 .upperselectionparagraph {
-    height: 50%;
-    padding: 0;
-    margin: 0px ;
-    outline: auto;
-    
-
+    height: 48%;
+    padding: 10px;
+    margin: 0px;
 }
 
 .lowerparagraph {
-    padding: 0px 10px;
-    border-top: white solid;
-    height: 50%;
-    border-width: auto;
-    outline: auto;
+    padding: 10px;
+    height: 48%;
+    margin:0px;
 }
+
+.selectionbars a{
+    /*styles the selection bar links so that their not in hyper link form*/
+    text-decoration:none;
+    color: black;
+}
+
+a:active{
+/*controls the style for the selection bar links when clicked*/
+
+}
+
 
 .test {
     

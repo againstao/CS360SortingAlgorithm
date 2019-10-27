@@ -1,26 +1,28 @@
 section.introsection{
     /*general settings for our introsection*/
-    font-size: 26;
+    font-size: xx-large;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    border-bottom-style: solid;
+    border-bottom-style: solid ;
+    border-width: 4px;
     border-color: white;
     padding: 0px;
     margin: 0px;
+    display: flex;
+    flex-direction: row;
 }
 
 .introsectionlogo img{
     /*style settings for our logo*/
-    display: inline-block;
-    padding: 20px 10px 0px 0px;
+    flex:1;
+    padding: 20px 10px;
     margin:0;
-    position: relative;  
+      
 
 }
 
 .introsectiontitle h1{
     /*style settings for title*/
-    position: relative;
-    top: -35px;
+    flex: 1;
     
 }
 
