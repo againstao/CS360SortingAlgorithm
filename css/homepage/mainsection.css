@@ -3,13 +3,13 @@
     display: flex;
     margin: 80px 10% 0px 10%;
     padding: 0;
+    outline: solid white;
 }
 
 .selectionbars{
     /*style for all selection bars as a whole*/
     flex:0;
-    outline: solid;
-    outline-color: white;
+    
     background: linear-gradient(rgb(72,219,251),rgb(36,110,125) )
 }
 .mainsectionselectionbars {
@@ -17,10 +17,7 @@
     font-size: x-large;
     color:black;
     
-    border-left-style: solid;
-    border-right-style: solid;
-    border-top: solid;
-    border-bottom:solid;
+    border: solid;
     border-color: white;
 
     text-align: center;
@@ -33,23 +30,25 @@
 
 .paragraphs {
     /*style for paragraph section as a whole*/
-    outline: white solid;
-    flex:1;
-    padding:0px 0px;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    
     
 }
 
 .upperselectionparagraph {
-    height: 48%;
+    flex:1;
     padding: 10px;
     margin: 0px;
+    width: max-content;
 }
 
 .lowerparagraph {
+    border-top: solid white;
+    flex:1;
     padding: 10px;
-    height: 48%;
     margin:0px;
+    border-width: 100%;
 }
 
 .selectionbars a{
