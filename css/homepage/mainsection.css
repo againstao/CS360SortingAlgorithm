@@ -9,7 +9,6 @@
 .selectionbars{
     /*style for all selection bars as a whole*/
     flex:0;
-    
     background: linear-gradient(rgb(72,219,251),rgb(36,110,125) )
 }
 .mainsectionselectionbars {

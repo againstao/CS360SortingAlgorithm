@@ -1,0 +1,61 @@
+section.pullupbar {
+    /*general settings for the pull up bar menu*/
+    color:white;
+    padding:0;
+    margin:0;
+    width:100%;
+    position: fixed;
+    bottom:0;
+    
+}
+
+.pullupbartitlesection{
+    /*settings for the title section of the pull up bar as a whole*/
+    display: flex;
+    flex-direction: row;
+    background: rgb(72,219,251);
+    color:black;
+    height: auto; 
+}
+
+.pullupbarexplainationheader {
+    /*settings for the pull up bar explaination header*/
+    padding: 5px 0px 5px 10px;
+    flex:2;
+}
+
+.pullupbarjavaheader{
+    /*settings for the pull up bar java code header*/
+    padding: 5px 10px 0px 10px;
+    flex: 3;
+}
+
+
+.pullupbarsection{
+    /*settings for the main section of the pull up bar*/
+    display: flex;
+    flex-direction: row;
+    background: black;
+    color:white;
+    height: auto; 
+     
+}
+
+
+
+.explainationsection {
+    /*settings for the explaination section*/
+    padding: 5px 0px 5px 10px;
+    flex:2;
+    width: 40%;
+    
+}
+
+
+
+.javasection{
+    padding: 5px 10px 0px 10px;
+    flex: 3;
+    width:60%;
+    border-left:solid rgb(72,219,251);;
+}
