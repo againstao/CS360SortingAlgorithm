@@ -52,23 +52,58 @@
     <!--navagation menu-->
     <header class ="navmenu">
         <nav>
-            <div><a href = "../index.html">Home</a></div>
-            <div><a href = "./">Mac</a></div>
-            <div>iPad</div>
-            <div>iPhone</div>
-            <div>Watch</div>
-            <div><a href = "google.com">TV</a></div>
-            <div>Music</div>
-            <div>Support</div>
-            <div>S</div>
-            <div>B</div>
+            <div><a href = "../">Home</a></div>
+            <div><a href="./sortpage.html?sort=selection">
+                </a>Selection</div>
+            <div><a href="./sortpage.html?sort=insertion">
+                Insertion</a></div>
+            <div><a href="./sortpage.html?sort=merge">
+                Merge</a></div>
+            <div><a href="./sortpage.html?sort=heap">
+                Heap</a></div>
+            <div><a href="./sortpage.html?sort=bubble">
+                Bubble</a></div>
+            <div><a href="./sortpage.html?sort=quick">
+                Quick</a></div>
+            <div><a href="./sortpage.html?sort=radix">
+                Radix</a></div>
         </nav>
     </header>
      
 
     <!--title of the sorting being played along with the buttons that stop, rewind, pause and resume-->
     <section class = "introsection">
-        <div class = "sortingname"><h1>Default Sort</h1></div><!----------------------------------------NEED TO GO BACK AND HAVE IT DISPLAY WHAT EACH SORT IS-->
+        <div class = "sortingname" id="defaultsort"><h1 >Defaul Sort</h1>
+            <script>
+                var sortName = document.getElementById('defaultsort');
+                sortName.innerHTML = GetURLParameter('sort')
+                switch (sortName.innerHTML) {
+                    case "selection":
+                        sortName.innerHTML = "Selection Sort";
+                        break;
+                    case "insertion":
+                        sortName.innerHTML = "Insertion Sort";
+                        break;
+                    case "merge":
+                        sortName.innerHTML = "Merge Sort";
+                        break;
+                    case "heap":
+                        sortName.innerHTML = "Heap Sort";
+                        break;
+                    case "bubble":
+                        sortName.innerHTML = "Bubble Sort";
+                        break;
+                    case "quick":
+                        sortName.innerHTML = "QuickSort";
+                        break;
+                    case "Radix":
+                        sortName.innerHTML = "Radix Sort";
+                        break;
+                }
+                
+            </script>
+        </div>
+            
         <section class = "playbar">
            <div class = "playopitions">A</div>
            <div class = "playopitions">B</div>
