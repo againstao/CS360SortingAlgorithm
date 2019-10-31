@@ -30,7 +30,6 @@ section.pullupbar {
     flex: 3;
 }
 
-
 .pullupbarsection{
     /*settings for the main section of the pull up bar*/
     display: flex;
@@ -41,8 +40,6 @@ section.pullupbar {
      
 }
 
-
-
 .explainationsection {
     /*settings for the explaination section*/
     padding: 5px 0px 5px 10px;
@@ -50,8 +47,6 @@ section.pullupbar {
     width: 40%;
     
 }
-
-
 
 .javasection{
     padding: 5px 10px 0px 10px;
