@@ -17,9 +17,15 @@ SortFactory.prototype.createSort = function(type, initarray, targetDivID) {
         case 'selection':
             sort = new SelectionSort(new BarDisplay(initarray, targetDivID));
             break;
-        case 'bubble': // NOTE: THESE TYPES ARE STILL TENTATIVE AND COULD CHANGE IF NEED BE
+        case 'insertion':
             break;
         case 'merge':
+            break;
+        case 'bubble': // NOTE: THESE TYPES ARE STILL TENTATIVE AND COULD CHANGE IF NEED BE
+            break;
+        case 'heap':
+            break;
+        case 'bubble':
             break;
         case 'quick':
             break;

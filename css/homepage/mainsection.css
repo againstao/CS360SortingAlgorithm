@@ -1,9 +1,9 @@
 .mainsection{
     /*style for the main section*/
     display: flex;
-    margin: 80px 10% 0px 10%;
+    margin: 40px 10% 0px 10%;
     padding: 0;
-    outline: solid white;
+    border-bottom: white solid;
 }
 
 .selectionbars{
@@ -15,10 +15,9 @@
      /*style for all the individual items in the list of sorts*/
     font-size: x-large;
     color:black;
-    
-    border: solid;
-    border-color: white;
-
+    border-top: solid white;
+    border-left: solid white;
+    border-right: solid white;
     text-align: center;
     width: 225px;
     height: 125px;
@@ -31,15 +30,17 @@
     /*style for paragraph section as a whole*/
     display: flex;
     flex-direction: column;
-    
+    border-right: solid white;
     
 }
 
 .upperselectionparagraph {
+    border-top: solid white;
     flex:1;
     padding: 10px;
     margin: 0px;
-    width: max-content;
+    width: auto;
+    
 }
 
 .lowerparagraph {
@@ -47,7 +48,7 @@
     flex:1;
     padding: 10px;
     margin:0px;
-    border-width: 100%;
+    width: auto;
 }
 
 .selectionbars a{
@@ -56,9 +57,10 @@
     color: black;
 }
 
-a:active{
+a:hover{
 /*controls the style for the selection bar links when clicked*/
-
+    width: 250px;
+    height: 125px;
 }
 
 
