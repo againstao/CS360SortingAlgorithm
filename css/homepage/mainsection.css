@@ -12,19 +12,23 @@
     background: linear-gradient(rgb(72,219,251),rgb(36,110,125) )
 }
 .mainsectionselectionbars {
-     /*style for all the individual items in the list of sorts*/
-    font-size: x-large;
-    color:black;
-    border-top: solid white;
-    border-left: solid white;
-    border-right: solid white;
-    text-align: center;
-    width: 225px;
-    height: 125px;
-    padding: 20px 0px 0px 0px;
-    flex: 1;
-    
+     /*style for the indiviual buttons for the different sorting items in the list of sorts*/
+     font-size: x-large;
+     background-color:transparent;
+     border: none;
+     cursor:pointer;
+     outline:none;
+     text-align: center;
+     color:black;
+     border-top: solid white;
+     border-left: solid white;
+     border-right: solid white;
+     width: 225px;
+     height: 125px;
+     flex: 1;
+     padding: 0px 0px 60px 0px;
 }
+
 
 .paragraphs {
     /*style for paragraph section as a whole*/
@@ -40,7 +44,14 @@
     padding: 10px;
     margin: 0px;
     width: auto;
+  
     
+}
+
+/*all the different paragraphs on the main page*/
+
+.hidden{
+    display: none;
 }
 
 .lowerparagraph {
@@ -65,7 +76,7 @@ a:hover{
 
 
 .test {
-    
+    /*let this be an example of how to dynamically size a section*/
     font-size: 20;
     color:white;
     background-color:red;
@@ -77,8 +88,5 @@ a:hover{
     flex-basis: 90%;
     min-width: 800px;
     max-width: 1000px;
-
 }
-/*let this be an example of how to dynamically size a section*/
-
 /*resource for the two column setup https://www.w3schools.com/howto/howto_css_two_columns.asp*/

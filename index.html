@@ -23,11 +23,13 @@
     <title>SMS: Sorting Made Simple</title>
     
     <!--links pulls in css page(s)-->
-    
     <link rel="stylesheet" type="text/css" href="./css/body.css ">
     <link rel="stylesheet" type="text/css" href="./css/navmenu.css ">
     <link rel="stylesheet" type="text/css" href="./css/homepage/introsection.css ">
     <link rel="stylesheet" type="text/css" href="./css/homepage/mainsection.css ">
+
+    <!--script pulls in all the javascript-->
+    <script src = "/pageeffects/homepage.js"></script>
 </head>
 
 <!--body is what the user will see and interact with-->
@@ -64,41 +66,39 @@
     <section class = "mainsection">
             
             <div class = "selectionbars">
-                <div class = "mainsectionselectionbars">Selection</div> 
-                <div class = "mainsectionselectionbars">Insertion</div>
-                <div class = "mainsectionselectionbars">Merge</div>
-                <div class = "mainsectionselectionbars">Heap</div>
-                <div class = "mainsectionselectionbars">Bubble</div>
-                <div class = "mainsectionselectionbars">Quick</div></a>
+                <button class = "mainsectionselectionbars" type ="button" onclick="displaySection('selectionsection')">Selection</button> 
+                <button class = "mainsectionselectionbars" type ="button" onclick="displaySection(insertionsection)">Insertion</button>
+                <button class = "mainsectionselectionbars" type ="button" onclick="displaySection(mergesection)">Merge</button>
+                <button class = "mainsectionselectionbars" type ="button" onclick="displaySection(heapsection)">Heap</button>
+                <button class = "mainsectionselectionbars" type ="button" onclick="displaySection(bubblesection)">Bubble</button>
+                <button class = "mainsectionselectionbars" type ="button" onclick="displaySection(quicksection)">Quick</button>
             </div>
 
             <div class = "paragraphs">
                
                     <div class = "upperselectionparagraph">
                         <!--Everything below is the various paragraphs that will be displayed upon clicking through the different sorts-->
-                        <div class = defaultparagraph>
-                            Welcome to Sorting Made Simple! Our goal is to explain sorting algorithims...
-                        </div>
-                        <div class = selectionparagraph>
-                            Selection Sorting can be described in a simple few steps</div>
+                        <div class = "selectionsection ">
+                            Selection Sorting can be described in a simple few steps
                             <a href="pages/sortpage.html?sort=selection">Selection Link</a>
-                        </div>
-                        <div class = insertionparagraph>
-                            Insertion Sorting can be described in a simple few steps</div>
+                       </div>
+                      <!--  
+                        <div class = insertionsection>
+                            Insertion Sorting can be described in a simple few steps
                             <a href="pages/sortpage.html?sort=insertion">Insertion link</a>
                         </div>
-                        <div class = mergeparagraph>
-                            Merge Sorting can be described in a simple few steps</div>
+                        <div class = mergesection>
+                            Merge Sorting can be described in a simple few steps
                             <a href="pages/sortpage.html?sort=merge">Merge Link</a>
                         </div>
-                        <div class = bubbleparagraph>
-                            Bubble Sorting can be described in a simple few steps</div>
+                        <div class = bubblesection>
+                            Bubble Sorting can be described in a simple few steps
                             <a href="pages/sortpage.html?sort=bubble">Heap link</a>
                         </div>
-                        <div class = quickparagraph>
-                            Quick Sorting can be described in a simple few steps</div>
+                        <div class = quicksection>
+                            Quick Sorting can be described in a simple few steps
                             <a href="pages/sortpage.html?sort=quick">Quick link</a>
-                        </div>
+                        </div>  -->
 
                     <div class = "lowerparagraph">
                     This is the lower half alskjdfhlaskdjfhlaskjd laskdjfhlaksjd flasdkjfhasd lkjashdlaksjdhalkjsdh lkajshdlkajshd  lakjsdhlaskj dhlaskjdhaslkjd hlkajhd alskdalkjdhsalkjdhasldkjhasdlkjsahdlaskjdhlakjsd laskjdhas dlakjsdha slkjhasldkjashdlkajs laksjdhlaskjdhaslkjdh laksjdhaslkjdha sldkjashdlkjashd laskjdhaslkjd lkajsdh  laksjdh lkjsa laksjdh
@@ -113,3 +113,4 @@
 </body>
   
 </html>
+
