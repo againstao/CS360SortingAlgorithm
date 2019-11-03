@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="24" viewBox="0 0 101 48">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #c7c7c7;
+        stroke-linecap: round;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #5c5c5c;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke-width: 5px;
+      }
+    </style>
+  </defs>
+  <g id="Slide_Up_Button" data-name="Slide Up Button" transform="translate(-1869.5 -1868.5)">
+    <path id="Path_1" data-name="Path 1" class="cls-1" d="M1821.121,1654.112s0-47,50-47,50,47,50,47" transform="translate(48.879 261.888)"/>
+    <line id="Line_1" data-name="Line 1" class="cls-2" x2="55" transform="translate(1892.5 1888.5)"/>
+    <line id="Line_2" data-name="Line 2" class="cls-2" x2="55" transform="translate(1892.5 1897.5)"/>
+    <line id="Line_3" data-name="Line 3" class="cls-2" x2="55" transform="translate(1892.5 1906.5)"/>
+  </g>
+</svg>

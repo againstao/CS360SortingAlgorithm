@@ -73,7 +73,7 @@
 
     <!--title of the sorting being played along with the buttons that stop, rewind, pause and resume-->
     <section class = "introsection">
-        <div class = "sortingname" id="defaultsort"><h1 >Defaul Sort</h1>
+        <div class = "sortingname" id="defaultsort"><h1 >Default Sort</h1>
             <script>
                 var sortName = document.getElementById('defaultsort');
                 sortName.innerHTML = GetURLParameter('sort')
@@ -169,16 +169,21 @@
 
     <!-- we need a pullup down here -->
     
-        <section class = "pullupbar"> <!--GOTTA GET THOSE GAINS BROOOOOO!!!!-->
+        <section class = "pullupbar" id = "pullupbar"> <!--GOTTA GET THOSE GAINS BROOOOOO!!!!-->
             
+            <div class = "pulloutbutton">
+                <img src="../Images/SortpageImages/Slide Up Button.svg" class = "pulloutbuttonimg" id="pulloutbuttonimg">
+                <img src="../Images/SortpageImages/Slide Up Button.svg" class = "pushinbuttonimg" id="pushinbuttonimg">
+            </div>
+
             <div class = "pullupbartitlesection">
                     <div class = "pullupbarexplainationheader"><strong>Explaination</strong></div>
                     <div class = "pullupbarjavaheader"><strong>Java Code</strong></div>
             </div>
 
-            <div class = pullupbarsection>
+            <div class = "pullupbarsection" id = "pullupbarsection">
                 
-                <div class = "explainationsection">Hello World
+                <div class = "explainationsection" id = "explainationsection">Hello World
                         Hello World
                         Hello World
                         Hello World
@@ -191,7 +196,31 @@
                 
                     
                 
-                <div class = "javasection">Hello World
+                <div class = "javasection" id="javasection">Hello World
+                        Hello World
+                        Hello World
+                        Hello World
+                        Hello World
+                        Hello World
+                        Hello World
+                        Hello World
+                        Hello World
+                        Hello World
+                        Hello World
+                        Hello World
+                        Hello World
+                        Hello World
+                        Hello World
+                        Hello World
+                        Hello World
+                        Hello World
+                        Hello World
+                        Hello World
+                        Hello World
+                        Hello World
+                        Hello World
+                        Hello World
+                        Hello World
                         Hello World
                         Hello World
                         Hello World
@@ -223,13 +252,55 @@
 
         </section>
     
+<script>
+    /*declare variables*/
 
+    /*all the variables for extending the bottom display*/
+    var expandpulloutdisplay = document.getElementById('pullupbar'); //the section as a whole
+    var expandpulloutbarsections = document.getElementById('pullupbarsection'); //the two sections as a whole
+    var expandexplainationsection = document.getElementById('explainationsection'); //the explaination section
+    var expandjavasection = document.getElementById('javasection'); //the java section
+    
+    /*varaibles for swapping out the buttons*/
+    var hidepulloutbutton =  document.getElementById('pulloutbuttonimg');
+    var showpulloutbutton = document.getElementById('pulloutbuttonimg');
+    var hidepushinbutton = document.getElementById('pushinbuttonimg');
+    var showpushinbutton = document.getElementById('pushinbuttonimg');
+
+    /*this is basically saying that when the pulloutbutton is clicked do the following function*/
+    document.getElementById('pulloutbuttonimg').addEventListener('click', function() {
+        
+        expandpulloutdisplay.classList.add('expandpullupbar');
+        expandpulloutdisplay.classList.add('expandpullupbarsection');
+        expandexplainationsection.classList.add('expandexplainationsection');
+        expandjavasection.classList.add('expandjavasection');
+        /*the above formats the explaination and java sections*/
+        hidepulloutbutton.classList.add('pulloutbuttonimghide');
+        /*this changes out the buttons so that the user can close the menu again*/
+        showpushinbutton.classList.add('revalpushinbutton');
+    })
+    
+    document.getElementById('pushinbuttonimg').addEventListener('click', function() {
+        
+        expandpulloutdisplay.classList.remove('expandpullupbar');
+        expandpulloutdisplay.classList.remove('expandpullupbarsection');
+        expandexplainationsection.classList.remove('expandexplainationsection');
+        expandjavasection.classList.remove('expandjavasection');
+        /*the above formats the explaination and java sections*/
+        hidepulloutbutton.classList.remove('pulloutbuttonimghide');
+        /*this changes out the buttons so that the user can close the menu again*/
+        showpushinbutton.classList.remove('revalpushinbutton');
+    })
+    
+    
+    
+    ;
+
+</script>
     
     
 </body>
 
-<script>
-    
-</script>
+
 
 </html>

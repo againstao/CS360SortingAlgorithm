@@ -8,7 +8,6 @@ section.introsection{
     
 }
 
-
 .sortingname{
     /*style settings for title portion*/
     font-size: xx-large;
@@ -17,8 +16,6 @@ section.introsection{
     background: black;
     padding: 20px 0px 0px 20px;
 }
-
-
 
 .playbar {
     display: flex;

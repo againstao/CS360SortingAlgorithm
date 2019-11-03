@@ -1,8 +1,8 @@
 section.pullupbar {
     /*general settings for the pull up bar menu*/
     color:white;
-    padding:0;
-    margin:0;
+    padding:0px;
+    margin:0px;
     width:100%;
     position: fixed;
     bottom:0;
@@ -16,6 +16,8 @@ section.pullupbar {
     background: rgb(72,219,251);
     color:black;
     height: auto; 
+    padding: 0;
+    margin:0;
 }
 
 .pullupbarexplainationheader {
@@ -36,7 +38,11 @@ section.pullupbar {
     flex-direction: row;
     background: black;
     color:white;
-    height: auto; 
+    height: 40px; 
+}
+
+.expandpullupbarsection {
+    height: 300px;
      
 }
 
@@ -45,12 +51,50 @@ section.pullupbar {
     padding: 5px 0px 5px 10px;
     flex:2;
     width: 40%;
-    
+    height: auto;
+}
+
+.expandexplainationsection {
+    height: +300px;
+    background: black;
 }
 
 .javasection{
     padding: 5px 10px 0px 10px;
     flex: 3;
     width:60%;
-    border-left:solid rgb(72,219,251);;
+    border-left:solid rgb(72,219,251);
+    height: auto;
+}
+
+.expandjavasection{
+    height: +300px;
+    background: black;
+    border-left:solid rgb(72,219,251);
+    
+
+}
+
+.pulloutbutton {
+    padding:0px auto 0px auto;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+.pulloutbuttonimg{
+    flex: auto;
+}
+
+.pulloutbuttonimghide{
+    display: none;
+}
+
+.pushinbuttonimg{
+    display:none;
+}
+
+.revalpushinbutton  {
+    display: inline;
+    flex:auto;
 }
