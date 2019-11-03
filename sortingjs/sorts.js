@@ -92,7 +92,7 @@ SelectionSort.prototype.cleanup = function () {
 }
 applyCommonFunctions(SelectionSort);
 SelectionSort.prototype.nextStep = function() {
-    // TODO basically a big finite state machine
+    // TODO develop the java code first? Then base the stuff off of each line(s)
 }
 
 

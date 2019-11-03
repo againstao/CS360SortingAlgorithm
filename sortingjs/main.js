@@ -46,35 +46,35 @@ actionMoveIndicator(sort.disp, id1, 1); // creating indicator id1 and putting it
 // setTimeout(()=>sort.pause(),2000);
 
 // sort.setTiming(1500);
-sort.start();
-setTimeout(() => { console.log('adjusting timing'); sort.setTiming(500) }, 3000);
-setTimeout(() => {
-    sort.pause();
-    sort.setTiming(600); // just a check to ensure that setTiming won't always start it up
-}, 6000);
-
-
+// sort.start();
+// setTimeout(() => { console.log('adjusting timing'); sort.setTiming(500) }, 3000);
 // setTimeout(() => {
-//     console.log('test: moving an indicator bar');
-//     actionMoveIndicator(sort.disp, id1, 2);
+//     sort.pause();
+//     sort.setTiming(600); // just a check to ensure that setTiming won't always start it up
+// }, 6000);
 
-//     setTimeout(() => {
-//         console.log('test: moving both ind and reg bars at once');
-//         actionSwapIndices(sort.disp, 2, 4)
-//         actionMoveIndicator(sort.disp, id1, 4);
 
-//         setTimeout(() => {
-//             console.log('test: putting in another bar');
-//             actionMoveIndicator(sort.disp, id2, 1);
+setTimeout(() => {
+    console.log('test: moving an indicator bar');
+    actionMoveIndicator(sort.disp, id1, 2);
 
-//             setTimeout(() => {
-//                 console.log('test: moving two ind bars at once');
-//                 actionMoveIndicator(sort.disp, id1, 2);
-//                 actionMoveIndicator(sort.disp, id2, 5);
-//             }, 1000);
-//         }, 1000);
-//     }, 1000);
-// }, 1000);
+    setTimeout(() => {
+        console.log('test: moving both ind and reg bars at once');
+        actionSwapIndices(sort.disp, 2, 4)
+        actionMoveIndicator(sort.disp, id1, 4);
+
+        setTimeout(() => {
+            console.log('test: putting in another bar');
+            actionMoveIndicator(sort.disp, id2, 1);
+
+            setTimeout(() => {
+                console.log('test: moving two ind bars at once');
+                actionMoveIndicator(sort.disp, id1, 2);
+                actionMoveIndicator(sort.disp, id2, 5);
+            }, 1000);
+        }, 1000);
+    }, 1000);
+}, 1000);
 
 
 

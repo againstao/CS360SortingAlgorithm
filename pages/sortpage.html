@@ -30,6 +30,11 @@
     <link rel="stylesheet" type="text/css" href="../css/sortpage/sortsection.css">
     <link rel="stylesheet" type="text/css" href="../css/sortpage/introsection.css">
     <link rel="stylesheet" type="text/css" href="../css/sortpage/pullupbar.css">
+
+    
+    <link rel="stylesheet" type="text/css" href="../sortingjs/style.css">
+    <!-- <script src="../sortingjs/sortdisplay.js" type="module"></script> -->
+    <!-- <script src="../sortingjs/sorts.js" type="module"></script> -->
     <script>
         // from https://stackoverflow.com/questions/22607150/getting-the-url-parameters-inside-the-html-page
         // This function will parse parameters out of the url (like the example.com/dummy.html?a=1&c=b things)
@@ -75,7 +80,7 @@
     <section class = "introsection">
         <div class = "sortingname" id="defaultsort"><h1 >Default Sort</h1>
             <script>
-                var sortName = document.getElementById('defaultsort');
+                let sortName = document.getElementById('defaultsort');
                 sortName.innerHTML = GetURLParameter('sort')
                 switch (sortName.innerHTML) {
                     case "selection":
@@ -117,10 +122,6 @@
     <!--this section is the section that will contain the actual animation portion of the website-->
     <section class = "sortsection">
         <div class="sortanimation" id="animate">This div will get targeted by the JS</div>
-        <script>
-            let animDiv = document.getElementById('animate');
-            animDiv.innerHTML = 'the "sort" parameter is: "' + GetURLParameter('sort') + '"';
-        </script>
     </section>
 
 
@@ -169,134 +170,147 @@
 
     <!-- we need a pullup down here -->
     
-        <section class = "pullupbar" id = "pullupbar"> <!--GOTTA GET THOSE GAINS BROOOOOO!!!!-->
+    <section class = "pullupbar" id = "pullupbar"> <!--GOTTA GET THOSE GAINS BROOOOOO!!!!-->
+        
+        <div class = "pulloutbutton">
+            <img src="../Images/SortpageImages/Slide Up Button.svg" class = "pulloutbuttonimg" id="pulloutbuttonimg">
+            <img src="../Images/SortpageImages/Slide Up Button.svg" class = "pushinbuttonimg" id="pushinbuttonimg">
+        </div>
+
+        <div class = "pullupbartitlesection">
+                <div class = "pullupbarexplanationheader"><strong>Explanation</strong></div>
+                <div class = "pullupbarjavaheader"><strong>Java Code</strong></div>
+        </div>
+
+        <div class = "pullupbarsection" id = "pullupbarsection">
             
-            <div class = "pulloutbutton">
-                <img src="../Images/SortpageImages/Slide Up Button.svg" class = "pulloutbuttonimg" id="pulloutbuttonimg">
-                <img src="../Images/SortpageImages/Slide Up Button.svg" class = "pushinbuttonimg" id="pushinbuttonimg">
+            <div class = "explanationsection" id = "explanationsection">Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
             </div>
-
-            <div class = "pullupbartitlesection">
-                    <div class = "pullupbarexplanationheader"><strong>Explanation</strong></div>
-                    <div class = "pullupbarjavaheader"><strong>Java Code</strong></div>
+            
+                
+            
+            <div class = "javasection" id="javasection">Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
+                    Hello World
             </div>
-
-            <div class = "pullupbarsection" id = "pullupbarsection">
-                
-                <div class = "explanationsection" id = "explanationsection">Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                </div>
-                
-                    
-                
-                <div class = "javasection" id="javasection">Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                        Hello World
-                </div>
-                
-            </div>
+            
+        </div>
 
 
-        </section>
+    </section>
     
-<script>
-    /*declare variables*/
+    <script>
+        /*declare variables*/
 
-    /*all the variables for extending the bottom display*/
-    var expandpulloutdisplay = document.getElementById('pullupbar'); //the section as a whole
-    var expandpulloutbarsections = document.getElementById('pullupbarsection'); //the two sections as a whole
-    var expandexplanationsection = document.getElementById('explanationsection'); //the explanation section
-    var expandjavasection = document.getElementById('javasection'); //the java section
-    
-    /*varaibles for swapping out the buttons*/
-    var hidepulloutbutton =  document.getElementById('pulloutbuttonimg');
-    var showpulloutbutton = document.getElementById('pulloutbuttonimg');
-    var hidepushinbutton = document.getElementById('pushinbuttonimg');
-    var showpushinbutton = document.getElementById('pushinbuttonimg');
-
-    /*this is basically saying that when the pulloutbutton is clicked do the following function*/
-    document.getElementById('pulloutbuttonimg').addEventListener('click', function() {
+        /*all the variables for extending the bottom display*/
+        var expandpulloutdisplay = document.getElementById('pullupbar'); //the section as a whole
+        var expandpulloutbarsections = document.getElementById('pullupbarsection'); //the two sections as a whole
+        var expandexplanationsection = document.getElementById('explanationsection'); //the explanation section
+        var expandjavasection = document.getElementById('javasection'); //the java section
         
-        expandpulloutdisplay.classList.add('expandpullupbarsection');
-        expandexplanationsection.classList.add('expandexplanationsection');
-        expandjavasection.classList.add('expandjavasection');
-        /*the above formats the explanation and java sections*/
-        hidepulloutbutton.classList.add('pulloutbuttonimghide');
-        /*this changes out the buttons so that the user can close the menu again*/
-        showpushinbutton.classList.add('revalpushinbutton');
-    })
-    
-    document.getElementById('pushinbuttonimg').addEventListener('click', function() {
-        
-        expandpulloutdisplay.classList.remove('expandpullupbar');
-        expandpulloutdisplay.classList.remove('expandpullupbarsection');
-        expandexplanationsection.classList.remove('expandexplanationsection');
-        expandjavasection.classList.remove('expandjavasection');
-        /*the above formats the explanation and java sections*/
-        hidepulloutbutton.classList.remove('pulloutbuttonimghide');
-        /*this changes out the buttons so that the user can close the menu again*/
-        showpushinbutton.classList.remove('revalpushinbutton');
-    })
-    
-    
-    
-    ;
+        /*varaibles for swapping out the buttons*/
+        var hidepulloutbutton =  document.getElementById('pulloutbuttonimg');
+        var showpulloutbutton = document.getElementById('pulloutbuttonimg');
+        var hidepushinbutton = document.getElementById('pushinbuttonimg');
+        var showpushinbutton = document.getElementById('pushinbuttonimg');
 
-</script>
-    
+        /*this is basically saying that when the pulloutbutton is clicked do the following function*/
+        document.getElementById('pulloutbuttonimg').addEventListener('click', function() {
+            
+            expandpulloutdisplay.classList.add('expandpullupbarsection');
+            expandexplanationsection.classList.add('expandexplanationsection');
+            expandjavasection.classList.add('expandjavasection');
+            /*the above formats the explanation and java sections*/
+            hidepulloutbutton.classList.add('pulloutbuttonimghide');
+            /*this changes out the buttons so that the user can close the menu again*/
+            showpushinbutton.classList.add('revalpushinbutton');
+        })
+        
+        document.getElementById('pushinbuttonimg').addEventListener('click', function() {
+            
+            expandpulloutdisplay.classList.remove('expandpullupbar');
+            expandpulloutdisplay.classList.remove('expandpullupbarsection');
+            expandexplanationsection.classList.remove('expandexplanationsection');
+            expandjavasection.classList.remove('expandjavasection');
+            /*the above formats the explanation and java sections*/
+            hidepulloutbutton.classList.remove('pulloutbuttonimghide');
+            /*this changes out the buttons so that the user can close the menu again*/
+            showpushinbutton.classList.remove('revalpushinbutton');
+        })
+        
+        
+        
+        ;
+
+    </script>
+
+    <!-- DOES THE INITIALIZATION & ATTACHMENT OF THE JS SORTER -->
+    <script type="module">
+        console.log('module load test msg :D')
+        import { SortFactory } from "../sortingjs/sorts.js";
+
+        // let animDiv = document.getElementById('animate');
+        // console.log(animDiv);
+        
+        let sortParam = GetURLParameter('sort');
+        let sd = new SortFactory();
+        let sort = sd.createSort(sortParam, [1,2,3,4,5], 'animate');
+        console.log(sort);
+    </script>
     
 </body>
 

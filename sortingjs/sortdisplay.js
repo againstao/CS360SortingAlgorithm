@@ -37,12 +37,12 @@ function arrayMax(arr) {
 
 const calcHeight = function(elem, minElem, range) {
     return ( MIN_HEIGHT_PERCENT
-        + ((elem-minElem)/range)*(100-MIN_HEIGHT_PERCENT) + '%' );
+        + ((elem-minElem)/range)*(100-MIN_HEIGHT_PERCENT) );
 }
 
 
 function setupTransitions(div) {
-    div.style.transition = 'left 0.4s ease-out 0s';
+    div.style.transition = 'height 0.4s ease-out 0s, left 0.4s ease-out 0s';
 }
 
 function ensureDivPositioning(div) {
@@ -73,7 +73,7 @@ function setOffsetPercent(elem, index, total) {
 
 
 // utility function for creating a new indicator div
-const supplyIndicatorDiv = function(indicatorID, parentDiv) {
+const SupplyIndicatorDiv = function(indicatorID, text, parentDiv) {
     let div = document.createElement('div');
     setupTransitions(div);
     // FOR STYLING PURPOSES, you can target them multiple ways:
@@ -85,8 +85,13 @@ const supplyIndicatorDiv = function(indicatorID, parentDiv) {
     div.classList.add('sdbar');
     div.classList.add('sdind');
     div.classList.add('sdind_' + indicatorID);
+    let divtext = document.createElement('div');
+    divtext.classList.add('sdind-text');
+    divtext.classList.add('sdind-text_' + indicatorID);
+    if(text) divtext.innerHTML = text;
     // parentDiv.appendChild(div);
     parentDiv.insertBefore(div, parentDiv.children[0]);
+    div.appendChild(divtext);
     return div;
 }
 
@@ -117,18 +122,23 @@ function actionSwapIndices(displayContext, ind1, ind2) {
 }
 
 // used to color bars specially for indices, etc. (also move a transparent version?)
-function actionMoveIndicator(displayContext, indicatorID, indexTo) {
-    let div = displayContext.indicatorDivs[indicatorID];
+function actionMoveIndicator(display, indicatorID, indexTo) {
+    let div = display.indicatorDivs[indicatorID];
     if (typeof(div) === 'undefined') {
         // then create a new one and start using it
-        div = (displayContext.indicatorDivs[indicatorID] = supplyIndicatorDiv(indicatorID, displayContext.divParent));
+        div = (display.indicatorDivs[indicatorID] = SupplyIndicatorDiv(
+            indicatorID, 'text', display.divParent));
     }
-    // console.log(displayContext);
+    // console.log(display);
     // do the positioning
-    setOffsetPercent(div, indexTo, displayContext.elems.length);
-    // TODO use setIndicatorOffset for different heights depending on indexTo?
-    div.style.height = '100%';
-    // console.log(div);
+    setOffsetPercent(div, indexTo, display.elems.length);
+
+    // use setIndicatorOffset for different heights depending on indexTo?
+
+    // div.style.height = '100%';
+    div.style.height = 'calc('
+            + calcHeight(display.elems[indexTo], display.minElem, display.range) + '% + 40px)';
+    div.style.bottom = '-50px';
 }
 
 
@@ -143,9 +153,9 @@ function actionMoveIndicator(displayContext, indicatorID, indexTo) {
 
 function BarDisplay(initarray, targetDivID) {
     this.elems = initarray;
-    const maxElem = arrayMax(initarray);
-    const minElem = arrayMin(initarray);
-    const range = maxElem - minElem;
+    this.maxElem = arrayMax(initarray);
+    this.minElem = arrayMin(initarray);
+    this.range = this.maxElem - this.minElem;
     
     // populate the divs using the initarray
     this.divs = [];
@@ -156,8 +166,9 @@ function BarDisplay(initarray, targetDivID) {
         const elem = initarray[i];
         let div = document.createElement('div');
         div.classList.add('sdbar');
+        // div.classList.add('sorted');
         // div.style.height = this.elems[i]*heightincrement + HEIGHT_UNIT;
-        div.style.height = calcHeight(this.elems[i], minElem, range);
+        div.style.height = calcHeight(this.elems[i], this.minElem, this.range) + '%';
         div.style.bottom = '0px';
 
         // div.style.textAlign = 'center';

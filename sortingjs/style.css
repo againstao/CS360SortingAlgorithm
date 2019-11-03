@@ -6,14 +6,19 @@
         }
 
         .sdbar { /* is applied to each bar element (the regular ones) */
-            background-color: red;
+            background-color: white;
             /* border: 0px solid red; */
+        }
+        .sdbar.sorted {
+            background-color: limegreen;
         }
 
         .sdbar-text { /* is applied to each child div (contains the text on each bar) */
+            color: black;
             text-align: center;
             font-size: 1.5em;
             width: 100%;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 
             position: absolute;
             /* you can try different values for bottom;
@@ -30,14 +35,26 @@
             transform: translate(-5px, -5px); /* offsetting the border, because that's necessary for some reason */
         }
 
+        .sdind-text {
+            color: white;
+            text-align: center;
+            font-size: 1em;
+            width: 100%;
+            /* font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; */
+            font-family: 'Courier New', monospace;
+
+            position: absolute;
+            bottom: 0;
+        }
+
 
         /* me actually testing the indicator-specific class styling */
         .sdind_1 {
             background-color: royalblue;
         }
         .sdind_test2 {
-            background-color: aqua;
-            border: 10px solid purple; /* test of changing up the border for differentiation */
+            background-color: magenta;
+            border: 5px solid plum; /* test of changing up the border for differentiation */
         }
         .sdind_iDidntUseThisOne { /* I didn't make any ind divs which used the id 'iDidntUseThisOne', so this shouldn't get used */
             background-color: yellow;
