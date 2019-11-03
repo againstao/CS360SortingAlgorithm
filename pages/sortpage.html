@@ -177,13 +177,13 @@
             </div>
 
             <div class = "pullupbartitlesection">
-                    <div class = "pullupbarexplainationheader"><strong>Explaination</strong></div>
+                    <div class = "pullupbarexplanationheader"><strong>Explanation</strong></div>
                     <div class = "pullupbarjavaheader"><strong>Java Code</strong></div>
             </div>
 
             <div class = "pullupbarsection" id = "pullupbarsection">
                 
-                <div class = "explainationsection" id = "explainationsection">Hello World
+                <div class = "explanationsection" id = "explanationsection">Hello World
                         Hello World
                         Hello World
                         Hello World
@@ -258,7 +258,7 @@
     /*all the variables for extending the bottom display*/
     var expandpulloutdisplay = document.getElementById('pullupbar'); //the section as a whole
     var expandpulloutbarsections = document.getElementById('pullupbarsection'); //the two sections as a whole
-    var expandexplainationsection = document.getElementById('explainationsection'); //the explaination section
+    var expandexplanationsection = document.getElementById('explanationsection'); //the explanation section
     var expandjavasection = document.getElementById('javasection'); //the java section
     
     /*varaibles for swapping out the buttons*/
@@ -270,11 +270,10 @@
     /*this is basically saying that when the pulloutbutton is clicked do the following function*/
     document.getElementById('pulloutbuttonimg').addEventListener('click', function() {
         
-        expandpulloutdisplay.classList.add('expandpullupbar');
         expandpulloutdisplay.classList.add('expandpullupbarsection');
-        expandexplainationsection.classList.add('expandexplainationsection');
+        expandexplanationsection.classList.add('expandexplanationsection');
         expandjavasection.classList.add('expandjavasection');
-        /*the above formats the explaination and java sections*/
+        /*the above formats the explanation and java sections*/
         hidepulloutbutton.classList.add('pulloutbuttonimghide');
         /*this changes out the buttons so that the user can close the menu again*/
         showpushinbutton.classList.add('revalpushinbutton');
@@ -284,9 +283,9 @@
         
         expandpulloutdisplay.classList.remove('expandpullupbar');
         expandpulloutdisplay.classList.remove('expandpullupbarsection');
-        expandexplainationsection.classList.remove('expandexplainationsection');
+        expandexplanationsection.classList.remove('expandexplanationsection');
         expandjavasection.classList.remove('expandjavasection');
-        /*the above formats the explaination and java sections*/
+        /*the above formats the explanation and java sections*/
         hidepulloutbutton.classList.remove('pulloutbuttonimghide');
         /*this changes out the buttons so that the user can close the menu again*/
         showpushinbutton.classList.remove('revalpushinbutton');

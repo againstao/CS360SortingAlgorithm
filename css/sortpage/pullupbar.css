@@ -6,6 +6,8 @@ section.pullupbar {
     width:100%;
     position: fixed;
     bottom:0;
+    height: 92px;
+    transition: 0.5s height 0s ease-out;
     
 }
 
@@ -15,13 +17,13 @@ section.pullupbar {
     flex-direction: row;
     background: rgb(72,219,251);
     color:black;
-    height: auto; 
+    height: unset; 
     padding: 0;
     margin:0;
 }
 
-.pullupbarexplainationheader {
-    /*settings for the pull up bar explaination header*/
+.pullupbarexplanationheader {
+    /*settings for the pull up bar explanation header*/
     padding: 5px 0px 5px 10px;
     flex:2;
 }
@@ -42,19 +44,19 @@ section.pullupbar {
 }
 
 .expandpullupbarsection {
-    height: 300px;
-     
+    height: 300px !important;
+    transition: 0.5s height 0s ease-out;
 }
 
-.explainationsection {
-    /*settings for the explaination section*/
+.explanationsection {
+    /*settings for the explanation section*/
     padding: 5px 0px 5px 10px;
     flex:2;
     width: 40%;
     height: auto;
 }
 
-.expandexplainationsection {
+.expandexplanationsection {
     height: +300px;
     background: black;
 }
