@@ -26,9 +26,11 @@ section.introsection{
     margin: 0px 20px 0px 10px;
 }
 
-.playopitions{
+.playoptions{
     margin: 0px 20px 0px 10px;
-    background: red;
+    background: royalblue;
+    font-family: monospace;
+    font-weight: bold;
 }
 
 

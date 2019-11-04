@@ -109,13 +109,12 @@
             </script>
         </div>
             
-        <div class = "playbar">
-           <div class = "playopitions">A</div>
-           <div class = "playopitions">B</div>
-           <div class = "playopitions">C</div>
-           <div class = "playopitions">D</div>
-           <div class = "playopitions">E</div>
-           <div class = "playopitions">G</div>
+        <div class="playbar">
+            <div class="playoptions" id="play_restart">&lt;&lt;</div>
+            <div class="playoptions" id="play_back"   >&lt;</div>
+            <div class="playoptions" id="play_play"   >Play</div>
+            <div class="playoptions" id="play_pause"  >||</div>
+            <div class="playoptions" id="play_next"   >&gt;</div>
         </div>
     </section> 
     
@@ -197,56 +196,7 @@
             
                 
             
-            <div class = "javasection" id="javasection">Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-            </div>
+            <div class = "javasection" id="javasection"></div>
             
         </div>
 
@@ -300,7 +250,7 @@
 
     <!-- DOES THE INITIALIZATION & ATTACHMENT OF THE JS SORTER -->
     <script type="module">
-        console.log('module load test msg :D')
+        console.log('module load test msg :D');
         import { SortFactory } from "../sortingjs/sorts.js";
 
         // let animDiv = document.getElementById('animate');
@@ -309,9 +259,49 @@
         let sortParam = GetURLParameter('sort');
         let sd = new SortFactory();
         let sort = sd.createSort(sortParam, [1,2,3,4,5], 'animate');
-        console.log(sort);
+        if(!sort) { // sort doesn't exist
+            document.getElementById('animate').innerHTML = "Oops! You forgot to specify a sorting type!";
+        } else { // sort was successfully created
+            // time to hook up the sort's functions!
+            let tmp = function() { console.log('tadaa onclick works'); }
+            document.getElementById('play_restart').onclick = tmp;
+        }
     </script>
-    
+
+    <!-- TESTING JAVA CODE AREA STUFF -->
+    <style>
+        .jc-line {
+            border: 1px solid darkred;
+            width: 100%; /* span the whole way across */
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #111;
+            color: white;
+        }
+        .jc-highlight {
+            background-color: darkgreen;
+            color: white;
+        }
+    </style>
+    <script>
+        const code = [
+            "public void foo() {",
+            "    int i = 0;",
+            "    int j = (i + 3);",
+            "    System.out.println(\"Answer is: \" + i);",
+            "}"
+        ];
+        let sect = document.getElementById('javasection');
+        for (let i = 0; i < code.length; i++) {
+            let codeline = code[i];
+            codeline = codeline.replace(" ","&nbsp;"); // fix up the trimming issue
+            let lineElem = document.createElement('div');
+            lineElem.classList.add('jc-line');
+            if(i == 1) { lineElem.classList.add('jc-highlight'); }
+            // asdf.innerHTML = "Hello World " + i ;
+            lineElem.innerHTML = codeline;
+            sect.appendChild(lineElem);
+        }
+    </script>
 </body>
 
 
