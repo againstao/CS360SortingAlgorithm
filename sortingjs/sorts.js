@@ -1,5 +1,5 @@
-import { BarDisplay,
-    actionMoveIndicator, actionSwapIndices } from "./sortdisplay.js";
+import { BarDisplay, actionMoveIndicator, actionSwapIndices,
+    populateJavaCode, highlightCodeDiv } from "./sortdisplay.js";
 
 export { SortFactory,
     SelectionSort };
@@ -11,11 +11,11 @@ export { SortFactory,
 function SortFactory() {
 }
 // type: string, initarray: array of comparable objects
-SortFactory.prototype.createSort = function(type, initarray, targetDivID) {
+SortFactory.prototype.createSort = function(type, initarray, targetDivID, javaDivID) {
     let sort;
     switch(type) {
         case 'selection':
-            sort = new SelectionSort(new BarDisplay(initarray, targetDivID));
+            sort = new SelectionSort(new BarDisplay(initarray, targetDivID, javaDivID));
             break;
         case 'insertion':
             break;
@@ -70,11 +70,32 @@ function applyCommonFunctions(aType) {
     }
 }
 
-
+const codeSS = [
+    "public static void selectionSort(int[] array) {",
+    "   I made this line really long just for testing purposes abcdefghijklm nopqrstuvwxyz 1234567890",
+    // "   int indexOfSmallest = 0;",
+    // "   int searchingIndex = 1;",
+    "   for (int i = 0; i < array.length-1; i++) {",
+    "       int small = i;",
+    "       int search = i+1;",
+    "       while (search < array.length) {",
+    "           if (array[search] < array[small]) {",
+    "               small = search;",
+    "           }",
+    "           search++;",
+    "       }",
+    "       int temp = array[small];",
+    "       array[small] = array[search];",
+    "       array[search] = temp;",
+    "   }",
+    "}"
+];
 function SelectionSort(displayObj) {
+    populateJavaCode(displayObj, codeSS);
     // general variables
     this.disp = displayObj;
     this.elems = displayObj.elems; // note to implementations: treat this as READ-ONLY
+    this.codedivs = displayObj.codedivs; // also treat this as READ-ONLY
     // Note: I'm using strings because: apparently the undefined object could be reassigned to something not actually undefined, because JavaScript's loose type checking is janky.
     this.timer = 'undefined';
     this.timing = 1000;
@@ -83,10 +104,13 @@ function SelectionSort(displayObj) {
     this.searchingIndex = 0; // for each gradualIndex, this finds the smallest
     this.curSearched = 0;
     // setup index pointers
-    
+    //TODO highlight elems
+    highlightCodeDiv(this.codedivs, [2,3]);
 }
+SelectionSort.prototype.code = codeSS;
 // releases appropriate resources and tells the display to clean itself up too
 SelectionSort.prototype.cleanup = function () {
+    delete this.codedivs;
     this.disp.cleanup();
     delete this.disp;
 }

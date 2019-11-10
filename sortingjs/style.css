@@ -59,3 +59,18 @@
         .sdind_iDidntUseThisOne { /* I didn't make any ind divs which used the id 'iDidntUseThisOne', so this shouldn't get used */
             background-color: yellow;
         }
+
+        /* here's the java code stuff */
+        .javacode-line {
+            border: 1px solid darkred;
+            width: 100%; /* span the whole way across */
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.8em;
+            background-color: #111;
+            color: white;
+            text-overflow: clip;
+        }
+        .javacode-highlight {
+            background-color: darkgreen;
+            color: white;
+        }

@@ -1,7 +1,8 @@
 // import { SortFactory } from "./sorts.js";
 export { setupTransitions, setOffsetPercent,
     BarDisplay,
-    actionSwapIndices, actionMoveIndicator };
+    actionSwapIndices, actionMoveIndicator,
+    populateJavaCode, highlightCodeDiv };
 
 
 // ===================
@@ -69,6 +70,45 @@ function setOffsetPercent(elem, index, total) {
     
     // console.log(elem);
     
+}
+
+
+const JC_CLASS = 'javacode-line';
+const HLT_CLASS = 'javacode-highlight';
+
+// utility function for creating a new code line div
+const SupplyJavaCodeDiv = function() {
+    let elem = document.createElement('div');
+    elem.classList.add(JC_CLASS);
+    return elem;
+}
+
+function populateJavaCode(display, code) {
+    let divs = display.codedivs;
+    let parentdiv = display.divJava;
+    for (let i = 0; i < code.length; i++) {
+        let codeline = code[i];
+        codeline = codeline.replace(/    /g,"&nbsp;&nbsp;&nbsp;&nbsp;"); // fix up the trimming issue
+        codeline = codeline.replace(/   /g,"&nbsp;&nbsp;&nbsp;&nbsp;"); // fix up the trimming issue
+        let lineElem = SupplyJavaCodeDiv();
+        divs.push(lineElem);
+        // asdf.innerHTML = "Hello World " + i ;
+        lineElem.innerHTML = codeline;
+        parentdiv.appendChild(lineElem);
+    }
+}
+
+function highlightCodeDiv(codedivs, shouldHlt) {
+    for (let ind = 0; ind < codedivs.length; ind++) {
+        const div = codedivs[ind];
+        let clist = div.classList;
+        let cind = clist.contains(HLT_CLASS);
+        if (shouldHlt.indexOf(ind) >= 0) { // ind should/shouldn't be highlighted
+            if (!cind) { clist.add(HLT_CLASS); }
+        } else {
+            if (cind) { clist.remove(HLT_CLASS); }
+        }
+    }
 }
 
 
@@ -141,6 +181,14 @@ function actionMoveIndicator(display, indicatorID, indexTo) {
     div.style.bottom = '-50px';
 }
 
+// used to ........? lines is an array
+function actionHighlightCode(lineDivs, highInds) {
+    for (let ind = 0; ind < lineDivs.length; ind++) {
+        const div = lineDivs[ind];
+        highlightCodeDiv(div, highInds.includes(ind));
+    }
+}
+
 
 
 // =================
@@ -151,12 +199,15 @@ function actionMoveIndicator(display, indicatorID, indexTo) {
 // contains the display stuff that sorts and actions will use as context
 // also initializes the display with stuff needed
 
-function BarDisplay(initarray, targetDivID) {
+function BarDisplay(initarray, targetDivID, javaDivID) {
     this.elems = initarray;
     this.maxElem = arrayMax(initarray);
     this.minElem = arrayMin(initarray);
     this.range = this.maxElem - this.minElem;
     
+    this.codedivs = [];
+    let java = document.getElementById(javaDivID);
+    this.divJava = java;
     // populate the divs using the initarray
     this.divs = [];
     let parent = document.getElementById(targetDivID);
@@ -192,8 +243,13 @@ BarDisplay.prototype.cleanup = function() {
     this.divs.forEach(div => {
         this.divParent.removeChild(div);
     });
+    this.codedivs.forEach(div => {
+        this.divJava.removeChild(div);
+    })
     delete this.divs;
-    delete this.parent;
+    delete this.codedivs;
+    delete this.divParent;
+    delete this.divJava;
 }
 
 function TreeDisplay(initarray) {

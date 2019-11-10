@@ -258,7 +258,7 @@
         
         let sortParam = GetURLParameter('sort');
         let sd = new SortFactory();
-        let sort = sd.createSort(sortParam, [1,2,3,4,5], 'animate');
+        let sort = sd.createSort(sortParam, [1,2,3,4,5], 'animate', 'javasection');
         if(!sort) { // sort doesn't exist
             document.getElementById('animate').innerHTML = "Oops! You forgot to specify a sorting type!";
         } else { // sort was successfully created
@@ -269,7 +269,7 @@
     </script>
 
     <!-- TESTING JAVA CODE AREA STUFF -->
-    <style>
+    <!-- <style>
         .jc-line {
             border: 1px solid darkred;
             width: 100%; /* span the whole way across */
@@ -281,8 +281,8 @@
             background-color: darkgreen;
             color: white;
         }
-    </style>
-    <script>
+    </style> -->
+    <!-- <script>
         const code = [
             "public void foo() {",
             "    int i = 0;",
@@ -301,7 +301,7 @@
             lineElem.innerHTML = codeline;
             sect.appendChild(lineElem);
         }
-    </script>
+    </script> -->
 </body>
 
 
