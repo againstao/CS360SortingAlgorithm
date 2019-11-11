@@ -140,8 +140,7 @@
 
        
         selectionbutton.onclick = function(){
-            
-            if(selectionparagraph.className != "hidden"){
+    
                 //hide all the other paragraphs
                 insertionparagraph.classList.add("hidden")
                 mergeparagraph.classList.add("hidden")
@@ -151,12 +150,10 @@
                 //show the paragraph
                 selectionparagraph.classList.remove("hidden")
                 
-            }
         };
 
 
         insertionbutton.onclick = function(){
-            if(insertionparagraph.className != "hidden"){
                 //hide all the other paragraphs
                 selectionparagraph.classList.add("hidden")
                 mergeparagraph.classList.add("hidden")
@@ -165,11 +162,9 @@
                 heapparagraph.classList.add("hidden")
                 //show the paragraph
                 insertionparagraph.classList.remove("hidden")
-            }    
+              
         };
-
         mergebutton.onclick = function(){
-            if(mergeparagraph.className != "hidden"){
                 //hide all the other paragraphs
                 selectionparagraph.classList.add("hidden")
                 insertionparagraph.classList.add("hidden")
@@ -177,12 +172,9 @@
                 quickparagraph.classList.add("hidden")
                 heapparagraph.classList.add("hidden")
                 //show the paragraph
-                mergeparagraph.classList.remove("hidden")
-            }    
+                mergeparagraph.classList.remove("hidden") 
         };
-
         bubblebutton.onclick = function(){
-            if(bubbleparagraph.className != "hidden"){
                 //hide all the other paragraphs
                 selectionparagraph.classList.add("hidden")
                 insertionparagraph.classList.add("hidden")
@@ -191,10 +183,8 @@
                 heapparagraph.classList.add("hidden")
                 //show the paragraph
                 bubbleparagraph.classList.remove("hidden")
-            }    
         };
         quickbutton.onclick = function(){
-            if(quickparagraph.className != "hidden"){
                 //hide all the other paragraphs
                 selectionparagraph.classList.add("hidden")
                 insertionparagraph.classList.add("hidden")
@@ -203,10 +193,9 @@
                 heapparagraph.classList.add("hidden")
                 //show the paragraph
                 quickparagraph.classList.remove("hidden")
-            }    
+    
         };
         heapbutton.onclick = function(){
-            if(heapparagraph.className != "hidden"){
                 //hide all the other paragraphs
                 selectionparagraph.classList.add("hidden")
                 insertionparagraph.classList.add("hidden")
@@ -214,8 +203,7 @@
                 mergeparagraph.classList.add("hidden")
                 quickparagraph.classList.add("hidden")
                 //show the paragraph
-                heapparagraph.classList.remove("hidden")
-            }    
+                heapparagraph.classList.remove("hidden") 
         };
         
       
