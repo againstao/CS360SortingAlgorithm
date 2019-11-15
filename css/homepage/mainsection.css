@@ -52,11 +52,11 @@
     /*all the different upper paragraphs on the main page*/
     font-size: 120%;
     margin-left: 20px;
+    margin-right: 20px;
     flex: 1;
     width: auto;
 
 }
-
 
 
 .hidden{
@@ -106,6 +106,7 @@ a:hover{
 }
 
 .Steps li {
+    /*Changes the li's to not have the bullet points*/
     list-style-type: none;
 }
 
