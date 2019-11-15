@@ -72,30 +72,75 @@
                     <div class = "upperselectionparagraphs">
                         <!--Everything below is the various paragraphs that will be displayed upon clicking through the different sorts-->
                         <div class = "uppersubsection"  id = "selectionparagraph">
-                            Selection Sorting can be described in a simple few steps
+                            Selection Sorting can be described in a simple few points.
                             <a href="pages/sortpage.html?sort=selection">Selection Link</a>
+                            <ul><u>Simple Sort</u>
+                                <li>Worst Case Runtime: O(n<sup>2</sup>)</li>
+                                <li>Method of Sorting: Divides list into two parts, then compares adjacent elements and swaps them if needed.</li>
+                                <li>This is a Stable, In-Place Sorting Algorithm</li>
+                                <li>Worst Case Space Complexity: O(1) additional memory space</li>
+                                <li>One of the least efficient sorting algorithms, but generally best for small lists</li>
+                            </ul>
                        </div>
                       
                         <div class = "uppersubsection hidden" id = "insertionparagraph">
-                            Insertion Sorting can be described in a simple few steps
+                            Insertion Sorting can be described in a simple few points.
                             <a href="pages/sortpage.html?sort=insertion">Insertion link</a>
+                            <ul><u>Simple Sort</u>
+                                <li>Worst Case Runtime: O(n<sup>2</sup>)</li>
+                                <li>Method of Sorting: Reads one element each repitition, and then creates a sorted list out of the pulled elements</li>
+                                <li>This is a Stable, In-Place Sorting Algorithm</li>
+                                <li>Worst Case Space Complexity: O(1) additional memory space</li>
+                                <li>Best for small data sets and is more efficient than Bubble and Selection sorts</li>
+                            </ul>
                         </div>
                          
                         <div class = "uppersubsection hidden" id = "mergeparagraph">
-                            Merge Sorting can be described in a simple few steps
+                            Merge Sorting can be described in a simple few points.
                             <a href="pages/sortpage.html?sort=merge">Merge Link</a>
+                            <ul><u>Efficient Sort</u>
+                                <li>Worst Case Runtime: O(n log n)</li>
+                                <li>Method of Sorting: Divides list into n segments, then compares segments and merges them into one ordered list</li>
+                                <li>This is a Stable, but not in-place sorting algorithm</li>
+                                <li>Worst Case Space Complexity: O(n) additional memory space, but can be O(1) with a linked list</li>
+                                <li>Best used for a linked list, but is not as efficient as the quicksort</li>
+                            </ul>
                         </div>
-                        <div class = "uppersubsection hidden" id = "bubbleparagraph">
-                            Bubble Sorting can be described in a simple few steps
-                            <a href="pages/sortpage.html?sort=bubble">Bubble link</a>
-                        </div>
-                        <div class = "uppersubsection hidden" id = "quickparagraph">
-                            Quick Sorting can be described in a simple few steps
-                            <a href="pages/sortpage.html?sort=quick">Quick link</a>
-                        </div>  
+
                         <div class = "uppersubsection hidden" id = "heapparagraph">
-                            Heap Sorting can be described in a simple few steps
-                            <a href="pages/sortpage.html?sort=heap">heap link</a>
+                            Heap Sorting can be described in a simple few points.
+                            <a href="pages/sortpage.html?sort=heap">Heap link</a>
+                            <ul><u>Efficient Sort</u>
+                                <li>Worst Case Runtime: O(n log n)</li>
+                                <li>Method of Sorting:Improved Selection sort. Divides the list into a sorted and unsorted area, and iteratively decreases the unsorted area by taking out the largest element and moving it to the sorted area</li>
+                                <li>This is a Stable, but not in-place sorting algorithm</li>
+                                <li>Worst Case Space Complexity: O(n) additional memory space</li>
+                                <li>A little slower than the quicksort, but it has the advantage of having a O(n log n) runtime</li>
+                            </ul>
+                        </div>
+
+                        <div class = "uppersubsection hidden" id = "bubbleparagraph">
+                            Bubble Sorting can be described in a simple few points.
+                            <a href="pages/sortpage.html?sort=bubble">Bubble link</a>
+                            <ul><u>Simple Sort</u>
+                                <li>Worst Case Runtime: O(n<sup>2</sup>)</li>
+                                <li>Method of Sorting: Repeatedly steps through a list, comparing adjacent elements and swapping them if they are in the wrong order.</li>
+                                <li>This is a Stable, In-Place Sorting Algorithm</li>
+                                <li>Worst Case Space Complexity: O(1) additional memory space</li>
+                                <li>One of the least efficient sorts, unless the input is mostly ordered with some elements out of order</li>
+                            </ul>
+                        </div>
+
+                        <div class = "uppersubsection hidden" id = "quickparagraph">
+                            Quick Sorting can be described in a simple few points.
+                            <a href="pages/sortpage.html?sort=quick">Quick link</a>
+                            <ul><u>Efficient Sort</u>
+                                <li>Worst Case Runtime: O(n<sup>2</sup>)</li>
+                                <li>Method of Sorting: Comparison sort that divides a large array into two smaller sub-arrays and then recursively sort the sub-arrays</li>
+                                <li>This is a Stable, but not in-place sorting algorithm</li>
+                                <li>Worst Case Space Complexity: O(n), with the best being O( n log n)</li>
+                                <li>About two or three times faster than the merge and heapsort. Similar to selection sort, but it does not always choose the worst-case partition</li>
+                            </ul>
                         </div>  
 
                     <div class = "lowerparagraph">
