@@ -41,7 +41,7 @@
 .upperselectionparagraphs {
     border-top: solid white;
     flex:1;
-    padding: 10px;
+    padding: 0px;
     margin: 0px;
     width: auto;
     display: flex;
@@ -50,9 +50,11 @@
 
 .uppersubsection{
     /*all the different upper paragraphs on the main page*/
-    flex:1;
+    font-size: 120%;
+    margin-left: 20px;
+    flex: 1;
     width: auto;
-    
+
 }
 
 
@@ -63,8 +65,8 @@
 
 .lowerparagraph {
     border-top: solid white;
-    flex:1;
-    padding: 10px;
+    flex: 1;
+    padding: 0px;
     width: auto;
 }
 
@@ -94,5 +96,21 @@ a:hover{
     flex-basis: 90%;
     min-width: 800px;
     max-width: 1000px;
+}
+
+.UpperSectionTitle {
+    /*REMEMBER TO COME BACK TO THIS YOU IDIOTS. also... spacing issue*/
+    text-decoration: underline;
+    font-size: x-large;
+    margin: 15px 0px 0px 0px;
+}
+
+.Steps li {
+    list-style-type: none;
+}
+
+.MethodTitle {
+    margin: 0px;
+    padding: 0px;
 }
 /*resource for the two column setup https://www.w3schools.com/howto/howto_css_two_columns.asp*/

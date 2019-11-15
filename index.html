@@ -83,22 +83,32 @@
                             <a href="pages/sortpage.html?sort=selection">Selection Link</a>
                             <ul><u>Simple Sort</u>
                                 <li>Worst Case Runtime: O(n<sup>2</sup>)</li>
-                                <li>Method of Sorting: Divides list into two parts, then compares adjacent elements and swaps them if needed.</li>
                                 <li>This is a Stable, In-Place Sorting Algorithm</li>
                                 <li>Worst Case Space Complexity: O(1) additional memory space</li>
                                 <li>One of the least efficient sorting algorithms, but generally best for small lists</li>
+                                Method of Sorting:
+                                <ul>Step 1: Divides list into two parts</ul>
+                                <ul>Step 2: Compares adjacent elements</ul>
+                                <ul>Step 3: Swaps them if they are out of order.</ul>
                             </ul>
                        </div>
                       
                         <div class = "uppersubsection hidden" id = "insertionparagraph">
-                            Insertion Sorting can be described in a simple few points.
-                            <a href="pages/sortpage.html?sort=insertion">Insertion link</a>
-                            <ul><u>Simple Sort</u>
+                            <div class = "UpperSectionTitle">Insertion Sort</div>
+                            <ul>
+                                <div class = "MethodTitle">Method of Sorting:</div>
+                                <ul class = "Steps">
+                                    <li>Step 1: Reads one element each repition</li>
+                                    <li>Step 2: Puts pulled element into new list</li>
+                                    <li>Step 3: Compares pulled element with new list</li>
+                                    <li>Step 4: Places most recently pulled element into new list in correct order</li><br>
+                                </ul>
+                                <li>Type of Sort: Simple</li>
                                 <li>Worst Case Runtime: O(n<sup>2</sup>)</li>
-                                <li>Method of Sorting: Reads one element each repitition, and then creates a sorted list out of the pulled elements</li>
                                 <li>This is a Stable, In-Place Sorting Algorithm</li>
                                 <li>Worst Case Space Complexity: O(1) additional memory space</li>
                                 <li>Best for small data sets and is more efficient than Bubble and Selection sorts</li>
+                                <!--<li><a href="pages/sortpage.html?sort=insertion">Insertion link</a></li> Link to this specific page-->
                             </ul>
                         </div>
                          
@@ -107,10 +117,13 @@
                             <a href="pages/sortpage.html?sort=merge">Merge Link</a>
                             <ul><u>Efficient Sort</u>
                                 <li>Worst Case Runtime: O(n log n)</li>
-                                <li>Method of Sorting: Divides list into n segments, then compares segments and merges them into one ordered list</li>
                                 <li>This is a Stable, but not in-place sorting algorithm</li>
                                 <li>Worst Case Space Complexity: O(n) additional memory space, but can be O(1) with a linked list</li>
                                 <li>Best used for a linked list, but is not as efficient as the quicksort</li>
+                                <li>Method of Sorting:</li>
+                                <ul>Step 1: Divides list into n segments</ul>
+                                <ul>Step 2: Compares each segment</ul>
+                                <ul>Step 3: Merges each segment into one ordered list</ul>
                             </ul>
                         </div>
 
@@ -119,10 +132,14 @@
                             <a href="pages/sortpage.html?sort=heap">Heap link</a>
                             <ul><u>Efficient Sort</u>
                                 <li>Worst Case Runtime: O(n log n)</li>
-                                <li>Method of Sorting:Improved Selection sort. Divides the list into a sorted and unsorted area, and iteratively decreases the unsorted area by taking out the largest element and moving it to the sorted area</li>
                                 <li>This is a Stable, but not in-place sorting algorithm</li>
                                 <li>Worst Case Space Complexity: O(n) additional memory space</li>
-                                <li>A little slower than the quicksort, but it has the advantage of having a O(n log n) runtime</li>
+                                <li>A little slower than the quicksort and an improved selection sort, but it has the advantage of having a O(n log n) runtime</li>
+                                <li>Method of Sorting:</li>
+                                <ul>Step 1: Divides list into two sections: sorted and unsorted</ul>
+                                <ul>Step 2: Pulls out largest element in unsorted section</ul>
+                                <ul>Step 3: Compares pulled element to the sorted section</ul>
+                                <ul>Step 4: Places each unordered element into sorted list to create a new ordered list</ul>
                             </ul>
                         </div>
 
@@ -131,10 +148,14 @@
                             <a href="pages/sortpage.html?sort=bubble">Bubble link</a>
                             <ul><u>Simple Sort</u>
                                 <li>Worst Case Runtime: O(n<sup>2</sup>)</li>
-                                <li>Method of Sorting: Repeatedly steps through a list, comparing adjacent elements and swapping them if they are in the wrong order.</li>
                                 <li>This is a Stable, In-Place Sorting Algorithm</li>
                                 <li>Worst Case Space Complexity: O(1) additional memory space</li>
                                 <li>One of the least efficient sorts, unless the input is mostly ordered with some elements out of order</li>
+                                <li>Method of Sorting:</li>
+                                <ul>Step 1: Reads the first two adjacent elements in the list</ul>
+                                <ul>Step 2: Compares the two elements</ul>
+                                <ul>Step 3: Swaps the elements if they are out of order</ul>
+                                <ul>Step 4: Repeat the first 3 steps through the entire lsit</ul>
                             </ul>
                         </div>
 
@@ -143,10 +164,14 @@
                             <a href="pages/sortpage.html?sort=quick">Quick link</a>
                             <ul><u>Efficient Sort</u>
                                 <li>Worst Case Runtime: O(n<sup>2</sup>)</li>
-                                <li>Method of Sorting: Comparison sort that divides a large array into two smaller sub-arrays and then recursively sort the sub-arrays</li>
                                 <li>This is a Stable, but not in-place sorting algorithm</li>
                                 <li>Worst Case Space Complexity: O(n), with the best being O( n log n)</li>
                                 <li>About two or three times faster than the merge and heapsort. Similar to selection sort, but it does not always choose the worst-case partition</li>
+                                <li>Method of Sorting: Comparison sort that divides a large array into two smaller sub-arrays and then recursively sort the sub-arrays</li>
+                                <ul>Step 1: Split list into two sub-arrays</ul>
+                                <ul>Step 2: An element is selected and becomes the pivot element</ul>
+                                <ul>Step 3: All elements smaller than the pivot are moved forward and the larger elements are moved backwards</ul>
+                                <ul>Step 4: Sub-arrays are then merged, creating one ordered list</ul>
                             </ul>
                         </div>  
 
