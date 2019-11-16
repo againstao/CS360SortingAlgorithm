@@ -58,6 +58,15 @@
 
 }
 
+.lowersubsection{
+    /*all the different lower paragraphs on the main page*/
+    font-size: 120%;
+    margin-left: 20px;
+    margin-right: 20px;
+    flex: 1;
+    width: auto;
+
+}
 
 .hidden{
     display: none;
@@ -99,6 +108,13 @@ a:hover{
 }
 
 .UpperSectionTitle {
+    /*REMEMBER TO COME BACK TO THIS YOU IDIOTS. also... spacing issue*/
+    text-decoration: underline;
+    font-size: x-large;
+    margin: 15px 0px 0px 0px;
+}
+
+.LowerSectionTitle {
     /*REMEMBER TO COME BACK TO THIS YOU IDIOTS. also... spacing issue*/
     text-decoration: underline;
     font-size: x-large;
