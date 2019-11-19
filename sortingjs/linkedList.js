@@ -28,7 +28,7 @@ class Node{
     }
 }
 
-class doublyLinkedList{
+class doublyLinkedList extends Node{
     constructor(){
         this.head =  null;
         this.tail = null;
@@ -46,17 +46,36 @@ class doublyLinkedList{
         }
         //general case: we have a head, add this 
         else if(this.head !== null){
-            //specifiy that the
-            this.tail.next = node;
+            //set the provided node previous pointer, to the tail
+            node.setPrev(this.tail); 
+            
+            //set the tail to point to the node provided
+            this.tail.setNext(node);
+           
             //reassign the new node to be the tail
             this.tail = node;
         }
     
     }
     //remove item
-    //getters
-        //get first 
+//getters
+    //get first
+    getHead(){
+        return this.head;
+    }
+        //get last
+    getTail(){
+        return this.tail;
+    } 
     //setters
+        //set first
+    setHead(node){
+        this.head = node;
+    }
+        //set last
+    setTail(node){
+        this.tail = node;
+    }
 }
 
 
