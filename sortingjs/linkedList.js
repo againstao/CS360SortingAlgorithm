@@ -14,11 +14,11 @@ class Node{
         this.prev = null;
         //a pointer to the previous item in the list
     }
-    setNext(Node){
-        this.next = Node;
+    setNext(nextNode){
+        this.next = nextNode;
     }
-    setPrev(Node){
-        this.prev = Node;
+    setPrev(prevNode){
+        this.prev = prevNode;
     }
     getNext(){
         return this.next;
