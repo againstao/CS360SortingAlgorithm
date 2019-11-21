@@ -3,9 +3,9 @@ export { BarDisplay }
 
 class BarDisplay {
 
-    constructor (initarray, javaCode, actionQueue, targetDivID, javaDivID, explainDivID) {
+    constructor (initarray, javaCode, /* actionQueue, */ targetDivID, javaDivID, explainDivID) {
         this.javaCode = javaCode.slice(); // effectively clones the list (for new reference purposes)
-        this.actionQueue = actionQueue;
+        // this.actionQueue = actionQueue;
         this.elems = initarray.slice(); // effectively clones the list (for new reference purposes)
         this.minElem = arrayMin(elem);
         this.maxElem = arrayMin(elem);
@@ -23,13 +23,81 @@ class BarDisplay {
             this.targetDiv.appendChild(div);
         }
         // populate javaDiv
-        for (let i = 0; i < code.length; i++) {
-            const line = code[i];
-            j
-        }
+        populateJavaCode(this);
     }
 
     //TODO functions for swapping, indicator divs, set explanation, etc.
+
+    //
+    setupElementList(elemList) {
+        // if(typeof(this.elems) === 'undefined') { // 'elems' doesn't exist on 'this', or it's set to undefined
+        // }
+        todo
+    }
+
+    // swap the elements on-screen
+    swapElements(index1, index2) {        
+        console.log('swapping ' + ind1 + ' and ' + ind2);
+        // shortcut if possible
+        if(ind1 == ind2) return;
+        // swap elems
+        let elems = displayContext.elems;
+        let tempelem = elems[ind1];
+        elems[ind1] = elems[ind2];
+        elems[ind2] = tempelem;
+        // swap divs
+        let divs = displayContext.divs;
+        let div1 = divs[ind1];
+        let div2 = divs[ind2];
+        divs[ind1] = div2;
+        divs[ind2] = div1;
+        // update visuals
+        setOffsetPercent(div1,ind2,elems.length);
+        setOffsetPercent(div2,ind1,elems.length);
+    }
+
+    // moves the indicator with ID of indicID to the position at index
+    //   note: automatically shows it too
+    moveIndicator(indicID, index) {
+
+    }
+
+    hideIndicator(indicID) {
+
+    }
+
+    hideAllIndicators() {
+        forEach
+    }
+
+    highlightCode(, lineIndices) {
+
+    }
+
+    setExplanation(explanation) {
+        this.explainDiv.innerHTML = explanation.toString();
+    }
+
+
+    // CLEANUP the display when releasing resources. Preferably call this if you're getting rid of the display.
+    cleanup() {
+
+    }
+
+    // just some utilities for this; don't call these publicly
+    _cleanupList() {
+        this.elemDivs.forEach(div => {
+            this.targetDiv.removeChild(div);
+        });
+        delete this.elemDivs;
+        delete this.targetDiv;
+    }
+    _cleanupIndics() {
+
+    }
+    _cleanupJava() {
+
+    }
 
 }
 
