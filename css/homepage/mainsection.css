@@ -9,7 +9,10 @@
 .selectionbars{
     /*style for all selection bars as a whole*/
     flex:0;
-    background: linear-gradient(rgb(72,219,251),rgb(36,110,125) )
+   /* old style change it if you think it looks better.
+    background: linear-gradient(rgb(72,219,251),rgb(36,110,125) );
+    */
+    background: rgb(50,170,190);
 }
 .mainsectionselectionbars {
      /*style for the indiviual buttons for the different sorting items in the list of sorts*/
@@ -27,8 +30,25 @@
      height: 112.5px;
      flex: 1;
      padding: 0px 0px 60px 0px;
+     line-height: 100px;
+    
 }
 
+.mainsectionselectionbars:hover {
+    transform: scale(1.075);
+    background: rgb(72,219,251);
+    border: none;
+    cursor:pointer;
+    outline:none;
+    text-align: center;
+    width: 202.5px;
+    height: 112.5px;
+    flex: 1;
+    padding: 0px 0px 60px 0px;
+    box-shadow: 0 0 300px rgb(73,220,252);
+    border: 5px solid #ffea00;
+}
+}
 
 .paragraphs {
     /*style for paragraph section as a whole*/
