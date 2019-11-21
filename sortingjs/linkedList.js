@@ -1,3 +1,6 @@
+export{Node, DoublyLinkedList}
+
+
 //this is our indiviudal objects that will go inside the linked list
 class Node{
     
@@ -28,10 +31,13 @@ class Node{
     }
 }
 
-class doublyLinkedList extends Node{
+class DoublyLinkedList{
     constructor(){
         this.head =  null;
         this.tail = null;
+
+        //this is the current node we are on at any given time when iterating
+        this.index = null;
     }
     //add item
     add(intArray,targetedInts,eventsArray){
@@ -59,7 +65,7 @@ class doublyLinkedList extends Node{
     }
     //remove item
 //getters
-    //get first
+        //get first
     getHead(){
         return this.head;
     }
@@ -67,15 +73,50 @@ class doublyLinkedList extends Node{
     getTail(){
         return this.tail;
     } 
-    //setters
-        //set first
-    setHead(node){
-        this.head = node;
+    
+        //goes to the next node
+    goForward(){
+        
+        if(this.index === null){
+            //check if index has been initialized, if not put it to head
+            return this.index = this.head;
+        }
+        
+        else if(this.index === this.tail){
+            //check if the index is at the end of the list if so dont
+            //let them go past the end
+            return this.index = this.tail;
+        }
+        
+        return this.index = this.index.getNext();
     }
-        //set last
-    setTail(node){
-        this.tail = node;
+
+        //goes to the prev node
+    goPrev(){
+
+        if(this.index === null){
+        //check if index has been initialized, if not put it to head
+            return this.index = this.head;
+        }
+
+        else if(this.index === this.head){
+            //check if we are at the beginning of the linked list 
+            // if so don't let them got past the head 
+            return this.index = this.head;
+        }
+    
+        return this.index = this.index.getPrev();
     }
+
+        //goes to the very beginning of the list
+    goToStart(){
+        return this.index = this.getHead();
+    }
+        //goes to the end of the list
+    goToEnd(){
+        return this.index = this.getTail();
+    }
+
 }
 
 

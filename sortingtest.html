@@ -27,7 +27,128 @@
     <div id="sortdisplay" class="sortdisplay"></div>
 </body>
 <!-- THIS SCRIPT LINK ALSO REQUIRED! This is all the js that does all the sorting. without this it's pretty boring :P -->
-<script src="sortingjs/main.js" type="module"></script>
-<script>
-    //
+
+<!-- test case for the doubly linked list add function -->
+<script type = "module">
+    import { Node, DoublyLinkedList } from '/sortingjs/linkedList.js';
+    let newList = new DoublyLinkedList();
+    
+    newList.add([1,1,1,1,1], [2,3], ['compare']);
+
+    
+
+    newList.add([2,2,2,2,2], [5,1], ['swap']);
+
+    
+
+    newList.add([3,3,3,3,3], [4,2], ['divide']);
+
+    //console.log(newList);
+
 </script>
+
+<!-- test case for the doubly linked list get head function-->
+<script type = "module">
+        import { Node, DoublyLinkedList } from '/sortingjs/linkedList.js';
+        let newList = new DoublyLinkedList();
+        
+        newList.add([1,1,1,1,1], [2,3], ['compare']);
+    
+        newList.add([2,2,2,2,2], [5,1], ['swap']);
+    
+        newList.add([3,3,3,3,3], [4,2], ['divide']);
+    
+        //console.log(newList.getHead());
+    
+    </script>
+
+    <!-- test case for the doubly linked list get tail function-->
+<script type = "module">
+        import { Node, DoublyLinkedList } from '/sortingjs/linkedList.js';
+        let newList = new DoublyLinkedList();
+        
+        newList.add([1,1,1,1,1], [2,3], ['compare']);
+    
+        newList.add([2,2,2,2,2], [5,1], ['swap']);
+    
+        newList.add([3,3,3,3,3], [4,2], ['divide']);
+    
+        //console.log(newList.getTail());
+    
+    </script>
+
+        <!-- test case for the doubly linked list goFoward function-->
+<script type = "module">
+        import { Node, DoublyLinkedList } from '/sortingjs/linkedList.js';
+        let newList = new DoublyLinkedList();
+        
+        newList.add([1,1,1,1,1], [2,3], ['compare']);
+    
+        newList.add([2,2,2,2,2], [5,1], ['swap']);
+    
+        newList.add([3,3,3,3,3], [4,2], ['divide']);
+    
+        // console.log(newList.goForward());
+        // console.log(newList.goForward());
+        // console.log(newList.goForward());
+        // console.log(newList.goForward());
+    </script>
+
+          <!-- test case for the doubly linked list goPrev function-->
+<script type = "module">
+        import { Node, DoublyLinkedList } from '/sortingjs/linkedList.js';
+        let newList = new DoublyLinkedList();
+        
+        newList.add([1,1,1,1,1], [2,3], ['compare']);
+    
+        newList.add([2,2,2,2,2], [5,1], ['swap']);
+    
+        newList.add([3,3,3,3,3], [4,2], ['divide']);
+    
+        // console.log(newList.goPrev());
+        // console.log(newList.goPrev());
+        // console.log(newList.goPrev());
+        // console.log(newList.goPrev());
+        // console.log(newList.goForward());
+        // console.log(newList.goPrev());
+        // console.log(newList.goPrev());
+        // console.log(newList.goForward());
+        // console.log(newList.goForward());
+        // console.log(newList.goForward());
+        // console.log(newList.goPrev());
+        // console.log(newList.goPrev());
+        // console.log(newList.goPrev());
+        // console.log(newList.goPrev());
+    </script>
+
+        <!-- test case for the doubly linked list goToStart function-->
+<script type = "module">
+        import { Node, DoublyLinkedList } from '/sortingjs/linkedList.js';
+        let newList = new DoublyLinkedList();
+        
+        newList.add([1,1,1,1,1], [2,3], ['compare']);
+    
+        newList.add([2,2,2,2,2], [5,1], ['swap']);
+    
+        newList.add([3,3,3,3,3], [4,2], ['divide']);
+    
+        newList.goForward();
+        newList.goForward();
+        // console.log(newList.goForward());
+
+        // console.log(newList.goToStart());     
+    </script>
+
+           <!-- test case for the doubly linked list goToEnd function-->
+<script type = "module">
+        import { Node, DoublyLinkedList } from '/sortingjs/linkedList.js';
+        let newList = new DoublyLinkedList();
+        
+        newList.add([1,1,1,1,1], [2,3], ['compare']);
+    
+        newList.add([2,2,2,2,2], [5,1], ['swap']);
+    
+        newList.add([3,3,3,3,3], [4,2], ['divide']);
+
+        // console.log(newList.goToEnd());     
+    </script>
