@@ -48,19 +48,22 @@ SortFactory.prototype.createSort = function(type, initarray, targetDivID, javaDi
 
 // a utility function for redundancy removal; all sorting impls should have these functions
 function applyCommonFunctions(aType) {
+
     aType.prototype.start = function() {
         this.timer = setInterval(() => {
             this.nextStep();
         }, this.timing);
-    }
-    aType.prototype.currentlyAuto = function() {
-        return (this.timer !== 'undefined'); // check if there's a timer being tracked
     }
     aType.prototype.pause = function() {
         if(this.timer !== 'undefined') {
             clearInterval(this.timer);
         }
         this.timer = 'undefined'; // set it back to pseudo-undefined
+    }
+    // TODO: restart() will need to empty the queue
+
+    aType.prototype.currentlyAuto = function() {
+        return (this.timer !== 'undefined'); // check if there's a timer being tracked
     }
     aType.prototype.setTiming = function(millis) {
         const wasRunning = this.currentlyAuto(); // for auto-resuming purposes
@@ -70,6 +73,7 @@ function applyCommonFunctions(aType) {
             this.start();
         }
     }
+    
 }
 
 
