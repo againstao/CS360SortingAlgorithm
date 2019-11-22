@@ -5,13 +5,14 @@ export{Node, DoublyLinkedList}
 class Node{
     
     //paramatized for our objects
-    constructor(intArray, targetedInts, eventsArray){
-        this.intArray =  intArray; 
-        //this will be starting what the sorting looks like at a particular point in time
-        this.targetedInts = targetedInts;
-        //this will a list of the elements that were targeted at this step
-        this.eventsArray = eventsArray;
-        //this will be an array of events that happened and what order they happened in
+    constructor(eventType, data, jsLineIndices){
+        this.event =  eventType; 
+        //this will be the event that took place
+        this.data = data;
+        //this will be the elements the event affected or the indicies
+        //of the element 
+        this.javaLines = jsLineIndices;
+        //this will be lines of code at which the event took place
         this.next = null;
         //a pointer to the next item in the list
         this.prev = null;
@@ -40,10 +41,10 @@ class DoublyLinkedList{
         this.index = null;
     }
     //add item
-    add(intArray,targetedInts,eventsArray){
+    add(eventType,data,jsLineIndices){
         
         //create an instance of our node using these parameters
-        let node = new Node(intArray,targetedInts,eventsArray);
+        let node = new Node(eventType,data,jsLineIndices);
         
         //special case: no nodes in the list
         if(this.head === null){
