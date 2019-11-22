@@ -46,8 +46,14 @@
     flex: 1;
     padding: 0px 0px 60px 0px;
     box-shadow: 0 0 300px rgb(73,220,252);
+<<<<<<< HEAD
     border: 5px solid white;
 }
+=======
+    border: 5px solid #ffea00;
+}
+
+>>>>>>> ced9a7a7652f773dc7666461db28e5c8521c4037
 
 
 .paragraphs {
