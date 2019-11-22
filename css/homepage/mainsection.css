@@ -46,9 +46,9 @@
     flex: 1;
     padding: 0px 0px 60px 0px;
     box-shadow: 0 0 300px rgb(73,220,252);
-    border: 5px solid #ffea00;
+    border: 5px solid white;
 }
-}
+
 
 .paragraphs {
     /*style for paragraph section as a whole*/
