@@ -1,9 +1,15 @@
 import {Node, DoublyLinkedList } from "./linkedList.js";
-export {Insertion,SortingFactory}
+export {SortingFactory,Insertion}
 class SortingFactory {
     constructor(type,list){
         this.create = sortingInstance(type,list);
         //returns an object of sort based off the type and list
+        this.unsortedList = this.create.getList();
+        //gets the unsorted list
+        this.sortedList = this.create.sort();
+        //returns the final sorted array when it is sorted
+        this.recordOfSort = this.create.getLinkedList();
+        //returns all the records that the linked list created 
     }
     
     sortingInstance(type, list) {
@@ -70,40 +76,47 @@ class Insertion {
         //save the list as the data we will pass to the animation generator
         //save 1 as the jsline
 
-        for (let i = 1; i < this.list.length - 1; i++) {
+        if(this.list.length === 1){
+            return this.list;
+        }//check to see if the array is only 1 long
+
+        for (let comparator = 1; comparator < this.list.length ; comparator++) {
         
-        this.linkedList.add('index',i,3);
+        this.linkedList.add('index',comparator,3);
         //save the first index to the linked list
         //save the indice as the data we will pass to the animation generator
         //save 3 as the jsline
           
-           let j = i;
+           let comparee = comparator-1;
            //assign j equal to i
 
-        this.linkedList.add('index',j,5);
+        this.linkedList.add('index',comparee,5);
         //save our smaller index to the linked list
         //save the indice as the data we will pass to the animation generator
         //save 3 as the jsline
 
-           while(j>0 && this.list[j-1] > this.list[j]){
-                //while j is greater than 0, and the previous element is greater than the current
+           while(comparee>=0 && this.list[comparee] > this.list[comparator]){
+                //if our comparee is greater than our index and 
                 
-                this.linkedList.add('compare',[j,j-1],7);
+                this.linkedList.add('compare',[comparee,comparator],7);
     
-            let temp = this.list[j];
-                //save the smaller element in a temp variable
-            this.list[j] = this.list[j-1];
-                //overwrite the smaller one with the larger one, so bigger values float right
-            this.list[j-1] = temp;
+            let temp = this.list[comparee];
+                //save the larger element in a temp variable
+            this.list[comparee] = this.list[comparator];
+                //overwrite the larger one with the smaller one, so bigger values float right
+            this.list[comparator] = temp;
                 //FUNCTION save event splice (we move it in front of the element that is smaller)
-                this.linkedList.add('swap',[j,j-1],9);
-            j--;
-                this.linkedList.add('movesecondindex',j-1,11);
+                this.linkedList.add('swap',[comparator,comparee],9);
+            comparee--;
+            comparator--;
+            //move both are comparee and comparator down one
+
+                this.linkedList.add('movesecondindex',comparee,11);
            }//while
 
         }//for
             
-        
+        return this.list;
     }//sort 
     //hasnt been unit tested
 
