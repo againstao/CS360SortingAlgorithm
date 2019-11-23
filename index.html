@@ -53,9 +53,9 @@
     </section>
     
     <!--this section is the main body of the webpage-->
-    <section class = "mainsection" >
+    <section class = "mainsection"  style="margin-left: 8%; margin-bottom: 3%;">
             
-            <div class = "selectionbars" >
+            <div class = "selectionbars">
                 <button class = "mainsectionselectionbars" id = "selectionbutton" type ="button">Selection</button> 
                 <button class = "mainsectionselectionbars" id = "insertionbutton" type ="button">Insertion</button>
                 <button class = "mainsectionselectionbars" id = "mergebutton" type ="button">Merge</button>
@@ -64,13 +64,13 @@
                 <button class = "mainsectionselectionbars" id = "quickbutton" type ="button">Quick</button>
             </div>
 
-            <div class = "paragraphs" >
+            <div class = "paragraphs" style="width:90%;">
                
                     <div class = "upperselectionparagraphs">
                         <!--Everything below is the various paragraphs that will be displayed upon clicking through the different sorts-->
-                        <div class = "uppersubsection"  id = "upperselectionparagraph">
+                        <div class = "uppersubsection" id = "upperselectionparagraph">
                             <div class = "UpperSectionTitle">Selection Sort</div>
-                            <ul>
+                            <ul class = "ParOverflow">
                                 <div class = "MethodTitle">Method of Sorting:</div>
                                 <ul class = "Steps">
                                     <li>Step 1: Divides list into two parts</li>
@@ -88,7 +88,7 @@
                       
                         <div class = "uppersubsection hidden" id = "upperinsertionparagraph">
                             <div class = "UpperSectionTitle">Insertion Sort</div>
-                            <ul>
+                            <ul class = "ParOverflow">
                                 <div class = "MethodTitle">Method of Sorting:</div>
                                 <ul class = "Steps">
                                     <li>Step 1: Reads one element each repition</li>
@@ -101,13 +101,14 @@
                                 <li>This is a Stable, In-Place Sorting Algorithm</li>
                                 <li>Worst Case Space Complexity: O(1) additional memory space</li>
                                 <li>Best for small data sets and is more efficient than Bubble and Selection sorts</li>
+                                <p></p>
                                 <!--<li><a href="pages/sortpage.html?sort=insertion">Insertion link</a></li> Link to this specific page-->
                             </ul>
                         </div>
                          
                         <div class = "uppersubsection hidden" id = "uppermergeparagraph">
                             <div class = "UpperSectionTitle">Merge Sort</div>
-                            <ul>
+                            <ul class = "ParOverflow">
                                 <div class = "MethodTitle">Method of Sorting:</div>
                                 <ul class = "Steps">
                                     <li>Step 1: Divides list into n segments</li>
@@ -118,14 +119,14 @@
                                 <li>Worst Case Runtime: O(n log n)</li>
                                 <li>This is a Stable, but not in-place sorting algorithm</li>
                                 <li>Worst Case Space Complexity: O(n) additional memory space, but can be O(1) with a linked list</li>
-                                <li>Best used for a linked list, but is not as efficient as the quicksort</li>
+                                <li style="height: 35px;">Best used for a linked list, but is not as efficient as the quicksort</li>
                                 <!--<a href="pages/sortpage.html?sort=merge">Merge Link</a> Link to this specific page-->
                             </ul>
                         </div>
 
                         <div class = "uppersubsection hidden" id = "upperheapparagraph">
                             <div class = "UpperSectionTitle">Heap Sort</div>
-                            <ul>
+                            <ul class = "ParOverflow">
                                 <div class = "MethodTitle">Method of Sorting:</div>
                                 <ul class = "Steps">
                                     <li>Step 1: Divides list into two sections: sorted and unsorted</li>
@@ -138,13 +139,14 @@
                                 <li>This is a Stable, but not in-place sorting algorithm</li>
                                 <li>Worst Case Space Complexity: O(n) additional memory space</li>
                                 <li>A little slower than the quicksort and an improved selection sort, but it has the advantage of having a O(n log n) runtime</li>
+                                <p></p>
                                 <!--<a href="pages/sortpage.html?sort=heap">Heap link</a> Link to this specific page-->
                             </ul>
                         </div>
 
                         <div class = "uppersubsection hidden" id = "upperbubbleparagraph">
                             <div class = "UpperSectionTitle">Bubble Sort</div> 
-                            <ul>
+                            <ul class = "ParOverflow">
                                 <div class = "MethodTitle">Method of Sorting:</div>
                                 <ul class = "Steps">
                                     <li>Step 1: Reads the first two adjacent elements in the list</li>
@@ -157,13 +159,14 @@
                                 <li>This is a Stable, In-Place Sorting Algorithm</li>
                                 <li>Worst Case Space Complexity: O(1) additional memory space</li>
                                 <li>One of the least efficient sorts, unless the input is mostly ordered with some elements out of order</li>
+                                <p></p>
                                 <!--<a href="pages/sortpage.html?sort=bubble">Bubble link</a> Link to this specific page-->
                             </ul>
                         </div>
 
                         <div class = "uppersubsection hidden" id = "upperquickparagraph">
                             <div class = "UpperSectionTitle">Quick Sort</div>
-                            <ul>
+                            <ul class = "ParOverflow">
                                 <div class = "MethodTitle">Method of Sorting:</div>
                                 <ul class = "Steps">
                                     <li>Step 1: Split list into two sub-arrays</li>
@@ -176,6 +179,7 @@
                                 <li>This is a Stable, but not in-place sorting algorithm</li>
                                 <li>Worst Case Space Complexity: O(n), with the best being O( n log n)</li>
                                 <li>About two or three times faster than the merge and heapsort. Similar to selection sort, but it does not always choose the worst-case partition</li>
+                                <p></p>
                                 <!--<a href="pages/sortpage.html?sort=quick">Quick link</a> Link to this specific page-->
                             </ul>
                         </div>  
@@ -187,7 +191,7 @@
                             <div class = "lowersubsection"  id = "lowerselectionparagraph">
                                 <div class = "LowerSectionTitle">See Selection Sort in action</div>
                                 
-                                <div class = "columnsubsection" style="float:left">
+                                <div class = "columnsubsection Par" style="float:left" >
                                     <div class = "lowersectioncolumn"></div>
                                     <div class = "lowersectioncolumn"><img src = sortedGraph.PNG></img></div>
                                     <div class = "lowersectioncolumn"><img src = fewUniqueElements.PNG></img></div>
@@ -197,7 +201,7 @@
                                 <div class = "columnsubsection" style="float:right">
                                     <div class = "lowersectioncolumn">Input your own data</div>
                                         
-                                    <div class = "lowersectioncolumn"><input></input></div>
+                                    <div class = "lowersectioncolumn" style="height: 170px;"><input></input></div>
                                     
                                 </div>
 
@@ -222,7 +226,7 @@
                         <div class = "columnsubsection" style="float:right">
                             <div class = "lowersectioncolumn">Input your own data</div>
                                 
-                            <div class = "lowersectioncolumn"><input></input></div>
+                            <div class = "lowersectioncolumn"  style="height: 170px;"><input></input></div>
                             
                         </div>
 
@@ -246,7 +250,7 @@
                             <div class = "columnsubsection" style="float:right">
                                 <div class = "lowersectioncolumn">Input your own data</div>
                                     
-                                <div class = "lowersectioncolumn"><input></input></div>
+                                <div class = "lowersectioncolumn"  style="height: 170px;"><input></input></div>
                                 
                             </div>
 
@@ -259,7 +263,7 @@
                 </div>
 
                 <div class = "lowersubsection hidden" id = "lowerheapparagraph">
-                    <div class = "UpperSectionTitle">See Heap Sort in action</div>
+                    <div class = "LowerSectionTitle">See Heap Sort in action</div>
                     <div class = "columnsubsection" style="float:left">
                             <div class = "lowersectioncolumn"></div>
                             <div class = "lowersectioncolumn"><img src = sortedGraph.PNG></img></div>
@@ -270,7 +274,7 @@
                         <div class = "columnsubsection" style="float:right">
                             <div class = "lowersectioncolumn">Input your own data</div>
                                 
-                            <div class = "lowersectioncolumn"><input></input></div>
+                            <div class = "lowersectioncolumn"  style="height: 170px;"><input></input></div>
                             
                         </div>
 
@@ -283,7 +287,7 @@
                 </div>
 
                 <div class = "lowersubsection hidden" id = "lowerbubbleparagraph">
-                    <div class = "UpperSectionTitle">See Bubble Sort in action</div> 
+                    <div class = "LowerSectionTitle">See Bubble Sort in action</div> 
                     <div class = "columnsubsection" style="float:left">
                             <div class = "lowersectioncolumn"></div>
                             <div class = "lowersectioncolumn"><img src = sortedGraph.PNG></img></div>
@@ -294,7 +298,7 @@
                         <div class = "columnsubsection" style="float:right">
                             <div class = "lowersectioncolumn">Input your own data</div>
                                 
-                            <div class = "lowersectioncolumn"><input></input></div>
+                            <div class = "lowersectioncolumn" style="height: 170px;"><input></input></div>
                             
                         </div>
 
@@ -307,7 +311,7 @@
                 </div>
 
                 <div class = "lowersubsection hidden" id = "lowerquickparagraph">
-                    <div class = "UpperSectionTitle">See Quick Sort in action</div>
+                    <div class = "LowerSectionTitle">See Quick Sort in action</div>
                     <div class = "columnsubsection" style="float:left">
                             <div class = "lowersectioncolumn"></div>
                             <div class = "lowersectioncolumn"><img src = sortedGraph.PNG></img></div>
@@ -318,7 +322,7 @@
                         <div class = "columnsubsection" style="float:right">
                             <div class = "lowersectioncolumn">Input your own data</div>
                                 
-                            <div class = "lowersectioncolumn"><input></input></div>
+                            <div class = "lowersectioncolumn" style="height: 170px;"><input></input></div>
                             
                         </div>
 

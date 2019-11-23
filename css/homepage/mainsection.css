@@ -60,13 +60,12 @@
     /*style for paragraph section as a whole*/
     display: flex;
     flex-direction: column;
-    border-right: solid white;
-    
+   
 }
 
 .columnsubsection{
-    overflow:auto;
     width:33.33%
+    
 
 }
 .lowersectioncolumn {
@@ -74,6 +73,7 @@
     display: flex;
     padding: 10px;
     text-align: center;
+    
 
 }
 .upperselectionparagraphs {
@@ -84,6 +84,7 @@
     width: auto;
     display: flex;
     flex-direction: column;
+    height: 57px;
 }
 
 .uppersubsection{
@@ -92,7 +93,7 @@
     margin-left: 20px;
     margin-right: 20px;
     flex: 1;
-    width: auto;
+    height: 335px;
 
 }
 
@@ -103,8 +104,7 @@
     margin-right: 20px;
     flex: 1;
     width: auto;
-    padding:15px
-
+    padding:15px;
 }
 
 .hidden{
@@ -112,6 +112,7 @@
 }
 
 .lowerparagraph {
+    
     border-top: solid white;
     flex: 1;
     padding: 0px;
@@ -151,6 +152,7 @@ a:hover{
     text-decoration: underline;
     font-size: x-large;
     margin: 15px 0px 0px 0px;
+    height: 57px;
 }
 
 .LowerSectionTitle {
@@ -168,5 +170,10 @@ a:hover{
 .MethodTitle {
     margin: 0px;
     padding: 0px;
+}
+ 
+.ParOverflow {
+    overflow: auto; 
+    height: 245px;
 }
 /*resource for the two column setup https://www.w3schools.com/howto/howto_css_two_columns.asp*/
