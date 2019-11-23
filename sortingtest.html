@@ -152,13 +152,33 @@
 
         // console.log(newList.goToEnd());     
     </script>
-
+        
+        <!-- test case for the insertion sort-->
 <script type = "module">
         import {Insertion} from '/sortingjs/SortingFactory.js';
         let insertionTest = new Insertion([5,4,3,2,1]);
         
-        console.log(insertionTest.sort());
-        console.log(insertionTest.getLinkedList());
-        console.log(insertionTest.getList());  
-        //my insertion algorithim in javascript is messed up somehow
+        //console.log(insertionTest.sort());
+        //console.log(insertionTest.getLinkedList());
+        //console.log(insertionTest.getList());  
+        
     </script>
+    <!-- test case for the bubble sort-->
+<script type = "module">
+        import {Bubble} from '/sortingjs/SortingFactory.js';
+        let bubbleTest = new Bubble([5,4,3,2,1]);
+        
+        //console.log(bubbleTest.sort());
+        //console.log(bubbleTest.getLinkedList());
+        //console.log(bubbleTest.getList());  
+        
+</script>
+<script type = "module">
+    import {Selection} from '/sortingjs/SortingFactory.js';
+    let selectionTest = new Selection([5,4,3,2,1]);
+    
+    console.log(selectionTest.sort());
+    //console.log(selectionTest.getLinkedList());
+    //console.log(selectionTest.getList());  
+    
+</script>

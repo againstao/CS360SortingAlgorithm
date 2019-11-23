@@ -1,5 +1,5 @@
 import {Node, DoublyLinkedList } from "./linkedList.js";
-export {SortingFactory,Insertion}
+export {SortingFactory,Insertion,Bubble,Selection}
 class SortingFactory {
     constructor(type,list){
         this.create = sortingInstance(type,list);
@@ -47,17 +47,41 @@ class SortingFactory {
 class Selection {
     constructor(list) {
         this.type = 'selection'
-        this.sortedList = sort(list);
+        this.list = list;
     }
 
 
     //the sorting instance of the respective class
-    sort(list) {
+    sort() {
+        
+        if(this.list.length <= 1){
+            return this.list;
+        }//check to see if the list is only one element long or shorter
+        
+       for(let i = 0; i < this.list.length-1;i++){
+        let index = i;
 
+        for(let j=i+1; j < this.list.length;j++){
+           if(this.list[j] < this.list[index]){
+               index=j;//searching for lowest index
+           } 
+        }
+        let smallerNumber = this.list[i];
+        this.list[index] = this.list[i];
+        this.list[i] = smallerNumber;
+       }
+        return this.list;
+    }//sort
+    
+    getLinkedList(){
+        return this.linkedList;
     }
 
+    getList(){
+        return this.list;
+    }
 
-}
+}//selection algoritihim is broken
 
 class Insertion {
     constructor(list) {
@@ -128,7 +152,7 @@ class Insertion {
         return this.list;
     }
 
-}
+}//done but hasnt been unit tested
 
 class Merge {
     constructor(list) {
@@ -159,17 +183,40 @@ class Heap {
 class Bubble {
     constructor(list) {
         this.type = 'bubble';
-        this.sortedList = list;
+        this.list = list;
     }
 
 
     //the sorting instance of the respective class
     sort() {
 
+        if(this.list.length <= 1){
+            return this.list;
+        }//see if the list length is less than or equal to one if so just return it
+
+        let arrayLength=this.list.length;
+        //set the arrayLength equal to the length of the elements in the list
+
+        for(arrayLength;arrayLength>0;arrayLength--){
+            for(let index=0; index <= this.list.length-1; index++){
+                if(this.list[index] > this.list[index+1]){
+                    let temp = this.list[index];
+                    this.list[index]= this.list[index+1];
+                    this.list[index+1] = temp;
+                }//if statment compare the current element to the next one
+            }//inner for loop selects the neighbors
+        }//outter for loop repeats the algorithim for n times
+        return this.list;
     }
 
+    getLinkedList(){
+        return this.linkedList;
+    }
 
-}
+    getList(){
+        return this.list;
+    }
+}//done but hasn't been unit tested or linked list hasnt been created
 
 class Quick {
     constructor(list) {
