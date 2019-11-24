@@ -58,17 +58,18 @@ class Selection {
             return this.list;
         }//check to see if the list is only one element long or shorter
         
-       for(let i = 0; i < this.list.length-1;i++){
-        let index = i;
+       for(let indexStart = 0; indexStart <= this.list.length-1;indexStart++){
+       
+        let minIndex = null;
 
-        for(let j=i+1; j < this.list.length;j++){
-           if(this.list[j] < this.list[index]){
-               index=j;//searching for lowest index
+        for(let indexIterator = indexStart; indexIterator <= this.list.length-1;indexIterator++){
+           if(this.list[indexIterator] < this.list[minIndex] || minIndex === null){
+            minIndex=indexIterator;//searching for lowest index
            } 
         }
-        let smallerNumber = this.list[i];
-        this.list[index] = this.list[i];
-        this.list[i] = smallerNumber;
+        let smallerNumber = this.list[indexStart];
+        this.list[indexStart] = this.list[minIndex];
+        this.list[minIndex] = smallerNumber;
        }
         return this.list;
     }//sort
@@ -81,7 +82,7 @@ class Selection {
         return this.list;
     }
 
-}//selection algoritihim is broken
+}//done but hasnt been unit tested or linked list hasnt been created
 
 class Insertion {
     constructor(list) {
