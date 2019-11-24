@@ -254,6 +254,13 @@ class Quick {
         }//check to see if the list is = to or smaller than 1
         //choose a pivot point here were using the median of three principle
     }
+    
+    getLinkedList(){
+        return this.linkedList;
+    }
 
+    getList(){
+        return this.list;
+    }
 
 }
