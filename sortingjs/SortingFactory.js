@@ -1,5 +1,5 @@
-import {Node, DoublyLinkedList } from "./linkedList.js";
-export {SortingFactory,Insertion,Bubble,Selection}
+import {DoublyLinkedList} from "./linkedList.js";
+export {SortingFactory,Insertion,Bubble,Selection,Merge,Quick,Heap}
 class SortingFactory {
     constructor(type,list){
         this.create = sortingInstance(type,list);
@@ -101,27 +101,29 @@ class Insertion {
             //save the event, the data that involves this event, and the line of JS
 
         if(this.list.length <= 1){
+            this.linkedList.add('end',this.list.length,3);
+                //save the event, the data that involves this event, and the line of JS
             return this.list;
         }//check to see if the array is only 1 long or lower
             
-                this.linkedList.add('check',this.list.length,3);
+                this.linkedList.add('check',this.list.length,5);
                 //save the event, the data that involves this event, and the line of JS
 
         for (let comparator = 1; comparator < this.list.length ; comparator++) {
         
-                this.linkedList.add('index',comparator,5);
+                this.linkedList.add('index',comparator,7);
                 //save the event, the data that involves this event, and the line of JS
           
            let comparee = comparator-1;
            //assign j equal to i
 
-                this.linkedList.add('index',comparee,7);
+                this.linkedList.add('index',comparee,9);
                 //save the event, the data that involves this event, and the line of JS
 
            while(comparee>=0 && this.list[comparee] > this.list[comparator]){
                 //if our comparee is bigger than the comparator
                 
-                this.linkedList.add('compare',[comparee,comparator],7);
+                this.linkedList.add('compare',[comparee,comparator],11);
                 //save the event, the data that involves this event, and the line of JS
 
             let temp = this.list[comparee];
@@ -130,17 +132,18 @@ class Insertion {
                 //overwrite the larger one with the smaller one, so bigger values float right
             this.list[comparator] = temp;
                 
-                this.linkedList.add('swap',[comparator,comparee],9);
+                this.linkedList.add('swap',[comparator,comparee],13);
                 //save the event, the data that involves this event, and the line of JS
             comparee--;
             comparator--;
             //move both are comparee and comparator down one
 
-                this.linkedList.add('movesecondindex',comparee,11);
+                this.linkedList.add('index',comparee,15);
+                this.linkedList.add('index',comparator,16);
            }//while
 
         }//for
-            
+        this.linkedList.add('end',this.list,19);
         return this.list;
     }//sort 
     //hasnt been unit tested
