@@ -1,6 +1,6 @@
 import { BarDisplay, actionMoveIndicator, actionSwapIndices,
     populateJavaCode, highlightCodeDiv } from "./sortdisplay.js";
-import { StateQueue } from "./statequeue.js";
+// import { StateQueue } from "./statequeue.js";
 
 export { SortFactory,
     SelectionSort };

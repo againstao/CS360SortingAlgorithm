@@ -8,13 +8,14 @@ class BarDisplay {
         // this.actionQueue = actionQueue;
         this.elems = initarray.slice(); // effectively clones the list (for new reference purposes)
         this.minElem = arrayMin(elem);
-        this.maxElem = arrayMin(elem);
+        this.maxElem = arrayMax(elem);
         this.elemRange = this.maxElem - this.minElem;
         this.targetDiv = document.getElementById(targetDivID);
         this.javaDiv = document.getElementById(javaDivID);
         this.explainDiv = document.getElementById(explainDivID);
         this.elemDivs = [];
         this.javaDivs = [];
+        this.indDivs = {};
         // populate targetDiv using elems
         this.targetDiv.classList.add('sdparent'); // setup parent div
         for (let i = 0; i < this.elems.length; i++) {
@@ -36,7 +37,7 @@ class BarDisplay {
     }
 
     // swap the elements on-screen
-    swapElements(index1, index2) {        
+    swapElements(index1, index2) {
         console.log('swapping ' + ind1 + ' and ' + ind2);
         // shortcut if possible
         if(ind1 == ind2) return;
@@ -56,21 +57,39 @@ class BarDisplay {
         setOffsetPercent(div2,ind1,elems.length);
     }
 
-    // moves the indicator with ID of indicID to the position at index
+    // set the indicator with ID of indicID to the position at index
     //   note: automatically shows it too
-    moveIndicator(indicID, index) {
+    setIndicator(indicID, index) {
+        let div = this.indDivs[indicID];
+        // if it doesn't exist yet, lazily initialize it
+        if (typeof(div) === 'undefined') {
+            // create a new one and start using it
+            div = (this.indDivs[indicID] = createIndicDiv(
+                indicID, 'text', display.divParent));
+        }
+        // console.log(display);
+        // do the positioning
+        setOffsetPercent(div, indexTo, display.elems.length);
 
+        // use setIndicatorOffset for different heights depending on indexTo?
+
+        // div.style.height = '100%';
+        div.style.height = 'calc('
+                + calcHeight(display.elems[indexTo], display.minElem, display.range) + '% + 40px)';
+        div.style.bottom = '-50px';
     }
 
+    // hides the indicator with ID of indicID
     hideIndicator(indicID) {
 
     }
 
+    // TODO keep adding doc to these uwu
     hideAllIndicators() {
         forEach
     }
 
-    highlightCode(, lineIndices) {
+    highlightCode(lineIndices) {
 
     }
 
@@ -167,7 +186,6 @@ function populateJavaCode(displayObj) {
         // create & setup the div
         let lineElem = createJavaCodeDiv();
         divs.push(lineElem);
-        // asdf.innerHTML = "Hello World " + i ;
         lineElem.innerHTML = codeline;
         parentdiv.appendChild(lineElem);
     }
@@ -220,6 +238,28 @@ function createElemDiv(displayObj, index) {
     setupTransitions(div);
     // parentDiv.appendChild(div);
     div.appendChild(textDiv);
+}
+
+function createIndicDiv(displayObj, indicID) {
+    let div = document.createElement('div');
+    setupTransitions(div);
+    // FOR STYLING PURPOSES, you can target them multiple ways:
+    //   by their individual ids "(parentid)_indic_(indicatorid)"
+    //   by the class "sdbar" - general for ALL bars (including non-indicators)
+    //   by the class "sdind" - for all indicator bars (useful for overriding properties on regular bars)
+    //   by their individual classes "sdind_(indicatorid)"
+    let parentDiv = displayObj.targetDiv;
+    div.id = parentDiv.id + "_indic_" + indicID;
+    div.classList.add('sdbar');
+    div.classList.add('sdind');
+    div.classList.add('sdind_' + indicatorID);
+    let divtext = document.createElement('div');
+    divtext.classList.add('sdind-text');
+    divtext.classList.add('sdind-text_' + indicatorID);
+    if(text) divtext.innerHTML = text;
+    parentDiv.insertBefore(div, parentDiv.children[0]);
+    div.appendChild(divtext);
+    return div;
 }
 
 function createJavaCodeDiv() {

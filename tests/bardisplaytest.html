@@ -2,10 +2,6 @@
 <head>
     <title>nothing to see here lol</title>
     <script>console.clear();/*this is just a personal decision; I didn't want my debugger retaining old console text.*/</script>
-    
-    <!-- THIS LINK IS REQUIRED! This pulls in the style classes that the JavaScript uses -->
-    <link rel="stylesheet" type="text/css" href="sortingjs/style.css">
-    
     <style>
         body { background-color: black; color: white; }
         /* h1, h2 { color: white; } nvm, this is getting inherited from body now */
@@ -21,10 +17,15 @@
     </style>
 </head>
 <body>
-    <h1>Hello test</h1>
+    <h1>Hello test bar display stuff testestest</h1>
     <h2>test2</h2>
-    <!-- This div gets targeted by the sortingjs files, because its id matches -->
-    <div id="sortdisplay" class="sortdisplay"></div>
+    <div id="target" class="sortdisplay"></div>
+    <div id="java" class=""></div>
+    <div id="expl" class=""></div>
 </body>
-<!-- THIS SCRIPT LINK ALSO REQUIRED! This is all the js that does all the sorting. without this it's pretty boring :P -->
-<script src="sortingjs/main.js" type="module"></script>
+
+<!-- test case for the BarDisplay functions -->
+<script type = "module">
+    import { BarDisplay } from '../sortingjs/BarDisplay.js';
+    let disp = new BarDisplay([1,3,2,4,3,5],["public static","blah"],"target","java","expl");
+</script>
