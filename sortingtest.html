@@ -27,7 +27,6 @@
     <div id="sortdisplay" class="sortdisplay"></div>
 </body>
 <!-- THIS SCRIPT LINK ALSO REQUIRED! This is all the js that does all the sorting. without this it's pretty boring :P -->
-<<<<<<< HEAD
 
 <!-- test case for the doubly linked list add function -->
 <script type = "module">
@@ -179,6 +178,18 @@
     let selectionTest = new Selection([5,4,3,2,1]);
     
     //console.log(selectionTest.sort());
+    //console.log(selectionTest.getLinkedList());
+    //console.log(selectionTest.getList());  
+    
+</script>
+
+<script type = "module">
+    import {Heap} from '/sortingjs/SortingFactory.js';
+    let arr = ([5,4,3,2,1]);
+
+    let heapTest = new Heap([1,2,3,4,5]);
+    
+    console.log(heapTest.sort());
     //console.log(selectionTest.getLinkedList());
     //console.log(selectionTest.getList());  
     

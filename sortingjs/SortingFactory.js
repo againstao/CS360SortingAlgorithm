@@ -1,4 +1,5 @@
 import {DoublyLinkedList} from "./linkedList.js";
+import { actionSwapIndices } from "./sortdisplay.js";
 export {SortingFactory,Insertion,Bubble,Selection,Merge,Quick,Heap}
 class SortingFactory {
     constructor(type,list){
@@ -215,15 +216,59 @@ class Merge {
 class Heap {
     constructor(list) {
         this.type = 'heap';
-        this.sortedList = list;
+        this.list = list;
+    }
+
+    heapify(list,i){
+        let left = 2 * i + 1;
+        let right = 2 * i + 2;
+        let max = i;
+
+        if (left < this.list.length && list[left] > list[max]) {
+            max = left;
+        }
+    
+        if (right < this.list.length && list[right] > list[max])     {
+            max = right;
+        }
+    
+        if (max != i) {
+            this.swap(this.list, i, max);
+            this.heapify(this.list, max);
+        }
+
+
+
+    }
+
+    swap(list,indexA,indexB){
+        let temp = list[indexA];
+        list[indexA] = list[indexB];
+        list[indexB] = temp; 
     }
 
     //the sorting instance of the respective class
     sort() {
+       
+        let arrayLength = this.list.length;//assign our array length to be equal to the list length
 
-    }
+        for(let i = Math.floor(arrayLength/2);i>=0; i-=1){
+            this.heapify(this.list,i);
+        }
 
-}
+        for(let i = this.list.length-1; i >0; i--){
+            this.swap(this.list,0,i);
+            arrayLength--;
+
+            this.heapify(this.list,0);
+        }
+       return this.list;
+    }//sort
+
+
+}//class heap: Minor issue with it source from where i based my code https://www.w3resource.com/javascript-exercises/searching-and-sorting-algorithm/searching-and-sorting-algorithm-exercise-3.php
+   
+
 
 class Bubble {
     constructor(list) {
