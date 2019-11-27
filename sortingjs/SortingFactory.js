@@ -42,7 +42,6 @@ class SortingFactory {
 
 }//sorting factory
 
-
 //all the different instances of our objects
 class Selection {
     constructor(list) {
@@ -253,7 +252,7 @@ class Quick {
     sort() {
 
         if(this.list.length <= 1){
-            return this.list.length;
+            return this.list;
         }//check to see if the list is = to or smaller than 1
         //choose a pivot point here were using the median of three principle
     }
