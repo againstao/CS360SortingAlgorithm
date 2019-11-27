@@ -204,7 +204,7 @@ class Merge {
         }
     }//Helper function
     
-      getLinkedList(){
+    getLinkedList(){
         return this.linkedList;
     }
 
@@ -217,35 +217,38 @@ class Heap {
     constructor(list) {
         this.type = 'heap';
         this.list = list;
+        //iterator for building the heap
+        this.indexIterator = 0;
     }
 
-    heapify(list,i){
-        let left = 2 * i + 1;
-        let right = 2 * i + 2;
-        let max = i;
+    buildMinHeap(){
 
-        if (left < this.list.length && list[left] > list[max]) {
-            max = left;
-        }
-    
-        if (right < this.list.length && list[right] > list[max])     {
-            max = right;
-        }
-    
-        if (max != i) {
-            this.swap(this.list, i, max);
-            this.heapify(this.list, max);
-        }
+            //if the left child is smaller than the parent    
+            if(this.list[this.indexIterator] > this.list[this.indexIterator*2+1]){
+                let temp = this.list[this.indexIterator];
+                this.list[this.indexIterator] = this.list[this.indexIterator*2+1];
+                this.list[this.indexIterator*2+1] = temp;
+            }//swap them
+            
+             //if the right child is smaller than the parent  
+            else if(this.list[this.indexIterator] > this.list[this.indexIterator*2+2]){
+                let temp = this.list[this.indexIterator];
+                this.list[this.indexIterator] = this.list[this.indexIterator*2+2];
+                this.list[this.indexIterator*2+2] = temp;
+            }
 
+            //if our indexIterator is at the last value
+            else if(this.indexIterator === this.list.length-1){
+                return this.list;
+            }
 
+            //else if everything is in order and there is no changes to make
+            else{
+                this.indexIterator = this.indexIterator + 1;
+                this.buildMinHeap();
+            }
 
-    }
-
-    swap(list,indexA,indexB){
-        let temp = list[indexA];
-        list[indexA] = list[indexB];
-        list[indexB] = temp; 
-    }
+    }//builds the heap so that the smallest element is on top
 
     //the sorting instance of the respective class
     sort() {
@@ -265,8 +268,51 @@ class Heap {
        return this.list;
     }//sort
 
+    
+    getIndexIterator(){
+        return this.indexIterator;
+    }//returns the index Iterator
 
 }//class heap: Minor issue with it source from where i based my code https://www.w3resource.com/javascript-exercises/searching-and-sorting-algorithm/searching-and-sorting-algorithm-exercise-3.php
+   
+class heapTree{
+    constructor(list) {
+        this.root = null;
+        //the parent node of everything
+        this.list=list;
+        //the array we pass to it
+        this.maxElements = list.length;
+        //the maximum elements that should be present within the array
+        
+    }
+
+
+    buildMinHeap(list){
+
+        //iterator through the entire array and 
+        for(let indexIterator = 0; indexIterator <= list.length - 1; indexIterator++){
+            
+
+            //if the left child is smaller than the parent    
+            if(list[indexIterator]>list[indexIterator*2+1]){
+                let temp = list[indexIterator];
+                list[indexIterator] = list[indexIterator*2+1];
+                list[indexIterator*2+1] = temp;
+            }//swap them
+            
+             //if the right child is smaller than the parent  
+            if(list[indexIterator]>list[indexIterator*2+2]){
+                let temp = list[indexIterator];
+                list[indexIterator] = list[indexIterator*2+2];
+                list[indexIterator*2+2] = temp;
+            }
+
+        }
+            return list;
+    }//builds the heap in an unorganized way
+
+
+}
    
 
 
