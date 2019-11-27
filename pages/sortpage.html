@@ -58,17 +58,17 @@
     <header class ="navmenu">
         <nav>
             <div><a href = "../">Home</a></div>
-            <div><a href="sortpage.html?sort=selection">
+            <div id = "navSelection"><a href="sortpage.html?sort=selection">
                 Selection</a></div>
-            <div><a href="sortpage.html?sort=insertion">
+            <div id = "navInsertion"><a href="sortpage.html?sort=insertion">
                 Insertion</a></div>
-            <div><a href="sortpage.html?sort=merge">
+            <div id = "navMerge"><a href="sortpage.html?sort=merge">
                 Merge</a></div>
-            <div><a href="sortpage.html?sort=heap">
+            <div id = "navHeap"><a href="sortpage.html?sort=heap">
                 Heap</a></div>
-            <div><a href="sortpage.html?sort=bubble">
+            <div id = "navBubble"><a href="sortpage.html?sort=bubble">
                 Bubble</a></div>
-            <div><a href="sortpage.html?sort=quick">
+            <div id = "navQuick"><a href="sortpage.html?sort=quick">
                 Quick</a></div>
         </nav>
     </header>
@@ -98,9 +98,6 @@
                         break;
                     case "quick":
                         sortName.innerHTML = "QuickSort";
-                        break;
-                    case "Radix":
-                        sortName.innerHTML = "Radix Sort";
                         break;
                 }
                 
@@ -180,16 +177,94 @@
         </div>
 
         <div class = "pullupbarsection" id = "pullupbarsection">
+            <!--Here is the sections that will contain all of the sorting explaination-->
             
-            <div class = "explanationsection" id = "explanationsection">Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
-                    Hello World
+            <div class = "explanationsection" id = "explanationsection">
+                <div class = "explainPara" id = "selectionParagraph">
+                    <!--This is for the Selection Sort-->
+                    <ul class = "explainSelection">
+                        <li><u>Step 1:</u> Declare and fill an array</li><br>
+                        <li><u>Step 2:</u> Split array into two subarrays</li><br>
+                        <li><u>Step 3:</u> recursively sort both subarrays using comparisons</li><br>
+                        <li><u>Step 4:</u> Get the smaller elements from the subarrays</li><br>
+                        <li><u>Step 5:</u> Copy remainder from both arrays if there are any</li><br>
+                        <li><u>Step 6:</u> Copy the results back into the original array, producing a sorted array</li><br>
+                    </ul>
+                </div> 
+                <!--This is for the Insertion Sort-->
+                <div class = "explainPara Hidden" id = "insertionParagraph">
+                    <ul class = "explainInsertion">
+                        <li><u>Step 1:</u> Declare and fill an array</li><br>
+                        <li><u>Step 2:</u> An element is selected and becomes the pivot element</li><br>
+                        <li><u>Step 4:</u> All elements smaller than the pivot are moved forward and the larger elements are moved backwards</li><br>
+                        <li><u>Step 4:</u> Recursively go through steps 2 and 3 until all subarrays are sorted</li><br>
+                        <li><u>Step 5:</u> Merge all subarrays into one array to get one fully sorted array</li><br>
+                    </ul>
+                </div>
+                <!--This is for the Merge Sort-->
+                <div class = "explainPara Hidden" id = "mergeParagraph">
+                        <ul class = "explainMerge">
+                            <li><u>Step 1:</u> Declare and fill an array</li><br>
+                            <li><u>Step 2:</u> Split array into two subarrays</li><br>
+                            <li><u>Step 3:</u> Recursively sort both subarrays using comparisons</li><br>
+                            <li><u>Step 4:</u> Get the smaller elements from the subarrays</li><br>
+                            <li><u>Step 5:</u> Copy remainder from both arrays if there are any</li><br>
+                            <li><u>Step 6:</u> Copy the results back into the original array, producing a sorted array</li><br>
+                        </ul>
+                    </div>
+                <!--This is for the Heap Sort-->
+                <div class = "explainPara Hidden" id = "heapParagraph">
+                        <ul class = "explainHeap">
+                            <li><u>Step 1:</u> Declare and fill array with elements</li><br>
+                            <li><u>Step 2:</u> Pull out largest element in unsorted section</li><br>
+                            <li><u>Step 3:</u> Compare pulled element to the sorted section and place it at the end</li><br>
+                            <li><u>Step 4:</u> Place each unordered element into sorted list to create a new ordered list</li><br>
+                        </ul>
+                    </div>
+                <!--This is for the Bubble Sort-->
+                <div class = "explainPara Hidden" id = "bubbleParagraph">
+                        <ul class = "explainBubble">
+                            <li><u>Step 1:</u> Declare and fill the array</li><br>
+                            <li><u>Step 2:</u> Within the for loop, compare the first two elements</li><br>
+                            <li><u>Step 3:</u> Swap the elements if they are out of order</li><br>
+                            <li><u>Step 4:</u> Repeat steps 2 and 3 through the entire array until the array is sorted fully</li><br>
+                        </ul>
+                    </div>
+                <!--This is for the Quick Sort-->
+                <div class = "explainPara Hidden" id = "quickParagraph">
+                        <ul class = "explainQuick">
+                            <li><u>Step 1:</u> Declare and fill an array</li><br>
+                            <li><u>Step 2:</u> An element is selected and becomes the pivot element</li><br>
+                            <li><u>Step 3:</u> All elements smaller than the pivot are moved forward and the larger elements are moved backwards</li><br>
+                            <li><u>Step 4:</u> Recursively go through steps 2 and 3 until all subarrays are sorted</li><br>
+                            <li><u>Step 5:</u> Merge all subarrays into one array to get one fully sorted array</li><br>
+                        </ul>
+                    </div>       
+                    <script>
+                        let explainPara = document.getElementById('paragraph');
+                        explainPara.innerHTML = GetURLParameter('sort')
+                        switch (explainPara.innerHTML) {
+                            case "selection":
+                                explainPara.innerHTML = showExplaination;
+                                break;
+                            case "insertion":
+                                explainPara.innerHTML = showExplaination;
+                                break;
+                            case "merge":
+                                explainPara.innerHTML = showExplaination;
+                                break;
+                            case "heap":
+                                explainPara.innerHTML = showExplaination;
+                                break;
+                            case "bubble":
+                                explainPara.innerHTML = showExplaination;
+                                break;
+                            case "quick":
+                                explainPara.innerHTML = showExplaination;
+                                break;
+                        }
+                    </script>
+                </div>
             </div>
             
                 

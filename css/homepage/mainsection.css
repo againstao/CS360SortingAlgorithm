@@ -55,8 +55,8 @@
     /*style for paragraph section as a whole*/
     display: flex;
     flex-direction: column;
-   border-right: solid white;
-   width:90%;
+    border-right: solid white;
+    width:90%;
 }
 
 .columnsubsection{

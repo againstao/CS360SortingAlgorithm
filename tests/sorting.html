@@ -2,36 +2,15 @@
 <head>
     <title>nothing to see here lol</title>
     <script>console.clear();/*this is just a personal decision; I didn't want my debugger retaining old console text.*/</script>
-    
-    <!-- THIS LINK IS REQUIRED! This pulls in the style classes that the JavaScript uses -->
-    <link rel="stylesheet" type="text/css" href="sortingjs/style.css">
-    
-    <style>
-        body { background-color: black; color: white; }
-        /* h1, h2 { color: white; } nvm, this is getting inherited from body now */
-        .sortdisplay {
-            /* Centering and such */
-            margin: auto;
-            width: 70%;
-            height: 300px;
-            /* Looks */
-            border: 1px solid red;
-            /* background-color: lightgray; */
-        }
-    </style>
 </head>
 <body>
     <h1>Hello test</h1>
     <h2>test2</h2>
-    <!-- This div gets targeted by the sortingjs files, because its id matches -->
-    <div id="sortdisplay" class="sortdisplay"></div>
 </body>
-<!-- THIS SCRIPT LINK ALSO REQUIRED! This is all the js that does all the sorting. without this it's pretty boring :P -->
-<<<<<<< HEAD
 
 <!-- test case for the doubly linked list add function -->
 <script type = "module">
-    import { Node, DoublyLinkedList } from '/sortingjs/linkedList.js';
+    import { Node, DoublyLinkedList } from '../sortingjs/linkedList.js';
     let newList = new DoublyLinkedList();
     
     newList.add([1,1,1,1,1], [2,3], ['compare']);
@@ -50,7 +29,7 @@
 
 <!-- test case for the doubly linked list get head function-->
 <script type = "module">
-        import { Node, DoublyLinkedList } from '/sortingjs/linkedList.js';
+        import { Node, DoublyLinkedList } from '../sortingjs/linkedList.js';
         let newList = new DoublyLinkedList();
         
         newList.add([1,1,1,1,1], [2,3], ['compare']);
@@ -65,7 +44,7 @@
 
     <!-- test case for the doubly linked list get tail function-->
 <script type = "module">
-        import { Node, DoublyLinkedList } from '/sortingjs/linkedList.js';
+        import { Node, DoublyLinkedList } from '../sortingjs/linkedList.js';
         let newList = new DoublyLinkedList();
         
         newList.add([1,1,1,1,1], [2,3], ['compare']);
@@ -80,7 +59,7 @@
 
         <!-- test case for the doubly linked list goFoward function-->
 <script type = "module">
-        import { Node, DoublyLinkedList } from '/sortingjs/linkedList.js';
+        import { Node, DoublyLinkedList } from '../sortingjs/linkedList.js';
         let newList = new DoublyLinkedList();
         
         newList.add([1,1,1,1,1], [2,3], ['compare']);
@@ -97,7 +76,7 @@
 
           <!-- test case for the doubly linked list goPrev function-->
 <script type = "module">
-        import { Node, DoublyLinkedList } from '/sortingjs/linkedList.js';
+        import { Node, DoublyLinkedList } from '../sortingjs/linkedList.js';
         let newList = new DoublyLinkedList();
         
         newList.add([1,1,1,1,1], [2,3], ['compare']);
@@ -124,7 +103,7 @@
 
         <!-- test case for the doubly linked list goToStart function-->
 <script type = "module">
-        import { Node, DoublyLinkedList } from '/sortingjs/linkedList.js';
+        import { Node, DoublyLinkedList } from '../sortingjs/linkedList.js';
         let newList = new DoublyLinkedList();
         
         newList.add([1,1,1,1,1], [2,3], ['compare']);
@@ -142,7 +121,7 @@
 
            <!-- test case for the doubly linked list goToEnd function-->
 <script type = "module">
-        import { Node, DoublyLinkedList } from '/sortingjs/linkedList.js';
+        import { Node, DoublyLinkedList } from '../sortingjs/linkedList.js';
         let newList = new DoublyLinkedList();
         
         newList.add([1,1,1,1,1], [2,3], ['compare']);
@@ -156,17 +135,17 @@
         
         <!-- test case for the insertion sort-->
 <script type = "module">
-        import {Insertion} from '/sortingjs/SortingFactory.js';
+        import {Insertion} from '../sortingjs/SortingFactory.js';
         let insertionTest = new Insertion([5,4,3,2,1]);
         
-       //console.log(insertionTest.sort());
+        console.log(insertionTest.sort());
         //console.log(insertionTest.getLinkedList());
         //console.log(insertionTest.getList());  
         
     </script>
     <!-- test case for the bubble sort-->
 <script type = "module">
-        import {Bubble} from '/sortingjs/SortingFactory.js';
+        import {Bubble} from '../sortingjs/SortingFactory.js';
         let bubbleTest = new Bubble([5,4,3,2,1]);
         
        // console.log(bubbleTest.sort());
@@ -175,7 +154,7 @@
         
 </script>
 <script type = "module">
-    import {Selection} from '/sortingjs/SortingFactory.js';
+    import {Selection} from '../sortingjs/SortingFactory.js';
     let selectionTest = new Selection([5,4,3,2,1]);
     
     //console.log(selectionTest.sort());
@@ -183,6 +162,3 @@
     //console.log(selectionTest.getList());  
     
 </script>
-=======
-<script src="sortingjs/main.js" type="module"></script>
->>>>>>> 67c4d9fb134fcdb61b78f8aa90eb1704f2930b52

@@ -43,6 +43,8 @@ class SortingFactory {
 }//sorting factory
 
 //all the different instances of our objects
+//SELECTION SORT
+
 class Selection {
     constructor(list) {
         this.type = 'selection'
@@ -83,6 +85,8 @@ class Selection {
     }
 
 }//done but hasnt been unit tested or linked list hasnt been created
+
+//INSERTION SORT
 
 class Insertion {
     constructor(list) {
@@ -161,13 +165,51 @@ class Merge {
     constructor(list) {
         this.type = 'merge';
         this.sortedList = list;
+        this.linkedList = new DoublyLinkedList();
     }
 
     //the sorting instance of the respective class
-    sort() {
-
+    mergeSort() {
+        const sortedArray = [...list]; //new array with content of list.
+        const length = sortedArray.length;
+        
+        //Base Case
+        //If there are 0 or 1 elements, stop splitting.
+        if (length < 2){
+            return list;
+        } 
+        
+        const mid = Math.floor(length/2); //Math.floor rounds down.
+        const left = sortedArray.slice(0,mid); // Left sub-array [0] to [mid-1].
+        const right = sortedArray.slice(middle)// Right sub-array from index[middle] to [length-1];
+        
+        //Recursive Step
+        return merge(mergeSort(left),mergeSort(right));
     }
 
+    merge(left, right) {
+        const aux = []; //Auxillary array
+        while (left.length && right.length) {
+            if (left[0] <= right[0])
+                {
+                    aux.push(left.shift());
+                }//If the first value in left sub-array, remove and add to auxillary array.
+            else 
+                {
+                    aux.push(right.shift());
+                }//else, remove and add first value in right sub-array to auxillary array.
+            return aux.concat(left,right);//Merge remaining items of left and right sub-arrays with the new array. 
+            
+        }
+    }//Helper function
+    
+      getLinkedList(){
+        return this.linkedList;
+    }
+
+    getSortedList(){
+        return this.sortedList;
+    }
 }
 
 class Heap {
