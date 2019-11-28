@@ -1,13 +1,18 @@
 <!DOCTYPE html>
+
 <head>
     <title>nothing to see here lol</title>
     <script>console.clear();/*this is just a personal decision; I didn't want my debugger retaining old console text.*/</script>
-    
+
     <!-- THIS LINK IS REQUIRED! This pulls in the style classes that the JavaScript uses -->
     <link rel="stylesheet" type="text/css" href="sortingjs/style.css">
-    
+
     <style>
-        body { background-color: black; color: white; }
+        body {
+            background-color: black;
+            color: white;
+        }
+
         /* h1, h2 { color: white; } nvm, this is getting inherited from body now */
         .sortdisplay {
             /* Centering and such */
@@ -20,6 +25,7 @@
         }
     </style>
 </head>
+
 <body>
     <h1>Hello test</h1>
     <h2>test2</h2>
@@ -29,192 +35,255 @@
 <!-- THIS SCRIPT LINK ALSO REQUIRED! This is all the js that does all the sorting. without this it's pretty boring :P -->
 
 <!-- test case for the doubly linked list add function -->
-<script type = "module">
+<script type="module">
     import { Node, DoublyLinkedList } from '/sortingjs/linkedList.js';
     let newList = new DoublyLinkedList();
-    
-    newList.add([1,1,1,1,1], [2,3], ['compare']);
 
-    
+    newList.add([1, 1, 1, 1, 1], [2, 3], ['compare']);
 
-    newList.add([2,2,2,2,2], [5,1], ['swap']);
 
-    
 
-    newList.add([3,3,3,3,3], [4,2], ['divide']);
+    newList.add([2, 2, 2, 2, 2], [5, 1], ['swap']);
+
+
+
+    newList.add([3, 3, 3, 3, 3], [4, 2], ['divide']);
 
     //console.log(newList);
 
 </script>
 
 <!-- test case for the doubly linked list get head function-->
-<script type = "module">
-        import { Node, DoublyLinkedList } from '/sortingjs/linkedList.js';
-        let newList = new DoublyLinkedList();
-        
-        newList.add([1,1,1,1,1], [2,3], ['compare']);
-    
-        newList.add([2,2,2,2,2], [5,1], ['swap']);
-    
-        newList.add([3,3,3,3,3], [4,2], ['divide']);
-    
+<script type="module">
+    import { Node, DoublyLinkedList } from '/sortingjs/linkedList.js';
+    let newList = new DoublyLinkedList();
+
+    newList.add([1, 1, 1, 1, 1], [2, 3], ['compare']);
+
+    newList.add([2, 2, 2, 2, 2], [5, 1], ['swap']);
+
+    newList.add([3, 3, 3, 3, 3], [4, 2], ['divide']);
+
         //console.log(newList.getHead());
-    
-    </script>
 
-    <!-- test case for the doubly linked list get tail function-->
-<script type = "module">
-        import { Node, DoublyLinkedList } from '/sortingjs/linkedList.js';
-        let newList = new DoublyLinkedList();
-        
-        newList.add([1,1,1,1,1], [2,3], ['compare']);
-    
-        newList.add([2,2,2,2,2], [5,1], ['swap']);
-    
-        newList.add([3,3,3,3,3], [4,2], ['divide']);
-    
+</script>
+
+<!-- test case for the doubly linked list get tail function-->
+<script type="module">
+    import { Node, DoublyLinkedList } from '/sortingjs/linkedList.js';
+    let newList = new DoublyLinkedList();
+
+    newList.add([1, 1, 1, 1, 1], [2, 3], ['compare']);
+
+    newList.add([2, 2, 2, 2, 2], [5, 1], ['swap']);
+
+    newList.add([3, 3, 3, 3, 3], [4, 2], ['divide']);
+
         //console.log(newList.getTail());
-    
-    </script>
 
-        <!-- test case for the doubly linked list goFoward function-->
-<script type = "module">
-        import { Node, DoublyLinkedList } from '/sortingjs/linkedList.js';
-        let newList = new DoublyLinkedList();
-        
-        newList.add([1,1,1,1,1], [2,3], ['compare']);
-    
-        newList.add([2,2,2,2,2], [5,1], ['swap']);
-    
-        newList.add([3,3,3,3,3], [4,2], ['divide']);
-    
-        // console.log(newList.goForward());
-        // console.log(newList.goForward());
-        // console.log(newList.goForward());
-        // console.log(newList.goForward());
-    </script>
+</script>
 
-          <!-- test case for the doubly linked list goPrev function-->
-<script type = "module">
-        import { Node, DoublyLinkedList } from '/sortingjs/linkedList.js';
-        let newList = new DoublyLinkedList();
-        
-        newList.add([1,1,1,1,1], [2,3], ['compare']);
-    
-        newList.add([2,2,2,2,2], [5,1], ['swap']);
-    
-        newList.add([3,3,3,3,3], [4,2], ['divide']);
-    
-        // console.log(newList.goPrev());
-        // console.log(newList.goPrev());
-        // console.log(newList.goPrev());
-        // console.log(newList.goPrev());
-        // console.log(newList.goForward());
-        // console.log(newList.goPrev());
-        // console.log(newList.goPrev());
-        // console.log(newList.goForward());
-        // console.log(newList.goForward());
-        // console.log(newList.goForward());
-        // console.log(newList.goPrev());
-        // console.log(newList.goPrev());
-        // console.log(newList.goPrev());
-        // console.log(newList.goPrev());
-    </script>
+<!-- test case for the doubly linked list goFoward function-->
+<script type="module">
+    import { Node, DoublyLinkedList } from '/sortingjs/linkedList.js';
+    let newList = new DoublyLinkedList();
 
-        <!-- test case for the doubly linked list goToStart function-->
-<script type = "module">
-        import { Node, DoublyLinkedList } from '/sortingjs/linkedList.js';
-        let newList = new DoublyLinkedList();
-        
-        newList.add([1,1,1,1,1], [2,3], ['compare']);
-    
-        newList.add([2,2,2,2,2], [5,1], ['swap']);
-    
-        newList.add([3,3,3,3,3], [4,2], ['divide']);
-    
-        newList.goForward();
-        newList.goForward();
+    newList.add([1, 1, 1, 1, 1], [2, 3], ['compare']);
+
+    newList.add([2, 2, 2, 2, 2], [5, 1], ['swap']);
+
+    newList.add([3, 3, 3, 3, 3], [4, 2], ['divide']);
+
+        // console.log(newList.goForward());
+        // console.log(newList.goForward());
+        // console.log(newList.goForward());
+        // console.log(newList.goForward());
+</script>
+
+<!-- test case for the doubly linked list goPrev function-->
+<script type="module">
+    import { Node, DoublyLinkedList } from '/sortingjs/linkedList.js';
+    let newList = new DoublyLinkedList();
+
+    newList.add([1, 1, 1, 1, 1], [2, 3], ['compare']);
+
+    newList.add([2, 2, 2, 2, 2], [5, 1], ['swap']);
+
+    newList.add([3, 3, 3, 3, 3], [4, 2], ['divide']);
+
+        // console.log(newList.goPrev());
+        // console.log(newList.goPrev());
+        // console.log(newList.goPrev());
+        // console.log(newList.goPrev());
+        // console.log(newList.goForward());
+        // console.log(newList.goPrev());
+        // console.log(newList.goPrev());
+        // console.log(newList.goForward());
+        // console.log(newList.goForward());
+        // console.log(newList.goForward());
+        // console.log(newList.goPrev());
+        // console.log(newList.goPrev());
+        // console.log(newList.goPrev());
+        // console.log(newList.goPrev());
+</script>
+
+<!-- test case for the doubly linked list goToStart function-->
+<script type="module">
+    import { Node, DoublyLinkedList } from '/sortingjs/linkedList.js';
+    let newList = new DoublyLinkedList();
+
+    newList.add([1, 1, 1, 1, 1], [2, 3], ['compare']);
+
+    newList.add([2, 2, 2, 2, 2], [5, 1], ['swap']);
+
+    newList.add([3, 3, 3, 3, 3], [4, 2], ['divide']);
+
+    newList.goForward();
+    newList.goForward();
         // console.log(newList.goForward());
 
         // console.log(newList.goToStart());     
-    </script>
+</script>
 
-           <!-- test case for the doubly linked list goToEnd function-->
-<script type = "module">
-        import { Node, DoublyLinkedList } from '/sortingjs/linkedList.js';
-        let newList = new DoublyLinkedList();
-        
-        newList.add([1,1,1,1,1], [2,3], ['compare']);
-    
-        newList.add([2,2,2,2,2], [5,1], ['swap']);
-    
-        newList.add([3,3,3,3,3], [4,2], ['divide']);
+<!-- test case for the doubly linked list goToEnd function-->
+<script type="module">
+    import { Node, DoublyLinkedList } from '/sortingjs/linkedList.js';
+    let newList = new DoublyLinkedList();
+
+    newList.add([1, 1, 1, 1, 1], [2, 3], ['compare']);
+
+    newList.add([2, 2, 2, 2, 2], [5, 1], ['swap']);
+
+    newList.add([3, 3, 3, 3, 3], [4, 2], ['divide']);
 
         // console.log(newList.goToEnd());     
-    </script>
-        
-        <!-- test case for the insertion sort-->
-<script type = "module">
-        import {Insertion} from '/sortingjs/SortingFactory.js';
-        let insertionTest = new Insertion([5,4,3,2,1]);
-        
-       //console.log(insertionTest.sort());
-        //console.log(insertionTest.getLinkedList());
-        //console.log(insertionTest.getList());  
-        
-    </script>
-    <!-- test case for the bubble sort-->
-<script type = "module">
-        import {Bubble} from '/sortingjs/SortingFactory.js';
-        let bubbleTest = new Bubble([5,4,3,2,1]);
-        
-       // console.log(bubbleTest.sort());
-        //console.log(bubbleTest.getLinkedList());
-        //console.log(bubbleTest.getList());  
-        
-</script>
-<script type = "module">
-    import {Selection} from '/sortingjs/SortingFactory.js';
-    let selectionTest = new Selection([5,4,3,2,1]);
-    
-    //console.log(selectionTest.sort());
-    //console.log(selectionTest.getLinkedList());
-    //console.log(selectionTest.getList());  
-    
 </script>
 
-    <!-- test cases to make sure heap sort works-->
-<script type = "module">
-    import {Heap} from '/sortingjs/SortingFactory.js';
-    
+<!-- test cases to make sure the actual sort for insertion works-->
+<script type="module">
+    import { Insertion } from '/sortingjs/SortingFactory.js';
+
+    //empty
+    let insertionTest = new Insertion([]);
+
+    console.log(insertionTest.sort());
+
+    //one element
+    insertionTest = new Insertion([1]);
+
+    console.log(insertionTest.sort());
+    //already sorted
+    insertionTest = new Insertion([1, 2, 3, 4, 5]);
+
+    console.log(insertionTest.sort());
+    //sorted backwards
+    insertionTest = new Insertion([5, 4, 3, 2, 1]);
+
+    console.log(insertionTest.sort());
+    //few unique elements
+    insertionTest = new Insertion([5, 5, 5, 4, 4, 1, 1, 2, 4]);
+
+    console.log(insertionTest.sort());
+    //random
+    insertionTest = new Insertion([-27, 18, -10000, -696969, 42, 54, 10, 11, 99]);
+
+    console.log(insertionTest.sort());
+
+</script>
+
+<!-- test cases to make sure the actual sort for bubble works-->
+<script type="module">
+    import { Bubble } from '/sortingjs/SortingFactory.js';
+
+    //empty
+    let bubbleTest = new Bubble([]);
+
+    //console.log(bubbleTest.sort());
+
+    //one element
+    bubbleTest = new Bubble([1]);
+
+    //console.log(bubbleTest.sort());
+    //already sorted
+    bubbleTest = new Bubble([1, 2, 3, 4, 5]);
+
+    //console.log(bubbleTest.sort());
+    //sorted backwards
+    bubbleTest = new Bubble([5, 4, 3, 2, 1]);
+
+    //console.log(bubbleTest.sort());
+    //few unique elements
+    bubbleTest = new Bubble([5, 5, 5, 4, 4, 1, 1, 2, 4]);
+
+    //console.log(bubbleTest.sort());
+    //random
+    bubbleTest = new Bubble([-27, 18, -10000, -696969, 42, 54, 10, 11, 99]);
+
+    //console.log(bubbleTest.sort());
+
+</script>
+
+<!-- test cases to make sure the actual sort for selection works-->
+<script type="module">
+    import { Selection } from '/sortingjs/SortingFactory.js';
+
+    //empty
+    let selectionTest = new Selection([]);
+
+    //console.log(selectionTest.sort());
+
+    //one element
+    selectionTest = new Selection([1]);
+
+    //console.log(selectionTest.sort());
+    //already sorted
+    selectionTest = new Selection([1, 2, 3, 4, 5]);
+
+    //console.log(selectionTest.sort());
+    //sorted backwards
+    selectionTest = new Selection([5, 4, 3, 2, 1]);
+
+    //console.log(selectionTest.sort());
+    //few unique elements
+    selectionTest = new Selection([5, 5, 5, 4, 4, 1, 1, 2, 4]);
+
+    //console.log(selectionTest.sort());
+    //random
+    selectionTest = new Selection([-27, 18, -10000, -696969, 42, 54, 10, 11, 99]);
+
+   //console.log(selectionTest.sort());
+
+</script>
+
+<!-- test cases to make sure the actual sort for heap works-->
+<script type="module">
+    import { Heap } from '/sortingjs/SortingFactory.js';
+
     //empty
     let heapTest = new Heap([]);
 
-    console.log(heapTest.sort());
-    
+    //console.log(heapTest.sort());
+
     //one element
     heapTest = new Heap([1]);
 
-    console.log(heapTest.sort());
+    //console.log(heapTest.sort());
     //already sorted
-    heapTest = new Heap([1,2,3,4,5]);
+    heapTest = new Heap([1, 2, 3, 4, 5]);
 
-    console.log(heapTest.sort());
+    //console.log(heapTest.sort());
     //sorted backwards
-    heapTest = new Heap([5,4,3,2,1]);
+    heapTest = new Heap([5, 4, 3, 2, 1]);
 
-    console.log(heapTest.sort());
+    //console.log(heapTest.sort());
     //few unique elements
-    heapTest = new Heap([5,5,5,4,4,1,1,2,4]);
+    heapTest = new Heap([5, 5, 5, 4, 4, 1, 1, 2, 4]);
 
-    console.log(heapTest.sort());
+    //console.log(heapTest.sort());
 
     //random
-    heapTest = new Heap([-27,18,-10000,-696969,42,54,10,11,99]);
+    heapTest = new Heap([-27, 18, -10000, -696969, 42, 54, 10, 11, 99]);
 
-    console.log(heapTest.sort());
-    //console.log(heapTest.getLinkedList());
-    //console.log(selectionTest.getList());  
-    
+    //console.log(heapTest.sort());
+
 </script>
-
