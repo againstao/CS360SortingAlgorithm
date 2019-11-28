@@ -85,7 +85,7 @@ class Selection {
         return this.list;
     }
 
-}//done but hasnt been unit tested or linked list hasnt been created
+}//done but linked list hasnt been created
 
 //INSERTION SORT
 
@@ -160,7 +160,9 @@ class Insertion {
         return this.list;
     }
 
-}//done but hasnt been unit tested
+}//done but linked list hasn't been united tested
+
+//MERGE SORT
 
 class Merge {
     constructor(list) {
@@ -211,6 +213,8 @@ class Merge {
     }
 }
 
+//HEAP SORT
+
 class Heap {
     constructor(list) {
         this.type = 'heap';
@@ -258,6 +262,7 @@ class Heap {
         return this.list;
 
     }//builds the heap so that the largest element is on top 
+    //something is either wrong here, heapify, or in sort itself
 
     heapify(index, list) {
         this.linkedList.add('comparator', index, 22);
@@ -306,6 +311,7 @@ class Heap {
 
     }//assume that we only have the top element out of place in the heap
     //goes through based on that and sorts it until it is in the correct spot
+    //something is either wrong here, heapify, or in sort itself
 
     //the sorting instance of the respective class
     sort() {
@@ -346,7 +352,7 @@ class Heap {
         this.linkedList.add('end', currentArray, 59);
         return this.list;
     }//sort
-
+    //something is either wrong here, heapify, or in sort itself
 
     getLinkedList() {
         return this.linkedList;
@@ -356,9 +362,9 @@ class Heap {
         return this.list;
     }
 
-}//class heap
+}//class heap, broken on a few of the test cases, also linked list hasn't been unit tested
 
-
+//BUBBLE SORT
 
 class Bubble {
     constructor(list) {
@@ -415,7 +421,9 @@ class Bubble {
     getList() {
         return this.list;
     }
-}//done but hasn't been unit tested or linked list hasnt been created
+}//done but linked list hasn't been unit tested
+
+//QUICK SORT
 
 class Quick {
     constructor(list) {
