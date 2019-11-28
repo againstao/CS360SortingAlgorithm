@@ -217,37 +217,37 @@ class Heap {
     constructor(list) {
         this.type = 'heap';
         this.list = list;
-        //iterator for building the heap
-        this.indexIterator = 0;
+        
     }
 
     buildMinHeap(){
 
+        for(let indexIterator = 0; indexIterator <= this.list.length-1; indexIterator++){
+
+            let leftChild = (indexIterator*2)+1;
+            let rightChild = (indexIterator*2)+2;
+
             //if the left child is smaller than the parent    
-            if(this.list[this.indexIterator] > this.list[this.indexIterator*2+1]){
-                let temp = this.list[this.indexIterator];
-                this.list[this.indexIterator] = this.list[this.indexIterator*2+1];
-                this.list[this.indexIterator*2+1] = temp;
+            if(this.list[indexIterator] > this.list[leftChild] && leftChild<=this.list.length-1){
+                let temp = this.list[leftChild];
+                this.list[leftChild] = this.list[indexIterator];
+                this.list[indexIterator] = temp;
+    
+                indexIterator=0;
             }//swap them
             
              //if the right child is smaller than the parent  
-            else if(this.list[this.indexIterator] > this.list[this.indexIterator*2+2]){
-                let temp = this.list[this.indexIterator];
-                this.list[this.indexIterator] = this.list[this.indexIterator*2+2];
-                this.list[this.indexIterator*2+2] = temp;
-            }
+             if(this.list[indexIterator] > this.list[rightChild] && rightChild<=this.list.length-1){
+                let temp = this.list[rightChild];
+                this.list[rightChild] = this.list[indexIterator];
+                this.list[indexIterator] = temp;
+   
+                indexIterator=0;
+            }//swap them
 
-            //if our indexIterator is at the last value
-            else if(this.indexIterator === this.list.length-1){
-                return this.list;
-            }
-
-            //else if everything is in order and there is no changes to make
-            else{
-                this.indexIterator = this.indexIterator + 1;
-                this.buildMinHeap();
-            }
-
+        }
+            return this.list;
+        
     }//builds the heap so that the smallest element is on top
 
     //the sorting instance of the respective class
