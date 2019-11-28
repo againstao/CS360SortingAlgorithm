@@ -115,13 +115,13 @@ class Insertion {
 
         for (let comparator = 1; comparator < this.list.length; comparator++) {
 
-            this.linkedList.add('index', comparator, 7);
+            this.linkedList.add('comparator', comparator, 7);
             //save the event, the data that involves this event, and the line of JS
 
             let comparee = comparator - 1;
             //assign j equal to i
 
-            this.linkedList.add('index', comparee, 9);
+            this.linkedList.add('comparee', comparee, 9);
             //save the event, the data that involves this event, and the line of JS
 
             while (comparee >= 0 && this.list[comparee] > this.list[comparator]) {
@@ -142,8 +142,8 @@ class Insertion {
                 comparator--;
                 //move both are comparee and comparator down one
 
-                this.linkedList.add('index', comparee, 15);
-                this.linkedList.add('index', comparator, 16);
+                this.linkedList.add('comparee', comparee, 15);
+                this.linkedList.add('comparator', comparator, 16);
             }//while
 
         }//for
@@ -220,17 +220,28 @@ class Heap {
 
     buildMaxHeap() {
 
+        if (this.list.length <= 1) {
+            return this.list;
+        }//check
+
+        this.linkedList.add('check', this.list, 3);
+
         for (let indexIterator = 0; indexIterator <= this.list.length - 1; indexIterator++) {
+
+            this.linkedList.add('comparator', indexIterator, 5);
 
             let leftChild = (indexIterator * 2) + 1;
             let rightChild = (indexIterator * 2) + 2;
+
+            this.linkedList.add('comparee', indexIterator, 7);
+            this.linkedList.add('comparee', indexIterator, 8);
 
             //if the left child is smaller than the parent    
             if (this.list[indexIterator] < this.list[leftChild] && leftChild <= this.list.length - 1) {
                 let temp = this.list[leftChild];
                 this.list[leftChild] = this.list[indexIterator];
                 this.list[indexIterator] = temp;
-
+                this.linkedList.add('swap', [indexIterator, leftChild], 13);
                 indexIterator = 0;
             }//swap them
 
@@ -239,7 +250,7 @@ class Heap {
                 let temp = this.list[rightChild];
                 this.list[rightChild] = this.list[indexIterator];
                 this.list[indexIterator] = temp;
-
+                this.linkedList.add('swap', [indexIterator, rightChild], 20);
                 indexIterator = 0;
             }//swap them
 
@@ -249,9 +260,18 @@ class Heap {
     }//builds the heap so that the largest element is on top 
 
     heapify(index, list) {
+        this.linkedList.add('comparator', index, 22);
 
         let leftChild = index * 2 + 1;
         let rightChild = index * 2 + 2;
+
+        this.linkedList.add('comparee', leftChild, 24);
+        this.linkedList.add('comparee', rightChild, 25);
+
+        if (this.list.length <= 1) {
+            return this.list;
+        }
+        this.linkedList.add('check', rightChild, 28);
 
         //if the left child is bigger than the current element we are examining
         if (this.list[leftChild] > this.list[index] && leftChild <= this.list.length - 1) {
@@ -260,6 +280,7 @@ class Heap {
             this.list[leftChild] = this.list[index];
             this.list[index] = temp;
             //swap them
+            this.linkedList.add('swap', [index, leftChild], 32);
 
             this.heapify(leftChild, list);
             //call heapify again but with the index for the left child since we swapped them
@@ -272,8 +293,8 @@ class Heap {
             let temp = this.list[rightChild];
             this.list[rightChild] = this.list[index];
             this.list[index] = temp;
-            //swap them call heapify again
-
+            //swap them 
+            this.linkedList.add('swap', [index, rightChild], 37);
             this.heapify(rightChild, list);
             //call heapify again but with the index for the right child since we swapped them
         }
@@ -281,47 +302,61 @@ class Heap {
         else {
             return list;
         }//base case neither the left nor the right child are bigger than the current value
-         //
+        //
 
     }//assume that we only have the top element out of place in the heap
-    //goes through based on that and sorts it until it is in a correct spot
+    //goes through based on that and sorts it until it is in the correct spot
 
     //the sorting instance of the respective class
     sort() {
+        this.linkedList.add('start', this.list, 1);
+
         this.list = this.buildMaxHeap();
-        //build the heap
-        
-        let currentArray=[];
+        //build the heap, check if the array size is <= 1 is done there so didnt include it here
+
+        this.linkedList.add('check', this.list, 41);
+
+        if (this.list.length <= 1) {
+            this.linkedList.add('end', this.list, 44);
+            return this.list;
+        }
+        //check if the array size is less than our equal to 1
+
+
+        let currentArray = [];
         //make a default array
 
-        
-        while(this.list.length > 0){
+        //while this.list still has elements in it
+        while (this.list.length > 0) {
 
             currentArray.unshift(this.list[0]);
             //unshift function adds the max element to our currentArray 
 
             this.list.shift();
-            //shift function removes the first element in the array,which in a heap is our max
+            //shift function removes the first element in the array,which in a heap is our max, and updates the indices and etc.
 
-            this.heapify(0,this.list);
+            this.linkedList.add('additionalarray', currentArray, 53);
+
+            this.heapify(0, this.list);
             //recrusively scan to see if our new max is the correct one
-        }
-        
-        
-        //declare our max as the top of the array
-        //swap the top of the heap with the bottom
+        }//throw the max into currentArray, delete the max from this.list, and check to make sure that it works
 
-        //place the top of the array at the end of a new array
-        //rebuild the heap
-        //assign the currentArray we have built as the new list
-        this.list = currentArray; 
+
+        this.list = currentArray;
+        this.linkedList.add('end', currentArray, 59);
         return this.list;
     }//sort
 
 
+    getLinkedList() {
+        return this.linkedList;
+    }
 
+    getList() {
+        return this.list;
+    }
 
-}//class heap: Minor issue with it source from where i based my code https://www.w3resource.com/javascript-exercises/searching-and-sorting-algorithm/searching-and-sorting-algorithm-exercise-3.php
+}//class heap
 
 
 

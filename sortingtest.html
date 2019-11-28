@@ -183,14 +183,37 @@
     
 </script>
 
+    <!-- test cases to make sure heap sort works-->
 <script type = "module">
     import {Heap} from '/sortingjs/SortingFactory.js';
-
-    let heapTest = new Heap([5,4,5,2,1]);
-
+    
+    //empty
+    let heapTest = new Heap([]);
 
     console.log(heapTest.sort());
-    //console.log(selectionTest.getLinkedList());
+    
+    //one element
+    heapTest = new Heap([1]);
+
+    console.log(heapTest.sort());
+    //already sorted
+    heapTest = new Heap([1,2,3,4,5]);
+
+    console.log(heapTest.sort());
+    //sorted backwards
+    heapTest = new Heap([5,4,3,2,1]);
+
+    console.log(heapTest.sort());
+    //few unique elements
+    heapTest = new Heap([5,5,5,4,4,1,1,2,4]);
+
+    console.log(heapTest.sort());
+
+    //random
+    heapTest = new Heap([-27,18,-10000,-696969,42,54,10,11,99]);
+
+    console.log(heapTest.sort());
+    //console.log(heapTest.getLinkedList());
     //console.log(selectionTest.getList());  
     
 </script>
