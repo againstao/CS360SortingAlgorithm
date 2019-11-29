@@ -56,24 +56,42 @@ class Selection {
 
     //the sorting instance of the respective class
     sort() {
+        this.linkedList.add('start',this.list,1);
+
+        this.linkedList.add('check',this.list,3);
 
         if (this.list.length <= 1) {
+            this.linkedList.add('end',this.list,5);
             return this.list;
-        }//check to see if the list is only one element long or shorter
+        }//check to see if the list is only one element or shorter
 
         for (let indexStart = 0; indexStart <= this.list.length - 1; indexStart++) {
 
+            this.linkedList.add('iterator',indexStart,11);
+
             let minIndex = null;
 
+            this.linkedList.add('minindex',minIndex,13);
+
             for (let indexIterator = indexStart; indexIterator <= this.list.length - 1; indexIterator++) {
+                
+                this.linkedList.add('comparator',minIndex,16);
+                this.linkedList.add('comparee',indexIterator,18);
+                
                 if (this.list[indexIterator] < this.list[minIndex] || minIndex === null) {
                     minIndex = indexIterator;//searching for lowest index
+                this.linkedList.add('comparator',minIndex,20);
                 }
+
             }
             let smallerNumber = this.list[indexStart];
             this.list[indexStart] = this.list[minIndex];
             this.list[minIndex] = smallerNumber;
+            this.linkedList.add('swap',minIndex,27);
         }
+
+        this.linkedList.add('end',minIndex,29);
+
         return this.list;
     }//sort
 
@@ -85,7 +103,7 @@ class Selection {
         return this.list;
     }
 
-}//done but linked list hasnt been created
+}//done but linked list hasnt been unit tested
 
 //INSERTION SORT
 
@@ -160,7 +178,7 @@ class Insertion {
         return this.list;
     }
 
-}//done but linked list hasn't been united tested
+}//done but linked list hasn't been unit tested
 
 //MERGE SORT
 
@@ -262,7 +280,6 @@ class Heap {
         return this.list;
 
     }//builds the heap so that the largest element is on top 
-    //something is either wrong here, heapify, or in sort itself
 
     heapify(index, list) {
         this.linkedList.add('comparator', index, 22);
@@ -311,7 +328,6 @@ class Heap {
 
     }//assume that we only have the top element out of place in the heap
     //goes through based on that and sorts it until it is in the correct spot
-    //something is either wrong here, heapify, or in sort itself
 
     //the sorting instance of the respective class
     sort() {
@@ -357,7 +373,7 @@ class Heap {
         this.linkedList.add('end', currentArray, 59);
         return this.list;
     }//sort
-    //something is either wrong here, heapify, or in sort itself
+    
 
     getLinkedList() {
         return this.linkedList;
@@ -367,7 +383,7 @@ class Heap {
         return this.list;
     }
 
-}//class heap, broken on a few of the test cases, also linked list hasn't been unit tested
+}//class heap linked list hasn't been unit tested
 
 //BUBBLE SORT
 
