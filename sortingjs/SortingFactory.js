@@ -374,7 +374,6 @@ class Heap {
         return this.list;
     }//sort
     
-
     getLinkedList() {
         return this.linkedList;
     }
