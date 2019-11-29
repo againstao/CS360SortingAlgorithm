@@ -287,7 +287,7 @@ class Heap {
             //swap them
             this.linkedList.add('swap', [index, leftChild], 32);
 
-            this.heapify(leftChild, list);
+            this.heapify(leftChild, this.list);
             //call heapify again but with the index for the left child since we swapped them
 
         }//swap them than call heapify again  
@@ -300,12 +300,12 @@ class Heap {
             this.list[index] = temp;
             //swap them 
             this.linkedList.add('swap', [index, rightChild], 37);
-            this.heapify(rightChild, list);
+            this.heapify(rightChild, this.list);
             //call heapify again but with the index for the right child since we swapped them
         }
 
         else {
-            return list;
+            return this.list;
         }//base case neither the left nor the right child are bigger than the current value
         //
 
@@ -335,11 +335,16 @@ class Heap {
         //while this.list still has elements in it
         while (this.list.length > 0) {
 
-            currentArray.unshift(this.list[0]);
-            //unshift function adds the max element to our currentArray 
+            let temp = this.list[0];
+            this.list[0] = this.list[this.list.length-1];
+            this.list[this.list.length-1] = temp;
+            //swap the "max" with the last element in our tree
 
-            this.list.shift();
-            //shift function removes the first element in the array,which in a heap is our max, and updates the indices and etc.
+            currentArray.unshift(this.list[this.list.length-1]);
+            //add the max to our new array
+
+            this.list.pop();
+            //remove the max from the end location
 
             this.linkedList.add('additionalarray', currentArray, 53);
 
