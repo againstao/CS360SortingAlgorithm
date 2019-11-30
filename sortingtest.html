@@ -257,6 +257,7 @@
 
 <!-- test cases to make sure the actual sort for heap works-->
 <script type="module">
+    /*
     import { Heap } from '/sortingjs/SortingFactory.js';
 
     //empty
@@ -285,5 +286,37 @@
     heapTest = new Heap([-27, 18, -10000, -696969, 42, 54, 10, 11, 99]);
 
     console.log(heapTest.sort());
+        */
+</script>
+
+<script type="module">
+    import { Quick } from '/sortingjs/SortingFactory.js';
+
+    //empty
+    let quickTest = new Quick([]);
+
+    console.log(quickTest.sort());
+
+    //one element
+    quickTest = new Quick([1]);
+
+    console.log(quickTest.sort());
+    //already sorted
+    quickTest = new Quick([1, 2, 3, 4, 5]);
+
+    console.log(quickTest.sort());
+    //sorted backwards
+    quickTest = new Quick([5, 4, 3, 2, 1]);
+
+    console.log(quickTest.sort());
+    //few unique elements
+    quickTest = new Quick([5, 5, 5, 4, 4, 1, 1, 2, 4]);
+
+    console.log(quickTest.sort());
+
+    //random
+    quickTest = new Quick([-27, 18, -10000, -696969, 42, 54, 10, 11, 99]);
+
+    console.log(quickTest.sort());
 
 </script>
