@@ -198,154 +198,44 @@
             </div>
             <!-- This marks the line between the upper sections and lower sections-->
 
-            <div class="lowerparagraph">
+            <div class="lowerselectionparagraphs">
+            <!--Everything below is the various paragraphs that will be displayed upon clicking through the different sorts-->
+                
+                <div class="lowerparagraph" id="lowerselectionparagraph">
+                    <div class = "LowerSectionTitle">See Selection Sort in Action</div>
 
-                <div class="lowersubsection" id="lowerselectionparagraph">
-                    <div class="LowerSectionTitle">See Selection Sort in action</div>
+                    <div class = "lowersubsections">
+                        <div class = "lowerleftsubsections"> 
+                        
+                            <div class = "lowerleftpicturescolmun">
+                            <div class = "lowerpictures"><img id = "selectionsortedpicture" src = "./Images/HomepageImages/sortedGraph.PNG">
+                                <div class = "lowerpicturesinfo"><strong>Sorted</strong></div>
+                            </div>
+                            <div class = "lowerpictures"><img id = "selectionfewuniquepicture" src = "./Images/HomepageImages/fewUniqueElements.PNG">
+                                <div class = "lowerpicturesinfo"><strong>Few Unique</strong></div>
+                            </div>
+                            <div class = "lowerpictures"><img id = "selectionrandompicture" src = "./Images/HomepageImages/randomData.PNG">
+                                <div class = "lowerpicturesinfo"><strong>Random</strong></div>
+                            </div>
+                            </div>
 
-                    <div class="columnsubsection Par" style="float:left">
-                        <div class="lowersectioncolumn"></div>
-                        <div class="lowersectioncolumn"><img src= "Images/HomepageImages/sortedGraph.PNG"></img></div>
-                        <div class="lowersectioncolumn"><img src="Images/HomepageImages/fewUniqueElements.PNG"></img></div>
-                        <div class="lowersectioncolumn"><img src="Images/HomepageImages/randomData.PNG"></img></div>
+                            <div class = "randominputboxes">
+                                <div class = "randominputtitle">Max Size: 20</div>
+                                <div class ="randomsizebox" id = "sortedselectionsize"><input></div>
+                                <div class = "randomsizebox" id = "fewuniqueselectionsize"><input></div>
+                                <div class="randomsizebox" id = "randomselectionsize"><input></div>
+                            </div>
+                        </div>
+                        <div class = "lowerrightsubsections">
+                            test
+                            <div><input></div>
+                        </div>
                     </div>
 
-                    <div class="columnsubsection" style="float:right">
-                        <div class="lowersectioncolumn">Input your own data</div>
-
-                        <div class="lowersectioncolumn" style="height: 170px;"><input></input></div>
-
-                    </div>
-
-                    <div class="columnsubsection" style="float:right; ">
-                        <div class="lowersectioncolumn" style="color:rgb(72,219,251);">Size <br> (Max:50)</div>
-                        <div class="lowersectioncolumn"><input style="height:25px; width:40% "></input></div>
-                        <div class="lowersectioncolumn"><input style="height:25px; width:40% "></input></div>
-                        <div class="lowersectioncolumn"><input style="height:25px; width:40% "></input></div>
-                    </div>
+                </div>
                 </div>
 
-                <div class="lowersubsection hidden" id="lowerinsertionparagraph">
-                    <div class="LowerSectionTitle">See Insertion Sort in action</div>
-                    <div class="columnsubsection" style="float:left">
-                        <div class="lowersectioncolumn"></div>
-                        <div class="lowersectioncolumn"><img src= "Images/HomepageImages/sortedGraph.PNG"></img></div>
-                        <div class="lowersectioncolumn"><img src="Images/HomepageImages/fewUniqueElements.PNG"></img></div>
-                        <div class="lowersectioncolumn"><img src="Images/HomepageImages/randomData.PNG"></img></div>
-                    </div>
-
-                    <div class="columnsubsection" style="float:right">
-                        <div class="lowersectioncolumn">Input your own data</div>
-
-                        <div class="lowersectioncolumn" style="height: 170px;"><input></input></div>
-
-                    </div>
-
-                    <div class="columnsubsection" style="float:right; ">
-                        <div class="lowersectioncolumn" style="color:rgb(72,219,251);">Size <br> (Max:50)</div>
-                        <div class="lowersectioncolumn"><input style="height:25px; width:40% "></input></div>
-                        <div class="lowersectioncolumn"><input style="height:25px; width:40% "></input></div>
-                        <div class="lowersectioncolumn"><input style="height:25px; width:40% "></input></div>
-                    </div>
-                </div>
-
-                <div class="lowersubsection hidden" id="lowermergeparagraph">
-                    <div class="LowerSectionTitle">See Merge Sort in action</div>
-                    <div class="columnsubsection" style="float:left">
-                        <div class="lowersectioncolumn"></div>
-                        <div class="lowersectioncolumn"><img src= "Images/HomepageImages/sortedGraph.PNG"></img></div>
-                        <div class="lowersectioncolumn"><img src="Images/HomepageImages/fewUniqueElements.PNG"></img></div>
-                        <div class="lowersectioncolumn"><img src="Images/HomepageImages/randomData.PNG"></img></div>
-                    </div>
-
-                    <div class="columnsubsection" style="float:right">
-                        <div class="lowersectioncolumn">Input your own data</div>
-
-                        <div class="lowersectioncolumn" style="height: 170px;"><input></input></div>
-
-                    </div>
-
-                    <div class="columnsubsection" style="float:right; ">
-                        <div class="lowersectioncolumn" style="color:rgb(72,219,251);">Size <br> (Max:50)</div>
-                        <div class="lowersectioncolumn"><input style="height:25px; width:40% "></input></div>
-                        <div class="lowersectioncolumn"><input style="height:25px; width:40% "></input></div>
-                        <div class="lowersectioncolumn"><input style="height:25px; width:40% "></input></div>
-                    </div>
-                </div>
-
-                <div class="lowersubsection hidden" id="lowerheapparagraph">
-                    <div class="LowerSectionTitle">See Heap Sort in action</div>
-                    <div class="columnsubsection" style="float:left">
-                        <div class="lowersectioncolumn"></div>
-                        <div class="lowersectioncolumn"><img src= "Images/HomepageImages/sortedGraph.PNG"></img></div>
-                        <div class="lowersectioncolumn"><img src="Images/HomepageImages/fewUniqueElements.PNG"></img></div>
-                        <div class="lowersectioncolumn"><img src="Images/HomepageImages/randomData.PNG"></img></div>
-                    </div>
-
-                    <div class="columnsubsection" style="float:right">
-                        <div class="lowersectioncolumn">Input your own data</div>
-
-                        <div class="lowersectioncolumn" style="height: 170px;"><input></input></div>
-
-                    </div>
-
-                    <div class="columnsubsection" style="float:right; ">
-                        <div class="lowersectioncolumn" style="color:rgb(72,219,251);">Size <br> (Max:50)</div>
-                        <div class="lowersectioncolumn"><input style="height:25px; width:40% "></input></div>
-                        <div class="lowersectioncolumn"><input style="height:25px; width:40% "></input></div>
-                        <div class="lowersectioncolumn"><input style="height:25px; width:40% "></input></div>
-                    </div>
-                </div>
-
-                <div class="lowersubsection hidden" id="lowerbubbleparagraph">
-                    <div class="LowerSectionTitle">See Bubble Sort in action</div>
-                    <div class="columnsubsection" style="float:left">
-                        <div class="lowersectioncolumn"></div>
-                        <div class="lowersectioncolumn"><img src= "Images/HomepageImages/sortedGraph.PNG"></img></div>
-                        <div class="lowersectioncolumn"><img src="Images/HomepageImages/fewUniqueElements.PNG"></img></div>
-                        <div class="lowersectioncolumn"><img src="Images/HomepageImages/randomData.PNG"></img></div>
-                    </div>
-
-                    <div class="columnsubsection" style="float:right">
-                        <div class="lowersectioncolumn">Input your own data</div>
-
-                        <div class="lowersectioncolumn" style="height: 170px;"><input></input></div>
-
-                    </div>
-
-                    <div class="columnsubsection" style="float:right; ">
-                        <div class="lowersectioncolumn" style="color:rgb(72,219,251);">Size <br> (Max:50)</div>
-                        <div class="lowersectioncolumn"><input style="height:25px; width:40% "></input></div>
-                        <div class="lowersectioncolumn"><input style="height:25px; width:40% "></input></div>
-                        <div class="lowersectioncolumn"><input style="height:25px; width:40% "></input></div>
-                    </div>
-                </div>
-
-                <div class="lowersubsection hidden" id="lowerquickparagraph">
-                    <div class="LowerSectionTitle">See Quick Sort in action</div>
-                    <div class="columnsubsection" style="float:left">
-                        <div class="lowersectioncolumn"></div>
-                        <div class="lowersectioncolumn"><img src= "Images/HomepageImages/sortedGraph.PNG"></img></div>
-                        <div class="lowersectioncolumn"><img src="Images/HomepageImages/fewUniqueElements.PNG"></img></div>
-                        <div class="lowersectioncolumn"><img src="Images/HomepageImages/randomData.PNG"></img></div>                    
-                    </div>
-
-                    <div class="columnsubsection" style="float:right">
-                        <div class="lowersectioncolumn">Input your own data</div>
-
-                        <div class="lowersectioncolumn" style="height: 170px;"><input></input></div>
-
-                    </div>
-
-                    <div class="columnsubsection" style="float:right; ">
-                        <div class="lowersectioncolumn" style="color:rgb(72,219,251);">Size <br> (Max:50)</div>
-                        <div class="lowersectioncolumn"><input style="height:25px; width:40% "></input></div>
-                        <div class="lowersectioncolumn"><input style="height:25px; width:40% "></input></div>
-                        <div class="lowersectioncolumn"><input style="height:25px; width:40% "></input></div>
-                    </div>
-                </div>
-
-            </div>
+        </div>
 
     </section>
     <!--mainsection-->

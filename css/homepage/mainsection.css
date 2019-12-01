@@ -1,5 +1,5 @@
 .mainsection{
-    /*style for the main section*/
+    /*style for the main section as a whole*/
     display: flex;
     margin: 40px 10% 0px 10%;
     padding: 0;
@@ -9,11 +9,9 @@
 .selectionbars{
     /*style for all selection bars as a whole*/
     flex:0;
-   /* old style change it if you think it looks better.
     background: linear-gradient(rgb(72,219,251),rgb(36,110,125) );
-    */
-    background: rgb(50,170,190);
 }
+
 .mainsectionselectionbars {
      /*style for the indiviual buttons for the different sorting items in the list of sorts*/
      font-size: x-large;
@@ -31,11 +29,10 @@
      flex: 1;
      padding: 0px 0px 60px 0px;
      line-height: 100px;
-     
-    
 }
 
 .mainsectionselectionbars:hover {
+    /*style for the hover effect on the buttons*/
     transform: scale(1.075);
     background: rgb(72,219,251);
     border: none;
@@ -50,29 +47,18 @@
     border: 5px solid white;
 }
 
-
 .paragraphs {
-    /*style for paragraph section as a whole*/
+    /*style for upper and lower paragraph section as a whole*/
     display: flex;
     flex-direction: column;
     border-right: solid white;
     width:90%;
 }
 
-.columnsubsection{
-    width:33.33%
-    
+/*all unique the upper pargraph styling*/
 
-}
-.lowersectioncolumn {
-    height: 50px;
-    display: flex;
-    padding: 10px;
-    text-align: center;
-    
-
-}
 .upperselectionparagraphs {
+    /*style for the upperparagraphs as a whole*/
     border-top: solid white;
     flex:1;
     padding: 0px;
@@ -81,6 +67,7 @@
     display: flex;
     flex-direction: column;
     height: 57px;
+    
 }
 
 .uppersubsection{
@@ -93,39 +80,114 @@
 
 }
 
-.lowersubsection{
-    /*all the different lower paragraphs on the main page*/
-    font-size: 120%;
-    margin-left: 20px;
-    margin-right: 20px;
-    flex: 1;
-    width: auto;
-    padding:15px;
+.UpperSectionTitle {
+    /*REMEMBER TO COME BACK TO THIS YOU IDIOTS. also... spacing issue*/
+    text-decoration: underline;
+    font-size: x-large;
+    margin: 15px 0px 0px 0px;
+    height: 57px;
 }
 
+.Steps li {
+    /*Changes the li's to not have the bullet points*/
+    list-style-type: none;
+}
+/*End of the unique upper pargraph styling*/
+
+/*all unique lower paragraph styling*/
+
+.lowerselectionparagraphs{
+    /*all the lower paragraphs on the main page*/
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    width: auto;
+    border-top: solid white;
+}
+
+.lowerparagraph {
+    /*styling for the individual lower paragraphs*/
+    flex: 1;
+    padding: 0px;
+    margin: 15px;
+    width: auto;
+}
+ 
+.LowerSectionTitle {
+    /*lower paragraph section title*/
+    text-decoration: underline;
+    font-size: x-large;
+    flex: 1;
+    padding: 0px 0px 10px 0px;
+}
+
+.lowersubsections {
+    /*style for everything below the title in the lower section*/
+    flex: 1;
+    display:flex;
+    flex-direction: row;
+}
+
+.lowerleftsubsections{
+    flex: 1;
+    display:flex;
+    flex-direction: row;
+}
+
+.lowerleftpicturescolmun{
+    flex:1;
+ 
+}
+
+.lowerpictures{
+    flex: 1;
+    padding: 13px;
+}
+
+.lowerpicturesinfo{
+    flex: 1;
+    text-align: center;
+    font-size: 12pt;
+    width: max-content;
+}
+
+.randominputboxes{
+    flex:20;
+    text-align: center;
+    background: chartreuse;
+    display: flex;
+    flex-direction: column;
+}
+
+.lowerrightsubsections{
+    flex:1;
+    background: purple;
+}
+
+/*common styling shared by multiple sections*/
 .hidden{
     display: none;
 }
 
-.lowerparagraph {
-    border-top: solid white;
-    flex: 1;
-    padding: 0px;
-    width: auto;
+.ParOverflow {
+    overflow: auto; 
+    height: 245px;
 }
 
-.selectionbars a{
-    /*styles the selection bar links so that their not in hyper link form*/
+.vertical-center {
+    margin: 0;
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+/*everything below here is simnply a reference it is not actually doing anything on the main page*/
+.something a{
+    /*styles links so that their not in hyper link form*/
     text-decoration:none;
     color: black;
 }
-
-a:hover{
-/*controls the style for the selection bar links when clicked*/
-    width: 250px;
-    height: 125px;
-}
-
 
 .test {
     /*let this be an example of how to dynamically size a section*/
@@ -142,33 +204,6 @@ a:hover{
     max-width: 1000px;
 }
 
-.UpperSectionTitle {
-    /*REMEMBER TO COME BACK TO THIS YOU IDIOTS. also... spacing issue*/
-    text-decoration: underline;
-    font-size: x-large;
-    margin: 15px 0px 0px 0px;
-    height: 57px;
-}
 
-.LowerSectionTitle {
-    /*REMEMBER TO COME BACK TO THIS YOU IDIOTS. also... spacing issue*/
-    text-decoration: underline;
-    font-size: x-large;
-    margin: 15px 0px 0px 0px;
-}
 
-.Steps li {
-    /*Changes the li's to not have the bullet points*/
-    list-style-type: none;
-}
-
-.MethodTitle {
-    margin: 0px;
-    padding: 0px;
-}
- 
-.ParOverflow {
-    overflow: auto; 
-    height: 245px;
-}
 /*resource for the two column setup https://www.w3schools.com/howto/howto_css_two_columns.asp*/
