@@ -38,9 +38,6 @@ class SortingFactory {
     }//in a programming since a factory is just an object that creates
     //or manufactures different objects
 
-
-
-
 }//sorting factory
 
 //all the different instances of our objects
