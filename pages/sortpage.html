@@ -19,9 +19,10 @@
     -->
 
 <!--this is essentially all the background stuff the user doesn’t need to see-->
+
 <head>
     <title>SMS: Sorting Made Simple</title>
-    
+
     <!--links pulls in css page(s)-->
     <link rel="stylesheet" type="text/css" href="../css/navmenu.css">
     <link rel="stylesheet" type="text/css" href="../css/body.css">
@@ -31,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../css/sortpage/introsection.css">
     <link rel="stylesheet" type="text/css" href="../css/sortpage/pullupbar.css">
 
-    
+
     <link rel="stylesheet" type="text/css" href="../sortingjs/style.css">
     <!-- <script src="../sortingjs/sortdisplay.js" type="module"></script> -->
     <!-- <script src="../sortingjs/sorts.js" type="module"></script> -->
@@ -52,31 +53,33 @@
 </head>
 
 <!--body is what the user will see and interact with-->
+
 <body>
-    
+
     <!--navagation menu-->
-    <header class ="navmenu">
+    <header class="navmenu">
         <nav>
-            <div><a href = "../">Home</a></div>
-            <div id = "navSelection"><a href="sortpage.html?sort=selection">
-                Selection</a></div>
-            <div id = "navInsertion"><a href="sortpage.html?sort=insertion">
-                Insertion</a></div>
-            <div id = "navMerge"><a href="sortpage.html?sort=merge">
-                Merge</a></div>
-            <div id = "navHeap"><a href="sortpage.html?sort=heap">
-                Heap</a></div>
-            <div id = "navBubble"><a href="sortpage.html?sort=bubble">
-                Bubble</a></div>
-            <div id = "navQuick"><a href="sortpage.html?sort=quick">
-                Quick</a></div>
+            <div><a href="../">Home</a></div>
+            <div id="navSelection"><a href="sortpage.html?sort=selection">
+                    Selection</a></div>
+            <div id="navInsertion"><a href="sortpage.html?sort=insertion">
+                    Insertion</a></div>
+            <div id="navMerge"><a href="sortpage.html?sort=merge">
+                    Merge</a></div>
+            <div id="navHeap"><a href="sortpage.html?sort=heap">
+                    Heap</a></div>
+            <div id="navBubble"><a href="sortpage.html?sort=bubble">
+                    Bubble</a></div>
+            <div id="navQuick"><a href="sortpage.html?sort=quick">
+                    Quick</a></div>
         </nav>
     </header>
-     
+
 
     <!--title of the sorting being played along with the buttons that stop, rewind, pause and resume-->
-    <section class = "introsection">
-        <div class = "sortingname" id="defaultsort"><h1 >Default Sort</h1>
+    <section class="introsection">
+        <div class="sortingname" id="defaultsort">
+            <h1>Default Sort</h1>
             <script>
                 let sortName = document.getElementById('defaultsort');
                 sortName.innerHTML = GetURLParameter('sort')
@@ -100,21 +103,21 @@
                         sortName.innerHTML = "QuickSort";
                         break;
                 }
-                
+
             </script>
         </div>
-            
+
         <div class="playbar">
-            <button class="playoptions" id="play_restart" type = "button">&lt;&lt;</button>
-            <button class="playoptions" id="play_back" type = "button">&lt;</button>
-            <button class ="playoptions" id = "play_play" type = "button">&#9658</button>
-            <button class="playoptions" id="play_pause" type = "button">&#10074&#10074</button>
-            <button class="playoptions" id="play_next" type = "button">&gt;</button>
+            <button class="playoptions" id="play_restart" type="button">&lt;&lt;</button>
+            <button class="playoptions" id="play_back" type="button">&lt;</button>
+            <button class="playoptions" id="play_play" type="button">&#9658</button>
+            <button class="playoptions" id="play_pause" type="button">&#10074&#10074</button>
+            <button class="playoptions" id="play_next" type="button">&gt;</button>
         </div>
-    </section> 
-    
+    </section>
+
     <!--this section is the section that will contain the actual animation portion of the website-->
-    <section class = "sortsection">
+    <section class="sortsection">
         <div class="sortanimation" id="animate">This div will get targeted by the JS</div>
     </section>
 
@@ -140,142 +143,109 @@
         <div>blah blah blah</div>
         <div>blah blah blah</div>
         <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-
     </section>
 
     <!-- we need a pullup down here -->
-    
-    <section class = "pullupbar" id = "pullupbar"> <!--GOTTA GET THOSE GAINS BROOOOOO!!!!-->
-        
-        <div class = "pulloutbutton">
-            <img src="../Images/SortpageImages/Slide Up Button.svg" class = "pulloutbuttonimg" id="pulloutbuttonimg">
-            <img src="../Images/SortpageImages/Slide Up Button.svg" class = "pushinbuttonimg" id="pushinbuttonimg">
+
+    <section class="pullupbar" id="pullupbar">
+        <!--GOTTA GET THOSE GAINS BROOOOOO!!!!-->
+
+        <div class="pulloutbutton">
+            <img src="../Images/SortpageImages/Slide Up Button.svg" class="pulloutbuttonimg" id="pulloutbuttonimg">
+            <img src="../Images/SortpageImages/Slide Up Button.svg" class="pushinbuttonimg" id="pushinbuttonimg">
         </div>
 
-        <div class = "pullupbartitlesection">
-                <div class = "pullupbarexplanationheader"><strong>Explanation</strong></div>
-                <div class = "pullupbarjavaheader"><strong>Java Code</strong></div>
+        <div class="pullupbartitlesection">
+            <div class="pullupbarexplanationheader"><strong>Explanation</strong></div>
+            <div class="pullupbarjavaheader"><strong>Java Code</strong></div>
         </div>
 
-        <div class = "pullupbarsection" id = "pullupbarsection">
+        <div class="pullupbarsection" id="pullupbarsection">
             <!--Here is the sections that will contain all of the sorting explaination-->
-            
-            <div class = "explanationsection" id = "explanationsection">
-                <div class = "explainPara" id = "selectionParagraph">
+
+            <div class="explanationsection" id="explanationsection">
+                
+                <div class="explainPara" id="selectionParagraph">
                     <!--This is for the Selection Sort-->
-                    <ul class = "explainSelection">
+                    <ul class="explainSelection">
                         <li><u>Step 1:</u> Declare and fill an array</li><br>
                         <li><u>Step 2:</u> Split array into two subarrays</li><br>
                         <li><u>Step 3:</u> recursively sort both subarrays using comparisons</li><br>
                         <li><u>Step 4:</u> Get the smaller elements from the subarrays</li><br>
                         <li><u>Step 5:</u> Copy remainder from both arrays if there are any</li><br>
-                        <li><u>Step 6:</u> Copy the results back into the original array, producing a sorted array</li><br>
+                        <li><u>Step 6:</u> Copy the results back into the original array, producing a sorted array</li>
+                        <br>
                     </ul>
-                </div> 
+                </div>
                 <!--This is for the Insertion Sort-->
-                <div class = "explainPara Hidden" id = "insertionParagraph">
-                    <ul class = "explainInsertion">
+                <div class="explainPara hidden" id="insertionParagraph">
+                    <ul class="explainInsertion">
                         <li><u>Step 1:</u> Declare and fill an array</li><br>
                         <li><u>Step 2:</u> An element is selected and becomes the pivot element</li><br>
-                        <li><u>Step 4:</u> All elements smaller than the pivot are moved forward and the larger elements are moved backwards</li><br>
+                        <li><u>Step 4:</u> All elements smaller than the pivot are moved forward and the larger elements
+                            are moved backwards</li><br>
                         <li><u>Step 4:</u> Recursively go through steps 2 and 3 until all subarrays are sorted</li><br>
                         <li><u>Step 5:</u> Merge all subarrays into one array to get one fully sorted array</li><br>
                     </ul>
                 </div>
                 <!--This is for the Merge Sort-->
-                <div class = "explainPara Hidden" id = "mergeParagraph">
-                        <ul class = "explainMerge">
-                            <li><u>Step 1:</u> Declare and fill an array</li><br>
-                            <li><u>Step 2:</u> Split array into two subarrays</li><br>
-                            <li><u>Step 3:</u> Recursively sort both subarrays using comparisons</li><br>
-                            <li><u>Step 4:</u> Get the smaller elements from the subarrays</li><br>
-                            <li><u>Step 5:</u> Copy remainder from both arrays if there are any</li><br>
-                            <li><u>Step 6:</u> Copy the results back into the original array, producing a sorted array</li><br>
-                        </ul>
-                    </div>
-                <!--This is for the Heap Sort-->
-                <div class = "explainPara Hidden" id = "heapParagraph">
-                        <ul class = "explainHeap">
-                            <li><u>Step 1:</u> Declare and fill array with elements</li><br>
-                            <li><u>Step 2:</u> Pull out largest element in unsorted section</li><br>
-                            <li><u>Step 3:</u> Compare pulled element to the sorted section and place it at the end</li><br>
-                            <li><u>Step 4:</u> Place each unordered element into sorted list to create a new ordered list</li><br>
-                        </ul>
-                    </div>
-                <!--This is for the Bubble Sort-->
-                <div class = "explainPara Hidden" id = "bubbleParagraph">
-                        <ul class = "explainBubble">
-                            <li><u>Step 1:</u> Declare and fill the array</li><br>
-                            <li><u>Step 2:</u> Within the for loop, compare the first two elements</li><br>
-                            <li><u>Step 3:</u> Swap the elements if they are out of order</li><br>
-                            <li><u>Step 4:</u> Repeat steps 2 and 3 through the entire array until the array is sorted fully</li><br>
-                        </ul>
-                    </div>
-                <!--This is for the Quick Sort-->
-                <div class = "explainPara Hidden" id = "quickParagraph">
-                        <ul class = "explainQuick">
-                            <li><u>Step 1:</u> Declare and fill an array</li><br>
-                            <li><u>Step 2:</u> An element is selected and becomes the pivot element</li><br>
-                            <li><u>Step 3:</u> All elements smaller than the pivot are moved forward and the larger elements are moved backwards</li><br>
-                            <li><u>Step 4:</u> Recursively go through steps 2 and 3 until all subarrays are sorted</li><br>
-                            <li><u>Step 5:</u> Merge all subarrays into one array to get one fully sorted array</li><br>
-                        </ul>
-                    </div>       
-                    <script>
-                        let explainPara = document.getElementById('paragraph');
-                        explainPara.innerHTML = GetURLParameter('sort')
-                        switch (explainPara.innerHTML) {
-                            case "selection":
-                                explainPara.innerHTML = showExplaination;
-                                break;
-                            case "insertion":
-                                explainPara.innerHTML = showExplaination;
-                                break;
-                            case "merge":
-                                explainPara.innerHTML = showExplaination;
-                                break;
-                            case "heap":
-                                explainPara.innerHTML = showExplaination;
-                                break;
-                            case "bubble":
-                                explainPara.innerHTML = showExplaination;
-                                break;
-                            case "quick":
-                                explainPara.innerHTML = showExplaination;
-                                break;
-                        }
-                    </script>
+                <div class="explainPara hidden" id="mergeParagraph">
+                    <ul class="explainMerge">
+                        <li><u>Step 1:</u> Declare and fill an array</li><br>
+                        <li><u>Step 2:</u> Split array into two subarrays</li><br>
+                        <li><u>Step 3:</u> Recursively sort both subarrays using comparisons</li><br>
+                        <li><u>Step 4:</u> Get the smaller elements from the subarrays</li><br>
+                        <li><u>Step 5:</u> Copy remainder from both arrays if there are any</li><br>
+                        <li><u>Step 6:</u> Copy the results back into the original array, producing a sorted array</li>
+                        <br>
+                    </ul>
                 </div>
+                <!--This is for the Heap Sort-->
+                <div class="explainPara hidden" id="heapParagraph">
+                    <ul class="explainHeap">
+                        <li><u>Step 1:</u> Declare and fill array with elements</li><br>
+                        <li><u>Step 2:</u> Pull out largest element in unsorted section</li><br>
+                        <li><u>Step 3:</u> Compare pulled element to the sorted section and place it at the end</li><br>
+                        <li><u>Step 4:</u> Place each unordered element into sorted list to create a new ordered list
+                        </li><br>
+                    </ul>
+                </div>
+                <!--This is for the Bubble Sort-->
+                <div class="explainPara hidden" id="bubbleParagraph">
+                    <ul class="explainBubble">
+                        <li><u>Step 1:</u> Declare and fill the array</li><br>
+                        <li><u>Step 2:</u> Within the for loop, compare the first two elements</li><br>
+                        <li><u>Step 3:</u> Swap the elements if they are out of order</li><br>
+                        <li><u>Step 4:</u> Repeat steps 2 and 3 through the entire array until the array is sorted fully
+                        </li><br>
+                    </ul>
+                </div>
+                <!--This is for the Quick Sort-->
+                <div class="explainPara hidden" id="quickParagraph">
+                    <ul class="explainQuick">
+                        <li><u>Step 1:</u> Declare and fill an array</li><br>
+                        <li><u>Step 2:</u> An element is selected and becomes the pivot element</li><br>
+                        <li><u>Step 3:</u> All elements smaller than the pivot are moved forward and the larger elements
+                            are moved backwards</li><br>
+                        <li><u>Step 4:</u> Recursively go through steps 2 and 3 until all subarrays are sorted</li><br>
+                        <li><u>Step 5:</u> Merge all subarrays into one array to get one fully sorted array</li><br>
+                    </ul>
+                </div>
+               
             </div>
-            
-                
-            
-            <div class = "javasection" id="javasection"></div>
+
+        
+
+        <script src = "/generaljs/explainPara.js"></script>
+
+        <div class="javasection" id="javasection"></div>
             
         </div>
 
+    </div>
 
     </section>
-    
+
     <script>
         /*declare variables*/
 
@@ -284,16 +254,16 @@
         var expandpulloutbarsections = document.getElementById('pullupbarsection'); //the two sections as a whole
         var expandexplanationsection = document.getElementById('explanationsection'); //the explanation section
         var expandjavasection = document.getElementById('javasection'); //the java section
-        
+
         /*varaibles for swapping out the buttons*/
-        var hidepulloutbutton =  document.getElementById('pulloutbuttonimg');
+        var hidepulloutbutton = document.getElementById('pulloutbuttonimg');
         var showpulloutbutton = document.getElementById('pulloutbuttonimg');
         var hidepushinbutton = document.getElementById('pushinbuttonimg');
         var showpushinbutton = document.getElementById('pushinbuttonimg');
 
         /*this is basically saying that when the pulloutbutton is clicked do the following function*/
-        document.getElementById('pulloutbuttonimg').addEventListener('click', function() {
-            
+        document.getElementById('pulloutbuttonimg').addEventListener('click', function () {
+
             expandpulloutdisplay.classList.add('expandpullupbarsection');
             expandexplanationsection.classList.add('expandexplanationsection');
             expandjavasection.classList.add('expandjavasection');
@@ -302,9 +272,9 @@
             /*this changes out the buttons so that the user can close the menu again*/
             showpushinbutton.classList.add('revalpushinbutton');
         })
-        
-        document.getElementById('pushinbuttonimg').addEventListener('click', function() {
-            
+
+        document.getElementById('pushinbuttonimg').addEventListener('click', function () {
+
             expandpulloutdisplay.classList.remove('expandpullupbar');
             expandpulloutdisplay.classList.remove('expandpullupbarsection');
             expandexplanationsection.classList.remove('expandexplanationsection');
@@ -323,15 +293,15 @@
 
         // let animDiv = document.getElementById('animate');
         // console.log(animDiv);
-        
+
         let sortParam = GetURLParameter('sort');
         let sd = new SortFactory();
-        let sort = sd.createSort(sortParam, [1,2,3,4,5], 'animate', 'javasection');
-        if(!sort) { // sort doesn't exist
+        let sort = sd.createSort(sortParam, [1, 2, 3, 4, 5], 'animate', 'javasection');
+        if (!sort) { // sort doesn't exist
             document.getElementById('animate').innerHTML = "Oops! You forgot to specify a sorting type!";
         } else { // sort was successfully created
             // time to hook up the sort's functions!
-            let tmp = function() { console.log('tadaa onclick works'); }
+            let tmp = function () { console.log('tadaa onclick works'); }
             document.getElementById('play_restart').onclick = tmp;
         }
     </script>

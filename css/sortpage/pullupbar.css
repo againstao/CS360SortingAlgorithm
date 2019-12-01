@@ -51,9 +51,9 @@
     /*settings for the explanation section*/
     padding: 5px 0px 5px 10px;
     flex:2;
-   
-   
 }
+
+
 
 .expandexplanationsection {
     height: +300px;
@@ -100,4 +100,8 @@
 .revalpushinbutton  {
     display: inline;
     flex:auto;
+}
+
+.hidden {
+    display:none;
 }
