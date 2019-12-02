@@ -105,3 +105,8 @@
 .hidden {
     display:none;
 }
+
+.ParOverflow {
+    overflow: auto; 
+    height: 245px;
+}
