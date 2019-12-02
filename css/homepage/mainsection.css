@@ -151,17 +151,31 @@
     width: max-content;
 }
 
+.homepageinputboxes_right{
+    height:230px;
+}
+
+.homepageinputboxes_left{
+    height:80%;
+}
+
+.randomsizebox {
+    height:33.33%;
+}
+
 .randominputboxes{
     flex:20;
     text-align: center;
-    background: chartreuse;
     display: flex;
     flex-direction: column;
+    
 }
 
 .lowerrightsubsections{
     flex:1;
-    background: purple;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 /*common styling shared by multiple sections*/
