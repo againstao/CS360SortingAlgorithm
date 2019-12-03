@@ -80,17 +80,19 @@ class Selection {
                 
                 if (this.list[indexIterator] < this.list[minIndex] || minIndex === null) {
                     minIndex = indexIterator;//searching for lowest index
-                this.linkedList.add('comparator',minIndex,20);
+                
                 }
+                this.linkedList.add('comparator',minIndex,20);
 
             }
             let smallerNumber = this.list[indexStart];
             this.list[indexStart] = this.list[minIndex];
             this.list[minIndex] = smallerNumber;
-            this.linkedList.add('swap',minIndex,27);
+            this.linkedList.add('swap',[minIndex,indexStart],27);
+            
         }
 
-        this.linkedList.add('end',minIndex,29);
+       // this.linkedList.add('end',minIndex,29);
 
         return this.list;
     }//sort
