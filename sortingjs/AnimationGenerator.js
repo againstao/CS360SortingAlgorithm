@@ -16,6 +16,11 @@ class AnimationGenerator {
 
     //
     start() {
+
+        if(this.timer !== 'undefined') {
+            return
+        }//check to see if start is already active
+
         this.timer = setInterval(() => {
             this.nextStep();
             if(this.isAtEnd()) {
