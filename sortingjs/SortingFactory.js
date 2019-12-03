@@ -36,6 +36,7 @@ class SortingFactory {
                 break;
         }
 
+
     }//in a programming since a factory is just an object that creates
     //or manufactures different objects
 
@@ -55,12 +56,12 @@ class Selection {
 
     //the sorting instance of the respective class
     sort() {
-        this.linkedList.add('start',this.list,1);
+        this.linkedList.add('start',this.list.slice(),1);
 
-        this.linkedList.add('check',this.list,3);
+        this.linkedList.add('check',this.list.slice(),3);
 
         if (this.list.length <= 1) {
-            this.linkedList.add('end',this.list,5);
+            this.linkedList.add('end',this.list.slice(),5);
             return this.list;
         }//check to see if the list is only one element or shorter
 
@@ -118,7 +119,7 @@ class Insertion {
     //the sorting instance of the respective class, this generates everything from step 1 to step x
     sort() {
 
-        this.linkedList.add('start', this.list, 1);
+        this.linkedList.add('start', this.list.slice(), 1);
         //save the event, the data that involves this event, and the line of JS
 
         this.linkedList.add('check', this.list.length, 5);
@@ -246,7 +247,7 @@ class Heap {
             return this.list;
         }//check
 
-        this.linkedList.add('check', this.list, 3);
+        this.linkedList.add('check', this.list.slice(), 3);
 
         for (let indexIterator = 0; indexIterator <= this.list.length - 1; indexIterator++) {
 
@@ -331,15 +332,15 @@ class Heap {
 
     //the sorting instance of the respective class
     sort() {
-        this.linkedList.add('start', this.list, 1);
+        this.linkedList.add('start', this.list.slice(), 1);
 
         this.list = this.buildMaxHeap();
         //build the heap, check if the array size is <= 1 is done there so didnt include it here
 
-        this.linkedList.add('check', this.list, 41);
+        this.linkedList.add('check', this.list.slice(), 41);
 
         if (this.list.length <= 1) {
-            this.linkedList.add('end', this.list, 44);
+            this.linkedList.add('end', this.list.slice(), 44);
             return this.list;
         }
         //check if the array size is less than our equal to 1
@@ -396,7 +397,7 @@ class Bubble {
 
     //the sorting instance of the respective class
     sort() {
-        this.linkedList.add('start', this.list, 1);
+        this.linkedList.add('start', this.list.slice(), 1);
         //save the event, the data for that event, and the line of javascript code
 
         if (this.list.length <= 1) {
