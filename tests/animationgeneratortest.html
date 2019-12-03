@@ -32,13 +32,18 @@
     console.log('in test');
     let generator = new AnimationGenerator(
         "insertion",
-        [1,3,2,4,3,5],
+        [10,1,3,2,4,3,5],
         ["public static","blah","    int i = 3;","}"],
         "targetdiv",
         "javadiv"
     );
+    console.log(generator);
 
     setTimeout(() => {
-        disp.swapElements(1,2);
+        generator.nextStep();
+        generator.nextStep();
+        generator.nextStep();
+        generator.nextStep();
     }, 800);
+
 </script>

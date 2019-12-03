@@ -29,6 +29,10 @@ class BarDisplay {
 
     //TODO functions for swapping, indicator divs, set explanation, etc.
 
+    resetElements() {
+        //TODO
+    }
+
     // swap the elements on-screen
     swapElements(ind1, ind2) {
         console.log('swapping ' + ind1 + ' and ' + ind2);

@@ -3,9 +3,10 @@ import { actionSwapIndices } from "./sortdisplay.js";
 export { SortingFactory, Insertion, Bubble, Selection, Merge, Quick, Heap }
 class SortingFactory {
     constructor(type, list) {
-        this.create = sortingInstance(type, list);
+        let listcopy = list.slice(); // copy the list in memory
+        this.create = this.sortingInstance(type, listcopy);
         //returns an object of sort based off the type and list
-        this.unsortedList = this.create.getList();
+        this.unsortedList = list;
         //gets the unsorted list
         this.sortedList = this.create.sort();
         //returns the final sorted array when it is sorted
