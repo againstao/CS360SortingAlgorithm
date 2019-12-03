@@ -7,15 +7,20 @@ class AnimationGenerator {
 
     constructor (type, list, javaCode, targetDivID, javaDivID) {
         this.sortingObj = new SortingFactory(type, list);
-        this.initList = this.sortingObj.unsortedList;
+        this.initList = this.sortingObj.unsortedList.slice();
         this.record = this.sortingObj.recordOfSort;
         this.displayObj = new BarDisplay(this.initList, javaCode, targetDivID, javaDivID);
+        this.timing = 1000;
+        this.timer = 'undefined';
     }
 
     //
     start() {
         this.timer = setInterval(() => {
             this.nextStep();
+            if(this.isAtEnd()) {
+                this.pause();
+            }
         }, this.timing);
     }
     pause() {
@@ -26,6 +31,10 @@ class AnimationGenerator {
     }
     restart() {
         this.record.goToStart();
+        console.log(this.initList);
+        this.displayObj.resetElements(this.initList);
+        this.displayObj.hideAllIndicators();
+        // this.nextStep();
     }
 
     currentlyAuto() {
@@ -39,16 +48,48 @@ class AnimationGenerator {
             this.start();
         }
     }
+    isAtEnd() {
+        return this.record.isAtEnd();
+    }
 
     nextStep() {
-        let action = this.record.goForward();
-        console.log(action);
-        // handleAction(action);
+        let actionNode = this.record.goForward();
+        console.log(actionNode);
+        this._handleAction(actionNode);
     }
     prevStep() {
-        let action = this.record.goPrev();
-        console.log(action);
-        // handleActionReverse(action);
+        let actionNode = this.record.goPrev();
+        console.log(actionNode);
+        this._handleActionReverse(actionNode);
+    }
+
+
+    // Stuff that actually interprets the action and calls the relevant functions on the display because of it
+
+    _handleAction(actionNode) {
+        switch(actionNode.event) {
+            // "start" event
+            case "start":
+                this.displayObj.resetElements(actionNode.data);
+                break;
+            // "comparator" event
+            case "comparator":
+                this.displayObj.setIndicator('comparator', actionNode.data);
+                break;
+            case "comparee":
+                this.displayObj.setIndicator('comparee', actionNode.data);
+                break;
+            // case "compare":
+            //     this.displayObj.setIndicator('comparee', actionNode.data[0]);
+            //     this.displayObj.setIndicator('comparator', actionNode.data[1]);
+            //     break;
+            case "swap":
+                this.displayObj.swapElements(actionNode.data[0], actionNode.data[1]);
+                break;
+            default:
+                console.error("Uh oh! unknown event type \""+actionNode.event+"\"");
+                break;
+        }
     }
 
 }

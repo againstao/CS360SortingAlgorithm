@@ -118,31 +118,7 @@
 
     <!--this section is the section that will contain the actual animation portion of the website-->
     <section class="sortsection">
-        <div class="sortanimation" id="animate">This div will get targeted by the JS</div>
-    </section>
-
-
-    <section>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
-        <div>blah blah blah</div>
+        <div class="sortanimation" id="animate"></div>
     </section>
 
     <!-- we need a pullup down here -->
@@ -301,6 +277,29 @@
     <!-- DOES THE INITIALIZATION & ATTACHMENT OF THE JS SORTER -->
     <script type="module">
         console.log('module load test msg :D');
+        import { AnimationGenerator } from "../sortingjs/AnimationGenerator.js";
+
+        let sortParam = GetURLParameter('sort');
+        if (!sortParam) { // sort doesn't exist
+            document.getElementById('animate').innerHTML = "Oops! You forgot to specify a sorting type!";
+        } else { // sort was specified
+            let generator = new AnimationGenerator(sortParam, [10,1,7,4,5,4,3],
+            ["code", "more code"], 'animate', 'javasection');
+            //time to hook up the sort's functions!
+            // let tmp = function () { console.log('tadaa onclick works'); }
+            // document.getElementById('play_restart').onclick = tmp;
+            // generator.start();
+            generator.setTiming(650);
+            document.getElementById('play_restart').onclick = function() { generator.restart() };
+            document.getElementById('play_back').onclick = function() { generator.prevStep() };
+            document.getElementById('play_play').onclick = function() { generator.start() };
+            document.getElementById('play_pause').onclick = function() { generator.pause() };
+            document.getElementById('play_next').onclick = function() { generator.nextStep() };
+        }
+    </script>
+    <!-- old one here -->
+    <!-- <script type="module">
+        console.log('module load test msg :D');
         import { SortFactory } from "../sortingjs/sorts.js";
 
         // let animDiv = document.getElementById('animate');
@@ -316,7 +315,7 @@
             let tmp = function () { console.log('tadaa onclick works'); }
             document.getElementById('play_restart').onclick = tmp;
         }
-    </script>
+    </script> -->
 
     <!-- TESTING JAVA CODE AREA STUFF -->
     <!-- <style>

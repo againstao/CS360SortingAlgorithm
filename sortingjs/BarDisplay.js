@@ -5,17 +5,26 @@ class BarDisplay {
 
     constructor (initarray, javaCode, targetDivID, javaDivID/*, explainDivID*/) {
         this.javaCode = javaCode.slice(); // effectively clones the list (for new reference purposes)
-        // this.actionQueue = actionQueue;
+        this.targetDiv = document.getElementById(targetDivID);
+        this.javaDiv = document.getElementById(javaDivID);
+        // this.explainDiv = document.getElementById(explainDivID);
+        this.resetElements(initarray.slice());
+        this.javaDivs = [];
+        this.indDivs = {};
+        
+        // populate javaDiv
+        populateJavaCode(this);
+    }
+
+    //TODO functions for swapping, indicator divs, set explanation, etc.
+
+    resetElements(initarray) {
+        this._emptyTargetDiv();
         this.elems = initarray.slice(); // effectively clones the list (for new reference purposes)
         this.minElem = arrayMin(this.elems);
         this.maxElem = arrayMax(this.elems);
         this.elemRange = this.maxElem - this.minElem;
-        this.targetDiv = document.getElementById(targetDivID);
-        this.javaDiv = document.getElementById(javaDivID);
-        // this.explainDiv = document.getElementById(explainDivID);
         this.elemDivs = [];
-        this.javaDivs = [];
-        this.indDivs = {};
         // populate targetDiv using elems
         this.targetDiv.classList.add('sdparent'); // setup parent div
         for (let i = 0; i < this.elems.length; i++) {
@@ -23,14 +32,6 @@ class BarDisplay {
             this.targetDiv.appendChild(div);
             this.elemDivs.push(div);
         }
-        // populate javaDiv
-        populateJavaCode(this);
-    }
-
-    //TODO functions for swapping, indicator divs, set explanation, etc.
-
-    resetElements() {
-        //TODO
     }
 
     // swap the elements on-screen
@@ -117,16 +118,24 @@ class BarDisplay {
 
     // CLEANUP the display when releasing resources. Preferably call this if you're getting rid of the display.
     cleanup() {
-
+        this._cleanupList();
+        this._cleanupIndics();
+        this._cleanupJava();
     }
 
     // just some utilities for this; don't call these publicly
     _cleanupList() {
+        this._emptyTargetDiv();
+        delete this.elemDivs;
+        delete this.targetDiv;
+    }
+    _emptyTargetDiv() {
+        if(typeof(this.elemDivs) === 'undefined') {
+            return;
+        }
         this.elemDivs.forEach(div => {
             this.targetDiv.removeChild(div);
         });
-        delete this.elemDivs;
-        delete this.targetDiv;
     }
     _cleanupIndics() {
 
