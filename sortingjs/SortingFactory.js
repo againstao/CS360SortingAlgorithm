@@ -416,7 +416,7 @@ class Bubble {
 
                 this.linkedList.add('comparator', index, 5);
                 //save the event, the data for that event, and the line of javascript code
-                this.linkedList.add('comparee', index, 5);
+                this.linkedList.add('comparee', index+1, 5);
                 //save the event, the data for that event, and the line of javascript code
 
                 if (this.list[index] > this.list[index + 1]) {
