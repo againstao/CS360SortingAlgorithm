@@ -10,9 +10,9 @@
             /* Centering and such */
             margin: auto;
             width: 70%;
-            height: 300px;
+            height: 100px;
             /* Looks */
-            border: 1px solid red;
+            border: 5px solid red;
             /* background-color: lightgray; */
         }
     </style>
@@ -29,7 +29,13 @@
 <!-- <script type = "module">
     import { BarDisplay } from '../sortingjs/BarDisplay.js';
     console.log('in test');
-    let disp = new BarDisplay([1,3,2,4,3,5],["public static","blah"],"target","java","expl");
+    let disp = new BarDisplay(
+        [1,3,2,4,3,5],
+        ["public static","blah","    int i = 3;","}"],
+        "target",
+        "java",
+        "expl"
+    );
     setTimeout(() => {
         disp.swapElements(1,2);
         setTimeout(() => {
@@ -91,7 +97,7 @@
 </script> -->
 
 <!-- test case for the BarDisplay function highlightCode -->
-<!-- <script type = "module">
+<script type = "module">
     import { BarDisplay } from '../sortingjs/BarDisplay.js';
     console.log('testing highlightCode');
     let disp = new BarDisplay([1,3,2,4,3,5],["public static","blah","lol","lorem ipsum"],"target","java","expl");
@@ -110,10 +116,10 @@
             }, 1500);
         }, 1500);
     }, 800);
-</script> -->
+</script>
 
 <!-- test case for the BarDisplay function highlightCode -->
-<script type = "module">
+<!-- <script type = "module">
     import { BarDisplay } from '../sortingjs/BarDisplay.js';
     console.log('testing setExplanation');
     let disp = new BarDisplay([1,3,2,4,3,5],["public static","blah"],"target","java","expl");
@@ -130,4 +136,4 @@
             }, 2000);
         }, 2000);
     }, 800);
-</script>
+</script> -->

@@ -3,7 +3,7 @@ export { BarDisplay }
 
 class BarDisplay {
 
-    constructor (initarray, javaCode, /* actionQueue, */ targetDivID, javaDivID, explainDivID) {
+    constructor (initarray, javaCode, targetDivID, javaDivID/*, explainDivID*/) {
         this.javaCode = javaCode.slice(); // effectively clones the list (for new reference purposes)
         // this.actionQueue = actionQueue;
         this.elems = initarray.slice(); // effectively clones the list (for new reference purposes)
@@ -12,7 +12,7 @@ class BarDisplay {
         this.elemRange = this.maxElem - this.minElem;
         this.targetDiv = document.getElementById(targetDivID);
         this.javaDiv = document.getElementById(javaDivID);
-        this.explainDiv = document.getElementById(explainDivID);
+        // this.explainDiv = document.getElementById(explainDivID);
         this.elemDivs = [];
         this.javaDivs = [];
         this.indDivs = {};
@@ -28,13 +28,6 @@ class BarDisplay {
     }
 
     //TODO functions for swapping, indicator divs, set explanation, etc.
-
-    //
-    setupElementList(elemList) {
-        // if(typeof(this.elems) === 'undefined') { // 'elems' doesn't exist on 'this', or it's set to undefined
-        // }
-        todo
-    }
 
     // swap the elements on-screen
     swapElements(ind1, ind2) {
