@@ -7,8 +7,8 @@ class BarDisplay {
         this.javaCode = javaCode.slice(); // effectively clones the list (for new reference purposes)
         // this.actionQueue = actionQueue;
         this.elems = initarray.slice(); // effectively clones the list (for new reference purposes)
-        this.minElem = arrayMin(elem);
-        this.maxElem = arrayMax(elem);
+        this.minElem = arrayMin(this.elems);
+        this.maxElem = arrayMax(this.elems);
         this.elemRange = this.maxElem - this.minElem;
         this.targetDiv = document.getElementById(targetDivID);
         this.javaDiv = document.getElementById(javaDivID);
@@ -19,9 +19,9 @@ class BarDisplay {
         // populate targetDiv using elems
         this.targetDiv.classList.add('sdparent'); // setup parent div
         for (let i = 0; i < this.elems.length; i++) {
-            // const elem = this.elems[i];
-            let div = createElemDiv(this);
+            let div = createElemDiv(this, i);
             this.targetDiv.appendChild(div);
+            this.elemDivs.push(div);
         }
         // populate javaDiv
         populateJavaCode(this);
@@ -37,17 +37,17 @@ class BarDisplay {
     }
 
     // swap the elements on-screen
-    swapElements(index1, index2) {
+    swapElements(ind1, ind2) {
         console.log('swapping ' + ind1 + ' and ' + ind2);
         // shortcut if possible
         if(ind1 == ind2) return;
         // swap elems
-        let elems = displayContext.elems;
+        let elems = this.elems;
         let tempelem = elems[ind1];
         elems[ind1] = elems[ind2];
         elems[ind2] = tempelem;
         // swap divs
-        let divs = displayContext.divs;
+        let divs = this.elemDivs;
         let div1 = divs[ind1];
         let div2 = divs[ind2];
         divs[ind1] = div2;
@@ -59,38 +59,58 @@ class BarDisplay {
 
     // set the indicator with ID of indicID to the position at index
     //   note: automatically shows it too
-    setIndicator(indicID, index) {
+    setIndicator(indicID, indexTo) {
         let div = this.indDivs[indicID];
         // if it doesn't exist yet, lazily initialize it
         if (typeof(div) === 'undefined') {
             // create a new one and start using it
             div = (this.indDivs[indicID] = createIndicDiv(
-                indicID, 'text', display.divParent));
+                // indicID, 'text', this.divParent));
+                this, indicID));
         }
-        // console.log(display);
+        if(div.classList.contains('hidden')) {
+            div.classList.remove('hidden');
+        }
+        // console.log(this);
         // do the positioning
-        setOffsetPercent(div, indexTo, display.elems.length);
-
-        // use setIndicatorOffset for different heights depending on indexTo?
+        setOffsetPercent(div, indexTo, this.elems.length);
 
         // div.style.height = '100%';
         div.style.height = 'calc('
-                + calcHeight(display.elems[indexTo], display.minElem, display.range) + '% + 40px)';
+                + calcHeight(this.elems[indexTo], this.minElem, this.elemRange) + '% + 40px)';
         div.style.bottom = '-50px';
     }
 
     // hides the indicator with ID of indicID
     hideIndicator(indicID) {
-
+        let div = this.indDivs[indicID];
+        // see if it exists
+        if (typeof(div) !== 'undefined') {
+            // if it does, add the hidden class if needed
+            if(!div.classList.contains('hidden')) {
+                div.classList.add('hidden');
+            }
+        }
     }
 
     // TODO keep adding doc to these uwu
     hideAllIndicators() {
-        forEach
+        Object.keys(this.indDivs).forEach(ind => {
+            this.hideIndicator(ind);
+        });
     }
 
     highlightCode(lineIndices) {
-
+        for (let ind = 0; ind < this.javaDivs.length; ind++) {
+            const div = this.javaDivs[ind];
+            let clist = div.classList;
+            let cind = clist.contains(HLT_CLASS);
+            if (lineIndices.indexOf(ind) >= 0) { // ind should/shouldn't be highlighted
+                if (!cind) { clist.add(HLT_CLASS); }
+            } else {
+                if (cind) { clist.remove(HLT_CLASS); }
+            }
+        }
     }
 
     setExplanation(explanation) {
@@ -234,10 +254,11 @@ function createElemDiv(displayObj, index) {
     let textDiv = document.createElement('div');
     textDiv.innerHTML = elems[index];
     textDiv.classList.add(SDBAR_TEXT_CLASS);
-    setOffsetPercent(div, i, initarray.length);
+    setOffsetPercent(div, index, elems.length);
     setupTransitions(div);
     // parentDiv.appendChild(div);
     div.appendChild(textDiv);
+    return div;
 }
 
 function createIndicDiv(displayObj, indicID) {
@@ -252,11 +273,11 @@ function createIndicDiv(displayObj, indicID) {
     div.id = parentDiv.id + "_indic_" + indicID;
     div.classList.add('sdbar');
     div.classList.add('sdind');
-    div.classList.add('sdind_' + indicatorID);
+    div.classList.add('sdind_' + indicID);
     let divtext = document.createElement('div');
     divtext.classList.add('sdind-text');
-    divtext.classList.add('sdind-text_' + indicatorID);
-    if(text) divtext.innerHTML = text;
+    divtext.classList.add('sdind-text_' + indicID);
+    if(indicID) divtext.innerHTML = indicID;
     parentDiv.insertBefore(div, parentDiv.children[0]);
     div.appendChild(divtext);
     return div;
