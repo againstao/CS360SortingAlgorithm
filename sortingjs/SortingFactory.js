@@ -120,14 +120,15 @@ class Insertion {
         this.linkedList.add('start', this.list, 1);
         //save the event, the data that involves this event, and the line of JS
 
+        this.linkedList.add('check', this.list.length, 5);
+        //save the event, the data that involves this event, and the line of JS
+
         if (this.list.length <= 1) {
             this.linkedList.add('end', this.list.length, 3);
             //save the event, the data that involves this event, and the line of JS
             return this.list;
         }//check to see if the array is only 1 long or lower
 
-        this.linkedList.add('check', this.list.length, 5);
-        //save the event, the data that involves this event, and the line of JS
 
         for (let comparator = 1; comparator < this.list.length; comparator++) {
 
