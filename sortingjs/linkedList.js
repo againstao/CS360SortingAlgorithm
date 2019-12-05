@@ -118,6 +118,11 @@ class DoublyLinkedList{
         return this.index = this.getTail();
     }
 
+    //returns whether or not the iterator is at the end of this list
+    isAtEnd(){
+        return (this.index === this.tail);
+    }
+
 }
 
 

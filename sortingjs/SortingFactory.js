@@ -3,9 +3,10 @@ import { actionSwapIndices } from "./sortdisplay.js";
 export { SortingFactory, Insertion, Bubble, Selection, Merge, Quick, Heap }
 class SortingFactory {
     constructor(type, list) {
-        this.create = sortingInstance(type, list);
+        let listcopy = list.slice(); // copy the list in memory
+        this.create = this.sortingInstance(type, listcopy);
         //returns an object of sort based off the type and list
-        this.unsortedList = this.create.getList();
+        this.unsortedList = list;
         //gets the unsorted list
         this.sortedList = this.create.sort();
         //returns the final sorted array when it is sorted
@@ -35,6 +36,7 @@ class SortingFactory {
                 break;
         }
 
+
     }//in a programming since a factory is just an object that creates
     //or manufactures different objects
 
@@ -54,12 +56,12 @@ class Selection {
 
     //the sorting instance of the respective class
     sort() {
-        this.linkedList.add('start',this.list,1);
+        this.linkedList.add('start',this.list.slice(),1);
 
-        this.linkedList.add('check',this.list,3);
+        this.linkedList.add('check',this.list.slice(),3);
 
         if (this.list.length <= 1) {
-            this.linkedList.add('end',this.list,5);
+            this.linkedList.add('end',this.list.slice(),5);
             return this.list;
         }//check to see if the list is only one element or shorter
 
@@ -78,17 +80,19 @@ class Selection {
                 
                 if (this.list[indexIterator] < this.list[minIndex] || minIndex === null) {
                     minIndex = indexIterator;//searching for lowest index
-                this.linkedList.add('comparator',minIndex,20);
+                
                 }
+                this.linkedList.add('comparator',minIndex,20);
 
             }
             let smallerNumber = this.list[indexStart];
             this.list[indexStart] = this.list[minIndex];
             this.list[minIndex] = smallerNumber;
-            this.linkedList.add('swap',minIndex,27);
+            this.linkedList.add('swap',[minIndex,indexStart],27);
+            
         }
 
-        this.linkedList.add('end',minIndex,29);
+       // this.linkedList.add('end',minIndex,29);
 
         return this.list;
     }//sort
@@ -117,7 +121,10 @@ class Insertion {
     //the sorting instance of the respective class, this generates everything from step 1 to step x
     sort() {
 
-        this.linkedList.add('start', this.list, 1);
+        this.linkedList.add('start', this.list.slice(), 1);
+        //save the event, the data that involves this event, and the line of JS
+
+        this.linkedList.add('check', this.list.length, 5);
         //save the event, the data that involves this event, and the line of JS
 
         if (this.list.length <= 1) {
@@ -126,8 +133,6 @@ class Insertion {
             return this.list;
         }//check to see if the array is only 1 long or lower
 
-        this.linkedList.add('check', this.list.length, 5);
-        //save the event, the data that involves this event, and the line of JS
 
         for (let comparator = 1; comparator < this.list.length; comparator++) {
 
@@ -244,7 +249,7 @@ class Heap {
             return this.list;
         }//check
 
-        this.linkedList.add('check', this.list, 3);
+        this.linkedList.add('check', this.list.slice(), 3);
 
         for (let indexIterator = 0; indexIterator <= this.list.length - 1; indexIterator++) {
 
@@ -329,15 +334,15 @@ class Heap {
 
     //the sorting instance of the respective class
     sort() {
-        this.linkedList.add('start', this.list, 1);
+        this.linkedList.add('start', this.list.slice(), 1);
 
         this.list = this.buildMaxHeap();
         //build the heap, check if the array size is <= 1 is done there so didnt include it here
 
-        this.linkedList.add('check', this.list, 41);
+        this.linkedList.add('check', this.list.slice(), 41);
 
         if (this.list.length <= 1) {
-            this.linkedList.add('end', this.list, 44);
+            this.linkedList.add('end', this.list.slice(), 44);
             return this.list;
         }
         //check if the array size is less than our equal to 1
@@ -394,7 +399,7 @@ class Bubble {
 
     //the sorting instance of the respective class
     sort() {
-        this.linkedList.add('start', this.list, 1);
+        this.linkedList.add('start', this.list.slice(), 1);
         //save the event, the data for that event, and the line of javascript code
 
         if (this.list.length <= 1) {
@@ -413,7 +418,7 @@ class Bubble {
 
                 this.linkedList.add('comparator', index, 5);
                 //save the event, the data for that event, and the line of javascript code
-                this.linkedList.add('comparee', index, 5);
+                this.linkedList.add('comparee', index+1, 5);
                 //save the event, the data for that event, and the line of javascript code
 
                 if (this.list[index] > this.list[index + 1]) {

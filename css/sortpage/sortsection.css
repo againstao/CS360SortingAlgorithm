@@ -3,6 +3,9 @@
 }
 
 div.sortanimation {
-    background-color:rgb(72,219,251);
+    /* background-color:rgb(72,219,251); */
+    /* background-color: ; */
+    border: solid 2px cyan;
+    /* border-bottom: solid 2px cyan; */
     height: 200px;
 }

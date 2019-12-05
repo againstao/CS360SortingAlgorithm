@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+    <title>nothing to see here lol</title>
+    <script>console.clear();/*this is just a personal decision; I didn't want my debugger retaining old console text.*/</script>
+    <link rel="stylesheet" type="text/css" href="../sortingjs/style.css">
+    <style>
+        body { background-color: #333; color: white; }
+        /* h1, h2 { color: white; } nvm, this is getting inherited from body now */
+        .sortdisplay {
+            /* Centering and such */
+            margin: auto;
+            width: 70%;
+            height: 200px;
+            /* Looks */
+            border: 5px solid red;
+            /* background-color: lightgray; */
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello animation gen test soefijasefajoi</h1>
+    <h2>test2</h2>
+    <div id="targetdiv" class="sortdisplay"></div>
+    <div id="javadiv" style="margin-top: 50px"></div>
+    <div id="expl"></div>
+</body>
+
+<!-- test case for the BarDisplay function swapElements -->
+<script type = "module">
+    import { AnimationGenerator } from '../sortingjs/AnimationGenerator.js';
+
+    console.log('in test');
+    let generator = new AnimationGenerator(
+        "insertion",
+        [10,1,7,2,4,3,4    //,1,4,2,29,6,17,69,69,69,69,69,10,1,-4,30,27,45,29,40,50,18,-2,10,58,69,69,10,1,-4,30,29,40,50,29,6,17,69,
+        // 10,1,7,2,4,3,4    ,1,4,2,29,6,17,69,69,69,69,69,10,1,-4,30,27,45,29,40,50,18,-2,10,58,69,69,10,1,-4,30,29,40,50,29,6,17,69,
+        // 10,1,7,2,4,3,4    ,1,4,2,29,6,17,69,69,69,69,69,10,1,-4,30,27,45,29,40,50,18,-2,10,58,69,69,10,1,-4,30,29,40,50,29,6,17,69
+    ],
+        ["public static","blah","    int i = 3;","}"],
+        "targetdiv",
+        "javadiv"
+    );
+    console.log(generator);
+    // generator.setTiming(650); // <-- A PERFECT BALANCE FOR THE ANIMATIONS :D
+    // generator.setTiming(1);
+    generator.setTiming(400);
+
+    setTimeout(() => {
+        // generator.nextStep();
+        // generator.nextStep();
+        // generator.nextStep();
+        // generator.nextStep();
+        generator.start();
+        setTimeout(() => {
+            // generator.pause();
+            generator.restart();
+        }, 4000);
+    }, 800);
+
+</script>
