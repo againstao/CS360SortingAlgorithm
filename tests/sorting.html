@@ -1,164 +1,263 @@
 <!DOCTYPE html>
+
 <head>
     <title>nothing to see here lol</title>
     <script>console.clear();/*this is just a personal decision; I didn't want my debugger retaining old console text.*/</script>
 </head>
+
 <body>
     <h1>Hello test</h1>
     <h2>test2</h2>
 </body>
 
 <!-- test case for the doubly linked list add function -->
-<script type = "module">
+<script type="module">
     import { Node, DoublyLinkedList } from '../sortingjs/linkedList.js';
     let newList = new DoublyLinkedList();
-    
-    newList.add([1,1,1,1,1], [2,3], ['compare']);
 
-    
+    newList.add([1, 1, 1, 1, 1], [2, 3], ['compare']);
 
-    newList.add([2,2,2,2,2], [5,1], ['swap']);
 
-    
 
-    newList.add([3,3,3,3,3], [4,2], ['divide']);
+    newList.add([2, 2, 2, 2, 2], [5, 1], ['swap']);
+
+
+
+    newList.add([3, 3, 3, 3, 3], [4, 2], ['divide']);
 
     //console.log(newList);
 
 </script>
 
 <!-- test case for the doubly linked list get head function-->
-<script type = "module">
-        import { Node, DoublyLinkedList } from '../sortingjs/linkedList.js';
-        let newList = new DoublyLinkedList();
-        
-        newList.add([1,1,1,1,1], [2,3], ['compare']);
-    
-        newList.add([2,2,2,2,2], [5,1], ['swap']);
-    
-        newList.add([3,3,3,3,3], [4,2], ['divide']);
-    
+<script type="module">
+    import { Node, DoublyLinkedList } from '../sortingjs/linkedList.js';
+    let newList = new DoublyLinkedList();
+
+    newList.add([1, 1, 1, 1, 1], [2, 3], ['compare']);
+
+    newList.add([2, 2, 2, 2, 2], [5, 1], ['swap']);
+
+    newList.add([3, 3, 3, 3, 3], [4, 2], ['divide']);
+
         //console.log(newList.getHead());
-    
-    </script>
 
-    <!-- test case for the doubly linked list get tail function-->
-<script type = "module">
-        import { Node, DoublyLinkedList } from '../sortingjs/linkedList.js';
-        let newList = new DoublyLinkedList();
-        
-        newList.add([1,1,1,1,1], [2,3], ['compare']);
-    
-        newList.add([2,2,2,2,2], [5,1], ['swap']);
-    
-        newList.add([3,3,3,3,3], [4,2], ['divide']);
-    
+</script>
+
+<!-- test case for the doubly linked list get tail function-->
+<script type="module">
+    import { Node, DoublyLinkedList } from '../sortingjs/linkedList.js';
+    let newList = new DoublyLinkedList();
+
+    newList.add([1, 1, 1, 1, 1], [2, 3], ['compare']);
+
+    newList.add([2, 2, 2, 2, 2], [5, 1], ['swap']);
+
+    newList.add([3, 3, 3, 3, 3], [4, 2], ['divide']);
+
         //console.log(newList.getTail());
-    
-    </script>
 
-        <!-- test case for the doubly linked list goFoward function-->
-<script type = "module">
-        import { Node, DoublyLinkedList } from '../sortingjs/linkedList.js';
-        let newList = new DoublyLinkedList();
-        
-        newList.add([1,1,1,1,1], [2,3], ['compare']);
-    
-        newList.add([2,2,2,2,2], [5,1], ['swap']);
-    
-        newList.add([3,3,3,3,3], [4,2], ['divide']);
-    
-        // console.log(newList.goForward());
-        // console.log(newList.goForward());
-        // console.log(newList.goForward());
-        // console.log(newList.goForward());
-    </script>
+</script>
 
-          <!-- test case for the doubly linked list goPrev function-->
-<script type = "module">
-        import { Node, DoublyLinkedList } from '../sortingjs/linkedList.js';
-        let newList = new DoublyLinkedList();
-        
-        newList.add([1,1,1,1,1], [2,3], ['compare']);
-    
-        newList.add([2,2,2,2,2], [5,1], ['swap']);
-    
-        newList.add([3,3,3,3,3], [4,2], ['divide']);
-    
-        // console.log(newList.goPrev());
-        // console.log(newList.goPrev());
-        // console.log(newList.goPrev());
-        // console.log(newList.goPrev());
-        // console.log(newList.goForward());
-        // console.log(newList.goPrev());
-        // console.log(newList.goPrev());
-        // console.log(newList.goForward());
-        // console.log(newList.goForward());
-        // console.log(newList.goForward());
-        // console.log(newList.goPrev());
-        // console.log(newList.goPrev());
-        // console.log(newList.goPrev());
-        // console.log(newList.goPrev());
-    </script>
+<!-- test case for the doubly linked list goFoward function-->
+<script type="module">
+    import { Node, DoublyLinkedList } from '../sortingjs/linkedList.js';
+    let newList = new DoublyLinkedList();
 
-        <!-- test case for the doubly linked list goToStart function-->
-<script type = "module">
-        import { Node, DoublyLinkedList } from '../sortingjs/linkedList.js';
-        let newList = new DoublyLinkedList();
-        
-        newList.add([1,1,1,1,1], [2,3], ['compare']);
-    
-        newList.add([2,2,2,2,2], [5,1], ['swap']);
-    
-        newList.add([3,3,3,3,3], [4,2], ['divide']);
-    
-        newList.goForward();
-        newList.goForward();
+    newList.add([1, 1, 1, 1, 1], [2, 3], ['compare']);
+
+    newList.add([2, 2, 2, 2, 2], [5, 1], ['swap']);
+
+    newList.add([3, 3, 3, 3, 3], [4, 2], ['divide']);
+
+        // console.log(newList.goForward());
+        // console.log(newList.goForward());
+        // console.log(newList.goForward());
+        // console.log(newList.goForward());
+</script>
+
+<!-- test case for the doubly linked list goPrev function-->
+<script type="module">
+    import { Node, DoublyLinkedList } from '../sortingjs/linkedList.js';
+    let newList = new DoublyLinkedList();
+
+    newList.add([1, 1, 1, 1, 1], [2, 3], ['compare']);
+
+    newList.add([2, 2, 2, 2, 2], [5, 1], ['swap']);
+
+    newList.add([3, 3, 3, 3, 3], [4, 2], ['divide']);
+
+        // console.log(newList.goPrev());
+        // console.log(newList.goPrev());
+        // console.log(newList.goPrev());
+        // console.log(newList.goPrev());
+        // console.log(newList.goForward());
+        // console.log(newList.goPrev());
+        // console.log(newList.goPrev());
+        // console.log(newList.goForward());
+        // console.log(newList.goForward());
+        // console.log(newList.goForward());
+        // console.log(newList.goPrev());
+        // console.log(newList.goPrev());
+        // console.log(newList.goPrev());
+        // console.log(newList.goPrev());
+</script>
+
+<!-- test case for the doubly linked list goToStart function-->
+<script type="module">
+    import { Node, DoublyLinkedList } from '../sortingjs/linkedList.js';
+    let newList = new DoublyLinkedList();
+
+    newList.add([1, 1, 1, 1, 1], [2, 3], ['compare']);
+
+    newList.add([2, 2, 2, 2, 2], [5, 1], ['swap']);
+
+    newList.add([3, 3, 3, 3, 3], [4, 2], ['divide']);
+
+    newList.goForward();
+    newList.goForward();
         // console.log(newList.goForward());
 
         // console.log(newList.goToStart());     
-    </script>
+</script>
 
-           <!-- test case for the doubly linked list goToEnd function-->
-<script type = "module">
-        import { Node, DoublyLinkedList } from '../sortingjs/linkedList.js';
-        let newList = new DoublyLinkedList();
-        
-        newList.add([1,1,1,1,1], [2,3], ['compare']);
-    
-        newList.add([2,2,2,2,2], [5,1], ['swap']);
-    
-        newList.add([3,3,3,3,3], [4,2], ['divide']);
+<!-- test case for the doubly linked list goToEnd function-->
+<script type="module">
+    import { Node, DoublyLinkedList } from '../sortingjs/linkedList.js';
+    let newList = new DoublyLinkedList();
+
+    newList.add([1, 1, 1, 1, 1], [2, 3], ['compare']);
+
+    newList.add([2, 2, 2, 2, 2], [5, 1], ['swap']);
+
+    newList.add([3, 3, 3, 3, 3], [4, 2], ['divide']);
 
         // console.log(newList.goToEnd());     
-    </script>
-        
-        <!-- test case for the insertion sort-->
-<script type = "module">
-        import {Insertion} from '../sortingjs/SortingFactory.js';
-        let insertionTest = new Insertion([5,4,3,2,1]);
-        
-        console.log(insertionTest.sort());
+</script>
+
+<!-- test case for the insertion sort-->
+<script type="module">
+    import { Insertion } from '../sortingjs/SortingFactory.js';
+    let insertionTest = new Insertion([]);
+
+    console.log(insertionTest.sort());
+
+    insertionTest = new Insertion([1]);
+
+    console.log(insertionTest.sort());
+
+    insertionTest = new Insertion([1, 2, 3, 4, 5]);
+
+    console.log(insertionTest.sort());
+
+    insertionTest = new Insertion([5, 4, 3, 2, 1]);
+
+    console.log(insertionTest.sort());
+
+    insertionTest = new Insertion([-5, -2, 0, 1, 2, 4]);
+
+    console.log(insertionTest.sort());
+
+    insertionTest = new Insertion([8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025]);
+
+    console.log(insertionTest.sort());
         //console.log(insertionTest.getLinkedList());
         //console.log(insertionTest.getList());  
-        
-    </script>
-    <!-- test case for the bubble sort-->
-<script type = "module">
-        import {Bubble} from '../sortingjs/SortingFactory.js';
-        let bubbleTest = new Bubble([5,4,3,2,1]);
-        
+
+</script>
+<!-- test case for the bubble sort-->
+<script type="module">
+    import { Bubble } from '../sortingjs/SortingFactory.js';
+    let bubbleTest = new Bubble([]);
+
+    console.log(bubbleTest.sort());
+
+    bubbleTest = new Bubble([1]);
+
+    console.log(bubbleTest.sort());
+
+    bubbleTest = new Bubble([1, 2, 3, 4, 5]);
+
+    console.log(bubbleTest.sort());
+
+    bubbleTest = new Bubble([5, 4, 3, 2, 1]);
+
+    console.log(bubbleTest.sort());
+
+    bubbleTest = new Bubble([-5, -2, 0, 1, 2, 4]);
+
+    console.log(bubbleTest.sort());
+
+    bubbleTest = new Bubble([8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025]);
+
+    console.log(bubbleTest.sort());
+
        // console.log(bubbleTest.sort());
         //console.log(bubbleTest.getLinkedList());
         //console.log(bubbleTest.getList());  
-        
+
 </script>
-<script type = "module">
-    import {Selection} from '../sortingjs/SortingFactory.js';
-    let selectionTest = new Selection([5,4,3,2,1]);
-    
+
+<script type="module">
+    import { Selection } from '../sortingjs/SortingFactory.js';
+    let selectionTest = new Selection([]);
+
+    console.log(selectionTest.sort());
+
+    selectionTest = new Selection([1]);
+
+    console.log(selectionTest.sort());
+
+    selectionTest = new Selection([1, 2, 3, 4, 5]);
+
+    console.log(selectionTest.sort());
+
+    selectionTest = new Selection([5, 4, 3, 2, 1]);
+
+    console.log(selectionTest.sort());
+
+    selectionTest = new Selection([-5, -2, 0, 1, 2, 4]);
+
+    console.log(selectionTest.sort());
+
+    selectionTest = new Selection([8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025]);
+
+    console.log(selectionTest.sort());
+
     //console.log(selectionTest.sort());
     //console.log(selectionTest.getLinkedList());
     //console.log(selectionTest.getList());  
-    
+
+</script>
+
+<script type="module">
+    import { Heap } from '../sortingjs/SortingFactory.js';
+    let heapTest = new Heap([]);
+
+    console.log(heapTest.sort());
+
+    heapTest = new Heap([1]);
+
+    console.log(heapTest.sort());
+
+    heapTest = new Heap([1, 2, 3, 4, 5]);
+
+    console.log(heapTest.sort());
+
+    heapTest = new Heap([5, 4, 3, 2, 1]);
+
+    console.log(heapTest.sort());
+
+    heapTest = new Heap([-5, -2, 0, 1, 2, 4]);
+
+    console.log(heapTest.sort());
+
+    heapTest = new Heap([8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025, 8, 9, 1, 25, 72, 85, 64, 84, -58, -1001, 5025]);
+
+    console.log(heapTest.sort());
+
+    //console.log(selectionTest.sort());
+    //console.log(selectionTest.getLinkedList());
+    //console.log(selectionTest.getList());  
+
 </script>
