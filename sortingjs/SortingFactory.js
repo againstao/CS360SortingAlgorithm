@@ -456,55 +456,29 @@ class Quick {
        smaller (smaller than pivot) to left of 
        pivot and all greater elements to right 
        of pivot */
-       partition(list, low, high) {
-            let pivot = list[high];
-            let i= (low-1);
-            for(let j=low; j<high; j++){
-                if(list[j]<pivot){
-                    i++;
+      
+    quicksort(array) {//credit to https://medium.com/karuna-sehgal/a-quick-explanation-of-quick-sort-7d8e2563629b
+        if (array.length == 0) return [];
 
-                    let temp = list[i];
-                    list[i] = list[j];
-                    list[j] = temp;
-                }
-            }
-            let temp = list[i+1];
-            list[i+1] = list[pivot];
-            list[pivot] = temp;
-            return i+1;
-       }
-
-       sort() {
-        while(true){ 
-            if (this.list.length <= 1) {
-                return this.list;
-            }//check to see if the list is = to or smaller than 1
-            let arrayLength = this.list.length;//set the arrayLength equal to the length of the elements in the list
-            let pivot = this.list[arrayLength%arrayLength/2];
-            let low=0;
-            let high=0;
-            for(let i=0; i<arrayLength; i++){
-                if(pivot < this.list[i]){
-                    low=this.list[i];
-                }
-                if(pivot > this.list[i]){
-                    high=this.list[i];
-                }
-            }
-            if (low < high) 
-            { 
-                /* pi is partitioning index, arr[pi] is  
-                    now at right place */
-                let pi = this.partition(this.list, low, high);
-                
-                // Recursively sort elements before 
-                // partition and after partition 
-                
-            } //the sorting instance of the respective class
-            
+        var left = [], right = [], pivot = array[0];
+    
+        for (var i = 1; i < array.length; i++) {
+            if(array[i] < pivot)
+                left.push(array[i])
+            else
+                right.push(array[i]);
+        }
+    
+        return this.quicksort(left).concat(pivot, this.quicksort(right));
+    }
+    
+    sort() {
+        if (this.list.length <= 1){
             return this.list;
-            }
-       }
+        }else{
+            this.quicksort(this.list);
+        }
+    }
     getLinkedList() {
         return this.linkedList;
     }
