@@ -462,28 +462,107 @@ class Quick {
        pivot and all greater elements to right 
        of pivot */
       
-    quicksort(array) {//credit to https://medium.com/karuna-sehgal/a-quick-explanation-of-quick-sort-7d8e2563629b
-        if (array.length == 0) return [];
-
-        var left = [], right = [], pivot = array[0];
-    
-        for (var i = 1; i < array.length; i++) {
-            if(array[i] < pivot)
-                left.push(array[i])
-            else
-                right.push(array[i]);
-        }
-    
-        return this.quicksort(left).concat(pivot, this.quicksort(right));
-    }
-    
     sort() {
-        if (this.list.length <= 1){
-            return this.list;
-        }else{
-            this.quicksort(this.list);
-        }
+
+        return this.partitionSort(this.list,0,this.list.length-1);
+        //move current pivot to the end of the array to get it out of the way
+
+        //if we have both an item from left & an item from right swap them
+
+        //if item from left index is bigger than item from right stop andd insert our pivot at the item from left location
+
+        //call quick sort again for both the left subarray and right subarray that we just created
+
+        //swap them
+
+        
+
     }
+
+    //sorts the quick sorts partitions
+    partitionSort(array,arrayStart,arrayEnd){
+        
+
+        let lastindex = arrayEnd;
+
+        let itemFromLeftIndex=arrayStart;
+        //item from left is elements that are larger than the pivot on the left side of the pivot
+        let itemFromRightIndex=lastindex-1;
+        //item from right index is elements that are smaller than the pivot on the right side
+
+        let pivotIndex = this.medianOfThree(array);
+        //declare a pivot index from the array
+
+        console.log(array[pivotIndex] + ' pivot og location' + pivotIndex);
+
+        array = this.swap(array,pivotIndex,lastindex);
+        //move the current pivot to the end of the array to get it out of the way
+
+        while(itemFromLeftIndex <= itemFromRightIndex){
+            
+            if(array[itemFromLeftIndex] <= array[lastindex]){
+                itemFromLeftIndex++;
+            }//if the item from left is less than our equal to our pivot move to the right
+
+            else if(array[itemFromRightIndex] > array[lastindex]){
+                itemFromRightIndex--;
+            }//if the item from right is more than our pivot move to the left
+
+            else{
+                array = this.swap(array,itemFromLeftIndex,itemFromRightIndex);
+                itemFromLeftIndex++;
+                itemFromRightIndex--;
+            }//swap itemFromLeft with itemFromRight
+            
+        }//while our itemfromleftindex is smaller than our itemfromrightindex value
+
+        array = this.swap(array,itemFromLeftIndex,lastindex);
+        //put the pivot back in the correct location
+        
+        pivotIndex = itemFromLeftIndex; 
+        //update the pivot location 
+        console.log('new pivot location' + pivotIndex); 
+        return array;
+    }
+
+    //finds median value from the array[firstindex], array[middleindex], and array[lastindex], and returns the index at which it is located
+    medianOfThree(array){
+        
+        let lastindex = array.length-1;
+        let firstindex = 0;
+        let middleindex = Math.floor(((array.length-1)/2));
+
+        if(array.length == 0){
+            return null;
+        }//check to see if the array has no elements if so just return null
+
+        else if(((array[firstindex] <= array[middleindex]) && (array[firstindex] >= array[lastindex])) || ((array[firstindex] >= array[middleindex]) && (array[firstindex] <= array[lastindex])))  {
+            return firstindex;
+        }//see if the first array element is smaller than and bigger than either of the elements
+
+        else if(((array[middleindex] <= array[firstindex]) && (array[middleindex] >= array[lastindex])) || ((array[middleindex] >= array[firstindex]) && (array[middleindex] <= array[lastindex]))) {
+            return middleindex;
+        }//see if the middle array element is smaller than and bigger than either of the elements
+
+        else{
+            return lastindex;
+        }//else return the last index
+
+        /* note this works so long as the first,last,and middle element are distinct values
+            if any of them are equal it will simple default to giving the first duplicate element
+        */
+
+    }
+
+    //swaps array[indexone] with array[indextwo] and returns the array
+    swap(array,indexone,indextwo){
+        let temp =  array[indexone];
+        array[indexone] = array[indextwo];
+        array[indextwo] = temp;
+
+        return array;
+    }
+
     getLinkedList() {
         return this.linkedList;
     }
@@ -495,3 +574,4 @@ class Quick {
        
     }
 
+    
