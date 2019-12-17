@@ -483,7 +483,7 @@ class Quick {
 
     }
 
-    //sorts the quick sorts partitions
+    //sorts the quick sorts partitions using the passed in values of the arraystart locations and arrayend locations
     partitionSort(arrayStart,arrayEnd){
 
         let itemFromLeftIndex=arrayStart;
@@ -526,7 +526,7 @@ class Quick {
         if(pivotIndex != arrayEnd){
             //call sort again but with our pivot as the starting index and the end
 
-            this.partitionSort(pivotIndex+1,arrayEnd)
+            this.partitionSort(pivotIndex+1,arrayEnd);
         }//if our pivot location does not equal our last index
         
         if(pivotIndex != arrayStart){
@@ -610,6 +610,6 @@ class Quick {
     }
 
        
-    }
+    }//done but linked list hasn't been unit tested
 
     
