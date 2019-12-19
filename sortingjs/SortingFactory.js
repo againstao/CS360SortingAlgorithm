@@ -464,22 +464,14 @@ class Quick {
       
     sort() {
 
+        this.linkedList.add('check',this.list.length,3);
 
         if(this.list.length-1 <= 0){
+            this.linkedList.add('end',this.list.length,5);
             return this.list;
         }//check to see if the list has none or one element if so just returns the list
 
         return this.partitionSort(0,this.list.length-1);
-        //move current pivot to the end of the array to get it out of the way
-
-        //if we have both an item from left & an item from right swap them
-
-        //if item from left index is bigger than item from right stop andd insert our pivot at the item from left location
-
-        //call quick sort again for both the left subarray and right subarray that we just created
-
-        //swap them
-
 
     }
 
@@ -489,7 +481,12 @@ class Quick {
         let pivotIndex = this.medianOfThree(arrayStart,arrayEnd);
         //declare a pivot index from the array
 
-        this.linkedList.add('comparator',pivotIndex,5);
+        //all the linked list stuff for the median of three is handled inside that function
+
+        this.list = this.swap(this.list,pivotIndex,arrayEnd);
+        //move the current pivot to the end of the array to get it out of the way
+        this.linkedList.add('swap',[pivotIndex,arrayEnd],12);
+        this.linkedList.add('comparator',arrayEnd,12);
 
         let itemFromLeftIndex=arrayStart;
         //item from left is elements that are larger than the pivot on the left side of the pivot
@@ -498,13 +495,6 @@ class Quick {
         let itemFromRightIndex=arrayEnd-1;
         //item from right index is elements that are smaller than the pivot on the right side
         this.linkedList.add('comparee',itemFromRightIndex,5);
-
-        this.list = this.swap(this.list,pivotIndex,arrayEnd);
-        //move the current pivot to the end of the array to get it out of the way
-
-        this.linkedList.add('swap',[pivotIndex,arrayEnd],12);
-
-        this.linkedList.add('comparator',arrayEnd,5);
 
         while(itemFromLeftIndex <= itemFromRightIndex){
             
@@ -520,9 +510,18 @@ class Quick {
 
             else{
                 this.list = this.swap(this.list,itemFromLeftIndex,itemFromRightIndex);
+                //swap the biggeritemfromleft with the smalleritemfromright
+
+                this.linkedList.add('swap',[itemFromLeftIndex,itemFromRightIndex],5);
+                
                 itemFromLeftIndex++;
                 itemFromRightIndex--;
-                this.linkedList.add('swap',[itemFromLeftIndex,itemFromRightIndex],5); 
+                //update the new locations
+
+                this.linkedList.add('comparee',itemFromLeftIndex,5);
+                this.linkedList.add('comparee',itemFromRightIndex,5);
+                
+
             }//swap itemFromLeft with itemFromRight
             
         }//while our itemfromleftindex is smaller than our itemfromrightindex value
@@ -530,12 +529,12 @@ class Quick {
         this.list = this.swap(this.list,itemFromLeftIndex,arrayEnd);
         //put the pivot back in the correct location
 
-        this.linkedList.add('swap',itemFromLeftIndex,5); 
+        this.linkedList.add('swap',[itemFromLeftIndex,arrayEnd],5); 
         
         pivotIndex = itemFromLeftIndex; 
         //update the pivot location 
 
-        this.linkedList.add('comparator',pivotIndex,5); 
+        this.linkedList.add('pivotcorrectlocation',pivotIndex,5); 
         
         if(pivotIndex != arrayEnd){
             //call sort again but with our pivot as the starting index and the end
@@ -547,6 +546,8 @@ class Quick {
             //call sort again but with our arrayStart being the same while or pivot is at the end
             this.partitionSort(arrayStart,pivotIndex-1);
         }
+
+        this.linkedList.add('end',this.list,5); 
         return this.list;
     }
 
@@ -582,9 +583,6 @@ class Quick {
     //finds the median value in this.list using the startIndex, and the endIndex as the parameters for where it searches
     medianOfThree(startIndex,endIndex){
 
-        //this.linkedList.add('comparee',startIndex,5);
-        //this.linkedList.add('comparee',endIndex,5);
-
         this.linkedList.add('check',this.list,5);
 
         if(startIndex-endIndex == 0){
@@ -592,25 +590,29 @@ class Quick {
             return startIndex;
         }//check to see if the array has only one element if so just return that value
 
-        let middleindex = (Math.floor(((endIndex-startIndex)/2))) + startIndex;
+        let middleIndex = (Math.floor(((endIndex-startIndex)/2))) + startIndex;
         //determine the middleindex
-        
+
+        //this.linkedList.add('comparee',startIndex,5);
+        //this.linkedList.add('comparee',endIndex,5);
         //this.linkedList.add('comparee',middleIndex,9);
 
-        if(((this.list[startIndex] <= this.list[middleindex]) && (this.list[startIndex] >= this.list[endIndex])) || ((this.list[startIndex] >= this.list[middleindex]) && (this.list[startIndex] <= this.list[endIndex])))  {
-            //this.linkedList.add('comparator',startIndex,9);
+        //issue here with the animation cant declare multiple comparee statements
+
+        if(((this.list[startIndex] <= this.list[middleIndex]) && (this.list[startIndex] >= this.list[endIndex])) || ((this.list[startIndex] >= this.list[middleIndex]) && (this.list[startIndex] <= this.list[endIndex])))  {
+            this.linkedList.add('comparator',startIndex,9);
             //maybe add a clear comparee event?
             return startIndex;
         }//see if the first array element is smaller than and bigger than either of the elements
 
-        else if(((this.list[middleindex] <= this.list[startIndex]) && (this.list[middleindex] >= this.list[endIndex])) || ((this.list[middleindex] >= this.list[startIndex]) && (this.list[middleindex] <= this.list[endIndex]))) {
-            //this.linkedList.add('comparator',middleIndex,9);
+        else if(((this.list[middleIndex] <= this.list[startIndex]) && (this.list[middleIndex] >= this.list[endIndex])) || ((this.list[middleIndex] >= this.list[startIndex]) && (this.list[middleIndex] <= this.list[endIndex]))) {
+            this.linkedList.add('comparator',middleIndex,9);
             //maybe add a clear comparee event
-            return middleindex;
+            return middleIndex;
         }//see if the middle array element is smaller than and bigger than either of the elements
 
         else{
-            //this.linkedList.add('comparator',endIndex,9);
+            this.linkedList.add('comparator',endIndex,9);
             return endIndex;
         }//else return the last index
 

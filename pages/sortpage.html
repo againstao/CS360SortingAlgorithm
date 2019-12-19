@@ -253,6 +253,10 @@
             // let tmp = function () { console.log('tadaa onclick works'); }
             // document.getElementById('play_restart').onclick = tmp;
             // generator.start();
+
+            //IMPORTANT FUNCTION TO GENERATE A RANDOM ARRAY from of size n with the numbers being between one and j
+            //to use this simply put it where we currently have the array at now in the else statement above 
+            //Array.from({length: n}, () => Math.floor(Math.random() * j)+1)
             generator.setTiming(650);
             document.getElementById('play_restart').onclick = function() { generator.restart() };
             document.getElementById('play_back').onclick = function() { generator.prevStep() };
