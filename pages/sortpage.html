@@ -250,7 +250,8 @@
         // list; gives the list to sort. Will override listSizeParam and listGenParam below
         let listParam = stringToList(GetURLParameter('list'));
         // generated list's size; if listParam is not specified, this will define how big of a list to generate
-        let listSizeParam = GetURLParameter('size') || 10; // default is 10
+        let listSizeParam = Number(GetURLParameter('size'));
+        if(isNaN(listSizeParam) || !Number.isFinite(listSizeParam)) listSizeParam = 10; // default is 10
         // generated list's type; if listParam is not specified, this will define what contents the list contains
         let listTypeParam = GetURLParameter('type') || 'random'; // default is random
 
