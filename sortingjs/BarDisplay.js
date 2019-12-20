@@ -175,8 +175,8 @@ const HLT_CLASS = 'javacode-highlight'; // added and removed when highlighting
 
 // used to calculate the height for an elem, in percentage
 function calcHeight(elem, minElem, range) {
-    return ( MIN_HEIGHT_PERCENT
-        + ((elem-minElem)/range)*(100-MIN_HEIGHT_PERCENT) );
+    return ( range<=0 ? 0.5*(MIN_HEIGHT_PERCENT+100) :
+        MIN_HEIGHT_PERCENT + ((elem-minElem)/range)*(100-MIN_HEIGHT_PERCENT) );
 }
 
 // some array utility functions

@@ -16,11 +16,10 @@ export { generateList, listToString, stringToList };
 //       | | | | |          | | | | |      | | | | |        | | | |          | | | | | |
 //       | | | | | |      | | | | | |      | | | | | |      | | | | | |      | | | | | |
 function generateList(size, genType, minValue=1, maxValue=10) {
-    if (size === 0) {
-        throw "generateList error: size must be greater than 0!";
-    }
-    if (!size) {
-        throw 'generateList error: size must be a positive integer, not '+size+'!';
+    let oldsize = size;
+    size = Number(size);
+    if (isNaN(size) || !Number.isFinite(size) || size <= 0) {
+        throw 'generateList error: size must be a positive integer, not '+oldsize+'!';
     }
     // ensure minValue and maxValue are integers
     minValue = Math.floor(minValue);
