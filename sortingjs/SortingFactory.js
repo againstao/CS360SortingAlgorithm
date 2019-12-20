@@ -219,35 +219,42 @@ class Merge {
         }
        
         //determines the middlePoint
-        let middlePoint = (Math.floor((currentArray.length-1)/2));
+        let middlePoint = Math.floor((currentArray.length-1)/2);
 
-        console.log('middlePoint' + middlePoint);
-
-        //gives the spilting indexes to the linked list
+        //gives the spilting index to the linked list
         this.linkedList.add('split',middlePoint,20);
 
         this.linkedList.add('highlightSubArray',[0,middlePoint+1],23);
 
+        console.log('OGcurrentArray' + currentArray);
+
         //determines the leftSubarray
-        let leftSubArray = currentArray.slice(0,middlePoint);
+        let leftSubArray = currentArray.slice(0,middlePoint+1);
+
+        console.log('currentArray after leftsubarrayslice' + currentArray);
 
         this.linkedList.add('highlightSubArray',[middlePoint+1,currentArray.length-1],26);
         
         //determines the rightSubarray
-        let rightSubArray = currentArray.slice(middlePoint+2,currentArray.length-1);
+        let rightSubArray = currentArray.slice(middlePoint+2,currentArray.length);
         
-        console.log('leftSubArray & rightSubArray' + leftSubArray + rightSubArray);
+        //console.log('leftSubArray' + leftSubArray.length,leftSubArray[0],leftSubArray[1],leftSubArray[2],leftSubArray[3],leftSubArray[4],leftSubArray[5]);
         //calls the same function again and recursively splits it
         leftSubArray = this.mergeSort(leftSubArray);
 
         rightSubArray = this.mergeSort(rightSubArray);
 
+        console.log('leftSubArray' + leftSubArray.length,leftSubArray[0],leftSubArray[1],leftSubArray[2],leftSubArray[3],leftSubArray[4],leftSubArray[5]);
+        console.log('rightSubArray' + rightSubArray.length,rightSubArray[0],rightSubArray[1],rightSubArray[2],rightSubArray[3],rightSubArray[4],rightSubArray[5]);
         return this.merge(leftSubArray,rightSubArray);
 
 
     }//takes in the array and divides it down until each array only has one element
 
     merge(leftSubArray, rightSubArray) {
+
+        let leftSize = leftSubArray;
+        console.log('leftSubArray', leftSize);
 
         let currentArray;
         this.linkedList.add('additionalArray',currentArray,39);
