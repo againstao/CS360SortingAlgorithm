@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<head>
+    <title>nothing to see here lol</title>
+    <script>console.clear();/*this is just a personal decision; I didn't want my debugger retaining old console text.*/</script>
+</head>
+
+<body style="background-color: black; color: white;">
+    <h1>Hello test</h1>
+    <h2>test2</h2>
+</body>
+
+<!-- test case for the generate list function -->
+<script type="module">
+    import { generateList } from '../generaljs/listutils.js';
+
+    console.log('testing different lengths of manysame...')
+    for (let size = 1; size < 11; size++) {
+        console.log(generateList(size, 'manysame'));
+    }
+
+    console.log('testing different genTypes...');
+    console.log(generateList(10,'random'));
+    console.log(generateList(10,'linear'));
+    console.log(generateList(10,'reversed'));
+    console.log(generateList(10,'manysame'));
+    console.log(generateList(10,'allsame'));
+
+    console.log('testing minValue and maxValue...');
+    console.log(generateList(10,'reversed',3));
+    console.log(generateList(10,'reversed',3,3));
+    console.log(generateList(10,'random',3,100));
+    console.log(generateList(10,'random',100,3));
+
+</script>
