@@ -188,42 +188,145 @@ class Insertion {
 class Merge {
     constructor(list) {
         this.type = 'merge';
-        this.sortedList = list;
+        this.list = list;
         this.linkedList = new DoublyLinkedList();
     }
 
     //the sorting instance of the respective class
-    mergeSort() {
-        const sortedArray = [...list]; //new array with content of list.
-        const length = sortedArray.length;
+    sort() {
 
-        //Base Case
-        //If there are 0 or 1 elements, stop splitting.
-        if (length < 2) {
-            return list;
+        this.linkedList.add('check',this.list.length,3);
+
+        //check if the array is a size of one if so just return the array
+        if(this.list.length-1 <= 0){
+            this.linkedList.add('end',this.list.length,5);
+            return this.list;
         }
+        
+        return this.mergeSort(this.list);
 
-        const mid = Math.floor(length / 2); //Math.floor rounds down.
-        const left = sortedArray.slice(0, mid); // Left sub-array [0] to [mid-1].
-        const right = sortedArray.slice(middle)// Right sub-array from index[middle] to [length-1];
+        //divide down the array until we get to one
+        //call the subMerge
 
-        //Recursive Step
-        return merge(mergeSort(left), mergeSort(right));
     }
 
-    merge(left, right) {
-        const aux = []; //Auxillary array
-        while (left.length && right.length) {
-            if (left[0] <= right[0]) {
-                aux.push(left.shift());
-            }//If the first value in left sub-array, remove and add to auxillary array.
-            else {
-                aux.push(right.shift());
-            }//else, remove and add first value in right sub-array to auxillary array.
-            return aux.concat(left, right);//Merge remaining items of left and right sub-arrays with the new array. 
+    mergeSort(currentArray){
+
+        //check if the array is a size of one if so just return the array
+        if(currentArray.length-1 <= 0){
+            this.linkedList.add('subEnd',currentArray.length,15);
+            return currentArray;
+        }
+       
+        //determines the middlePoint
+        let middlePoint = Math.floor((currentArray.length-1)/2);
+
+        //gives the spilting index to the linked list
+        this.linkedList.add('split',middlePoint,20);
+
+        this.linkedList.add('highlightSubArray',[0,middlePoint+1],23);
+
+        console.log('OGcurrentArray' + currentArray);
+
+        //determines the leftSubarray
+        let leftSubArray = currentArray.slice(0,middlePoint+1);
+
+        console.log('currentArray after leftsubarrayslice' + currentArray);
+
+        this.linkedList.add('highlightSubArray',[middlePoint+1,currentArray.length-1],26);
+        
+        //determines the rightSubarray
+        let rightSubArray = currentArray.slice(middlePoint+2,currentArray.length);
+        
+        //console.log('leftSubArray' + leftSubArray.length,leftSubArray[0],leftSubArray[1],leftSubArray[2],leftSubArray[3],leftSubArray[4],leftSubArray[5]);
+        //calls the same function again and recursively splits it
+        leftSubArray = this.mergeSort(leftSubArray);
+
+        rightSubArray = this.mergeSort(rightSubArray);
+
+        console.log('leftSubArray' + leftSubArray.length,leftSubArray[0],leftSubArray[1],leftSubArray[2],leftSubArray[3],leftSubArray[4],leftSubArray[5]);
+        console.log('rightSubArray' + rightSubArray.length,rightSubArray[0],rightSubArray[1],rightSubArray[2],rightSubArray[3],rightSubArray[4],rightSubArray[5]);
+        return this.merge(leftSubArray,rightSubArray);
+
+
+    }//takes in the array and divides it down until each array only has one element
+
+    merge(leftSubArray, rightSubArray) {
+
+        let leftSize = leftSubArray;
+        console.log('leftSubArray', leftSize);
+
+        let currentArray;
+        this.linkedList.add('additionalArray',currentArray,39);
+
+        //console.log('leftSubArray & rightSubArray' + leftSubArray + rightSubArray); 
+
+        //while both sub arrays have elements
+        while(leftSubArray.length > 0 && rightSubArray.length > 0){
+            
+            //if the first element in the left subarray is smaller than our equal to the first element in the right sub array
+            if(leftSubArray[0] <= rightSubArray[0]){
+
+                this.linkedList.add('addToArray',leftSubArray[0],44);
+
+                //take the leftSubArray[0] and adds it to the currentArray
+                currentArray.splice(currentArray.length,0,leftSubArray[0]);
+
+                //remove the element from the leftSubArray
+                leftSubArray.shift();
+
+                this.linkedList.add('remove',leftSubArray[0],47);
+
+            }
+
+            //else take the rightSubArray[0] and add it 
+            else{
+                //take the rightSubArray[0] and adds it to the currentArray
+                currentArray.splice(currentArray.length,0,rightSubArray[0]);
+
+                //remove the element from the rightSubArray
+                rightSubArray.shift();
+
+                this.linkedList.add('remove',rightSubArray[0],56);
+
+            }
 
         }
-    }//Helper function
+
+        //at this point either leftSubArray or rightSubArray
+
+        //while the leftSubArray has elements, remove them and throw them into our current array
+        while(leftSubArray.length-1 > 0){
+
+                this.linkedList.add('addToArray',leftSubArray[0],63);
+
+                //take the leftSubArray[0] and adds it to the currentArray
+                currentArray.splice(currentArray.length,0,leftSubArray[0]);
+
+                //remove the element from the leftSubArray
+                leftSubArray.shift();
+
+                this.linkedList.add('remove',leftSubArray[0],65);
+        }
+
+        //while the rightSubArray has elements, remove them and throw them into our current array
+        while(rightSubArray.length-1 > 0){
+
+            this.linkedList.add('addToArray',rightSubArray[0],69);
+
+            //take the leftSubArray[0] and adds it to the currentArray
+            currentArray.splice(currentArray.length,0,rightSubArray[0]);
+
+            //remove the element from the leftSubArray
+            rightSubArray.shift();
+
+            this.linkedList.add('remove',rightSubArray[0],71);
+    }
+
+    this.linkedList.add('sortedSubArray',currentArray,74);
+    return currentArray;
+      
+    }//compares and combines the subarrays
 
     getLinkedList() {
         return this.linkedList;
@@ -642,4 +745,10 @@ class Quick {
        
     }//done but linked list hasn't been unit tested
 
-    
+
+//sorts we might look into adding
+//pigeon hole sort
+//Tournament sort
+//Gravity sort
+//Counting sort
+
