@@ -201,9 +201,10 @@ class Merge {
         if(this.list.length-1 <= 0){
             this.linkedList.add('end',this.list.length,5);
             return this.list;
+        } else {
+            let temp = this.mergeSort(this.list);
+            return temp;
         }
-        
-        return this.mergeSort(this.list);
 
         //divide down the array until we get to one
         //call the subMerge
@@ -211,55 +212,40 @@ class Merge {
     }
 
     mergeSort(currentArray){
-
-        //check if the array is a size of one if so just return the array
-        if(currentArray.length-1 <= 0){
-            this.linkedList.add('subEnd',currentArray.length,15);
-            return currentArray;
-        }
-       
         //determines the middlePoint
         let middlePoint = Math.floor((currentArray.length-1)/2);
-
         //gives the spilting index to the linked list
         this.linkedList.add('split',middlePoint,20);
 
-        this.linkedList.add('highlightSubArray',[0,middlePoint+1],23);
-
-        console.log('OGcurrentArray' + currentArray);
-
         //determines the leftSubarray
         let leftSubArray = currentArray.slice(0,middlePoint+1);
+        this.linkedList.add('highlightSubArray',[0,middlePoint+1],23);
+        //console.log('leftsubarray' + leftSubArray);
 
-        console.log('currentArray after leftsubarrayslice' + currentArray);
-
-        this.linkedList.add('highlightSubArray',[middlePoint+1,currentArray.length-1],26);
-        
         //determines the rightSubarray
-        let rightSubArray = currentArray.slice(middlePoint+2,currentArray.length);
+        let rightSubArray = currentArray.slice(middlePoint+1,currentArray.length);
+        this.linkedList.add('highlightSubArray',[middlePoint+1,currentArray.length-1],26);
+
+        //if the current array is at least 2 elements long
+        if(currentArray.length-1 > 0){
+            //call the same function again and recursively split it
+            leftSubArray = this.mergeSort(leftSubArray);
+            rightSubArray = this.mergeSort(rightSubArray);
+        } 
         
-        //console.log('leftSubArray' + leftSubArray.length,leftSubArray[0],leftSubArray[1],leftSubArray[2],leftSubArray[3],leftSubArray[4],leftSubArray[5]);
-        //calls the same function again and recursively splits it
-        leftSubArray = this.mergeSort(leftSubArray);
-
-        rightSubArray = this.mergeSort(rightSubArray);
-
-        console.log('leftSubArray' + leftSubArray.length,leftSubArray[0],leftSubArray[1],leftSubArray[2],leftSubArray[3],leftSubArray[4],leftSubArray[5]);
-        console.log('rightSubArray' + rightSubArray.length,rightSubArray[0],rightSubArray[1],rightSubArray[2],rightSubArray[3],rightSubArray[4],rightSubArray[5]);
         return this.merge(leftSubArray,rightSubArray);
-
+            
 
     }//takes in the array and divides it down until each array only has one element
 
     merge(leftSubArray, rightSubArray) {
 
-        let leftSize = leftSubArray;
-        console.log('leftSubArray', leftSize);
-
-        let currentArray;
+        let currentArray = [];
         this.linkedList.add('additionalArray',currentArray,39);
+        
+        this.linkedList.add('comparator',leftSubArray[0],43);
 
-        //console.log('leftSubArray & rightSubArray' + leftSubArray + rightSubArray); 
+        this.linkedList.add('comparee', rightSubArray[0],43);
 
         //while both sub arrays have elements
         while(leftSubArray.length > 0 && rightSubArray.length > 0){
@@ -269,26 +255,35 @@ class Merge {
 
                 this.linkedList.add('addToArray',leftSubArray[0],44);
 
+                this.linkedList.add('swap',leftSubArray[0],rightSubArray[0],69);
+
                 //take the leftSubArray[0] and adds it to the currentArray
-                currentArray.splice(currentArray.length,0,leftSubArray[0]);
+                currentArray.push(leftSubArray[0]);
 
                 //remove the element from the leftSubArray
                 leftSubArray.shift();
 
                 this.linkedList.add('remove',leftSubArray[0],47);
 
+                //update the comparator and the comparee
+                this.linkedList.add('comparator',leftSubArray[0],43);
+                this.linkedList.add('comparee', rightSubArray[0],43);
+
             }
 
             //else take the rightSubArray[0] and add it 
             else{
                 //take the rightSubArray[0] and adds it to the currentArray
-                currentArray.splice(currentArray.length,0,rightSubArray[0]);
+                currentArray.push(rightSubArray[0]);
 
                 //remove the element from the rightSubArray
                 rightSubArray.shift();
 
                 this.linkedList.add('remove',rightSubArray[0],56);
 
+                //update the comparator and the comparee
+                this.linkedList.add('comparator',leftSubArray[0],43);
+                this.linkedList.add('comparee', rightSubArray[0],43);
             }
 
         }
@@ -296,34 +291,41 @@ class Merge {
         //at this point either leftSubArray or rightSubArray
 
         //while the leftSubArray has elements, remove them and throw them into our current array
-        while(leftSubArray.length-1 > 0){
+        while(leftSubArray.length-1 >= 0){
 
                 this.linkedList.add('addToArray',leftSubArray[0],63);
 
                 //take the leftSubArray[0] and adds it to the currentArray
-                currentArray.splice(currentArray.length,0,leftSubArray[0]);
+                currentArray.push(leftSubArray[0]);
 
                 //remove the element from the leftSubArray
                 leftSubArray.shift();
 
                 this.linkedList.add('remove',leftSubArray[0],65);
+
+                //update the comparator
+                this.linkedList.add('comparator',leftSubArray[0],43);
         }
 
         //while the rightSubArray has elements, remove them and throw them into our current array
-        while(rightSubArray.length-1 > 0){
+        while(rightSubArray.length-1 >= 0){
 
             this.linkedList.add('addToArray',rightSubArray[0],69);
 
             //take the leftSubArray[0] and adds it to the currentArray
-            currentArray.splice(currentArray.length,0,rightSubArray[0]);
+            currentArray.push(rightSubArray[0]);
 
             //remove the element from the leftSubArray
             rightSubArray.shift();
 
             this.linkedList.add('remove',rightSubArray[0],71);
+
+            //update the comparator
+            this.linkedList.add('comparator',rightSubArray[0],43);
     }
 
     this.linkedList.add('sortedSubArray',currentArray,74);
+
     return currentArray;
       
     }//compares and combines the subarrays
