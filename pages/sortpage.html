@@ -242,12 +242,35 @@
     <script type="module">
         console.log('module load test msg :D');
         import { AnimationGenerator } from "../sortingjs/AnimationGenerator.js";
+        import { generateList, stringToList } from "../generaljs/listutils.js";
 
+        //  GET PARAMETERS
+        // sort; gives the type of sort
         let sortParam = GetURLParameter('sort');
+        // list; gives the list to sort. Will override listSizeParam and listGenParam below
+        let listParam = stringToList(GetURLParameter('list'));
+        // generated list's size; if listParam is not specified, this will define how big of a list to generate
+        let listSizeParam = Number(GetURLParameter('size'));
+        if(isNaN(listSizeParam) || !Number.isFinite(listSizeParam) || listSizeParam <= 0)
+            listSizeParam = 10; // default is 10
+        // generated list's type; if listParam is not specified, this will define what contents the list contains
+        let listTypeParam = GetURLParameter('type') || 'random'; // default is random
+
+        // generate list if needed (if listParam exists, use it; else, generate a list)
+        let listToUse;
+        try {
+            listToUse = listParam || generateList(listSizeParam, listTypeParam);
+            console.log(listToUse);
+        } catch (error) {
+            document.getElementById('animate').innerHTML = "Oops! Something's wrong with the array you made!"
+            throw error;
+        }
+
+        // SHOW STUFF!
         if (!sortParam) { // sort doesn't exist
             document.getElementById('animate').innerHTML = "Oops! You forgot to specify a sorting type!";
         } else { // sort was specified
-            let generator = new AnimationGenerator(sortParam, [10,1,7,4,5,4,3],
+            let generator = new AnimationGenerator(sortParam, listToUse,//[10,1,7,4,5,4,3],
             ["code", "more code"], 'animate', 'javasection');
             //time to hook up the sort's functions!
             // let tmp = function () { console.log('tadaa onclick works'); }
