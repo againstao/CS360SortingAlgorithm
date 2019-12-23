@@ -3,12 +3,12 @@
 
 
 /*everything under 600 px*/
-@media screen and (min-width: 1px){
+@media screen and (min-width: 0px){
 
      
     header.navmenu{
         /*general style for the navagation menu at the top */
-        background: pink;
+        background: linear-gradient(180deg,rgb(199, 199, 199),rgb(92, 92, 92));
         color:black;
         font-size: 14px;
         font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -18,28 +18,62 @@
         border-bottom: solid 1px black;
     }
     
-    .navmenu nav{
-       /*style for the nav menu as a whole*/
-       text-align: center;
-       flex-basis: 100%;
-       width:80vmax;
-       padding:14px 0px 14px 0px;
-       margin: auto;
-       display: flex;
-       flex-direction: row;
-        
+    
+    .desktopnav {
+        /*style for the nav menu as a whole*/
+        text-align: center;
+        flex-basis: 100%;
+        width:80vmax;
+        padding:14px 0px 14px 0px;
+        margin: auto;
+        display: none;
+        flex-direction: row; 
+     }
+
+     .mobilenav {
+         /*style for the nav menu as a whole*/
+         text-align: center;
+         flex-basis: 100%;
+         width:80vmax;
+         padding: 14px 0px 14px 0px;
+         margin: auto;
+         display: flex;
+         flex-direction: row; 
+         height: 16px;
+     }
+    
+     .divhamburgernav{
+        padding: 0px;
+        background: transparent;
+        flex: 1;
+        position: relative;
+        top:-3px;
+        background: red;
     }
-    
-    
-    
-    .navmenu div{
-        /*style for the individual elements in the unordered list*/
-       margin:auto;
-       width: auto;
-      padding: auto;
-       text-align: center;
-       
+
+    .hamburgerimage{
+        padding: 0px 0px 0px 20px;
+        background: red;
     }
+
+    .hamburgerpopoutmenu{
+        /*makes all the text in the ul align to the left*/
+        text-align: left;
+    }
+
+    .hamburgerpopoutmenu li{
+            /*Changes the li's to not have the bullet points*/
+            list-style-type: none;
+            text-align: left;
+    }
+
+    .divlogo {
+       flex: 20;
+       position: relative;
+       top: -7.5px;
+    }
+
+   
     
     .navmenu a{
         /*styles the links so that their not in hyper link form*/
@@ -52,17 +86,7 @@
         color:rgb(50, 50, 50);
     }
     
-    .navmenu li:first-child {
-        display:inline-flex;
-       padding:0px auto 0px 0px;
-       text-align: center;
-    }
-    .navmenu li:last-child {
-        display:inline-flex;
-       padding:0px 0px 0px auto;
-       text-align: center;
-    }
-
+    
 
 
 
@@ -70,7 +94,7 @@
 
 
 /*Full Screen to a little under Half screen Desktop View*/
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
    
     header.navmenu{
         /*general style for the navagation menu at the top */
@@ -84,20 +108,29 @@
         border-bottom: solid 1px black;
     }
     
-    .navmenu nav{
-       /*style for the nav menu as a whole*/
-       text-align: center;
-       flex-basis: 100%;
-       width:80vmax;
-       padding:14px 0px 14px 0px;
-       margin: auto;
-       display: flex;
-       flex-direction: row;
         
-    }
-    
-    
-    
+    .desktopnav {
+        /*style for the nav menu as a whole*/
+        text-align: center;
+        flex-basis: 100%;
+        width:80vmax;
+        padding:14px 0px 14px 0px;
+        margin: auto;
+        display: flex;
+        flex-direction: row; 
+     }
+
+     .mobilenav {
+         /*style for the nav menu as a whole*/
+         text-align: center;
+         flex-basis: 100%;
+         width:80vmax;
+         padding:14px 0px 14px 0px;
+         margin: auto;
+         display: none;
+         flex-direction: row; 
+     }
+
     .navmenu div{
         /*style for the individual elements in the unordered list*/
        margin:auto;

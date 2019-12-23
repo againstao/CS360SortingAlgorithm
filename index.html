@@ -35,7 +35,24 @@
 
 <body>
     <header class="navmenu">
-        <nav>
+        <nav class ="mobilenav">
+            <div class = "divhamburgernav">
+                <img class = "hamburgerimage" src = "./Images/HomepageImages/Nav Bar/Hamburger Menu.png" height="20">
+                <ul class = hamburgerpopoutmenu>
+                    <li><a href="pages/sortpage.html?sort=selection">Selection</a></li>
+                    <li><a href="pages/sortpage.html?sort=insertion">Insertion</a></li>
+                    <li><a href="pages/sortpage.html?sort=merge">Merge</a></li>
+                    <li><a href="pages/sortpage.html?sort=heap">Heap</a></li>
+                    <li><a href="pages/sortpage.html?sort=bubble">Bubble</a></li>
+                    <li><a href="pages/sortpage.html?sort=quick">Quick</a></li>
+                </ul>  
+            </div>
+            <div class = "divlogo">
+                <img class = "logo" src = https://i.ytimg.com/vi/EyOzwjfgPVA/maxresdefault.jpg height="30" width="30">
+            </div>
+            
+        </nav>
+        <nav class = "desktopnav">
             <div><a href="./index.html">Home</a></div>
             <div><a href="pages/sortpage.html?sort=selection">Selection</a></div>
             <div><a href="pages/sortpage.html?sort=insertion">Insertion</a></div>
@@ -408,7 +425,7 @@
 
     <!-- js for making the paragraphs display dynamically -->
     <script src="./generaljs/homepage/changingparagraphs.js"></script>
-    
+
 
 
 </body>
