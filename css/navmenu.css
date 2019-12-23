@@ -44,7 +44,6 @@
     
      .divhamburgernav{
         padding: 0px;
-        background: transparent;
         flex: 1;
         position: relative;
         top:-3px;
@@ -52,7 +51,7 @@
     }
 
     .hamburgerimage{
-        margin: 0px 0px 0px 00px;
+        margin: 0px 0px 0px 0px;
         background: purple;
     }
 
@@ -69,8 +68,13 @@
 
     .divlogo {
        flex: 20;
+       background: lime;
        position: relative;
        top: -7.5px;
+    }
+
+    .logo{
+        text-align: center;
     }
 
    
@@ -85,10 +89,6 @@
         /*styles the links so that they change color when you hover over them*/
         color:rgb(50, 50, 50);
     }
-    
-    
-
-
 
 }
 
