@@ -1,56 +1,135 @@
-header.navmenu{
-    /*general style for the navagation menu at the top */
-    background: linear-gradient(180deg,rgb(199, 199, 199),rgb(92, 92, 92));
-    color:black;
-    font-size: 14px;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    padding: 0px 0px 0px 0px;
-    position: sticky;
-    top:0;
-    border-bottom: solid 1px black;
-}
+/*follows mobile first css style*/
 
-.navmenu nav{
-   /*style for the nav menu as a whole*/
-   text-align: center;
-   flex-basis: 100%;
-   width:80vmax;
-   padding:14px 0px 14px 0px;
-   margin: auto;
-   display: flex;
-   flex-direction: row;
+
+
+/*everything under 600 px*/
+@media screen and (min-width: 1px){
+
+     
+    header.navmenu{
+        /*general style for the navagation menu at the top */
+        background: pink;
+        color:black;
+        font-size: 14px;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        padding: 0px 0px 0px 0px;
+        position: sticky;
+        top:0;
+        border-bottom: solid 1px black;
+    }
     
+    .navmenu nav{
+       /*style for the nav menu as a whole*/
+       text-align: center;
+       flex-basis: 100%;
+       width:80vmax;
+       padding:14px 0px 14px 0px;
+       margin: auto;
+       display: flex;
+       flex-direction: row;
+        
+    }
+    
+    
+    
+    .navmenu div{
+        /*style for the individual elements in the unordered list*/
+       margin:auto;
+       width: auto;
+      padding: auto;
+       text-align: center;
+       
+    }
+    
+    .navmenu a{
+        /*styles the links so that their not in hyper link form*/
+        text-decoration:none;
+        color: black;
+        
+    }
+    a:hover{
+        /*styles the links so that they change color when you hover over them*/
+        color:rgb(50, 50, 50);
+    }
+    
+    .navmenu li:first-child {
+        display:inline-flex;
+       padding:0px auto 0px 0px;
+       text-align: center;
+    }
+    .navmenu li:last-child {
+        display:inline-flex;
+       padding:0px 0px 0px auto;
+       text-align: center;
+    }
+
+
+
+
 }
 
 
-
-.navmenu div{
-    /*style for the individual elements in the unordered list*/
-   margin:auto;
-   width: auto;
-  padding: auto;
-   text-align: center;
+/*Full Screen to a little under Half screen Desktop View*/
+@media screen and (min-width: 600px) {
    
-}
-
-.navmenu a{
-    /*styles the links so that their not in hyper link form*/
-    text-decoration:none;
-    color: black;
+    header.navmenu{
+        /*general style for the navagation menu at the top */
+        background: linear-gradient(180deg,rgb(199, 199, 199),rgb(92, 92, 92));
+        color:black;
+        font-size: 14px;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        padding: 0px 0px 0px 0px;
+        position: sticky;
+        top:0;
+        border-bottom: solid 1px black;
+    }
     
-}
-a:hover{
-    /*styles the links so that they change color when you hover over them*/
-    color:rgb(50, 50, 50);
+    .navmenu nav{
+       /*style for the nav menu as a whole*/
+       text-align: center;
+       flex-basis: 100%;
+       width:80vmax;
+       padding:14px 0px 14px 0px;
+       margin: auto;
+       display: flex;
+       flex-direction: row;
+        
+    }
+    
+    
+    
+    .navmenu div{
+        /*style for the individual elements in the unordered list*/
+       margin:auto;
+       width: auto;
+      padding: auto;
+       text-align: center;
+       
+    }
+    
+    .navmenu a{
+        /*styles the links so that their not in hyper link form*/
+        text-decoration:none;
+        color: black;
+        
+    }
+    a:hover{
+        /*styles the links so that they change color when you hover over them*/
+        color:rgb(50, 50, 50);
+    }
+    
+    .navmenu li:first-child {
+        display:inline-flex;
+       padding:0px auto 0px 0px;
+       text-align: center;
+    }
+    .navmenu li:last-child {
+        display:inline-flex;
+       padding:0px 0px 0px auto;
+       text-align: center;
+    }
+
+
+
 }
 
-.navmenu li:first-child {
-    display:inline-flex;
-   padding:0px auto 0px 0px;
-   text-align: center;
-}
-.navmenu li:last-child {
-    display:inline-flex;
-   padding:0px 0px 0px auto;
-   text-align: center;
-}
