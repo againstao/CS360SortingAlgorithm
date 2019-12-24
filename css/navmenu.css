@@ -36,7 +36,6 @@
          /*style for the nav menu as a whole*/
          text-align: center;
          flex-basis: 100%;
-         
          padding: 14px 0px 14px 0px;
          margin: auto;
          display: flex;
@@ -50,7 +49,6 @@
         padding: 0px;
         flex: 1;
         position: relative;
-        top:-3px;
         width: auto;
     }
 
@@ -58,15 +56,39 @@
         margin: 0px 0px 0px 0px;
     }
 
-    .hamburgerpopoutmenu{
-        /*makes all the text in the ul align to the left*/
+    .hamburgerpopoutsection{
+        /*the section as a whole for the hamburger nav menu*/
+        display: flex;
+        z-index: 1;
+    }
+
+    .hamburgerpopoutsection ul{
+        /* the ul part of the humburger section align to the left*/
         text-align: left;
+        margin: 0;
+        padding: 0;
+        flex:1;
+        z-index: 1;
+        background: linear-gradient(rgb(72,219,251),rgb(36,110,125) );
     }
 
     .hamburgerpopoutmenu li{
-            /*Changes the li's to not have the bullet points*/
+            /*the li's inside the hamburger section to not have the bullet points*/
             list-style-type: none;
+            text-decoration:none;
+            /*need to add a hover effect
+            background: rgb(199, 199, 199);
+            */
+            color: black;
             text-align: left;
+            padding: 10px;
+    }
+
+    .hamburgerpopoutmenu a {
+            /*the styling for the links inside the hamburger menu*/
+            list-style-type: none;
+            text-decoration:none;
+            color: black;
     }
 
     .divlogo {
