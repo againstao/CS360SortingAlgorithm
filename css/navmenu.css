@@ -60,6 +60,11 @@
         /*the section as a whole for the hamburger nav menu*/
         display: flex;
         z-index: 1;
+        /*position: fixed;
+        height: 100vmax;
+        width: 100%;
+        enable these once we get the javascript to make this section appear and disappear
+        */
     }
 
     .hamburgerpopoutsection ul{
@@ -69,7 +74,7 @@
         padding: 0;
         flex:1;
         z-index: 1;
-        background: linear-gradient(rgb(72,219,251),rgb(36,110,125) );
+        background: linear-gradient(rgb(72,219,251),rgb(36,110,125));
     }
 
     .hamburgerpopoutmenu li{
