@@ -40,6 +40,7 @@
          display: flex;
          flex-direction: row; 
          height: 16px;
+         width: auto;
      }
     
      .divhamburgernav{
@@ -47,12 +48,10 @@
         flex: 1;
         position: relative;
         top:-3px;
-        background: red;
     }
 
     .hamburgerimage{
         margin: 0px 0px 0px 0px;
-        background: purple;
     }
 
     .hamburgerpopoutmenu{
@@ -67,14 +66,16 @@
     }
 
     .divlogo {
-       flex: 20;
-       background: lime;
+       flex: 7;
        position: relative;
        top: -7.5px;
+       align-items: center;
+       justify-content: center;
     }
 
     .logo{
         text-align: center;
+        display: inline;
     }
 
    
