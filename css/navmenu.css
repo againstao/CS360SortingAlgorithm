@@ -16,6 +16,7 @@
         position: sticky;
         top:0;
         border-bottom: solid 1px black;
+      
     }
     
     
@@ -28,19 +29,21 @@
         margin: auto;
         display: none;
         flex-direction: row; 
+        width: auto;
      }
 
      .mobilenav {
          /*style for the nav menu as a whole*/
          text-align: center;
          flex-basis: 100%;
-         width:80vmax;
+         
          padding: 14px 0px 14px 0px;
          margin: auto;
          display: flex;
          flex-direction: row; 
          height: 16px;
          width: auto;
+         
      }
     
      .divhamburgernav{
@@ -48,6 +51,7 @@
         flex: 1;
         position: relative;
         top:-3px;
+        width: auto;
     }
 
     .hamburgerimage{
@@ -66,19 +70,21 @@
     }
 
     .divlogo {
-       flex: 7;
+       flex: 9;
        position: relative;
        top: -7.5px;
-       align-items: center;
-       justify-content: center;
+       width: auto;  
     }
 
     .logo{
         text-align: center;
-        display: inline;
+        position: relative;
+        left: -25px;
     }
 
-   
+   .hidden{
+       display: none;
+   }
     
     .navmenu a{
         /*styles the links so that their not in hyper link form*/
@@ -119,6 +125,7 @@
         margin: auto;
         display: flex;
         flex-direction: row; 
+        width: auto;
      }
 
      .mobilenav {
