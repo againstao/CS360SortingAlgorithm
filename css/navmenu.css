@@ -56,37 +56,49 @@
         margin: 0px 0px 0px 0px;
     }
 
+ /*the section as a whole for the hamburger nav menu*/
     .hamburgerpopoutsection{
-        /*the section as a whole for the hamburger nav menu*/
+        display: flex; 
+    }
+
+/* the humburger section as a whole*/
+    .hamburgerpopoutmenu{
+        /* the humburger section as a whole*/
+        text-align: center;
+        padding: 25px 0px 25px 0px;
+        position: fixed;
+        background: linear-gradient(rgb(72,219,251),rgb(36,110,125) );
         display: flex;
-        z-index: 1;
-        /*position: fixed;
-        height: 100vmax;
+        flex-direction: column;
         width: 100%;
-        enable these once we get the javascript to make this section appear and disappear
-        */
-    }
+      
 
-    .hamburgerpopoutsection ul{
-        /* the ul part of the humburger section align to the left*/
-        text-align: left;
-        margin: 0;
-        padding: 0;
-        flex:1;
-        z-index: 1;
-        background: linear-gradient(rgb(72,219,251),rgb(36,110,125));
     }
-
-    .hamburgerpopoutmenu li{
-            /*the li's inside the hamburger section to not have the bullet points*/
+   /*the indviduals items inside the hamburger section*/
+    .hamburgerpopoutmenuitems{
+            /*the indviduals items inside the hamburger section*/
             list-style-type: none;
             text-decoration:none;
+            font-size: x-large;
+            background-color:transparent;
+            border: none;
+            cursor:pointer;
+            outline: none;
+            border-top: solid white thin;
             /*need to add a hover effect
             background: rgb(199, 199, 199);
             */
             color: black;
-            text-align: left;
-            padding: 10px;
+            text-align: center;
+            flex: 1;
+            padding: 0px 0px 10px 0px;
+            
+        
+            
+    }
+
+    .lasthamburgerpopoutmenutitem{
+        border-bottom: solid white thin;
     }
 
     .hamburgerpopoutmenu a {
