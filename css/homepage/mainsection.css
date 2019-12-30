@@ -1,19 +1,19 @@
+/*style for the main section as a whole*/
 .mainsection{
-    /*style for the main section as a whole*/
     display: flex;
     margin: 40px 10% 0px 10%;
     padding: 0;
     border-bottom: white solid;
 }
 
+/*style for all selection bars as a whole*/
 .selectionbars{
-    /*style for all selection bars as a whole*/
     flex:0;
     background: linear-gradient(rgb(72,219,251),rgb(36,110,125) );
 }
 
+/*style for the indiviual buttons for the different sorting items in the list of sorts*/
 .mainsectionselectionbars {
-     /*style for the indiviual buttons for the different sorting items in the list of sorts*/
      font-size: x-large;
      background-color:transparent;
      border: none;
@@ -31,8 +31,8 @@
      line-height: 100px;
 }
 
+/*style for the hover effect on the buttons*/
 .mainsectionselectionbars:hover {
-    /*style for the hover effect on the buttons*/
     transform: scale(1.075);
     background: rgb(72,219,251);
     border: none;
@@ -47,8 +47,8 @@
     border: 5px solid white;
 }
 
+/*style for upper and lower paragraph section as a whole*/
 .paragraphs {
-    /*style for upper and lower paragraph section as a whole*/
     display: flex;
     flex-direction: column;
     border-right: solid white;
@@ -57,8 +57,8 @@
 
 /*all unique the upper pargraph styling*/
 
+/*style for the upperparagraphs as a whole*/
 .upperselectionparagraphs {
-    /*style for the upperparagraphs as a whole*/
     border-top: solid white;
     flex:1;
     padding: 0px;
@@ -67,11 +67,10 @@
     display: flex;
     flex-direction: column;
     height: 57px;
-    
 }
 
+/*all the different upper paragraphs on the main page*/
 .uppersubsection{
-    /*all the different upper paragraphs on the main page*/
     font-size: 120%;
     margin-left: 20px;
     margin-right: 20px;
