@@ -79,16 +79,16 @@
 
 }
 
+/*REMEMBER TO COME BACK TO THIS YOU IDIOTS. also... spacing issue*/
 .UpperSectionTitle {
-    /*REMEMBER TO COME BACK TO THIS YOU IDIOTS. also... spacing issue*/
     text-decoration: underline;
     font-size: x-large;
     margin: 15px 0px 0px 0px;
     height: 57px;
 }
 
+/*Changes the li's to not have the bullet points*/
 .Steps li {
-    /*Changes the li's to not have the bullet points*/
     list-style-type: none;
 }
 /*End of the unique upper pargraph styling*/
