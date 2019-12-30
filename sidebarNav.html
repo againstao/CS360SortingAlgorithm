@@ -15,16 +15,17 @@
         <header class="navmenu">
             <nav class ="mobilenav">
                 <div class = "divhamburgernav">
-                    <img class = "hamburgerimage" src = "./Images/HomepageImages/Nav Bar/Hamburger Menu.png" height="20">
-                   
+                    <img class = "hamburgerimage " id = "hamburgerimageclosed" src = "./Images/HomepageImages/Nav Bar/Hamburger Menu.png" height="20">
+                    <img class = "hamburgerimage hidden" id = "hamburgerimageopen" src = "./Images\HomepageImages\Nav Bar\HamburgerOpenButton.png" height="20">
                 </div>
                 <div class = "divlogo">
                     <img class = "logo" src = https://i.ytimg.com/vi/EyOzwjfgPVA/maxresdefault.jpg height="30" width="30">
                 </div>
             </nav>
+                
             <nav class = "desktopnav">
                 <div><a href="./index.html">Home</a></div>
-                <div><a href="pages/sortpage.html?sort=selection">Selection</a></div>
+                <div><a href="pages/sortpage.html?sort=selection"> Selection</a></div>
                 <div><a href="pages/sortpage.html?sort=insertion">Insertion</a></div>
                 <div><a href="pages/sortpage.html?sort=merge">Merge</a></div>
                 <div><a href="pages/sortpage.html?sort=heap">Heap</a></div>
@@ -34,15 +35,20 @@
             
         </header>
 
-        <section class = "hamburgerpopoutsection">
+        <section class = "hamburgerpopoutsection hidden" id = "hamburgerpopoutsection">
             <div class = "hamburgerpopoutmenu">
-                <button class = "hamburgerpopoutmenuitems"><a href="pages/sortpage.html?sort=selection">Selection</a></button>
-                <button class = "hamburgerpopoutmenuitems"><a href="pages/sortpage.html?sort=insertion">Insertion</a></button>
-                <button class = "hamburgerpopoutmenuitems"><a href="pages/sortpage.html?sort=merge">Merge</a></button>
-                <button class = "hamburgerpopoutmenuitems"><a href="pages/sortpage.html?sort=heap">Heap</a></button>
-                <button class = "hamburgerpopoutmenuitems"><a href="pages/sortpage.html?sort=bubble">Bubble</a></button>
-                <button class = "hamburgerpopoutmenuitems lasthamburgerpopoutmenutitem"><a href="pages/sortpage.html?sort=quick">Quick</a></button>
+                <button class = "hamburgerpopoutmenuitems firsthamburgerpopoutmenuitem" id = "hamburgeritemhome" type="button">Home</button>
+                <button class = "hamburgerpopoutmenuitems" id = "hamburgeritemselection" type="button">Selection</button>
+                <button class = "hamburgerpopoutmenuitems" id = "hamburgeriteminsertion" type="button">Insertion</button>
+                <button class = "hamburgerpopoutmenuitems" id = "hamburgeritemmerge" type="button">Merge</button>
+                <button class = "hamburgerpopoutmenuitems" id = "hamburgeritemheap" type="button">Heap</button>
+                <button class = "hamburgerpopoutmenuitems" id = "hamburgeritembubble" type="button">Bubble</button>
+                <button class = "hamburgerpopoutmenuitems" id = "hamburgeritemquick" type="button">Quick</button>
             </div>   
+
+            <!-- js for going to the links inside the hamburger menu -->
+            <script src="./generaljs/navmenu/linksForHamburgerButtons.js"></script>
+
         </section>
            
             <section class="introsection">
