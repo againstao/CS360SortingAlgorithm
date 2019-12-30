@@ -505,38 +505,52 @@ class Bubble {
     //the sorting instance of the respective class
     sort() {
         this.linkedList.add('start', this.list.slice(), 1);
-        //save the event, the data for that event, and the line of javascript code
 
+        //see if the list length is less than or equal to one if so just return it
         if (this.list.length <= 1) {
             return this.list;
-        }//see if the list length is less than or equal to one if so just return it
-        this.linkedList.add('check', this.list.length, 3);
-        //save the event, the data for that event, and the line of javascript code
+        }
 
-        let arrayLength = this.list.length;
-        //set the arrayLength equal to the length of the elements in the list
-        this.linkedList.add('maxtorepeat', this.list.length, 5);
-        //save the event, the data for that event, and the line of javascript code
-        for (arrayLength; arrayLength > 0; arrayLength--) {
+        this.linkedList.add('check', this.list.length, 3);
+
+        //default arewedone to false so we will scan through the list at least once
+        let arewedone = false;
+        
+        this.linkedList.add('arewedone', this.list.length, 5);
+        
+        while (arewedone == false) {
+
+            let didwechangeanything = false;
+            //set a throw away variable to check if we are done, default to false
 
             for (let index = 0; index <= this.list.length - 1; index++) {
-
+                
                 this.linkedList.add('comparator', index, 5);
-                //save the event, the data for that event, and the line of javascript code
                 this.linkedList.add('comparee', index+1, 5);
-                //save the event, the data for that event, and the line of javascript code
 
                 if (this.list[index] > this.list[index + 1]) {
                     let temp = this.list[index];
                     this.list[index] = this.list[index + 1];
                     this.list[index + 1] = temp;
 
-                    this.linkedList.add('swap', [index, index + 1], 7);
-                    //save the event, the data for that event, and the line of javascript code
+                    didwechangeanything = true;
+                    //if we swap anything make didwechange true
 
+                    this.linkedList.add('swap', [index, index + 1], 7);
+                    
                 }//if statment compare the current element to the next one
+
             }//inner for loop selects the neighbors
-        }//outter for loop repeats the algorithim for n times
+
+            this.linkedList.add('check', this.list, 7);
+
+            //see if we changed anything
+            if(didwechangeanything == false){
+                arewedone = true;
+                this.linkedList.add('doneSorting', this.list, 10);
+            }
+
+        }//while loop repeats the algorithim as long as didwechangeanything == true
         this.linkedList.add('end', this.list, 10);
 
         return this.list;
