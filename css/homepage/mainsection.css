@@ -10,6 +10,7 @@
         border-bottom: solid thin white;
         border-top: solid thin white;
         flex-direction: column;
+        height: auto;
 }  
 /*style for all selection bars as a whole*/
 .selectionbars{
