@@ -217,7 +217,7 @@
     
     
 /*Full Screen to a little under Half screen Desktop View*/
-@media screen and (min-width: 769px){
+@media (min-width: 769px){
 
 /*style for the main section as a whole*/
 .mainsection{
