@@ -14,11 +14,19 @@
    height: auto;
 }
 
-.introsectionlogo {
+.introsectionlogolarge {
     /*style settings for our logo*/
     flex:1;
     padding: 10px 10px 10px 10px;
-    
+    height: auto;
+    display: none;
+}
+
+.introsectionlogosmall {
+    /*style settings for our logo*/
+    flex:1;
+    padding: 10px 10px 10px 10px;
+    display: flex;
   
 }
 
@@ -30,7 +38,7 @@
     
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
 
     .introsection{
         /*general settings for our introsection*/
@@ -44,11 +52,19 @@
 
     }
 
-    .introsectionlogo {
+    .introsectionlogolarge {
         /*style settings for our logo*/
         flex:1;
         padding: 10px 10px 0px 10px;
         height: auto;
+        display: flex;
+    }
+
+    .introsectionlogosmall {
+        flex:1;
+        padding: 10px 10px 0px 10px;
+        height: auto;
+        display: none;
     }
     
     .introsectiontitle {

@@ -1,15 +1,239 @@
+/*follows mobile first format*/
+
+
+/*everything under 769 px*/
+/*style for the main section as a whole*/
+.mainsection{
+        display: flex;
+        margin: 10px 5% 40px 5%;
+        padding: 0;
+        border-bottom: solid thin white;
+        border-top: solid thin white;
+        flex-direction: column;
+}  
+/*style for all selection bars as a whole*/
+.selectionbars{
+        flex:1;
+        background: linear-gradient(rgb(72,219,251),rgb(36,110,125) );
+       
+        /*background: purple;*/
+        display: flex;
+        flex-direction: row;
+       
+}
+    
+/*style for the indiviual buttons for the different sorting items in the list of sorts*/
+.mainsectionselectionbars {
+    font-size: small;
+    background-color:transparent;
+    border: none;
+    cursor:pointer;
+    outline:none;
+    text-align: center;
+    color:black;
+    border-left: solid thin white;
+    border-bottom: solid thin white;
+    flex: 1;
+    padding: 30px 1% 30px 1%;
+                
+}
+    
+.lastsectionselectionbars {
+    border-right: solid thin white;
+}
+
+/*style for the hover effect on the buttons*/
+.mainsectionselectionbars:hover {
+        transform: scale(1.075);
+        background: rgb(72,219,251);
+        border: none;
+        cursor:pointer;
+        outline:none;
+        text-align: center;
+        width: 175px;
+        flex: 1;
+        padding: 20px 0px 20px 0px;
+        box-shadow: 0 0 300px rgb(73,220,252);
+        border: 5px solid white; 
+}
+    
+/*style for upper and lower paragraph section as a whole*/
+.paragraphs {
+        display: flex;
+        flex-direction: column;
+        border-right: solid thin white;
+        border-left: solid thin white;
+        flex: 8;
+}
+    
+/*all unique the upper pargraph styling*/
+    
+/*style for the upperparagraphs as a whole*/
+.upperselectionparagraphs {
+        flex:1;
+        padding: 0px;
+        margin: 0px;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        height: 57px;
+}
+    
+/*all the different upper paragraphs on the main page*/
+.uppersubsection{
+        font-size: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 10px;
+        flex: 1;
+        height: 335px;
+    
+}
+    
+/*REMEMBER TO COME BACK TO THIS YOU IDIOTS. also... spacing issue*/
+.UpperSectionTitle {
+        text-decoration: underline;
+        font-size: x-large;
+        margin: 15px 0px 0px 0px;
+        height: 57px;
+}
+    
+/*Changes the li's to not have the bullet points*/
+.Steps li {
+        list-style-type: none;
+}
+/*End of the unique upper pargraph styling*/
+    
+/*all unique lower paragraph styling*/
+    
+.lowerselectionparagraphs{
+        /*all the lower paragraphs on the main page*/
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        width: auto;
+        border-top: solid white;
+}
+    
+.lowerparagraph {
+        /*styling for the individual lower paragraphs*/
+        flex: 1;
+        padding: 0px;
+        margin: 15px;
+        width: auto;
+}
+     
+.LowerSectionTitle {
+        /*lower paragraph section title*/
+        text-decoration: underline;
+        font-size: x-large;
+        flex: 1;
+        padding: 0px 0px 10px 0px;
+}
+    
+.lowersubsections {
+        /*style for everything below the title in the lower section*/
+        flex: 1;
+        display:flex;
+        flex-direction: row;
+}
+    
+.lowerleftsubsections{
+        flex: 1;
+        display:flex;
+        flex-direction: row;
+        border-right: solid thin white;
+}
+    
+.lowerleftpicturescolmun{
+        flex:1;
+     
+}
+    
+.lowerpictures{
+        flex: 1;
+        padding: 13px;
+}
+    
+.lowerpicturesinfo{
+        flex: 1;
+        text-align: center;
+        font-size: 12pt;
+        width: max-content;
+}
+    
+.homepageinputboxes_right{
+        width: 75%;
+        flex:1;
+        height: 220px;
+}
+    
+.homepageinputboxes_left{
+        height:60%;
+        width: 70%;
+        
+}
+    
+.randomsizebox {
+        height:33.33%;
+}
+    
+.randominputboxes{
+        flex:20;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    
+        
+}
+    
+.lowerrightsubsections{
+        flex:1;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+       
+}
+    
+/*common styling shared by multiple sections*/
+.hidden{
+        display: none;
+}
+    
+.ParOverflow {
+    overflow: auto; 
+    height: 245px;
+}
+    
+.vertical-center {
+   margin: 0;
+   position: relative;
+   top: 50%;
+   -ms-transform: translateY(-50%);
+   transform: translateY(-50%);
+} 
+    
+
+    
+    
+/*Full Screen to a little under Half screen Desktop View*/
+@media (min-width: 769px){
+
 /*style for the main section as a whole*/
 .mainsection{
     display: flex;
     margin: 40px 10% 0px 10%;
     padding: 0;
-    border-bottom: white solid;
+    border-right: white solid;
+    flex-direction:row ;
 }
 
 /*style for all selection bars as a whole*/
 .selectionbars{
-    flex:0;
+    flex:1;
     background: linear-gradient(rgb(72,219,251),rgb(36,110,125) );
+    display: flex;
+    flex-direction: column;
 }
 
 /*style for the indiviual buttons for the different sorting items in the list of sorts*/
@@ -21,14 +245,12 @@
      outline:none;
      text-align: center;
      color:black;
-     border-top: solid white;
+     border-bottom: solid white;
      border-left: solid white;
-     border-right: solid white;
-     width: 202.5px;
-     height: 112.5px;
      flex: 1;
-     padding: 0px 0px 60px 0px;
-     line-height: 100px;
+     padding: 20px 0px 20px 0px;
+     min-width: 175px;
+   
 }
 
 /*style for the hover effect on the buttons*/
@@ -39,27 +261,25 @@
     cursor:pointer;
     outline:none;
     text-align: center;
-    width: 202.5px;
-    height: 112.5px;
+    width: 175px;
     flex: 1;
-    padding: 0px 0px 60px 0px;
+    padding: 20px 0px 20px 0px;
     box-shadow: 0 0 300px rgb(73,220,252);
-    border: 5px solid white;
+    border: 5px solid white; 
 }
 
 /*style for upper and lower paragraph section as a whole*/
 .paragraphs {
     display: flex;
     flex-direction: column;
-    border-right: solid white;
-    width:90%;
+    flex: 8;
 }
 
 /*all unique the upper pargraph styling*/
 
 /*style for the upperparagraphs as a whole*/
 .upperselectionparagraphs {
-    border-top: solid white;
+    
     flex:1;
     padding: 0px;
     margin: 0px;
@@ -104,6 +324,10 @@
     border-top: solid white;
 }
 
+.lastsectionselectionbars {
+    border-bottom: none;
+}
+
 .lowerparagraph {
     /*styling for the individual lower paragraphs*/
     flex: 1;
@@ -123,7 +347,7 @@
 .lowersubsections {
     /*style for everything below the title in the lower section*/
     flex: 1;
-    display:flex;
+    display: flex;
     flex-direction: row;
 }
 
@@ -131,7 +355,6 @@
     flex: 1;
     display:flex;
     flex-direction: row;
-    border-right: solid white;
 }
 
 .lowerleftpicturescolmun{
@@ -200,7 +423,11 @@
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-  }
+}
+
+}
+/*end of full screen to a little under half screen desktop view*/
+
 
 /*everything below here is simnply a reference it is not actually doing anything on the main page*/
 .something a{
@@ -223,7 +450,5 @@
     min-width: 800px;
     max-width: 1000px;
 }
-
-
 
 /*resource for the two column setup https://www.w3schools.com/howto/howto_css_two_columns.asp*/
