@@ -198,6 +198,8 @@
         flex-direction: column;
        
 }
+
+/*end of unique lower paragraph styling*/
     
 /*common styling shared by multiple sections*/
 .hidden{
@@ -217,7 +219,7 @@
    transform: translateY(-50%);
 } 
     
-
+/*end of everything under 769 px*/
     
     
 /*Full Screen to a little under Half screen Desktop View*/
@@ -410,6 +412,8 @@
     flex-direction: column;
    
 }
+
+/*end of all unique lower paragraph styling*/
 
 /*common styling shared by multiple sections*/
 .hidden{
