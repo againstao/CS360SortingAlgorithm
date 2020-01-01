@@ -77,7 +77,7 @@
         width: auto;
         display: flex;
         flex-direction: column;
-        height: 57px;
+        height: auto;
 }
     
 /*all the different upper paragraphs on the main page*/
