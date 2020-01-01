@@ -54,17 +54,18 @@
 
     .introsectionlogolarge {
         /*style settings for our logo*/
+        display: flex;
         flex:1;
         padding: 10px 10px 0px 10px;
         height: auto;
-        display: flex;
     }
 
     .introsectionlogosmall {
+        display: none;
         flex:1;
         padding: 10px 10px 0px 10px;
         height: auto;
-        display: none;
+        
     }
     
     .introsectiontitle {
