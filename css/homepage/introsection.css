@@ -11,14 +11,14 @@
     margin: 0px;
     display: flex;
     flex-direction: row;
-   height: auto;
+   height: min-content;
 }
 
 .introsectionlogolarge {
     /*style settings for our logo*/
     flex:1;
     padding: 10px 10px 10px 10px;
-    height: auto;
+    height: min-content;
     display: none;
 }
 
@@ -27,6 +27,7 @@
     flex:1;
     padding: 10px 10px 10px 10px;
     display: flex;
+    height: min-content;
   
 }
 
@@ -34,7 +35,7 @@
     /*style settings for title*/
     flex: 99;
     margin: auto;
-    height: auto;
+    height: min-content;
     
 }
 
@@ -48,7 +49,7 @@
         margin: 0px;
         display: flex;
         flex-direction: row;
-        height: auto;
+        height: min-content;
 
     }
 
@@ -56,22 +57,23 @@
         /*style settings for our logo*/
         display: flex;
         flex:1;
-        padding: 10px 10px 0px 10px;
-        height: auto;
+        padding: 10px 10px 10px 10px;
+        height: min-content;
     }
 
     .introsectionlogosmall {
         display: none;
         flex:1;
         padding: 10px 10px 0px 10px;
-        height: auto;
+        height: min-content;
         
     }
     
     .introsectiontitle {
         /*style settings for title*/
         flex: 99;
-        margin: auto;
+        height: min-content;
+     
         
     }
 
