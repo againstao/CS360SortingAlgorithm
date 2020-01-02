@@ -246,11 +246,38 @@
             <div class="lowerselectionparagraphs">
             <!--Everything below is the various paragraphs that will be displayed upon clicking through the different sorts-->
             
-                
+                <!-- old    styling  
+                    <div class = "lowersubsections">
+                        <div class = "lowerleftsubsections"> 
+                        
+                            <div class = "lowerleftpicturescolmun">
+                            <div class = "lowerpictures"><img id = "selectionsortedpicture" src = "./Images/HomepageImages/sortedGraph.PNG">
+                                <div class = "lowerpicturesinfo"><strong>Sorted</strong></div>
+                            </div>
+                            <div class = "lowerpictures"><img id = "selectionfewuniquepicture" src = "./Images/HomepageImages/fewUniqueElements.PNG">
+                                <div class = "lowerpicturesinfo"><strong>Few Unique</strong></div>
+                            </div>
+                            <div class = "lowerpictures"><img id = "selectionrandompicture" src = "./Images/HomepageImages/randomData.PNG">
+                                <div class = "lowerpicturesinfo"><strong>Random</strong></div>
+                            </div>
+                            </div>
+
+                            <div class = "randominputboxes">
+                                <div class = "randominputtitle">Input a size of at most 20, than click the image to see the animation!</div>
+                                <div class ="randomsizebox" id = "sortedselectionsize"><input class = "homepageinputboxes_left" type = "number" min="0" max ="20"></div>
+                                <div class ="randomsizebox" id = "fewuniqueselectionsize"><input class = "homepageinputboxes_left"></div>
+                                <div class ="randomsizebox" id = "randomselectionsize"><input class = "homepageinputboxes_left"></div>
+                            </div>
+                        </div>
+                        <div class = "lowerrightsubsections">
+                            Input your own custom data
+                            <div><input class = "homepageinputboxes_right"></input></div>
+                        </div>
+                    </div> -->
                 
                 <div class="lowersubsection" id = "lowerselectionparagraph">
                     <div class = "LowerSectionTitle">See Selection Sort in Action</div>
-                    <div class = "lowerinstructionaltitle"> Generate a list or input your own data.</div>
+                    <div class = "lowerinstructionaltitle"> Randomly generate a list or input your own data!</div>
                     <div class = "lowerinputsubsections">
                         <div class = "lowerinputleftsubsections">
                            
@@ -294,79 +321,53 @@
                         </div>
 
                     </div>
-                </div>
-
-
-
-                    
-            </div>
-
-
-                
-
-
-    <!-- old    styling  
-                    <div class = "lowersubsections">
-                        <div class = "lowerleftsubsections"> 
-                        
-                            <div class = "lowerleftpicturescolmun">
-                            <div class = "lowerpictures"><img id = "selectionsortedpicture" src = "./Images/HomepageImages/sortedGraph.PNG">
-                                <div class = "lowerpicturesinfo"><strong>Sorted</strong></div>
-                            </div>
-                            <div class = "lowerpictures"><img id = "selectionfewuniquepicture" src = "./Images/HomepageImages/fewUniqueElements.PNG">
-                                <div class = "lowerpicturesinfo"><strong>Few Unique</strong></div>
-                            </div>
-                            <div class = "lowerpictures"><img id = "selectionrandompicture" src = "./Images/HomepageImages/randomData.PNG">
-                                <div class = "lowerpicturesinfo"><strong>Random</strong></div>
-                            </div>
-                            </div>
-
-                            <div class = "randominputboxes">
-                                <div class = "randominputtitle">Input a size of at most 20, than click the image to see the animation!</div>
-                                <div class ="randomsizebox" id = "sortedselectionsize"><input class = "homepageinputboxes_left" type = "number" min="0" max ="20"></div>
-                                <div class ="randomsizebox" id = "fewuniqueselectionsize"><input class = "homepageinputboxes_left"></div>
-                                <div class ="randomsizebox" id = "randomselectionsize"><input class = "homepageinputboxes_left"></div>
-                            </div>
-                        </div>
-                        <div class = "lowerrightsubsections">
-                            Input your own custom data
-                            <div><input class = "homepageinputboxes_right"></input></div>
-                        </div>
-                    </div> -->
-
-                
+                </div>    
 
                 <div class="lowersubsection hidden" id = "lowerinsertionparagraph">
                     <div class = "LowerSectionTitle">See Insertion Sort in Action</div>
-
-                    <div class = "lowersubsections">
-                        <div class = "lowerleftsubsections"> 
-                        
-                            <div class = "lowerleftpicturescolmun">
-                            <div class = "lowerpictures"><img id = "insertionsortedpicture" src = "./Images/HomepageImages/sortedGraph.PNG">
-                                <div class = "lowerpicturesinfo"><strong>Sorted</strong></div>
-                            </div>
-                            <div class = "lowerpictures"><img id = "insertionfewuniquepicture" src = "./Images/HomepageImages/fewUniqueElements.PNG">
-                                <div class = "lowerpicturesinfo"><strong>Few Unique</strong></div>
-                            </div>
-                            <div class = "lowerpictures"><img id = "insertionrandompicture" src = "./Images/HomepageImages/randomData.PNG">
-                                <div class = "lowerpicturesinfo"><strong>Random</strong></div>
-                            </div>
+                    <div class = "lowerinstructionaltitle"> Randomly generate a list or input your own data!</div>
+                    <div class = "lowerinputsubsections">
+                        <div class = "lowerinputleftsubsections">
+                            
+                            <div class = "fieldinfo">
+                                button size
                             </div>
 
-                            <div class = "randominputboxes">
-                                <div class = "randominputtitle">Input a size of at most 20, than click the image to see the animation!</div>
-                                <div class ="randomsizebox" id = "sortedinsertionsize"><input class = "homepageinputboxes_left"></div>
-                                <div class ="randomsizebox" id = "fewuniqueinsertionsize"><input class = "homepageinputboxes_left"></div>
-                                <div class ="randomsizebox" id = "randominsertionsize"><input class = "homepageinputboxes_left"></div>
+                            <div class = "lowerleftinputrow">
+                                <div class = lowerinputbutton>
+                                    <img id = "insertionsortedpicture" src = "./Images/HomepageImages/sortedGraph.PNG">
+                                        <div class = "lowerpicturesinfo"><strong>Sorted</strong></div>
+                                </div>
+
+                                <div class ="randomsizebox" id = "sortedinsertionsize"><input class = "homepageinputboxes_left">
+                                </div>
                             </div>
+
+                            <div class = "lowerleftinputrow">
+                                <div class = lowerinputbutton>
+                                    <img id = "insertionfewuniquepicture" src = "./Images/HomepageImages/fewUniqueElements.PNG">
+                                    <div class = "lowerpicturesinfo"><strong>Few Unique</strong></div>
+                                </div>
+
+                                <div class ="randomsizebox" id = "fewuniqueinsertionsize"><input class = "homepageinputboxes_left">
+                                </div>
+                            </div>
+
+                            <div class = "lowerleftinputrow">
+                                <div class = lowerinputbutton>
+                                    <img id = "insertionrandompicture" src = "./Images/HomepageImages/randomData.PNG">
+                                    <div class = "lowerpicturesinfo"><strong>Random</strong></div>
+                                </div>
+
+                                <div class ="randomsizebox" id = "randominsertionsize"><input class = "homepageinputboxes_left">
+                                </div>
+                            </div>
+
                         </div>
-                        <div class = "lowerrightsubsections">
-                            Input your own custom data
-                            <div><input class = "homepageinputboxes_right"></div>
+
+                        <div class = "lowerinputrightsubsections">hello
                         </div>
                     </div>
-
                 </div>
 
                 <div class="lowersubsection hidden" id = "lowermergeparagraph">
@@ -502,38 +503,7 @@
                 </div>
 
             </div>
-            <!--lower selection paragraphs need to be formated the following way
-                
-                Title Section
-
-                beginning of title section
-                ------------------------------------------------------------------------
-                "See x sort in Action"
-                ------------------------------------------------------------------------
-                end of title section
-
-                beginning of left section
-                ------------------------------------------------------------------------
-                "input any size, than click the image to see this sort animated"
-                "Note: any size above 20 will not display the individual values"
-                
-                //in a single row format
-                picture of a sorted list        | input box for said list
-                picture of a few unique list    | input box for said list
-                picture of random               | input box for said list 
-                -----------------------------------------------------------------------
-                end of left section
-
-
-                beinning of right section
-                -----------------------------------------------------------------------
-                "input a custom data list"
-                input box that fills from top to bottom and left to right
-                button that say's something like "click to see your custom list animated"
-                -----------------------------------------------------------------------
-                end of right section
-            
-                -->
+         
         </div>
 
     </section>
