@@ -14,13 +14,10 @@ class AnimationGenerator {
         this.timer = 'undefined';
     }
 
-    //
     start() {
-
         if(this.timer !== 'undefined') {
             return
         }//check to see if start is already active
-
         this.timer = setInterval(() => {
             this.nextStep();
             if(this.isAtEnd()) {
@@ -56,13 +53,18 @@ class AnimationGenerator {
     isAtEnd() {
         return this.record.isAtEnd();
     }
+    isAtStart() {
+        return this.record.isAtStart();
+    }
 
     nextStep() {
+        if(this.isAtEnd()) return; // shortut the function
         let actionNode = this.record.goForward();
         console.log(actionNode);
         this._handleAction(actionNode);
     }
     prevStep() {
+        if(this.isAtStart()) return; // shortcut the function
         let actionNode = this.record.goPrev();
         console.log(actionNode);
         this._handleActionReverse(actionNode);

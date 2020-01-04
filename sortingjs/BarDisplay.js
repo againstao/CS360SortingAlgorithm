@@ -58,6 +58,12 @@ class BarDisplay {
     // set the indicator with ID of indicID to the position at index
     //   note: automatically shows it too
     setIndicator(indicID, indexTo) {
+        // ensure indexTo is a number
+        let origIndexTo = indexTo;
+        indexTo = Number(indexTo);
+        if(origIndexTo === null || typeof origIndexTo === 'undefined' ||
+            isNaN(indexTo) || !Number.isInteger(indexTo)) throw 'setIndicator error: indexTo "'+origIndexTo+'" is not a valid integer!';
+        // get the indicator div with indicID
         let div = this.indDivs[indicID];
         // if it doesn't exist yet, lazily initialize it
         if (typeof(div) === 'undefined') {

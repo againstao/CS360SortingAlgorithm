@@ -122,6 +122,10 @@ class DoublyLinkedList{
     isAtEnd(){
         return (this.index === this.tail);
     }
+    //returns whether or not the iterator is at the beginning of this list
+    isAtStart(){
+        return (this.index === this.head);
+    }
 
 }
 
