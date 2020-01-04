@@ -93,6 +93,9 @@ class AnimationGenerator {
             case "swap":
                 this.displayObj.swapElements(actionNode.data[0], actionNode.data[1]);
                 break;
+            case "pivot":
+                this.displayObj.setIndicator('pivot', actionNode.data);
+                break;
             default:
                 console.error("Uh oh! unknown event type \""+actionNode.event+"\"");
                 break;
