@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang = "en">
 <!--Comments Common tags
     h1 - heading 1
     h2 -heading 2
@@ -28,28 +28,67 @@
     <link rel="stylesheet" type="text/css" href="./css/navmenu.css ">
     <link rel="stylesheet" type="text/css" href="./css/homepage/introsection.css ">
     <link rel="stylesheet" type="text/css" href="./css/homepage/mainsection.css ">
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--meta name = "viewport" is the default inital scale of the website-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 
 </head>
 
 <!--body is what the user will see and interact with-->
 
 <body>
+    
     <header class="navmenu">
-        <nav>
+
+        <nav class ="mobilenav">
+            
+            <div class = "divhamburgernav">
+                <img class = "hamburgerimage " id = "hamburgerimageclosed" src = "./Images/HomepageImages/Nav Bar/Hamburger Menu.png" height="20">
+                <img class = "hamburgerimage hidden" id = "hamburgerimageopen" src = "./Images\HomepageImages\Nav Bar\HamburgerOpenButton.png" height="20">
+            </div>
+
+            <div class = "divlogo">
+                <img class = "logo" src = https://i.ytimg.com/vi/EyOzwjfgPVA/maxresdefault.jpg height="30" width="30">
+            </div>
+        </nav>
+            
+        <nav class = "desktopnav">
             <div><a href="./index.html">Home</a></div>
-            <div><a href="pages/sortpage.html?sort=selection">Selection</a></div>
+            <div><a href="pages/sortpage.html?sort=selection"> Selection</a></div>
             <div><a href="pages/sortpage.html?sort=insertion">Insertion</a></div>
             <div><a href="pages/sortpage.html?sort=merge">Merge</a></div>
             <div><a href="pages/sortpage.html?sort=heap">Heap</a></div>
             <div><a href="pages/sortpage.html?sort=bubble">Bubble</a></div>
             <div><a href="pages/sortpage.html?sort=quick">Quick</a></div>
         </nav>
+        
     </header>
+
+    <section class = "hamburgerpopoutsection hidden" id = "hamburgerpopoutsection">
+        <div class = "hamburgerpopoutmenu">
+            <button class = "hamburgerpopoutmenuitems firsthamburgerpopoutmenuitem" id = "hamburgeritemhome" type="button">Home</button>
+            <button class = "hamburgerpopoutmenuitems" id = "hamburgeritemselection" type="button">Selection</button>
+            <button class = "hamburgerpopoutmenuitems" id = "hamburgeriteminsertion" type="button">Insertion</button>
+            <button class = "hamburgerpopoutmenuitems" id = "hamburgeritemmerge" type="button">Merge</button>
+            <button class = "hamburgerpopoutmenuitems" id = "hamburgeritemheap" type="button">Heap</button>
+            <button class = "hamburgerpopoutmenuitems" id = "hamburgeritembubble" type="button">Bubble</button>
+            <button class = "hamburgerpopoutmenuitems" id = "hamburgeritemquick" type="button">Quick</button>
+        </div>   
+
+        <!-- js for going to the links inside the hamburger menu -->
+        <script src="./generaljs/navmenu/mobileNav.js"></script>
+
+    </section>
 
     <!--this section is title and the logo-->
     <section class="introsection">
-        <div class="introsectionlogo"><img src=https://i.ytimg.com/vi/EyOzwjfgPVA/maxresdefault.jpg height="100"
+        <div class="introsectionlogolarge"><img src=https://i.ytimg.com/vi/EyOzwjfgPVA/maxresdefault.jpg height="100"
                 width="100"></div>
+        <div class="introsectionlogosmall"><img src=https://i.ytimg.com/vi/EyOzwjfgPVA/maxresdefault.jpg height="50"
+                width="50"></div>
         <!--need to go back and add our logo later-->
         <div class="introsectiontitle">
             <h1>Sorting Made Simple</h1>
@@ -58,7 +97,7 @@
     </section>
 
     <!--this section is the main body of the webpage-->
-    <section class="mainsection" style="margin-left: 8%; margin-bottom: 3%;">
+    <section class="mainsection">
 
         <div class="selectionbars">
             <button class="mainsectionselectionbars" id="selectionbutton" type="button">Selection</button>
@@ -66,7 +105,7 @@
             <button class="mainsectionselectionbars" id="mergebutton" type="button">Merge</button>
             <button class="mainsectionselectionbars" id="heapbutton" type="button">Heap</button>
             <button class="mainsectionselectionbars" id="bubblebutton" type="button">Bubble</button>
-            <button class="mainsectionselectionbars" id="quickbutton" type="button">Quick</button>
+            <button class="mainsectionselectionbars lastsectionselectionbars" id="quickbutton" type="button">Quick</button>
         </div>
 
         <div class="paragraphs">
@@ -74,125 +113,131 @@
             <div class="upperselectionparagraphs">
                 <!--Everything below is the various paragraphs that will be displayed upon clicking through the different sorts-->
                 <div class="uppersubsection" id="upperselectionparagraph">
-                    <div class="UpperSectionTitle">Selection Sort</div>
-                    <ul class="ParOverflow">
-                        <div class="MethodTitle">Method of Sorting:</div>
-                        <ul class="Steps">
-                            <li>Step 1: Divides list into two parts</li>
-                            <li>Step 2: Compares adjacent elements</li>
-                            <li>Step 3: Swaps them if they are out of order.</li><br>
-                        </ul>
-                        <li>Type of Sort: Simple</li>
-                        <li>Worst Case Runtime: O(n<sup>2</sup>)</li>
-                        <li>This is a Stable, In-Place Sorting Algorithm</li>
-                        <li>Worst Case Space Complexity: O(1) additional memory space</li>
-                        <li>One of the least efficient sorting algorithms, but generally best for small lists</li>
-                        <!--<a href="pages/sortpage.html?sort=selection">Selection Link</a> Link to this specific page-->
-                    </ul>
+                    <div class="ParOverflow"> 
+                        <div class="UpperSectionTitle">Selection Sort</div>
+                        
+                            <div class="MethodTitle">Method of Sorting:</div>
+                            <ul class="Steps">
+                                <li>Step 1: Divides list into two parts</li>
+                                <li>Step 2: Compares adjacent elements</li>
+                                <li>Step 3: Swaps them if they are out of order.</li>
+                            </ul><br>
+                            <div class="additionalsortinginfotitle">Additional Info:</div>
+                            <ul class = "additionalsortinginfo">  
+                                <li>Type of Sort: Simple</li>
+                                <li>Worst Case Runtime: O(n<sup>2</sup>)</li>
+                                <li>This is a Stable, In-Place Sorting Algorithm</li>
+                                <li>Worst Case Space Complexity: O(1) additional memory space</li>
+                                <li>One of the least efficient sorting algorithms, but generally best for small lists</li>
+                            </ul>
+                    </div>
                 </div>
 
                 <div class="uppersubsection hidden" id="upperinsertionparagraph">
+                    <div class="ParOverflow">
                     <div class="UpperSectionTitle">Insertion Sort</div>
-                    <ul class="ParOverflow">
                         <div class="MethodTitle">Method of Sorting:</div>
                         <ul class="Steps">
                             <li>Step 1: Reads one element each repition</li>
                             <li>Step 2: Puts pulled element into new list</li>
                             <li>Step 3: Compares pulled element with new list</li>
-                            <li>Step 4: Places most recently pulled element into new list in correct order</li><br>
+                            <li>Step 4: Places most recently pulled element into new list in correct order</li>
+                        </ul><br>
+                        <div class="additionalsortinginfotitle">Additional Info:</div>
+                        <ul class = "additionalsortinginfo"> 
+                            <li>Type of Sort: Simple</li>
+                            <li>Worst Case Runtime: O(n<sup>2</sup>)</li>
+                            <li>This is a Stable, In-Place Sorting Algorithm</li>
+                            <li>Worst Case Space Complexity: O(1) additional memory space</li>
+                            <li>Best for small data sets and is more efficient than Bubble and Selection sorts</li>
                         </ul>
-                        <li>Type of Sort: Simple</li>
-                        <li>Worst Case Runtime: O(n<sup>2</sup>)</li>
-                        <li>This is a Stable, In-Place Sorting Algorithm</li>
-                        <li>Worst Case Space Complexity: O(1) additional memory space</li>
-                        <li>Best for small data sets and is more efficient than Bubble and Selection sorts</li>
-                        <p></p>
                         <!--<li><a href="pages/sortpage.html?sort=insertion">Insertion link</a></li> Link to this specific page-->
-                    </ul>
+                    </div>
                 </div>
 
                 <div class="uppersubsection hidden" id="uppermergeparagraph">
+                    <div class="ParOverflow">
                     <div class="UpperSectionTitle">Merge Sort</div>
-                    <ul class="ParOverflow">
                         <div class="MethodTitle">Method of Sorting:</div>
                         <ul class="Steps">
                             <li>Step 1: Divides list into n segments</li>
                             <li>Step 2: Compares each segment</li>
-                            <li>Step 3: Merges each segment into one ordered list</li><br>
+                            <li>Step 3: Merges each segment into one ordered list</li>
+                        </ul><br>
+                        <div class="additionalsortinginfotitle">Additional Info:</div>
+                        <ul class = "additionalsortinginfo"> 
+                            <li>Type of Sort: Efficient</li>
+                            <li>Worst Case Runtime: O(n log n)</li>
+                            <li>This is a Stable, but not in-place sorting algorithm</li>
+                            <li>Worst Case Space Complexity: O(n) additional memory space, but can be O(1) with a linked list</li>
+                            <li>Best used for a linked list, but is not as efficient as the quicksort</li>
                         </ul>
-                        <li>Type of Sort: Efficient</li>
-                        <li>Worst Case Runtime: O(n log n)</li>
-                        <li>This is a Stable, but not in-place sorting algorithm</li>
-                        <li>Worst Case Space Complexity: O(n) additional memory space, but can be O(1) with a linked
-                            list</li>
-                        <li>Best used for a linked list, but is not as efficient as the quicksort</li>
-                        <!--<a href="pages/sortpage.html?sort=merge">Merge Link</a> Link to this specific page-->
-                    </ul>
+                    </div>
                 </div>
 
                 <div class="uppersubsection hidden" id="upperheapparagraph">
+                    <div class="ParOverflow">
                     <div class="UpperSectionTitle">Heap Sort</div>
-                    <ul class="ParOverflow">
                         <div class="MethodTitle">Method of Sorting:</div>
                         <ul class="Steps">
                             <li>Step 1: Divides list into two sections: sorted and unsorted</li>
                             <li>Step 2: Pulls out largest element in unsorted section</li>
                             <li>Step 3: Compares pulled element to the sorted section</li>
                             <li>Step 4: Places each unordered element into sorted list to create a new ordered list</li>
-                            <br>
-                        </ul>
-                        <li>Type of Sort: Efficient</li>
-                        <li>Worst Case Runtime: O(n log n)</li>
-                        <li>This is a Stable, but not in-place sorting algorithm</li>
-                        <li>Worst Case Space Complexity: O(n) additional memory space</li>
-                        <li>A little slower than the quicksort and an improved selection sort, but it has the advantage
-                            of having a O(n log n) runtime</li>
-                        <p></p>
-                        <!--<a href="pages/sortpage.html?sort=heap">Heap link</a> Link to this specific page-->
-                    </ul>
+                            
+                        </ul><br>
+                        <div class="additionalsortinginfotitle">Additional Info:</div>
+                        <ul class = "additionalsortinginfo">  
+                            <li>Type of Sort: Efficient</li>
+                            <li>Worst Case Runtime: O(n log n)</li>
+                            <li>This is a Stable, but not in-place sorting algorithm</li>
+                            <li>Worst Case Space Complexity: O(n) additional memory space</li>
+                            <li>A little slower than the quicksort and an improved selection sort, but it has the advantage of having a O(n log n) runtime</li>
+                    </div>
                 </div>
 
                 <div class="uppersubsection hidden" id="upperbubbleparagraph">
+                    <div class="ParOverflow">
                     <div class="UpperSectionTitle">Bubble Sort</div>
-                    <ul class="ParOverflow">
                         <div class="MethodTitle">Method of Sorting:</div>
                         <ul class="Steps">
                             <li>Step 1: Reads the first two adjacent elements in the list</li>
                             <li>Step 2: Compares the two elements</li>
                             <li>Step 3: Swaps the elements if they are out of order</li>
-                            <li>Step 4: Repeat the first 3 steps through the entire lsit</li><br>
+                            <li>Step 4: Repeat the first 3 steps through the entire lsit</li>
+                        </ul><br>
+                        <div class="additionalsortinginfotitle">Additional Info:</div>
+                        <ul class = "additionalsortinginfo">
+                            <li>Type of Sort: Simple</li>
+                            <li>Worst Case Runtime: O(n<sup>2</sup>)</li>
+                            <li>This is a Stable, In-Place Sorting Algorithm</li>
+                            <li>Worst Case Space Complexity: O(1) additional memory space</li>
+                            <li>One of the least efficient sorts, unless the input is mostly ordered with some elements out of order</li>
                         </ul>
-                        <li>Type of Sort: Simple</li>
-                        <li>Worst Case Runtime: O(n<sup>2</sup>)</li>
-                        <li>This is a Stable, In-Place Sorting Algorithm</li>
-                        <li>Worst Case Space Complexity: O(1) additional memory space</li>
-                        <li>One of the least efficient sorts, unless the input is mostly ordered with some elements out
-                            of order</li>
-                        <p></p>
-                        <!--<a href="pages/sortpage.html?sort=bubble">Bubble link</a> Link to this specific page-->
-                    </ul>
+                       
+                    </div>
                 </div>
 
                 <div class="uppersubsection hidden" id="upperquickparagraph">
+                    <div class="ParOverflow">
                     <div class="UpperSectionTitle">Quick Sort</div>
-                    <ul class="ParOverflow">
                         <div class="MethodTitle">Method of Sorting:</div>
                         <ul class="Steps">
                             <li>Step 1: Split list into two sub-arrays</li>
                             <li>Step 2: An element is selected and becomes the pivot element</li>
                             <li>Step 3: All elements smaller than the pivot are moved forward and the larger elements
                                 are moved backwards</li>
-                            <li>Step 4: Sub-arrays are then merged, creating one ordered list</li><br>
+                            <li>Step 4: Sub-arrays are then merged, creating one ordered list</li>
+                        </ul><br>
+                        <div class="additionalsortinginfotitle">Additional Info:</div>
+                        <ul class = "additionalsortinginfo">
+                            <li>Type of Sort: Efficient</li>
+                            <li>Worst Case Runtime: O(n<sup>2</sup>)</li>
+                            <li>This is a Stable, but not in-place sorting algorithm</li>
+                            <li>Worst Case Space Complexity: O(n), with the best being O( n log n)</li>
+                            <li>About two or three times faster than the merge and heapsort. Similar to selection sort, but it does not always choose the worst-case partition</li>
                         </ul>
-                        <li>Type of Sort: Efficient</li>
-                        <li>Worst Case Runtime: O(n<sup>2</sup>)</li>
-                        <li>This is a Stable, but not in-place sorting algorithm</li>
-                        <li>Worst Case Space Complexity: O(n), with the best being O( n log n)</li>
-                        <li>About two or three times faster than the merge and heapsort. Similar to selection sort, but
-                            it does not always choose the worst-case partition</li>
-                        <p></p>
-                        <!--<a href="pages/sortpage.html?sort=quick">Quick link</a> Link to this specific page-->
-                    </ul>
+                    </div>
                 </div>
 
             </div>
@@ -200,10 +245,8 @@
 
             <div class="lowerselectionparagraphs">
             <!--Everything below is the various paragraphs that will be displayed upon clicking through the different sorts-->
-                
-                <div class="lowerparagraph" id = "lowerselectionparagraph">
-                    <div class = "LowerSectionTitle">See Selection Sort in Action</div>
-
+            
+                <!-- old    styling  
                     <div class = "lowersubsections">
                         <div class = "lowerleftsubsections"> 
                         
@@ -230,184 +273,305 @@
                             Input your own custom data
                             <div><input class = "homepageinputboxes_right"></input></div>
                         </div>
+                    </div> -->
+                
+                <div class="lowersubsection" id = "lowerselectionparagraph">
+                    <div class = "LowerSectionTitle">See Selection Sort in Action</div>
+                    <div class = "lowerinstructionaltitle"> Randomly generate a list or input your own data!</div>
+                    <div class = "lowerinputsubsections">
+                        <div class = "lowerinputleftsubsections">
+                           
+                            <div class = "fieldinfo">
+                                <div class = "fieldinfobuttonheader">Button</div> 
+                                <div class = "fieldinfosizeheader">Size</div>
+                            </div>
+                            
+                            <div class = "lowerleftinputrow">
+
+                                <div class = lowerinputbutton>
+                                    <img id = "selectionsortedpicture" src = "./Images/HomepageImages/sortedGraph.PNG">
+                                    <div class = "lowerpicturesinfo"><strong>Sorted</strong></div>
+                                </div>
+
+                                <div class ="randomsizebox" id = "sortedselectionsize"><input class = "homepageinputboxes_left" type = "number" min="0" max ="20"></div>
+                            </div>
+
+                            <div class = "lowerleftinputrow">
+                                
+                                <div class = "lowerinputbutton">
+                                    <img id = "selectionfewuniquepicture" src = "./Images/HomepageImages/fewUniqueElements.PNG">
+                                    <div class = "lowerpicturesinfo"><strong>Few Unique</strong></div>
+                                </div>
+
+                                <div class ="randomsizebox" id = "fewuniqueselectionsize"><input class = "homepageinputboxes_left" type = "number" min="0" max ="20"></div>
+                            </div>
+
+                            <div class = "lowerleftinputrow">
+
+                                <div class = "lowerinputbutton">
+                                    <img id = "selectionrandompicture" src = "./Images/HomepageImages/randomData.PNG">
+                                    <div class = "lowerpicturesinfo"><strong>Random</strong></div>
+                                </div>
+                        
+                                <div class ="randomsizebox" id = "randomselectionsize"><input class = "homepageinputboxes_left"></div>
+                            </div>
+    
+                        </div>
+
+                        <div class = "lowerinputrightsubsections">hello
+                        </div>
+
                     </div>
+                </div>    
 
-                </div>
-
-                <div class="lowerparagraph hidden" id = "lowerinsertionparagraph">
+                <div class="lowersubsection hidden" id = "lowerinsertionparagraph">
                     <div class = "LowerSectionTitle">See Insertion Sort in Action</div>
-
-                    <div class = "lowersubsections">
-                        <div class = "lowerleftsubsections"> 
-                        
-                            <div class = "lowerleftpicturescolmun">
-                            <div class = "lowerpictures"><img id = "insertionsortedpicture" src = "./Images/HomepageImages/sortedGraph.PNG">
-                                <div class = "lowerpicturesinfo"><strong>Sorted</strong></div>
-                            </div>
-                            <div class = "lowerpictures"><img id = "insertionfewuniquepicture" src = "./Images/HomepageImages/fewUniqueElements.PNG">
-                                <div class = "lowerpicturesinfo"><strong>Few Unique</strong></div>
-                            </div>
-                            <div class = "lowerpictures"><img id = "insertionrandompicture" src = "./Images/HomepageImages/randomData.PNG">
-                                <div class = "lowerpicturesinfo"><strong>Random</strong></div>
-                            </div>
+                    <div class = "lowerinstructionaltitle"> Randomly generate a list or input your own data!</div>
+                    <div class = "lowerinputsubsections">
+                        <div class = "lowerinputleftsubsections">
+                            
+                            <div class = "fieldinfo">
+                                <div class = "fieldinfobuttonheader">Button</div> 
+                                <div class = "fieldinfosizeheader">Size</div>
                             </div>
 
-                            <div class = "randominputboxes">
-                                <div class = "randominputtitle">Input a size of at most 20, than click the image to see the animation!</div>
-                                <div class ="randomsizebox" id = "sortedinsertionsize"><input class = "homepageinputboxes_left"></div>
-                                <div class ="randomsizebox" id = "fewuniqueinsertionsize"><input class = "homepageinputboxes_left"></div>
-                                <div class ="randomsizebox" id = "randominsertionsize"><input class = "homepageinputboxes_left"></div>
+                            <div class = "lowerleftinputrow">
+                                <div class = lowerinputbutton>
+                                    <img id = "insertionsortedpicture" src = "./Images/HomepageImages/sortedGraph.PNG">
+                                        <div class = "lowerpicturesinfo"><strong>Sorted</strong></div>
+                                </div>
+
+                                <div class ="randomsizebox" id = "sortedinsertionsize"><input class = "homepageinputboxes_left">
+                                </div>
                             </div>
+
+                            <div class = "lowerleftinputrow">
+                                <div class = lowerinputbutton>
+                                    <img id = "insertionfewuniquepicture" src = "./Images/HomepageImages/fewUniqueElements.PNG">
+                                    <div class = "lowerpicturesinfo"><strong>Few Unique</strong></div>
+                                </div>
+
+                                <div class ="randomsizebox" id = "fewuniqueinsertionsize"><input class = "homepageinputboxes_left">
+                                </div>
+                            </div>
+
+                            <div class = "lowerleftinputrow">
+                                <div class = lowerinputbutton>
+                                    <img id = "insertionrandompicture" src = "./Images/HomepageImages/randomData.PNG">
+                                    <div class = "lowerpicturesinfo"><strong>Random</strong></div>
+                                </div>
+
+                                <div class ="randomsizebox" id = "randominsertionsize"><input class = "homepageinputboxes_left">
+                                </div>
+                            </div>
+
                         </div>
-                        <div class = "lowerrightsubsections">
-                            Input your own custom data
-                            <div><input class = "homepageinputboxes_right"></div>
+
+                        <div class = "lowerinputrightsubsections">hello
                         </div>
                     </div>
-
                 </div>
 
-                <div class="lowerparagraph hidden" id = "lowermergeparagraph">
+                <div class="lowersubsection hidden" id = "lowermergeparagraph">
                     <div class = "LowerSectionTitle">See Merge Sort in Action</div>
-
-                    <div class = "lowersubsections">
-                        <div class = "lowerleftsubsections"> 
+                    <div class = "lowerinstructionaltitle"> Randomly generate a list or input your own data!</div>
+                    <div class = "lowerinputsubsections">
+                        <div class = "lowerinputleftsubsections"> 
                         
-                            <div class = "lowerleftpicturescolmun">
-                            <div class = "lowerpictures"><img id = "mergesortedpicture" src = "./Images/HomepageImages/sortedGraph.PNG">
-                                <div class = "lowerpicturesinfo"><strong>Sorted</strong></div>
-                            </div>
-                            <div class = "lowerpictures"><img id = "mergefewuniquepicture" src = "./Images/HomepageImages/fewUniqueElements.PNG">
-                                <div class = "lowerpicturesinfo"><strong>Few Unique</strong></div>
-                            </div>
-                            <div class = "lowerpictures"><img id = "mergerandompicture" src = "./Images/HomepageImages/randomData.PNG">
-                                <div class = "lowerpicturesinfo"><strong>Random</strong></div>
-                            </div>
+                            <div class = "fieldinfo">
+                                <div class = "fieldinfobuttonheader">Button</div> 
+                                <div class = "fieldinfosizeheader">Size</div>
                             </div>
 
-                            <div class = "randominputboxes">
-                                <div class = "randominputtitle">Input a size of at most 20, than click the image to see the animation!</div>
-                                <div class ="randomsizebox" id = "sortedmergesize"><input class = "homepageinputboxes_left"></div>
+                            <div class = "lowerleftinputrow">
+                                <div class = lowerinputbutton>
+                                    <img id = "mergesortedpicture" src = "./Images/HomepageImages/sortedGraph.PNG">
+                                    <div class = "lowerpicturesinfo"><strong>Sorted</strong></div>
+                                </div>
+                                    <div class ="randomsizebox" id = "sortedmergesize"><input class = "homepageinputboxes_left"></div>
+                            </div>
+
+                            <div class = "lowerleftinputrow">
+                                <div class = lowerinputbutton>
+                                    <img id = "mergefewuniquepicture" src = "./Images/HomepageImages/fewUniqueElements.PNG">
+                                    <div class = "lowerpicturesinfo"><strong>Few Unique</strong></div>
+                                </div>
                                 <div class ="randomsizebox" id = "fewuniquemergesize"><input class = "homepageinputboxes_left"></div>
+                            </div>
+
+                            <div class = "lowerleftinputrow">
+                                <div class = lowerinputbutton>
+                                    <img id = "mergerandompicture" src = "./Images/HomepageImages/randomData.PNG">
+                                    <div class = "lowerpicturesinfo"><strong>Random</strong></div>
+                                </div>
                                 <div class ="randomsizebox" id = "randommergesize"><input class = "homepageinputboxes_left"></div>
                             </div>
+
                         </div>
-                        <div class = "lowerrightsubsections">
-                            Input your own custom data
-                            <div><input class = "homepageinputboxes_right"></div>
+
+                        <div class = "lowerinputrightsubsections">
+                                hello
                         </div>
                     </div>
 
                 </div>
 
-                <div class="lowerparagraph hidden" id = "lowerheapparagraph">
+                <div class="lowersubsection hidden" id = "lowerheapparagraph">
                     <div class = "LowerSectionTitle">See Heap Sort in Action</div>
-
-                    <div class = "lowersubsections">
-                        <div class = "lowerleftsubsections"> 
+                    <div class = "lowerinstructionaltitle"> Randomly generate a list or input your own data!</div>
+                    <div class = "lowerinputsubsections">
+                        <div class = "lowerinputleftsubsections"> 
                         
-                            <div class = "lowerleftpicturescolmun">
-                            <div class = "lowerpictures"><img id = "heapsortedpicture" src = "./Images/HomepageImages/sortedGraph.PNG">
-                                <div class = "lowerpicturesinfo"><strong>Sorted</strong></div>
-                            </div>
-                            <div class = "lowerpictures"><img id = "heapfewuniquepicture" src = "./Images/HomepageImages/fewUniqueElements.PNG">
-                                <div class = "lowerpicturesinfo"><strong>Few Unique</strong></div>
-                            </div>
-                            <div class = "lowerpictures"><img id = "heaprandompicture" src = "./Images/HomepageImages/randomData.PNG">
-                                <div class = "lowerpicturesinfo"><strong>Random</strong></div>
-                            </div>
+                            <div class = "fieldinfo">
+                                <div class = "fieldinfobuttonheader">Button</div> 
+                                <div class = "fieldinfosizeheader">Size</div>
                             </div>
 
-                            <div class = "randominputboxes">
-                                <div class = "randominputtitle">Input a size of at most 20, than click the image to see the animation!</div>
+                            <div class = "lowerleftinputrow">
+                                <div class = lowerinputbutton>
+                                    <img id = "heapsortedpicture" src = "./Images/HomepageImages/sortedGraph.PNG">
+                                    <div class = "lowerpicturesinfo"><strong>Sorted</strong></div>
+                                </div>
+
                                 <div class ="randomsizebox" id = "sortedheapsize"><input class = "homepageinputboxes_left"></div>
+                            </div>
+
+                            <div class = "lowerleftinputrow">
+                                <div class = lowerinputbutton>
+                                    <img id = "heapfewuniquepicture" src = "./Images/HomepageImages/fewUniqueElements.PNG">
+                                    <div class = "lowerpicturesinfo"><strong>Few Unique</strong></div>
+                                </div>
+
                                 <div class ="randomsizebox" id = "fewuniqueheapsize"><input class = "homepageinputboxes_left"></div>
+                            </div>
+                            
+                            <div class = "lowerleftinputrow">
+                                <div class = lowerinputbutton>
+                                    <img id = "heaprandompicture" src = "./Images/HomepageImages/randomData.PNG">
+                                    <div class = "lowerpicturesinfo"><strong>Random</strong></div>
+                                </div>
+
                                 <div class ="randomsizebox" id = "randomheapsize"><input class = "homepageinputboxes_left"></div>
                             </div>
+                            
                         </div>
-                        <div class = "lowerrightsubsections">
+                        <div class = "lowerinputrightsubsections">
                             Input your own custom data
-                            <div><input class = "homepageinputboxes_right"></div>
+                            
                         </div>
                     </div>
 
                 </div>
 
-                <div class="lowerparagraph hidden" id = "lowerbubbleparagraph">
+                <div class="lowersubsection hidden" id = "lowerbubbleparagraph">
                     <div class = "LowerSectionTitle">See Bubble Sort in Action</div>
-
-                    <div class = "lowersubsections">
-                        <div class = "lowerleftsubsections"> 
-                        
-                            <div class = "lowerleftpicturescolmun">
-                            <div class = "lowerpictures"><img id = "bubblesortedpicture" src = "./Images/HomepageImages/sortedGraph.PNG">
-                                <div class = "lowerpicturesinfo"><strong>Sorted</strong></div>
-                            </div>
-                            <div class = "lowerpictures"><img id = "bubblefewuniquepicture" src = "./Images/HomepageImages/fewUniqueElements.PNG">
-                                <div class = "lowerpicturesinfo"><strong>Few Unique</strong></div>
-                            </div>
-                            <div class = "lowerpictures"><img id = "bubblerandompicture" src = "./Images/HomepageImages/randomData.PNG">
-                                <div class = "lowerpicturesinfo"><strong>Random</strong></div>
-                            </div>
+                    <div class = "lowerinstructionaltitle"> Randomly generate a list or input your own data!</div>
+                    <div class = "lowerinputsubsections">
+                        <div class = "lowerinputleftsubsections"> 
+                            
+                            <div class = "fieldinfo">
+                                <div class = "fieldinfobuttonheader">Button</div> 
+                                <div class = "fieldinfosizeheader">Size</div>
                             </div>
 
-                            <div class = "randominputboxes">
-                                <div class = "randominputtitle">Input a size of at most 20, than click the image to see the animation!</div>
-                                <div class ="randomsizebox" id = "bubbleselectionsize"><input class = "homepageinputboxes_left"></div>
+                            <div class = "lowerleftinputrow">
+                                <div class = lowerinputbutton>
+                                    <img id = "bubblesortedpicture" src = "./Images/HomepageImages/sortedGraph.PNG">
+                                    <div class = "lowerpicturesinfo"><strong>Sorted</strong></div>
+                                </div>
+
+                                <div class ="randomsizebox" id = "bubblesortedsize"><input class = "homepageinputboxes_left"></div>
+                            </div>
+
+                            <div class = "lowerleftinputrow">
+                                <div class = lowerinputbutton>
+                                    <img id = "bubblefewuniquepicture" src = "./Images/HomepageImages/fewUniqueElements.PNG">
+                                    <div class = "lowerpicturesinfo"><strong>Few Unique</strong></div>
+                                </div>
+
                                 <div class ="randomsizebox" id = "fewuniquebubblesize"><input class = "homepageinputboxes_left"></div>
+                            </div>
+
+                            <div class = "lowerleftinputrow">
+                                <div class = lowerinputbutton>
+                                    <img id = "bubblerandompicture" src = "./Images/HomepageImages/randomData.PNG">
+                                    <div class = "lowerpicturesinfo"><strong>Random</strong></div>
+                                </div>
+
                                 <div class ="randomsizebox" id = "randombubblesize"><input class = "homepageinputboxes_left"></div>
                             </div>
+
                         </div>
-                        <div class = "lowerrightsubsections">
+                        <div class = "lowerinputrightsubsections">
                             Input your own custom data
-                            <div><input class = "homepageinputboxes_right"></div>
+                            
                         </div>
                     </div>
 
                 </div>
 
-                <div class="lowerparagraph hidden" id = "lowerquickparagraph">
+                <div class="lowersubsection hidden" id = "lowerquickparagraph">
                     <div class = "LowerSectionTitle">See Quick Sort in Action</div>
+                    <div class = "lowerinstructionaltitle"> Randomly generate a list or input your own data!</div>
+                    <div class = "lowerinputsubsections">
+                        <div class = "lowerinputleftsubsections">
 
-                    <div class = "lowersubsections">
-                        <div class = "lowerleftsubsections"> 
-                        
-                            <div class = "lowerleftpicturescolmun">
-                            <div class = "lowerpictures"><img id = "quicksortedpicture" src = "./Images/HomepageImages/sortedGraph.PNG">
-                                <div class = "lowerpicturesinfo"><strong>Sorted</strong></div>
+                            <div class = "fieldinfo">
+                                <div class = "fieldinfobuttonheader">Button</div> 
+                                <div class = "fieldinfosizeheader">List Size</div>
                             </div>
-                            <div class = "lowerpictures"><img id = "quickfewuniquepicture" src = "./Images/HomepageImages/fewUniqueElements.PNG">
+
+                            <div class = "lowerleftinputrow"> 
+                            <div class = "lowerinputbutton">
+                                <img id = "quicksortedpicture" src = "./Images/HomepageImages/sortedGraph.PNG">
+                                <div class = "lowerpicturesinfo"><strong>Sorted</strong></div>
+
+                            </div>
+
+                            <div class ="randomsizebox" id = "sortedquicksize"><input class = "homepageinputboxes_left"></div>
+                            </div> 
+                        
+                            <div class = "lowerleftinputrow">
+                            <div class = "lowerinputbutton">
+                                <img id = "quickfewuniquepicture" src = "./Images/HomepageImages/fewUniqueElements.PNG">
                                 <div class = "lowerpicturesinfo"><strong>Few Unique</strong></div>
                             </div>
-                            <div class = "lowerpictures"><img id = "quickrandompicture" src = "./Images/HomepageImages/randomData.PNG">
-                                <div class = "lowerpicturesinfo"><strong>Random</strong></div>
+
+                            <div class ="randomsizebox" id = "fewuniquequicksize"><input class = "homepageinputboxes_left"></div>
                             </div>
+                            
+                            <div class = "lowerleftinputrow">
+                            <div class = "lowerinputbutton">
+                                <img id = "quickrandompicture" src = "./Images/HomepageImages/randomData.PNG">
+                                <div class = "lowerpicturesinfo"><strong>Random</strong></div>
+
                             </div>
 
-                            <div class = "randominputboxes">
-                                <div class = "randominputtitle">Input a size of at most 20, than click the image to see the animation!</div>
-                                <div class ="randomsizebox" id = "sortedquicksize"><input class = "homepageinputboxes_left"></div>
-                                <div class ="randomsizebox" id = "fewuniquequicksize"><input class = "homepageinputboxes_left"></div>
-                                <div class ="randomsizebox" id = "randomquicksize"><input class = "homepageinputboxes_left"></div>
+                            <div class ="randomsizebox" id = "randomquicksize"><input class = "homepageinputboxes_left"></div>
+
                             </div>
+
                         </div>
-                        <div class = "lowerrightsubsections">
+                    
+                        <div class = "lowerinputrightsubsections">
                             Input your own custom data
-                            <div><input class = "homepageinputboxes_right"></div>
+                       
                         </div>
                     </div>
-
                 </div>
 
             </div>
 
         </div>
-
+         
     </section>
-    <!--mainsection-->
+<!--mainsection-->
+
+  
 
     <!-- js for making the paragraphs display dynamically -->
-    <script src="./generaljs/homepage.js"></script>
+    <script src="./generaljs/homepage/changingparagraphs.js"></script>
+
 
 
 </body>

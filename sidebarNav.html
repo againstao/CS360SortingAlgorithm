@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--links pulls in css page(s)-->
+    <link rel="stylesheet" type="text/css" href="./css/body.css ">
+    <link rel="stylesheet" type="text/css" href="./css/navmenu.css ">
+    <link rel="stylesheet" type="text/css" href="./css/homepage/introsection.css ">
+    <link rel="stylesheet" type="text/css" href="./css/homepage/mainsection.css ">
+</head>
+<body>
+        <header class="navmenu">
+            <nav class ="mobilenav">
+                <div class = "divhamburgernav">
+                    <img class = "hamburgerimage " id = "hamburgerimageclosed" src = "./Images/HomepageImages/Nav Bar/Hamburger Menu.png" height="20">
+                    <img class = "hamburgerimage hidden" id = "hamburgerimageopen" src = "./Images\HomepageImages\Nav Bar\HamburgerOpenButton.png" height="20">
+                </div>
+                <div class = "divlogo">
+                    <img class = "logo" src = https://i.ytimg.com/vi/EyOzwjfgPVA/maxresdefault.jpg height="30" width="30">
+                </div>
+            </nav>
+                
+            <nav class = "desktopnav">
+                <div><a href="./index.html">Home</a></div>
+                <div><a href="pages/sortpage.html?sort=selection"> Selection</a></div>
+                <div><a href="pages/sortpage.html?sort=insertion">Insertion</a></div>
+                <div><a href="pages/sortpage.html?sort=merge">Merge</a></div>
+                <div><a href="pages/sortpage.html?sort=heap">Heap</a></div>
+                <div><a href="pages/sortpage.html?sort=bubble">Bubble</a></div>
+                <div><a href="pages/sortpage.html?sort=quick">Quick</a></div>
+            </nav>
+            
+        </header>
+
+        <section class = "hamburgerpopoutsection hidden" id = "hamburgerpopoutsection">
+            <div class = "hamburgerpopoutmenu">
+                <button class = "hamburgerpopoutmenuitems firsthamburgerpopoutmenuitem" id = "hamburgeritemhome" type="button">Home</button>
+                <button class = "hamburgerpopoutmenuitems" id = "hamburgeritemselection" type="button">Selection</button>
+                <button class = "hamburgerpopoutmenuitems" id = "hamburgeriteminsertion" type="button">Insertion</button>
+                <button class = "hamburgerpopoutmenuitems" id = "hamburgeritemmerge" type="button">Merge</button>
+                <button class = "hamburgerpopoutmenuitems" id = "hamburgeritemheap" type="button">Heap</button>
+                <button class = "hamburgerpopoutmenuitems" id = "hamburgeritembubble" type="button">Bubble</button>
+                <button class = "hamburgerpopoutmenuitems" id = "hamburgeritemquick" type="button">Quick</button>
+            </div>   
+
+            <!-- js for going to the links inside the hamburger menu -->
+            <script src="./generaljs/navmenu/mobileNav.js"></script>
+
+        </section>
+           
+            <section class="introsection">
+                <div class="introsectionlogo"><img src=https://i.ytimg.com/vi/EyOzwjfgPVA/maxresdefault.jpg height="100"
+                        width="100"></div>
+                <!--need to go back and add our logo later-->
+                <div class="introsectiontitle">
+                    <h1>Sorting Made Simple</h1>
+                </div>
+        
+            </section>
+    
+</body>
+</html>

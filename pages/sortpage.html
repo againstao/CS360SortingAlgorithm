@@ -24,10 +24,8 @@
     <title>SMS: Sorting Made Simple</title>
 
     <!--links pulls in css page(s)-->
-    <link rel="stylesheet" type="text/css" href="../css/navmenu.css">
-    <link rel="stylesheet" type="text/css" href="../css/body.css">
-    <!-- <link rel="stylesheet" type="text/css" href="../css/homepage/introsection.css">
-    <link rel="stylesheet" type="text/css" href="../css/homepage/mainsection.css"> -->
+    <link rel="stylesheet" type="text/css" href="/css/navmenu.css">
+    <link rel="stylesheet" type="text/css" href="/css/body.css">
     <link rel="stylesheet" type="text/css" href="../css/sortpage/sortsection.css">
     <link rel="stylesheet" type="text/css" href="../css/sortpage/introsection.css">
     <link rel="stylesheet" type="text/css" href="../css/sortpage/pullupbar.css">
@@ -36,6 +34,14 @@
     <link rel="stylesheet" type="text/css" href="../sortingjs/style.css">
     <!-- <script src="../sortingjs/sortdisplay.js" type="module"></script> -->
     <!-- <script src="../sortingjs/sorts.js" type="module"></script> -->
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--meta name = "viewport" is the default inital scale of the website-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
     <script>
         // from https://stackoverflow.com/questions/22607150/getting-the-url-parameters-inside-the-html-page
         // This function will parse parameters out of the url (like the example.com/dummy.html?a=1&c=b things)
@@ -56,26 +62,48 @@
 
 <body>
 
-    <!--navagation menu-->
     <header class="navmenu">
-        <nav>
-            <div><a href="../">Home</a></div>
-            <div id="navSelection"><a href="sortpage.html?sort=selection">
-                    Selection</a></div>
-            <div id="navInsertion"><a href="sortpage.html?sort=insertion">
-                    Insertion</a></div>
-            <div id="navMerge"><a href="sortpage.html?sort=merge">
-                    Merge</a></div>
-            <div id="navHeap"><a href="sortpage.html?sort=heap">
-                    Heap</a></div>
-            <div id="navBubble"><a href="sortpage.html?sort=bubble">
-                    Bubble</a></div>
-            <div id="navQuick"><a href="sortpage.html?sort=quick">
-                    Quick</a></div>
+
+        <nav class ="mobilenav">
+            
+            <div class = "divhamburgernav">
+                <img class = "hamburgerimage " id = "hamburgerimageclosed" src = "../Images/HomepageImages/Nav Bar/Hamburger Menu.png" height="20">
+                <img class = "hamburgerimage hidden" id = "hamburgerimageopen" src = "../Images/HomepageImages/Nav Bar/HamburgerOpenButton.png" height="20">
+            </div>
+
+            <div class = "divlogo">
+                <img class = "logo" src = https://i.ytimg.com/vi/EyOzwjfgPVA/maxresdefault.jpg height="30" width="30">
+            </div>
         </nav>
+            
+        <nav class = "desktopnav">
+            <div><a href="../index.html">Home</a></div>
+            <div><a href="./sortpage.html?sort=selection"> Selection</a></div>
+            <div><a href="./sortpage.html?sort=insertion">Insertion</a></div>
+            <div><a href="./sortpage.html?sort=merge">Merge</a></div>
+            <div><a href="./sortpage.html?sort=heap">Heap</a></div>
+            <div><a href="./sortpage.html?sort=bubble">Bubble</a></div>
+            <div><a href="./sortpage.html?sort=quick">Quick</a></div>
+        </nav>
+        
     </header>
 
+    <section class = "hamburgerpopoutsection hidden" id = "hamburgerpopoutsection">
+        <div class = "hamburgerpopoutmenu">
+            <button class = "hamburgerpopoutmenuitems firsthamburgerpopoutmenuitem" id = "hamburgeritemhome" type="button">Home</button>
+            <button class = "hamburgerpopoutmenuitems" id = "hamburgeritemselection" type="button">Selection</button>
+            <button class = "hamburgerpopoutmenuitems" id = "hamburgeriteminsertion" type="button">Insertion</button>
+            <button class = "hamburgerpopoutmenuitems" id = "hamburgeritemmerge" type="button">Merge</button>
+            <button class = "hamburgerpopoutmenuitems" id = "hamburgeritemheap" type="button">Heap</button>
+            <button class = "hamburgerpopoutmenuitems" id = "hamburgeritembubble" type="button">Bubble</button>
+            <button class = "hamburgerpopoutmenuitems" id = "hamburgeritemquick" type="button">Quick</button>
+        </div>   
 
+        <!-- js for going to the links inside the hamburger menu -->
+        <script src="../generaljs/navmenu/mobileNav.js"></script>
+
+    </section>
+    
     <!--title of the sorting being played along with the buttons that stop, rewind, pause and resume-->
     <section class="introsection">
         <div class="sortingname" id="defaultsort">
