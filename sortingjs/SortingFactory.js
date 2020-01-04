@@ -45,7 +45,6 @@ class SortingFactory {
 //all the different instances of our objects
 
 //SELECTION SORT
-
 class Selection {
     constructor(list) {
         this.type = 'selection'
@@ -108,7 +107,6 @@ class Selection {
 }//done but linked list hasnt been unit tested
 
 //INSERTION SORT
-
 class Insertion {
     constructor(list) {
         this.type = 'insertion';
@@ -184,7 +182,6 @@ class Insertion {
 }//done but linked list hasn't been unit tested
 
 //MERGE SORT
-
 class Merge {
     constructor(list) {
         this.type = 'merge';
@@ -340,7 +337,6 @@ class Merge {
 }
 
 //HEAP SORT
-
 class Heap {
     constructor(list) {
         this.type = 'heap';
@@ -493,7 +489,6 @@ class Heap {
 }//class heap linked list hasn't been unit tested
 
 //BUBBLE SORT
-
 class Bubble {
     constructor(list) {
         this.type = 'bubble';
@@ -566,7 +561,6 @@ class Bubble {
 }//done but linked list hasn't been unit tested
 
 //QUICK SORT
-
 class Quick {
     constructor(list) {
         this.type = 'quick';
@@ -719,19 +713,19 @@ class Quick {
         //issue here with the animation cant declare multiple comparee statements
 
         if(((this.list[startIndex] <= this.list[middleIndex]) && (this.list[startIndex] >= this.list[endIndex])) || ((this.list[startIndex] >= this.list[middleIndex]) && (this.list[startIndex] <= this.list[endIndex])))  {
-            this.linkedList.add('comparator',startIndex,9);
+            this.linkedList.add('pivot',startIndex,9);
             //maybe add a clear comparee event?
             return startIndex;
         }//see if the first array element is smaller than and bigger than either of the elements
 
         else if(((this.list[middleIndex] <= this.list[startIndex]) && (this.list[middleIndex] >= this.list[endIndex])) || ((this.list[middleIndex] >= this.list[startIndex]) && (this.list[middleIndex] <= this.list[endIndex]))) {
-            this.linkedList.add('comparator',middleIndex,9);
+            this.linkedList.add('pivot',middleIndex,9);
             //maybe add a clear comparee event
             return middleIndex;
         }//see if the middle array element is smaller than and bigger than either of the elements
 
         else{
-            this.linkedList.add('comparator',endIndex,9);
+            this.linkedList.add('pivot',endIndex,9);
             return endIndex;
         }//else return the last index
 
