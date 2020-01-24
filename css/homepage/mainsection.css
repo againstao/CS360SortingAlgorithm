@@ -167,7 +167,7 @@
     text-align: center;
     text-decoration: underline;
     padding: 0px 0px 10px 0px;
-    
+    font-size: 14px;
 }
 /*size header styling for the lower paragraphs*/
 .fieldinfosizeheader{
@@ -176,7 +176,7 @@
     flex: 2;
     margin: 0px 5% 0px 0px;
     padding: 0px 0px 10px 0px;
-   
+    font-size: 14px;
 }
 /*the lower paragraphs input sections as a whole*/
 .lowerinputsubsections{
@@ -196,14 +196,14 @@
 .lowerleftinputrow{
     display: flex;
     flex-direction: row;
-    
+    margin: 0px 10px 0px 0px; 
 }
 /*the text underneath the pictures*/
 .lowerpicturesinfo{
     flex: 1;
     text-align: center;
-    font-size: 12pt;
     width: max-content;
+    font-size: 14px;
 }
 /*the styling for the lower paragraph, riight subsections, input boxes*/
 .homepageinputboxes_right{
@@ -215,11 +215,13 @@
 .homepageinputboxes_left{
     height: 85%;
     width: 90%;
-    
+    margin: 0px 0px 10px 0px;    
 }
 /*the div section for the input boxes*/
 .randomsizebox {
         flex: 3;
+       
+        
 }
 /*the styling for the div sections containing the buttons in the lower section*/
 .lowerinputbutton{
@@ -232,8 +234,33 @@
     flex:1;
     text-align: center;
     display: flex;
-    flex-direction: row;
-    
+    flex-direction: column;
+    margin: 0px 0px 0px 15px;
+}
+
+.lowerinputrightheader{
+    flex:1;
+    font-size: 14px;
+}
+
+/*wrapper for the text*/
+.customlistwrapper{
+    flex:9;
+    margin: 0;
+    width: auto;
+   
+}
+
+/*the custom list the user can input*/
+.customlist{
+    height: 90%;
+    width: 90%;
+}
+
+/*the button for the custom input list*/
+.custominputbutton{
+    background:rgb(72,219,251);
+    border: white thin solid;
 }
 
 /*end of unique lower paragraph styling*/
@@ -462,6 +489,7 @@
     text-align: center;
     text-decoration: underline;
     padding: 0px 0px 10px 0px;
+    font-size: 14px;
 }
 /*size header styling for the lower paragraphs*/
 .fieldinfosizeheader{
@@ -470,7 +498,7 @@
     flex: 2;
     margin: 0px 5% 0px 0px;
     padding: 0px 0px 10px 0px;
-    
+    font-size: 14px;
 }
 /*the lower paragraphs input sections as a whole*/
 .lowerinputsubsections{
@@ -501,14 +529,14 @@
     flex:1;
     text-align: center;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     
 }
 /*the text underneath the pictures*/
 .lowerpicturesinfo{
     flex: 1;
     text-align: center;
-    font-size: 12pt;
+    font-size: 14px;
     width: max-content;
 }
 /*the styling for the lower paragraph, riight subsections, input boxes*/
@@ -521,6 +549,7 @@
 .homepageinputboxes_left{
     height: 85%;
     width: 90%;
+    margin: 0px 0px 10px 0px; 
     
 }
 /*the div section for the input boxes*/

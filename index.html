@@ -276,8 +276,15 @@
                     </div> -->
                 
                 <div class="lowersubsection" id = "lowerselectionparagraph">
-                    <div class = "LowerSectionTitle">See Selection Sort in Action</div>
+
+                    <div class = "LowerSectionTitle" id = "SelectionLowerSectionTitle">See Selection Sort in Action</div>
+                    <div class = "LowerSectionTitle hidden" id = "InsertionLowerSectionTitle">See Insertion Sort in Action</div>
+                    <div class = "LowerSectionTitle hidden" id = "MergeLowerSectionTitle">See Merge Sort in Action</div>
+                    <div class = "LowerSectionTitle hidden" id = "HeapLowerSectionTitle">See Heap Sort in Action</div>
+                    <div class = "LowerSectionTitle hidden" id = "BubbleLowerSectionTitle">See Bubble Sort in Action</div>
+                    <div class = "LowerSectionTitle hidden" id = "QuickLowerSectionTitle">See Quick Sort in Action</div>
                     <div class = "lowerinstructionaltitle"> Randomly generate a list or input your own data!</div>
+
                     <div class = "lowerinputsubsections">
                         <div class = "lowerinputleftsubsections">
                            
@@ -289,7 +296,7 @@
                             <div class = "lowerleftinputrow">
 
                                 <div class = lowerinputbutton>
-                                    <img id = "selectionsortedpicture" src = "./Images/HomepageImages/sortedGraph.PNG">
+                                    <img id = "sortedpicture" src = "./Images/HomepageImages/sortedGraph.PNG">
                                     <div class = "lowerpicturesinfo"><strong>Sorted</strong></div>
                                 </div>
 
@@ -299,31 +306,34 @@
                             <div class = "lowerleftinputrow">
                                 
                                 <div class = "lowerinputbutton">
-                                    <img id = "selectionfewuniquepicture" src = "./Images/HomepageImages/fewUniqueElements.PNG">
+                                    <img id = "fewuniquepicture" src = "./Images/HomepageImages/fewUniqueElements.PNG">
                                     <div class = "lowerpicturesinfo"><strong>Few Unique</strong></div>
                                 </div>
 
-                                <div class ="randomsizebox" id = "fewuniqueselectionsize"><input class = "homepageinputboxes_left" type = "number" min="0" max ="20"></div>
+                                <div class ="randomsizebox" id = "fewuniquesize"><input class = "homepageinputboxes_left" type = "number" min="0" max ="20"></div>
                             </div>
 
                             <div class = "lowerleftinputrow">
 
                                 <div class = "lowerinputbutton">
-                                    <img id = "selectionrandompicture" src = "./Images/HomepageImages/randomData.PNG">
+                                    <img id = "randompicture" src = "./Images/HomepageImages/randomData.PNG">
                                     <div class = "lowerpicturesinfo"><strong>Random</strong></div>
                                 </div>
                         
-                                <div class ="randomsizebox" id = "randomselectionsize"><input class = "homepageinputboxes_left"></div>
+                                <div class ="randomsizebox" id = "randomsize"><input class = "homepageinputboxes_left" type = "number" min="0" max ="20"></div>
                             </div>
     
                         </div>
 
-                        <div class = "lowerinputrightsubsections">hello
+                        <div class = "lowerinputrightsubsections">
+                            <div class = lowerinputrightheader>Input a custom list of integers, separated by commas</div>
+                            <div class = customlistwrapper><textarea class = customlist></textarea></div>
+                            <div class = custominputbuttonwrapper><button class = custominputbutton>Go!</button></div>
                         </div>
 
                     </div>
                 </div>    
-
+<!-- old style
                 <div class="lowersubsection hidden" id = "lowerinsertionparagraph">
                     <div class = "LowerSectionTitle">See Insertion Sort in Action</div>
                     <div class = "lowerinstructionaltitle"> Randomly generate a list or input your own data!</div>
@@ -558,7 +568,7 @@
                        
                         </div>
                     </div>
-                </div>
+                </div> -->
 
             </div>
 
