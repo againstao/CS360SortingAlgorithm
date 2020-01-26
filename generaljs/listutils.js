@@ -15,7 +15,7 @@ export { generateList, listToString, stringToList };
 //       |   | | |            | | | |      | | | |          | | | |          | | | | | |
 //       | | | | |          | | | | |      | | | | |        | | | |          | | | | | |
 //       | | | | | |      | | | | | |      | | | | | |      | | | | | |      | | | | | |
-function generateList(size, genType, minValue=1, maxValue=10) {
+function generateList(size, genType, minValue=1, maxValue=100) {
     let oldsize = size;
     size = Number(size);
     if (isNaN(size) || !Number.isFinite(size) || size <= 0) {
@@ -99,3 +99,4 @@ function stringToList(string) {
     if(failed) return undefined;
     return list;
 }
+
