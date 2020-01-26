@@ -6,6 +6,21 @@ import {generateList,stringToList} from  "../listutils";
 
 //whichever button was clicked, take in that size and use it to generate the list
 
+//the buttons on index.html that 
+var sortedbutton = document.getElementById('sortedpicture');
+var fewuniquebutton = document.getElementById('fewuniquepicture');
+var randombutton = document.getElementById('randompicture');
+
+//the variables for the size inside the input box the user entered
+var sortedsize = document.getElementById("sortedsize").value;
+var fewuniquesize =  document.getElementById("fewuniquesize").value;
+var randomsize = document.getElementById("randominputbox").value;
+
+//the events the  trigger the class  to be created
+sortedbutton.addEventListener("click", new(createTheList ("sorted",sortedsize)));
+fewuniquebutton.addEventListener("click", new(createTheList ("sorted",fewuniquesize)));
+randombutton.addEventListener("click", new(createTheList ("sorted",randomsize)));
+
 class createTheList  {
     constructor(type,list){
         this.size; 
@@ -13,7 +28,7 @@ class createTheList  {
     }
 
 
-//finds the paragraph that is not hidden on index.html
+//finds the paragraph that does not have the hidden class on index.html
 findActiveParagraph()  {
     if  (!document.getElementById("upperselectionparagraph").contains(hidden)){
         console.log("selection is the active paragraph");
