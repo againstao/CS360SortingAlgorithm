@@ -310,7 +310,7 @@
                                     <div class = "lowerpicturesinfo"><strong>Few Unique</strong></div>
                                 </div>
 
-                                <div class ="randomsizebox" id = "fewuniquesize"><input class = "homepageinputboxes_left" id  = "fewuniquesize" type = "number" min="0" max ="20"></div>
+                                <div class ="randomsizebox" id = "fewuniquesizewrapper"><input class = "homepageinputboxes_left" id  = "fewuniquesize" type = "number" min="0" max ="20"></div>
                             </div>
 
                             <div class = "lowerleftinputrow">
@@ -327,7 +327,7 @@
 
                         <div class = "lowerinputrightsubsections">
                             <div class = lowerinputrightheader>Input a custom list of integers, separated by commas</div>
-                            <div class = customlistwrapper><textarea class = customlist></textarea></div>
+                            <div class = customlistwrapper><textarea class = customlist id = customlist></textarea></div>
                             <div class = custominputbuttonwrapper><button class = custominputbutton id = "custominputbutton">Go!</button></div>
                         </div>
 
@@ -583,7 +583,7 @@
     <script src="./generaljs/homepage/changingparagraphs.js"></script>
 
     <!--  js that takes in the size and  generates the list based off which button was pressed-->
-
+    <script src = "./generaljs/inputBox.js" type="module"></script>
 </body>
 
 </html>
