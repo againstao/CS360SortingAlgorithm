@@ -80,7 +80,9 @@ class ListAndSortMethod  {
         this.list = list;
         this.typeOfSort = type;
         this.sortMethod = this.findActiveParagraph();
-        this.listGenerator();
+        //this.listGenerator();
+        this.gotoSortPage();
+
     }
 
 //looks at the list and size variables and assigns the appropriate values based off the parameters
@@ -93,7 +95,7 @@ listGenerator(){
         this.list = this.generateList(this.size,this.typeOfSort, minValue, maxValue);
     }
     else{
-        let temp = this.stringToList(this.list);
+        let temp = this.listToString(this.list);
         this.list = temp;
     }
  
@@ -140,6 +142,10 @@ findActiveParagraph()  {
     }
     
 }//findActiveparagraph
+
+gotoSortPage(){
+    location.replace("/pages/sortpage.html?sort="+this.sortMethod+"&size="+this.size+"&list="+this.list+"&type="+this.typeOfSort);
+}
 
 //generates a  list based off the parameters provided
 generateList(size, genType, minValue=1, maxValue=100) {
