@@ -1,4 +1,4 @@
-import {ListAndSortMethod} from "inputBox.js";
+
 export { generateList, listToString, stringToList };
 
 

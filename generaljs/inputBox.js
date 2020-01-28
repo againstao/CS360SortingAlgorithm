@@ -39,7 +39,6 @@ let x;
             //make a new object for that list and sort method
             x = new ListAndSortMethod ("linear",sortedsize,null); 
             
-            console.log(x);
         break;
 
         case fewuniquebutton:
@@ -48,20 +47,20 @@ let x;
 
             x = new ListAndSortMethod ("manysame",fewuniquesize,null); 
             
-            console.log(x);
         break;
 
         case randombutton:
             let randomsize = document.getElementById("randominputbox").value;
 
             x = new ListAndSortMethod ("random",randomsize,null); 
-            console.log(x);
+
         break;
 
         case custominputbutton:
             let custominput = document.getElementById("customlist").value;
+            
             x = new ListAndSortMethod("custom",null,custominput); 
-            console.log(x);
+
         break;
 
     }
@@ -70,7 +69,7 @@ let x;
 }
 
 
-export { ListAndSortMethod };
+
 //the object that uses generateList and String to list functions
 class ListAndSortMethod  {
 
