@@ -51,9 +51,23 @@ function generateList(size, genType, minValue=1, maxValue=100) {
             genFunction = function(index) { return minValue + (size - index - 1); }
             break;
         case 'manysame':
+            //possible way to do it in the future
+
+            /*
+            divide size by digits 1-10
+            see if size/10 is a number greater than two 
+            if not see if size/9 is a number greater than two
+            .
+            .
+            .
+            etc
+            when we find a number that size/x is greater than two
+            randomly choose from x to 3 on how to divide up the few unique section
+            */
+        
             let threshold1 = Math.floor(size/3); // one-third of the size
             let threshold2 = Math.floor(size*2/3); // two-thirds of the size
-            genFunction = function(index) { return (index<threshold1 ? maxValue : (index<threshold2 ? minValue+halfRange : minValue)); }
+            genFunction = function(index) { return (index<threshold1 ? minValue : (index<threshold2 ? minValue+halfRange : maxValue)); }
             break;
         case 'allsame':
             genFunction = function(index) { return minValue + halfRange; }
