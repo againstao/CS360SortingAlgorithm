@@ -67,7 +67,7 @@ function generateList(size, genType, minValue=1, maxValue=100) {
         
             let threshold1 = Math.floor(size/3); // one-third of the size
             let threshold2 = Math.floor(size*2/3); // two-thirds of the size
-            genFunction = function(index) { return (index<threshold1 ? minValue : (index<threshold2 ? minValue+halfRange : maxValue)); }
+            genFunction = function(index) { return (index<threshold1 ? maxValue : (index<threshold2 ? minValue+halfRange : minValue)); }
             break;
         case 'allsame':
             genFunction = function(index) { return minValue + halfRange; }
